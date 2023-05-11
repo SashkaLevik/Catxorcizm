@@ -3,16 +3,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class InventoryCells : MonoBehaviour
+public class TowerView : MonoBehaviour
 {
     [SerializeField] private Image _iconImage;
     [SerializeField] private Image _background;
     [SerializeField] private Button _sellButton;
     [SerializeField] private TMP_Text _price;
 
-    private AssetItem _item;
+    private TowerStaticData _item;
     
-    public event UnityAction<AssetItem, InventoryCells> SellButtonClick;
+    public event UnityAction<TowerStaticData, TowerView> SellButtonClick;
     
     private void OnEnable()
     {
@@ -24,18 +24,13 @@ public class InventoryCells : MonoBehaviour
         _sellButton.onClick.RemoveListener(OnButtonClick);
     }
     
-    public void Initialize(AssetItem item)
+    public void Initialize(TowerStaticData item)
     {
         _item = item;
         _iconImage.sprite = item.UIIcon;
         _price.text = item.Price.ToString();
         
         OnEnable();
-    }
-    
-    public void Render(ITemTower item)
-    {
-        _iconImage.sprite = item.UIIcon;
     }
 
     private void OnButtonClick()

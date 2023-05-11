@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: ArcherTower
   m_EditorClassIdentifier: 
-  _name: Archer
-  _icon: {fileID: 21300000, guid: 3bb391f29875b8547839100c446b1c75, type: 3}
-  _tower: {fileID: 7904435158241777399, guid: 26a70916715f5494ab8e0915cbb9f988, type: 3}
+  Damage: 12
+  AttackRange: 5
+  Cooldown: 1.5
+  UIIcon: {fileID: 21300000, guid: fe41f7b9db7c0744e9d2bc38875ab848, type: 3}
+  Price: 120
+  Prefab: {fileID: 7904435158241777399, guid: 26a70916715f5494ab8e0915cbb9f988, type: 3}
+  TowerTypeID: 0

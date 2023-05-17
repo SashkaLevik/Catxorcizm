@@ -1,4 +1,5 @@
-﻿using CodeBase.Tower;
+﻿using CodeBase.Infrastructure.StaticData;
+using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
 

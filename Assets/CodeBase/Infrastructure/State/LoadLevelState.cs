@@ -1,4 +1,5 @@
 ﻿using CodeBase.Infrastructure.Factory;
+using CodeBase.Tower;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
@@ -32,9 +33,9 @@ namespace CodeBase.Infrastructure.State
         
         private void OnLoaded()
         {
-            GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
-            _gameFactory.CreateHud();
-
+            GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag)); 
+            GameObject hud = _gameFactory.CreateHud();
+            hero.GetComponentInChildren<TowerSpawner>().Construct(hud.GetComponentInChildren<ShopTower>());
             //CameraFollow(hero);
 
             _stateMachine.Enter<GameLoopState>();

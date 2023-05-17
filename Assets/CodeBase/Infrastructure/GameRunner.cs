@@ -1,7 +1,6 @@
-using CodeBase.Infrastructure;
 using UnityEngine;
 
-namespace CodeBase
+namespace CodeBase.Infrastructure
 {
     public class GameRunner : MonoBehaviour
     {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CodeBase.Infrastructure.StaticData;
+using UnityEngine;
 
 namespace CodeBase.Tower
 {

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Infrastructure.StaticData;
+using CodeBase.Tower;
 using UnityEngine;
 
-namespace CodeBase.Tower
+namespace CodeBase.Infrastructure.Service.StaticData
 {
     public class StaticDataService : IStaticDataService
     {

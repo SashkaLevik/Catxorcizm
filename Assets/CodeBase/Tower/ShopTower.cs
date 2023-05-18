@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
+using CodeBase.Player;
 using UnityEngine;
 using UnityEngine.Events;
 

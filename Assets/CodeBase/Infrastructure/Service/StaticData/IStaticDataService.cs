@@ -1,5 +1,6 @@
 ﻿using CodeBase.Infrastructure.StaticData;
-using CodeBase.Tower;
+using CodeBase.Infrastructure.StaticData.Windows;
+using CodeBase.UI.Service.Windows;
 
 namespace CodeBase.Infrastructure.Service.StaticData
 {
@@ -7,5 +8,6 @@ namespace CodeBase.Infrastructure.Service.StaticData
     {
         void LoadTower();
         TowerStaticData ForTower(TowerTypeID typeID);
+        WindowConfig ForWindow(WindowId windowID);  
     }
 }

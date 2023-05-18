@@ -3,6 +3,8 @@ using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Tower;
+using CodeBase.UI.Service.Factory;
+using CodeBase.UI.Service.Windows;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -35,9 +37,17 @@ namespace CodeBase.Infrastructure.State
         {
             //_services.RegisterSingle<IInputService>(InputService());
             RegisterStaticData();
+            
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(), _services.Single<IStaticDataService>()));
+            
+            _services.RegisterSingle<IWindowService>(new WindowService(_services.Single<IUIFactory>()));
+            _services.RegisterSingle<IUIFactory>(new UIFactory(_services.Single<IAssetProvider>(),
+                _services.Single<IStaticDataService>()));
 
+            _services.RegisterSingle<IGameFactory>(new GameFactory(
+                _services.Single<IAssetProvider>(),
+                _services.Single<IStaticDataService>(),
+                _services.Single<IWindowService>()));
         }
 
         private void RegisterStaticData()

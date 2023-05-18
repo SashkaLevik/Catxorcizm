@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6361116ea9564d7f99deae0781a3d0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _closeShop: {fileID: 1240846625864178844}
-  _shop: {fileID: 0}
-  TowerTypeID: 0
 --- !u!114 &680859473414911472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e328642cd3f4a4a8957216ecb376833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 1_62b9c3a1-5369-4470-8b24-96dd5b084d39
+  Id: player_8bc67d3e-2535-42b8-b0dd-2982d7111193
 --- !u!1 &341575373072400021
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +70,7 @@ GameObject:
   - component: {fileID: 1240846625864178844}
   - component: {fileID: 5953664393571922020}
   - component: {fileID: 4932836922059551357}
-  - component: {fileID: 3961165636207867743}
+  - component: {fileID: 3419336643088574809}
   m_Layer: 0
   m_Name: OpenPanelShop
   m_TagString: Untagged
@@ -154,7 +151,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3961165636207867743
+--- !u!114 &3419336643088574809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,13 +160,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 341575373072400021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beeb916e95054686af140caa241d0725, type: 3}
+  m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawner: {fileID: 2727894763121133204}
-  _button: {fileID: 4932836922059551357}
-  _panel: {fileID: 0}
-  _spawnPointPosition: {fileID: 0}
+  Button: {fileID: 4932836922059551357}
+  WindowId: 1
+  _spawnPointPosition: {fileID: 2727894763121133204}
 --- !u!1 &2521633538448016297
 GameObject:
   m_ObjectHideFlags: 0

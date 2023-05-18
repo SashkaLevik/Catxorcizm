@@ -273,10 +273,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
-    - target: {fileID: 680859473414911472, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}
-      propertyPath: Id
-      value: player_8bc67d3e-2535-42b8-b0dd-2982d7111193
-      objectReference: {fileID: 0}
     - target: {fileID: 2727894763121133204, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -320,14 +316,6 @@ PrefabInstance:
     - target: {fileID: 2727894763121133204, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3961165636207867743, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}
-      propertyPath: _panel
-      value: 
-      objectReference: {fileID: 8996498029233480027, guid: e825d53812fc250499ae7a19a7ddac0b, type: 3}
-    - target: {fileID: 6021873392450914267, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}
-      propertyPath: _shop
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595c2bc7699a17a468239e9324ceea03, type: 3}

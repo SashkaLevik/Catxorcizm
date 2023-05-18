@@ -1,6 +1,8 @@
-﻿using CodeBase.Infrastructure.Factory;
+﻿using System;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
+using CodeBase.UI.Forms;
 using UnityEngine;
 
 namespace CodeBase.Tower
@@ -8,15 +10,15 @@ namespace CodeBase.Tower
     public class TowerSpawner : MonoBehaviour
     {
         private IGameFactory _factory;
-        private ShopTower _turretShopTower;
-    
+        private ShopWindow _shopWindow;
+
         private string _id;
         private bool _createTower;
 
-        public void Construct(ShopTower turretShopTower)
+        public void Construct(ShopWindow shopWindow)
         {
-            _turretShopTower = turretShopTower;
-            _turretShopTower.Happened += BuyTower;
+            _shopWindow = shopWindow;
+            //_shopWindow.Happened += BuyTower;
         }
         
         private void Awake()
@@ -27,7 +29,7 @@ namespace CodeBase.Tower
 
         private void OnDestroy()
         {
-            _turretShopTower.Happened -= BuyTower;
+            //_shopWindow.Happened -= BuyTower;
         }
 
         private void BuyTower(TowerStaticData data)

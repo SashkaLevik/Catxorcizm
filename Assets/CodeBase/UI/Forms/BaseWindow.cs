@@ -15,6 +15,7 @@ namespace CodeBase.UI.Forms
         protected virtual void OnAwake()
         {
             CloseButton.onClick.AddListener(() => Destroy(gameObject));
+            //gameObject.SetActive(false)
         }
     }
 }

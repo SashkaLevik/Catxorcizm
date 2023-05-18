@@ -6,7 +6,9 @@ using UnityEngine;
 public class DragonFlame : MonoBehaviour
 {
     [SerializeField] private int _speed;
+    [SerializeField] private int _damage;
     [SerializeField] private BaseEnemy _target;
+    [SerializeField] private BaseMinion _baseMinion;
 
     private const string Flame = "Flame";
 
@@ -35,7 +37,10 @@ public class DragonFlame : MonoBehaviour
         if (collision.TryGetComponent(out BaseEnemy enemy))
         {
             Debug.Log("Hit");
+            enemy.TakeDamage(_damage);
             Destroy(gameObject);
         }
-    }        
+    }
+    
+    
 }

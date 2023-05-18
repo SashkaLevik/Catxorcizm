@@ -1,8 +1,15 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: c32324b474d78b241bf76b76d9648daf
 =======
 guid: 1ab70a45ac0b77849a0cbe1ba00a185f
+>>>>>>> remotes/origin/weapon
+=======
+guid: 1ab70a45ac0b77849a0cbe1ba00a185f
+=======
+guid: c32324b474d78b241bf76b76d9648daf
+>>>>>>> master
 >>>>>>> remotes/origin/weapon
 folderAsset: yes
 DefaultImporter:

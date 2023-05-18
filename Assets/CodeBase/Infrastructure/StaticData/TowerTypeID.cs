@@ -1,4 +1,4 @@
-﻿namespace CodeBase.Tower
+﻿namespace CodeBase.Infrastructure.StaticData
 {
         public enum TowerTypeID
         {

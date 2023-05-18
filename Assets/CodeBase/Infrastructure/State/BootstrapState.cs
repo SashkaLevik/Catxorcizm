@@ -1,6 +1,8 @@
-﻿using CodeBase.AssetManagement;
+﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.StaticData;
+using CodeBase.Tower;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -32,8 +34,17 @@ namespace CodeBase.Infrastructure.State
         private void RegisterServices()
         {
             //_services.RegisterSingle<IInputService>(InputService());
+            RegisterStaticData();
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>()));
+            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssetProvider>(), _services.Single<IStaticDataService>()));
+
+        }
+
+        private void RegisterStaticData()
+        {
+            IStaticDataService staticData = new StaticDataService();
+            staticData.LoadTower();
+            _services.RegisterSingle(staticData);
         }
 
         private void EnterLoadLevel() =>

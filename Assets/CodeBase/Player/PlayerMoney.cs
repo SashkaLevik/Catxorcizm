@@ -1,8 +1,8 @@
-﻿using CodeBase.Tower;
+﻿using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CodeBase
+namespace CodeBase.Player
 {
     public class PlayerMoney : MonoBehaviour
     {

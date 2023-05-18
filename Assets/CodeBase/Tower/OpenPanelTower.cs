@@ -4,25 +4,21 @@ namespace CodeBase.Tower
 {
     public class OpenPanelTower : MonoBehaviour
     {
-        [SerializeField] private Transform _panel;
-        [SerializeField] private Transform _buttonClose;
+        [SerializeField] private Transform _shop;
 
         private void Start()
         {
-            _panel.gameObject.SetActive(false);
-            _buttonClose.gameObject.SetActive(false);
+            _shop.gameObject.SetActive(false);
         }
 
         public void OpenPanel()
         {
-            _panel.gameObject.SetActive(true);
-            _buttonClose.gameObject.SetActive(true);
+            _shop.gameObject.SetActive(true);
         }
 
         public void ClosePanel()
         {
-            _panel.gameObject.SetActive(false);
-            _buttonClose.gameObject.SetActive(false);
+            _shop.gameObject.SetActive(false);
         }
     }
 }

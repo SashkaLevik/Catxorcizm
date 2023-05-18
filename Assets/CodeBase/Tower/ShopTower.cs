@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using CodeBase.Infrastructure.StaticData;
+using CodeBase.Player;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CodeBase.Tower
 {
@@ -9,12 +13,11 @@ namespace CodeBase.Tower
         [SerializeField] private OpenPanelTower _closePanel;
         [SerializeField] private List<TowerStaticData> _items;
         [SerializeField] private List<TowerView> _towerViewPrefabs;
-        //[SerializeField] private BuildTowerSpawn[] _buildTower;
 
-        private Transform _selectedSpawnPoint;
         private int _currentCostOfGold;
         private int _currentMoney;
         private readonly List<TowerView> _towerViews = new List<TowerView>();
+        public event UnityAction<TowerStaticData> Happened;
 
         private void Start()
         {
@@ -36,11 +39,6 @@ namespace CodeBase.Tower
             {
                 view.SellButtonClick += TrySellBuy;
             }
-
-            // foreach (BuildTowerSpawn buildTowerSpawn in _buildTower)
-            // {
-            //     buildTowerSpawn.BuildButtonClick += TargetSpawn;
-            // }
         }
 
         private void OnDisable()
@@ -49,16 +47,6 @@ namespace CodeBase.Tower
             {
                 view.SellButtonClick -= TrySellBuy;
             }
-        
-            // foreach (BuildTowerSpawn buildTowerSpawn in _buildTower)
-            // {
-            //     buildTowerSpawn.BuildButtonClick -= TargetSpawn;
-            // }
-        }
-
-        private void TargetSpawn(Transform spawn)
-        {
-            _selectedSpawnPoint = spawn;
         }
 
         private void TrySellBuy(TowerStaticData data, TowerView view)
@@ -72,6 +60,7 @@ namespace CodeBase.Tower
             if (_currentCostOfGold <= _currentMoney)
             {
                 _playerMoney.BuyTower(data);
+                Happened?.Invoke(data);
                 _closePanel.ClosePanel();
             }
         }

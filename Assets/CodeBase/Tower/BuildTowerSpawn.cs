@@ -8,11 +8,22 @@ namespace CodeBase.Tower
     {
         [SerializeField] private Transform _spawner;
         [SerializeField] private Button _button;
-        [SerializeField] private OpenPanelTower _panel;
 
+        private OpenPanelTower _panel;
+        
         public Transform _spawnPointPosition;
     
         public event UnityAction<Transform> BuildButtonClick;
+
+        public void Construct(OpenPanelTower panel)
+        {
+            _panel = panel;
+        }
+
+        private void Start()
+        {
+            _spawnPointPosition = _spawner;
+        }
 
         private void OnEnable()
         {
@@ -22,11 +33,6 @@ namespace CodeBase.Tower
         private void OnDisable()
         {
             _button.onClick.RemoveListener(OnButtonClick);
-        }
-
-        private void Start()
-        {
-            _spawnPointPosition = _spawner;
         }
 
         private void OnButtonClick()

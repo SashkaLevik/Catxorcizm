@@ -1,4 +1,6 @@
-﻿using CodeBase.AssetManagement;
+﻿using CodeBase.Infrastructure.AssetManagement;
+using CodeBase.Infrastructure.Service.StaticData;
+using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
 using UnityEngine;
 
@@ -6,39 +8,34 @@ namespace CodeBase.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
-        //private GameObject HeroGameObject { get; set; }
-    
+        private GameObject _heroGameObject;
         private readonly IAssetProvider _assets;
-        private IStaticDataService _staticData;
+        private readonly IStaticDataService _staticData;
 
-        public GameFactory(IAssetProvider assets)
+        public GameFactory(IAssetProvider assets, IStaticDataService staticData)
         {
             _assets = assets;
+            _staticData = staticData;
         }
 
-        public GameObject CreateHero(GameObject at) =>
+        public GameObject CreateHero(GameObject at) => 
             _assets.Instantiate(path: AssetPath.HeroPath, at: at.transform.position);
 
-        public void CreateHud() =>
+        public GameObject CreateHud() =>
             _assets.Instantiate(AssetPath.HudPath);
 
         public GameObject CreatTower(TowerTypeID typeId, Transform parent)
         {
-            throw new System.NotImplementedException();
+            TowerStaticData towerData = _staticData.ForTower(typeId);
+            GameObject tower = Object.Instantiate(towerData.Prefab, parent.position, Quaternion.identity, parent);
+        
+            var attack = tower.GetComponent<TowerAttack>();
+            attack.Construct(_heroGameObject.transform);
+            attack.Damage = towerData.Damage;
+            attack.AttackRange = towerData.AttackRange;
+            attack.Cooldown = towerData.Cooldown;
+        
+            return tower;
         }
-
-        // public GameObject CreatTower(TowerTypeID typeId, Transform parent)
-        // {
-        //     TowerStaticData towerData = _staticData.ForTower(typeId);
-        //     GameObject tower = Object.Instantiate(towerData.Prefab, parent.position, Quaternion.identity, parent);
-        //
-        //     var attack = tower.GetComponent<TowerAttack>();
-        //     attack.Construct(HeroGameObject.transform);
-        //     attack.Damage = towerData.Damage;
-        //     attack.AttackRange = towerData.AttackRange;
-        //     attack.Cooldown = towerData.Cooldown;
-        //
-        //     return tower;
-        // }
     }
 }

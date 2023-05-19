@@ -20,6 +20,8 @@ namespace CodeBase.UI.Forms
 
         private void Start()
         {
+            _currentMoney = 500;
+            
             for (int i = 0; i < _items.Count; i++)
             {
                 _towerViews.Add(_towerViewPrefabs[i]);
@@ -51,8 +53,7 @@ namespace CodeBase.UI.Forms
         private void TrySellBuy(TowerStaticData data, TowerView view)
         {
             _currentCostOfGold = data.Price;
-        
-        
+
             if (_currentMoney <= 0)
                 return;
 

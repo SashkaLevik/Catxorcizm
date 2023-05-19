@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Infrastructure.StaticData.Windows;
+using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Windows;
 using UnityEngine;
 

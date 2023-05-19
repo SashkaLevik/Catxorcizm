@@ -1,4 +1,5 @@
 ﻿using CodeBase.UI.Service.Factory;
+using UnityEngine;
 
 namespace CodeBase.UI.Service.Windows
 {
@@ -6,10 +7,8 @@ namespace CodeBase.UI.Service.Windows
     {
         private readonly IUIFactory _uiFactory;
 
-        public WindowService(IUIFactory uiFactory)
-        {
+        public WindowService(IUIFactory uiFactory) => 
             _uiFactory = uiFactory;
-        }
 
         public void Open(WindowId windowID)
         {

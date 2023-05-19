@@ -6,7 +6,7 @@ namespace CodeBase.Infrastructure.Service.StaticData
 {
     public interface IStaticDataService : IService
     {
-        void LoadTower();
+        void Load();
         TowerStaticData ForTower(TowerTypeID typeID);
         WindowConfig ForWindow(WindowId windowID);  
     }

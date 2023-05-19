@@ -22,16 +22,19 @@ namespace CodeBase.Infrastructure.Factory
             _windowService = windowService;
         }
 
-        public GameObject CreateHero(GameObject at) => 
-            _assets.Instantiate(path: AssetPath.HeroPath, at: at.transform.position);
+        public GameObject CreateHero(GameObject at)
+        {
+            var hero = _assets.Instantiate(path: AssetPath.HeroPath, at: at.transform.position);
+            
+            foreach (OpenWindowButton windowButton in hero.GetComponentsInChildren<OpenWindowButton>())
+                windowButton.Construct(_windowService);
+
+            return hero;
+        }
 
         public GameObject CreateHud()
         {
             GameObject hud = _assets.Instantiate(AssetPath.HudPath);
-
-            foreach (OpenWindowButton windowButton in hud.GetComponentsInChildren<OpenWindowButton>())
-                windowButton.Construct(_windowService);
-
             return hud;
         }
 

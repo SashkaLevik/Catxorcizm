@@ -10,7 +10,7 @@ namespace CodeBase.UI.Element
         public Button Button;
         public WindowId WindowId;
         public Transform _spawnPointPosition;
-        //public event UnityAction<Transform> BuildButtonClick;
+        public event UnityAction<Transform> BuildButtonClick;
         
         private IWindowService _windowService;
 
@@ -20,20 +20,15 @@ namespace CodeBase.UI.Element
         private void Awake() => 
             Button.onClick.AddListener(Open);
 
-        // private void OnEnable()
-        // {
-        //     Button.onClick.AddListener(Open);
-        // }
-        //
-        // private void OnDisable()
-        // {
-        //     Button.onClick.RemoveListener(Open);
-        // }
+        private void OnDisable()
+        {
+            Button.onClick.RemoveListener(Open);
+        }
         
         private void Open()
         {
             _windowService.Open(WindowId);
-            //BuildButtonClick?.Invoke(_spawnPointPosition);
+            BuildButtonClick?.Invoke(_spawnPointPosition);
         }
     }
 }

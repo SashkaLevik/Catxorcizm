@@ -14,16 +14,16 @@ namespace CodeBase.Infrastructure.Service.StaticData
         private Dictionary<TowerTypeID, TowerStaticData> _tower;
         private Dictionary<WindowId,WindowConfig> _windowConfigs;
 
-        public void LoadTower()
+        public void Load()
         {
+            _tower = Resources
+                .LoadAll<TowerStaticData>(StaticDataTowerPath)
+                .ToDictionary(x => x.TowerTypeID, x => x);
+         
             _windowConfigs = Resources
                 .Load<WindowStaticData>(StaticDataWindowsPath)
                 .Configs
                 .ToDictionary(x => x.WindowId, x => x);
-            
-            _tower = Resources
-                .LoadAll<TowerStaticData>(StaticDataTowerPath)
-                .ToDictionary(x => x.TowerTypeID, x => x);
         }
 
         public TowerStaticData ForTower(TowerTypeID typeID) =>

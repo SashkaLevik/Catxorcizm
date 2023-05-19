@@ -18,7 +18,6 @@ namespace CodeBase.Tower
         public void Construct(ShopWindow shopWindow)
         {
             _shopWindow = shopWindow;
-            //_shopWindow.Happened += BuyTower;
         }
         
         private void Awake()
@@ -27,9 +26,14 @@ namespace CodeBase.Tower
             _factory = AllServices.Container.Single<IGameFactory>();
         }
 
+        private void OnEnable()
+        {
+            _shopWindow.Happened += BuyTower;
+        }
+
         private void OnDestroy()
         {
-            //_shopWindow.Happened -= BuyTower;
+            _shopWindow.Happened -= BuyTower;
         }
 
         private void BuyTower(TowerStaticData data)
@@ -42,10 +46,5 @@ namespace CodeBase.Tower
         {
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
         }
-
-        // private void Create()
-        // {
-        //     _createTower = true;
-        // }
     }
 }

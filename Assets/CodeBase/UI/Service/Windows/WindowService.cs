@@ -17,9 +17,14 @@ namespace CodeBase.UI.Service.Windows
                 case WindowId.Unknown:
                     break;
                 case WindowId.Shop:
-                    _uiFactory.CreateShop();
+                    EnableWindow(_uiFactory.Shop.gameObject);
                     break;
             }
+        }
+
+        private void EnableWindow(GameObject window)
+        {
+            window.SetActive(true);
         }
     }
 }

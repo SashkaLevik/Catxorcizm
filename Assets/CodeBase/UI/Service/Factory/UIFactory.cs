@@ -1,8 +1,6 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Service.StaticData;
-using CodeBase.Infrastructure.StaticData.Windows;
 using CodeBase.UI.Forms;
-using CodeBase.UI.Service.Windows;
 using UnityEngine;
 
 namespace CodeBase.UI.Service.Factory
@@ -13,20 +11,29 @@ namespace CodeBase.UI.Service.Factory
         private readonly IAssetProvider _assets;
         private readonly IStaticDataService _staticData;
         private Transform _uiRoot;
+        private ShopWindow _shop;
 
         public UIFactory(IAssetProvider assets, IStaticDataService staticData)
         {
             _assets = assets;
             _staticData = staticData;
         }
-        
-        public void CreateShop()
+
+        public ShopWindow Shop => _shop;
+
+        public GameObject CreateUIRoot()
         {
-            WindowConfig config = _staticData.ForWindow(WindowId.Shop);
-            Object.Instantiate(config.Prefab, _uiRoot);
-        }
-        
-        public void CreateUIRoot() => 
             _uiRoot = _assets.Instantiate(UIRootPath).transform;
+            _shop = GetShop();
+
+            return _uiRoot.gameObject;
+        }
+
+        private ShopWindow GetShop()
+        {
+            ShopWindow shop = _uiRoot.gameObject.GetComponentInChildren<ShopWindow>();
+            shop.gameObject.SetActive(false);
+            return shop;
+        }
     }
 }

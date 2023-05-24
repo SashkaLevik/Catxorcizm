@@ -1,8 +1,8 @@
-﻿using System;
-using CodeBase.Infrastructure.Factory;
+﻿using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
+using CodeBase.UI.Service.Factory;
 using UnityEngine;
 
 namespace CodeBase.Tower
@@ -10,33 +10,35 @@ namespace CodeBase.Tower
     public class TowerSpawner : MonoBehaviour
     {
         private IGameFactory _factory;
+        private IUIFactory _uIFactory;
         private ShopWindow _shopWindow;
-
-        private string _id;
         private bool _createTower;
 
-        public void Construct(ShopWindow shopWindow)
+        private string _id;
+        public bool CreateTower => _createTower;
+
+        public void Construct(IUIFactory uiFactory)
         {
-            _shopWindow = shopWindow;
+            _uIFactory = uiFactory;
+            _uIFactory.Shop.Opened += ShopOnOpened;
         }
-        
+
         private void Awake()
         {
             _id = GetComponent<UniqueId>().Id;
             _factory = AllServices.Container.Single<IGameFactory>();
         }
 
-        private void OnEnable()
+        private void ShopOnOpened(bool open)
         {
-            _shopWindow.Happened += BuyTower;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
-            _shopWindow.Happened -= BuyTower;
+            _uIFactory.Shop.Opened -= ShopOnOpened;
         }
 
-        private void BuyTower(TowerStaticData data)
+        public void BuyTowerSpawn(TowerStaticData data)
         {
             Spawner(data.TowerTypeID, transform);
             _createTower = true;

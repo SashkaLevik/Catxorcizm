@@ -14,8 +14,13 @@ namespace CodeBase.UI.Forms
 
         protected virtual void OnAwake()
         {
-            CloseButton.onClick.AddListener(() => Destroy(gameObject));
-            //gameObject.SetActive(false)
+            CloseButton.onClick.AddListener(() => ClosePanel());
+        }
+
+        private void ClosePanel()
+        {
+            gameObject.GetComponent<ShopWindow>().Inactive();
+            gameObject.SetActive(false);
         }
     }
 }

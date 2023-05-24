@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40803309135729013}
   - component: {fileID: 40803309135729014}
+  - component: {fileID: 4757678890221362453}
   - component: {fileID: 40803309135729012}
   m_Layer: 0
   m_Name: player
@@ -92,6 +93,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4757678890221362453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40803309135729015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54007f6659b240558257a889677d107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minions: []
+  _spawners:
+  - {fileID: 7761132466402788468}
+  - {fileID: 3146768183484498492}
+  - {fileID: 3090578702207968061}
+  - {fileID: 2904313825638713380}
+  - {fileID: 1151284719812983207}
+  - {fileID: 2233802320089229096}
 --- !u!114 &40803309135729012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +669,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 7761132466402788468}
   Button: {fileID: 8957690590381945298}
   WindowId: 1
-  _spawnPointPosition: {fileID: 2161592580429743419}
+  SpawnPointPosition: {fileID: 2161592580429743419}
 --- !u!1 &5200661772657565286
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,9 +778,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 2233802320089229096}
   Button: {fileID: 640926929746072206}
   WindowId: 1
-  _spawnPointPosition: {fileID: 7587051875175671399}
+  SpawnPointPosition: {fileID: 7587051875175671399}
 --- !u!1 &5483981722662513863
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +795,7 @@ GameObject:
   - component: {fileID: 2233802320089229096}
   - component: {fileID: 5035891603381654787}
   m_Layer: 0
-  m_Name: Spawner (7)
+  m_Name: Spawner (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1026,9 +1051,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 1151284719812983207}
   Button: {fileID: 1738151550324968449}
   WindowId: 1
-  _spawnPointPosition: {fileID: 8768719022995519720}
+  SpawnPointPosition: {fileID: 8768719022995519720}
 --- !u!1 &6692670481266225736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1068,7 @@ GameObject:
   - component: {fileID: 1151284719812983207}
   - component: {fileID: 6131990361754209164}
   m_Layer: 0
-  m_Name: Spawner (6)
+  m_Name: Spawner (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1441,9 +1468,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 3146768183484498492}
   Button: {fileID: 4345577850489534362}
   WindowId: 1
-  _spawnPointPosition: {fileID: 6764689051120976755}
+  SpawnPointPosition: {fileID: 6764689051120976755}
 --- !u!1 &9065616275045603955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,9 +1577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 3090578702207968061}
   Button: {fileID: 4397474825495238299}
   WindowId: 1
-  _spawnPointPosition: {fileID: 6676974369231364722}
+  SpawnPointPosition: {fileID: 6676974369231364722}
 --- !u!1 &9178981477161513322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ef5b705083451a982b7d5387122b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 4757678890221362453}
+  _towerSpawner: {fileID: 2904313825638713380}
   Button: {fileID: 4587825460897922434}
   WindowId: 1
-  _spawnPointPosition: {fileID: 6774718054004787563}
+  SpawnPointPosition: {fileID: 6774718054004787563}

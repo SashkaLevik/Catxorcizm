@@ -1,8 +1,9 @@
 ﻿using CodeBase.Infrastructure.Factory;
+using CodeBase.Player;
 using CodeBase.Tower;
-using CodeBase.UI;
 using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Factory;
+using CodeBase.UI.Service.Windows;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
@@ -38,10 +39,22 @@ namespace CodeBase.Infrastructure.State
 
         private void OnLoaded()
         {
-            InitUiRoot();
+            //InitUiRoot();
+
+            GameObject uiRoot = _uiFactory.CreateUIRoot();
             GameObject hud = _gameFactory.CreateHud();
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
-            hero.GetComponentInChildren<TowerSpawner>().Construct(hud.GetComponentInChildren<ShopWindow>());
+            
+            Debug.Log(uiRoot.GetComponentInChildren<ShopWindow>(true));
+            
+            uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
+                hero.GetComponent<PlayerMoney>(), 
+                hero.GetComponent<Inventory>());
+            
+            foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
+            {
+                towerSpawner.Construct(_uiFactory);
+            }
             
             //CameraFollow(hero);
 

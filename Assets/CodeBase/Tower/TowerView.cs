@@ -32,8 +32,6 @@ namespace CodeBase.Tower
             _item = item;
             _iconImage.sprite = item.UIIcon;
             _price.text = item.Price.ToString();
-        
-            OnEnable();
         }
 
         private void OnButtonClick()

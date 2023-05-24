@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: ArcherTower
   m_EditorClassIdentifier: 
-  Damage: 50
-  AttackRange: 10
-  Cooldown: 3
+  Damage: 10
+  AttackRange: 5
+  Cooldown: 1.5
   UIIcon: {fileID: 21300000, guid: fe41f7b9db7c0744e9d2bc38875ab848, type: 3}
   Price: 120
   Prefab: {fileID: 7904435158241777399, guid: 26a70916715f5494ab8e0915cbb9f988, type: 3}

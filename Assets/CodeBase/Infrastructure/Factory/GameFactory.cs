@@ -11,6 +11,7 @@ namespace CodeBase.Infrastructure.Factory
     public class GameFactory : IGameFactory
     {
         private GameObject _heroGameObject;
+        
         private readonly IAssetProvider _assets;
         private readonly IStaticDataService _staticData;
         private readonly IWindowService _windowService;
@@ -44,7 +45,6 @@ namespace CodeBase.Infrastructure.Factory
             GameObject tower = Object.Instantiate(towerData.Prefab, parent.position, Quaternion.identity, parent);
         
             var attack = tower.GetComponent<TowerAttack>();
-            attack.Construct(_heroGameObject.transform);
             attack.Damage = towerData.Damage;
             attack.AttackRange = towerData.AttackRange;
             attack.Cooldown = towerData.Cooldown;

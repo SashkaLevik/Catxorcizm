@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Factory;
+﻿using System;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
@@ -27,6 +28,10 @@ namespace CodeBase.Tower
         {
             _id = GetComponent<UniqueId>().Id;
             _factory = AllServices.Container.Single<IGameFactory>();
+        }
+
+        private void Update()
+        {
         }
 
         private void ShopOnOpened(bool open)

@@ -1,6 +1,5 @@
 ﻿using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.Tower;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Factory

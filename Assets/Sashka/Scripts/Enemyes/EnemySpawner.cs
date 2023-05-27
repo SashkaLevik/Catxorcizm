@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts.Enemyes
 {
     public class EnemySpawner : MonoBehaviour
     {
@@ -30,11 +30,6 @@ namespace Sashka
         private void Spawn()
         {
             StartCoroutine(SpawnEnemies(_weakEnemyCount, _mediumEnemyCount));
-        }            
-
-        private void OnEnemyDied(BaseEnemy enemy)
-        {
-            enemy.Died -= OnEnemyDied;
         }
 
         private IEnumerator SpawnEnemies(int weakCount, int mediumCount)
@@ -45,16 +40,21 @@ namespace Sashka
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Weak);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
-                _spawnedEnemy.Died += OnEnemyDied;
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += OnEnemyDied;
                 yield return delay;
             }
             for (int i = 0; i < mediumCount; i++)
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Medium);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
-                _spawnedEnemy.Died += OnEnemyDied;
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += OnEnemyDied;
                 yield return delay;
             }
+        }
+
+        private void OnEnemyDied(BaseEnemy enemy)
+        {
+            enemy.GetComponentInChildren<EnemyHealth>().Died -= OnEnemyDied;
         }
 
         private T GetRandomEnemy<T>(EnemyTypeID type) where T : BaseEnemy

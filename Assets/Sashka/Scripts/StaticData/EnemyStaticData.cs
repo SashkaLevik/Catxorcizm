@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts.StaticData
 {
     [CreateAssetMenu(fileName = "EnemyData", menuName = "StaticData/Enemy")]
     public class EnemyStaticData : ScriptableObject

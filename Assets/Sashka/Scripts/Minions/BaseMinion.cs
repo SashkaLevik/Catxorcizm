@@ -1,9 +1,10 @@
+using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts.Minions
 {
     public class BaseMinion : MonoBehaviour
     {
@@ -22,7 +23,6 @@ namespace Sashka
             Move();
         }
 
-
         public void Init(BaseEnemy enemy)
         {
             _enemy = enemy;
@@ -40,7 +40,7 @@ namespace Sashka
             if (collision.TryGetComponent(out _enemy))
             {
                 //_enemies.Add(_enemy);
-                // Attack();
+                //Attack();
             }
         }
 

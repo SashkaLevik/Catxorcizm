@@ -1,9 +1,10 @@
+using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts
 {
     [CreateAssetMenu(fileName = "EnemyType", menuName = "EnemyType")]
     public class ScriptablePrefab : ScriptableObject
@@ -20,6 +21,6 @@ namespace Sashka
             _enemyPrefab = _prefabs[randomPrefab];
             return _enemyPrefab;
         }
-    }   
+    }
 }
 

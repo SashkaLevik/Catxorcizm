@@ -1,4 +1,4 @@
-﻿namespace Sashka
+﻿namespace Assets.Sashka.Scripts.StaticData
 {
     public enum EnemyTypeID
     {

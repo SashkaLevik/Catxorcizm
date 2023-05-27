@@ -1,9 +1,10 @@
+using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts.Minions
 {
     public class AttackTrigger : MonoBehaviour
     {
@@ -13,7 +14,7 @@ namespace Sashka
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent<BaseEnemy>(out _enemy))
+            if (collision.TryGetComponent(out _enemy))
             {
                 AttackZoneEntered?.Invoke();
             }

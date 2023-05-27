@@ -1,8 +1,9 @@
+using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Sashka
+namespace Assets.Sashka.Scripts.Minions
 {
     [RequireComponent(typeof(Animator))]
     public class DragonFlame : MonoBehaviour
@@ -39,7 +40,7 @@ namespace Sashka
             if (collision.TryGetComponent(out BaseEnemy enemy))
             {
                 Debug.Log("Hit");
-                enemy.TakeDamage(_damage);
+                enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
                 Destroy(gameObject);
             }
         }

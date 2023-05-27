@@ -4,6 +4,6 @@ namespace CodeBase.UI.Service.Windows
 {
     public interface IWindowService : IService
     {
-        void Open(WindowID windowID);
+        void Open(WindowId windowID);
     }
 }

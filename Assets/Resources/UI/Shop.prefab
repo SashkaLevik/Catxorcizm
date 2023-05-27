@@ -52,6 +52,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 7442535934709040136}
+  _items:
+  - {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
+  - {fileID: 11400000, guid: 822d3040d89fec2419e31f8a1d034578, type: 2}
+  _towerViewPrefabs:
+  - {fileID: 347642854938885506}
+  - {fileID: 347642856066636685}
+  - {fileID: 347642854940758237}
+  - {fileID: 347642854925228103}
+  - {fileID: 347642856187578130}
+  - {fileID: 347642855454927715}
+  - {fileID: 347642854327737300}
 --- !u!1 &7442535934318125472
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +384,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OpenPanelTower, Assembly-CSharp
+        m_TargetAssemblyTypeName: CodeBase.Tower.OpenPanelTower, Assembly-CSharp
         m_MethodName: ClosePanel
         m_Mode: 1
         m_Arguments:
@@ -521,7 +532,6 @@ GameObject:
   - component: {fileID: 7442535935319520856}
   - component: {fileID: 7442535935319520862}
   - component: {fileID: 7442535935319520857}
-  - component: {fileID: 7442535935319520863}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -589,31 +599,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7442535935319520863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442535935319520859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a0807149104cbc99a5b6c86b7ea2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerMoney: {fileID: 0}
-  _closePanel: {fileID: 0}
-  _items:
-  - {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
-  - {fileID: 11400000, guid: 822d3040d89fec2419e31f8a1d034578, type: 2}
-  _towerViewPrefabs:
-  - {fileID: 347642854938885506}
-  - {fileID: 347642856066636685}
-  - {fileID: 347642854940758237}
-  - {fileID: 347642854925228103}
-  - {fileID: 347642856187578130}
-  - {fileID: 347642855454927715}
-  - {fileID: 347642854327737300}
 --- !u!1 &7442535935325875556
 GameObject:
   m_ObjectHideFlags: 0

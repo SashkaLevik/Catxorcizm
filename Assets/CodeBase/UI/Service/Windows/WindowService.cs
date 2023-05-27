@@ -1,4 +1,5 @@
 ﻿using CodeBase.UI.Service.Factory;
+using UnityEngine;
 
 namespace CodeBase.UI.Service.Windows
 {
@@ -6,21 +7,24 @@ namespace CodeBase.UI.Service.Windows
     {
         private readonly IUIFactory _uiFactory;
 
-        public WindowService(IUIFactory uiFactory)
-        {
+        public WindowService(IUIFactory uiFactory) => 
             _uiFactory = uiFactory;
-        }
 
-        public void Open(WindowID windowID)
+        public void Open(WindowId windowID)
         {
             switch (windowID)
             {
-                case WindowID.Unknown:
+                case WindowId.Unknown:
                     break;
-                case WindowID.Shop:
-                    _uiFactory.CreateShop();
+                case WindowId.Shop:
+                    EnableWindow(_uiFactory.Shop.gameObject);
                     break;
             }
+        }
+
+        private void EnableWindow(GameObject window)
+        {
+            window.SetActive(true);
         }
     }
 }

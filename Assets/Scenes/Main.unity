@@ -397,6 +397,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 266.793
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 151.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 428.1895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265234492859146738, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75.985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 266.793
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 151.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 151.3965
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293597171383121558, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -75.985
+      objectReference: {fileID: 0}
     - target: {fileID: 3583826824757915217, guid: bee88924fb0dd6843a82c91f4e2d378e, type: 3}
       propertyPath: m_Name
       value: Hud

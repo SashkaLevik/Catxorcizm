@@ -33,11 +33,23 @@ namespace CodeBase.Tower
 
             RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
             
-            if(hitInfo.collider)
+            //Debug.Log(hitInfo.collider.GetComponentInChildren<TowerSpawner>().CreateTower);
+            
+            Debug.Log(hitInfo.collider);
+
+            if (hitInfo.collider)
             {
-                transform.parent = hitInfo.collider.transform;
-                transform.localPosition = Vector3.zero;
-                transform.GetComponent<Collider>().enabled = true;
+                if (!hitInfo.collider.GetComponentInChildren<TowerSpawner>().CreateTower)
+                {
+                    transform.parent = hitInfo.collider.transform;
+                    transform.localPosition = Vector3.zero;
+                    transform.GetComponent<Collider>().enabled = true;
+                }
+                else
+                {
+                    transform.localPosition = Vector3.zero;
+                    transform.GetComponent<Collider>().enabled = true;
+                }
             }
             else
             {

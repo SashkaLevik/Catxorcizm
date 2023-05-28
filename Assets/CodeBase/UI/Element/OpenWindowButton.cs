@@ -16,25 +16,29 @@ namespace CodeBase.UI.Element
 
         private IWindowService _windowService;
 
-        public void Construct(IWindowService windowService)
-        {
+        public void Construct(IWindowService windowService) => 
             _windowService = windowService;
-        }
 
         private void Update()
         {
-            if(_towerSpawner.CreateTower)
-                gameObject.SetActive(false);
+            _towerSpawner.ObjectExists += PanelActive;
         }
 
         private void OnEnable()
         {
+            
             Button.onClick.AddListener(Open);
         }
 
         private void OnDisable()
         {
+            _towerSpawner.ObjectExists -= PanelActive;
             Button.onClick.RemoveListener(Open);
+        }
+
+        private void PanelActive(bool active)
+        {
+            gameObject.SetActive(!active);
         }
 
         private void Open()

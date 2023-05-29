@@ -18,7 +18,7 @@ namespace CodeBase.Tower
 
         private string _id;
         public bool CreateTower => _createTower;
-        public event UnityAction<bool> ObjectExists;
+        public event UnityAction<bool> ShiftTower;
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -26,16 +26,16 @@ namespace CodeBase.Tower
             _uIFactory.Shop.Opened += ShopOnOpened;
         }
 
+        public void IsCreateTower()
+        {
+            _createTower = !_createTower;
+            ShiftTower?.Invoke(_createTower);
+        }
+
         private void Awake()
         {
             _id = GetComponent<UniqueId>().Id;
             _factory = AllServices.Container.Single<IGameFactory>();
-            ObjectExists?.Invoke(_createTower);
-        }
-
-        private void Update()
-        {
-            _createTower = gameObject.GetComponentInChildren<TowerAttack>();
         }
 
         private void ShopOnOpened(bool open)
@@ -51,7 +51,7 @@ namespace CodeBase.Tower
         {
             Spawner(data.TowerTypeID, transform);
             _createTower = true;
-            ObjectExists?.Invoke(_createTower);
+            ShiftTower?.Invoke(_createTower);
         }
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)

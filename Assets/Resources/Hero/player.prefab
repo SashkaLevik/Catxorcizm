@@ -1158,6 +1158,7 @@ GameObject:
   - component: {fileID: 8779109444093919078}
   - component: {fileID: 9113626678720897256}
   - component: {fileID: 8386745816307507335}
+  - component: {fileID: 4879767431493769699}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1252,6 +1253,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4879767431493769699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243465295470614546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461e094c3aad478b9a235f618902b4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttons:
+  - {fileID: 1681819192864287478}
+  - {fileID: 2903210458580468191}
+  - {fileID: 7391546151688229239}
+  - {fileID: 5042685479242510029}
+  - {fileID: 2404154723167153548}
+  - {fileID: 4237733728902231076}
+  _towerSpawners:
+  - {fileID: 7761132466402788468}
+  - {fileID: 3146768183484498492}
+  - {fileID: 3090578702207968061}
+  - {fileID: 2904313825638713380}
+  - {fileID: 1151284719812983207}
+  - {fileID: 5619677473289276617}
 --- !u!1 &6435761268209374380
 GameObject:
   m_ObjectHideFlags: 0

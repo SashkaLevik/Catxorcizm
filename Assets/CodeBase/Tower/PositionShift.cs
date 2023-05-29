@@ -1,12 +1,16 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace CodeBase.Tower
 {
     public class PositionShift : MonoBehaviour
     {
         private Vector3 _offset;
+        private Transform _currentPosition;
+
+        private void Start()
+        {
+            _currentPosition = transform.parent;
+        }
 
         public void OnMouseDown()
         {
@@ -39,11 +43,9 @@ namespace CodeBase.Tower
 
             if (hitInfo.collider)
             {
-                if (!hitInfo.collider.GetComponentInChildren<TowerSpawner>().CreateTower)
+                if (!hitInfo.collider.GetComponent<TowerSpawner>().CreateTower)
                 {
-                    transform.parent = hitInfo.collider.transform;
-                    transform.localPosition = Vector3.zero;
-                    transform.GetComponent<Collider>().enabled = true;
+                    NewPosition(hitInfo);
                 }
                 else
                 {
@@ -56,6 +58,17 @@ namespace CodeBase.Tower
                 transform.localPosition = Vector3.zero;
                 transform.GetComponent<Collider>().enabled = true;
             }
+        }
+
+        private void NewPosition(RaycastHit2D hitInfo)
+        {
+            transform.parent = hitInfo.collider.transform;
+            _currentPosition.GetComponent<TowerSpawner>().IsCreateTower();
+
+            _currentPosition = transform.parent;
+            transform.localPosition = Vector3.zero;
+            transform.GetComponent<Collider>().enabled = true;
+            transform.parent.GetComponent<TowerSpawner>().IsCreateTower();
         }
     }
 }

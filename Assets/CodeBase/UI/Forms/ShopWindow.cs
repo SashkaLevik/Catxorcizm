@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Player;
 using CodeBase.Tower;
+using CodeBase.UI.Element;
 using UnityEngine;
 
 namespace CodeBase.UI.Forms
@@ -11,6 +12,7 @@ namespace CodeBase.UI.Forms
     {
         [SerializeField] private List<TowerStaticData> _items;
         [SerializeField] private List<TowerView> _towerViewPrefabs;
+        [SerializeField] private OpenPanelMinions _panelMinions;
 
         private PlayerMoney _playerMoney;
         private Inventory _inventory;
@@ -35,7 +37,7 @@ namespace CodeBase.UI.Forms
 
         protected override void OnAwake()
         {
-            base.OnAwake(); Debug.Log(_items.Count);
+            base.OnAwake();
             
             for (int i = 0; i < _items.Count; i++)
             {
@@ -57,6 +59,7 @@ namespace CodeBase.UI.Forms
             foreach (var view in _towerViews)
             {
                 view.SellButtonClick += TrySellBuy;
+                view.Highlighted += _panelMinions.Show;
             }
         }
 
@@ -65,6 +68,7 @@ namespace CodeBase.UI.Forms
             foreach (var view in _towerViews)
             {
                 view.SellButtonClick -= TrySellBuy;
+                view.Highlighted -= _panelMinions.Show;
             }
         }
 

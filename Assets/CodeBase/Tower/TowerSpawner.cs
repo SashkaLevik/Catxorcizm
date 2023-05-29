@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Factory;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CodeBase.Tower
 {
@@ -17,6 +18,7 @@ namespace CodeBase.Tower
 
         private string _id;
         public bool CreateTower => _createTower;
+        public event UnityAction<bool> ShiftTower;
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -24,14 +26,16 @@ namespace CodeBase.Tower
             _uIFactory.Shop.Opened += ShopOnOpened;
         }
 
+        public void IsCreateTower()
+        {
+            _createTower = !_createTower;
+            ShiftTower?.Invoke(_createTower);
+        }
+
         private void Awake()
         {
             _id = GetComponent<UniqueId>().Id;
             _factory = AllServices.Container.Single<IGameFactory>();
-        }
-
-        private void Update()
-        {
         }
 
         private void ShopOnOpened(bool open)
@@ -47,6 +51,7 @@ namespace CodeBase.Tower
         {
             Spawner(data.TowerTypeID, transform);
             _createTower = true;
+            ShiftTower?.Invoke(_createTower);
         }
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)

@@ -44,9 +44,7 @@ namespace CodeBase.Infrastructure.State
             GameObject uiRoot = _uiFactory.CreateUIRoot();
             GameObject hud = _gameFactory.CreateHud();
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
-            
-            Debug.Log(uiRoot.GetComponentInChildren<ShopWindow>(true));
-            
+
             uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
                 hero.GetComponent<PlayerMoney>(), 
                 hero.GetComponent<Inventory>());

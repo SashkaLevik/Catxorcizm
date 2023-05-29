@@ -1,12 +1,16 @@
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace CodeBase.Tower
 {
     public class PositionShift : MonoBehaviour
     {
         private Vector3 _offset;
+        private Transform _currentPosition;
+
+        private void Start()
+        {
+            _currentPosition = transform.parent;
+        }
 
         public void OnMouseDown()
         {
@@ -33,17 +37,38 @@ namespace CodeBase.Tower
 
             RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
             
-            if(hitInfo.collider)
+            //Debug.Log(hitInfo.collider.GetComponentInChildren<TowerSpawner>().CreateTower);
+            
+            Debug.Log(hitInfo.collider);
+
+            if (hitInfo.collider)
             {
-                transform.parent = hitInfo.collider.transform;
-                transform.localPosition = Vector3.zero;
-                transform.GetComponent<Collider>().enabled = true;
+                if (!hitInfo.collider.GetComponent<TowerSpawner>().CreateTower)
+                {
+                    NewPosition(hitInfo);
+                }
+                else
+                {
+                    transform.localPosition = Vector3.zero;
+                    transform.GetComponent<Collider>().enabled = true;
+                }
             }
             else
             {
                 transform.localPosition = Vector3.zero;
                 transform.GetComponent<Collider>().enabled = true;
             }
+        }
+
+        private void NewPosition(RaycastHit2D hitInfo)
+        {
+            transform.parent = hitInfo.collider.transform;
+            _currentPosition.GetComponent<TowerSpawner>().IsCreateTower();
+
+            _currentPosition = transform.parent;
+            transform.localPosition = Vector3.zero;
+            transform.GetComponent<Collider>().enabled = true;
+            transform.parent.GetComponent<TowerSpawner>().IsCreateTower();
         }
     }
 }

@@ -13,35 +13,34 @@ namespace CodeBase.UI.Element
         [SerializeField] private TowerSpawner _towerSpawner;
         public Button Button;
         public WindowId WindowId;
+        public TowerSpawner TowerSpawner => _towerSpawner;
 
         private IWindowService _windowService;
 
-        public void Construct(IWindowService windowService)
-        {
+        public void Construct(IWindowService windowService) =>
             _windowService = windowService;
-        }
-
-        private void Update()
-        {
-            if(_towerSpawner.CreateTower)
-                gameObject.SetActive(false);
-        }
 
         private void OnEnable()
         {
+            //_towerSpawner.ShiftTower += ShowOpenWindow;
             Button.onClick.AddListener(Open);
         }
 
         private void OnDisable()
         {
+            //_towerSpawner.ShiftTower -= ShowOpenWindow;
             Button.onClick.RemoveListener(Open);
+        }
+
+        private void ShowOpenWindow(bool active)
+        {
+            this.gameObject.SetActive(!active);
         }
 
         private void Open()
         {
             _windowService.Open(WindowId);
             _inventory.SetSpawnPosition(_towerSpawner);
-
         }
     }
 }

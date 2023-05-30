@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +11,9 @@ namespace Assets.Sashka.Infastructure
         private void Awake()
         {
             _game = new Game(this);
-            _game._stateMachine.Eneter<BootstrapState>();
+            _game._stateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);
-        }
+        }        
     }
 }

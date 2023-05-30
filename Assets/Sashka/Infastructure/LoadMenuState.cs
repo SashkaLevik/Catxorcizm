@@ -13,8 +13,12 @@ namespace Assets.Sashka.Infastructure
             _scenLoader = scenLoader;
         }
 
-        public void Eneter(string sceneName) => 
+        public void Enter(string sceneName) => 
             _scenLoader.Load(sceneName);
+
+        private void OnLoaded()
+        {
+        }
 
         public void Exit()
         {

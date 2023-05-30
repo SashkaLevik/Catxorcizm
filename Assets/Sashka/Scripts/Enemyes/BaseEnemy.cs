@@ -36,15 +36,20 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Update()
         {
             Move();
-        }
+        }        
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out _baseMinion))
             {
                 _currentSpeed = 0;
+                _attackRate -= Time.deltaTime;
 
-                StartCoroutine(Attack());
+                if (_attackRate <= 0)
+                {
+                    _attackRate = 4;
+                    _baseMinion.TakeDamage(_damage);
+                }
             }
         }
 
@@ -52,25 +57,24 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             _baseMinion = null;
             Invoke(nameof(SetDefaultSpeed), 1f);
-            StopCoroutine(Attack());
         }
 
         private void SetDefaultSpeed() =>
             _currentSpeed = _speed;
 
-        private IEnumerator Attack()
-        {
 
-            while (_baseMinion != null)
-            {
-                Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
+        //private IEnumerator Attack()
+        //{
+        //    while (_baseMinion != null)
+        //    {
+        //        Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
 
-                hitPlayer.GetComponent<BaseMinion>().TakeDamage(_damage);
-
-                Debug.Log("Attack");
-                yield return new WaitForSeconds(_attackRate);
-            }
-        }
+        //        hitPlayer.GetComponent<BaseMinion>().TakeDamage(_damage);
+                
+        //        yield return new WaitForSeconds(_attackRate);
+        //        Debug.Log("Attack");
+        //    }
+        //}
 
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;

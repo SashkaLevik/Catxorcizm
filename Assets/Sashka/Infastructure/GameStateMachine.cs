@@ -20,16 +20,16 @@ namespace Assets.Sashka.Infastructure
             };
         }
 
-        public void Eneter<TState>() where TState : class, IState
+        public void Enter<TState>() where TState : class, IState
         {
             IState state = ChangeState<TState>();
-            state.Eneter();
+            state.Enter();
         }
 
-        public void Eneter<TState, TPayLoad>(TPayLoad payLoad) where TState : class, IPayLoadedState<TPayLoad>
+        public void Enter<TState, TPayLoad>(TPayLoad payLoad) where TState : class, IPayLoadedState<TPayLoad>
         {
             TState state = ChangeState<TState>();
-            state.Eneter(payLoad);
+            state.Enter(payLoad);
         }
 
         private TState ChangeState<TState>() where TState : class, IExitableState

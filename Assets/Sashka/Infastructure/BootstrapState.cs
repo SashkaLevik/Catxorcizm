@@ -14,18 +14,17 @@ namespace Assets.Sashka.Infastructure
             _scenLoader = scenLoader;
         }
 
-        public void Eneter()
+        public void Enter()
         {
             //RegisterServices();
             _scenLoader.Load(MyInitial, onLoaded: LoadMenu);
         }
 
         private void LoadMenu() => 
-            _stateMachine.Eneter<LoadMenuState, string>("SampleScene");
+            _stateMachine.Enter<LoadMenuState, string>("MenuScene");
 
         private void RegisterServices()
         {
-            throw new NotImplementedException();
         }
 
         public void Exit()

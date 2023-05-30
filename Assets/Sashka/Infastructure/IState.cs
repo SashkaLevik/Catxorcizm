@@ -2,12 +2,12 @@
 {
     public interface IState : IExitableState
     {
-        public void Eneter();
+        public void Enter();
     }
 
     public interface IPayLoadedState<TPayLoad> : IExitableState
     {
-        public void Eneter(TPayLoad payLoad);
+        public void Enter(TPayLoad payLoad);
     }
 
     public interface IExitableState

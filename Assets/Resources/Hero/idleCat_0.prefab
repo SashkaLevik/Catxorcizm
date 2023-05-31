@@ -1,5 +1,107 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &32361525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32361526}
+  - component: {fileID: 32361528}
+  - component: {fileID: 32361527}
+  m_Layer: 8
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &32361526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32361525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4045924479044773205}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &32361528
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32361525}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.647597, y: -0.52589655}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.340812, y: 3.1212382}
+  m_EdgeRadius: 0
+--- !u!114 &32361527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32361525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd30cf5b85f3a64fb42927c102a72d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1368373337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368373338}
+  m_Layer: 6
+  m_Name: SpawnPointFireBoll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368373338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368373337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.515, y: 0.099, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4045924479044773205}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1577797406
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577797407}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577797406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.52, z: 0}
+  m_LocalPosition: {x: 0.45, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +144,7 @@ GameObject:
   - component: {fileID: 8679385748958288349}
   - component: {fileID: 3435686561747876983}
   - component: {fileID: 8753776114124818563}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +220,7 @@ GameObject:
   - component: {fileID: 939993923891576204}
   - component: {fileID: 746804127279829581}
   - component: {fileID: 8263543661458500521}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Backgraund
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +326,8 @@ Transform:
   - {fileID: 4382794035808612752}
   - {fileID: 8997752488857972536}
   - {fileID: 1577797407}
+  - {fileID: 32361526}
+  - {fileID: 1368373338}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -333,7 +437,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06786227, y: -0.5106467}
+  m_Offset: {x: -0.06786227, y: -0.15206182}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -344,7 +448,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5942755, y: 3.0793135}
+  m_Size: {x: 1.5942755, y: 2.3621438}
   m_EdgeRadius: 0
 --- !u!114 &2586064438848024941
 MonoBehaviour:
@@ -399,13 +503,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0191116185b4457b9141b884d5f4b16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
+  _meleeDamage: 2
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
-  _attackPosition: {fileID: 1577797407}
-  _attackRate: 0.7
-  _attackRanged: 1.06
+  _meleeAttack: {fileID: 1577797407}
+  _attackSpeed: 0.5
+  _attackAngle: 0
+  _sizeMeleeAttack: {x: 1.5, y: 2.1}
+  _rangedDamage: 1
+  _rangedAttack: {fileID: 8997752488857972536}
+  _spellSpeed: 3
+  _sizeRangedAttack: {x: 5.5, y: 2.1}
+  _spawnPointFireBoll: {fileID: 1368373338}
+  _prefabFireBoll: {fileID: 3735261827982188379, guid: e2112b199d7b9944884d61006e23b408, type: 3}
+  _attackTrigger: {fileID: 32361527}
 --- !u!114 &1208951504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +543,7 @@ GameObject:
   - component: {fileID: 4045924479825067026}
   - component: {fileID: 4045924479825067024}
   - component: {fileID: 4045924479825067027}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FireBook_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +648,7 @@ GameObject:
   - component: {fileID: 4382794035808612752}
   - component: {fileID: 6756061845452680841}
   - component: {fileID: 2360217477341157107}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +731,7 @@ GameObject:
   - component: {fileID: 5145262573789970192}
   - component: {fileID: 1357672109273436437}
   - component: {fileID: 5454337559606485488}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: HpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,8 +790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8997752488857972536}
-  - component: {fileID: 641860615}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: AttackRanged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,23 +805,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9057353213676350749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.6, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4045924479044773205}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &641860615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9057353213676350749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd30cf5b85f3a64fb42927c102a72d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}

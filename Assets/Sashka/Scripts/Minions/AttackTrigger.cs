@@ -1,20 +1,18 @@
+using System;
 using Assets.Sashka.Scripts.Enemyes;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Minions
 {
     public class AttackTrigger : MonoBehaviour
     {
-        [SerializeField] private BaseEnemy _enemy;
-
-        public event UnityAction AttackZoneEntered;
+        public event Action<BaseEnemy> AttackZoneEntered;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out _enemy))
+            if (collision.TryGetComponent(out BaseEnemy enemy))
             {
-                AttackZoneEntered?.Invoke();
+                AttackZoneEntered?.Invoke(enemy);
             }
         }
     }

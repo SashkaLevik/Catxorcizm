@@ -62,7 +62,7 @@ namespace Assets.Sashka.Scripts.Enemyes
             Invoke(nameof(SetDefaultSpeed), 1f);
             StopCoroutine(Attack());
             
-            _heroHealth = null;
+            // _heroHealth = null;
             Invoke(nameof(SetDefaultSpeed), 1f);
             StopCoroutine(AttackPlayer());
             
@@ -76,6 +76,7 @@ namespace Assets.Sashka.Scripts.Enemyes
             while (_baseMinion != null)
             {
                 Collider2D hitMinion = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
+                Debug.Log(hitMinion.GetComponent<BaseMinion>());
                 hitMinion.GetComponent<BaseMinion>().TakeDamage(_damage);
                 
                 Debug.Log("Attack");
@@ -87,27 +88,36 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             while (_heroHealth != null)
             {
-                Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
-                hitPlayer.GetComponent<HeroHealth>().TakeDamage(_damage);
+                OnAttack();
                 
                 Debug.Log("AttackHero");
                 yield return new WaitForSeconds(_attackRate);
             }
         }
         
-        // private IEnumerator Attack<T>()
-        // {
-        //     while (_baseMinion != null)
-        //     {
-        //         Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
-        //         hitPlayer.GetComponent<T>().TakeDamage(_damage);
-        //
-        //         Debug.Log("Attack");
-        //         yield return new WaitForSeconds(_attackRate);
-        //     }
-        // }
+        private void OnAttack()
+        {
+            foreach (Collider2D hero in Hit())
+            {
+                hero.GetComponent<HeroHealth>().TakeDamage(_damage);
+            }
+        }
+
+        private Collider2D[] Hit()
+        {
+            return Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange, _player);
+        }
 
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;
+
+
+        private void OnDrawGizmosSelected()
+        {
+            if (_attackPoint == null)
+                return;
+
+            Gizmos.DrawWireSphere(_attackPoint.transform.position, _attackRange);
+        }
     }
 }

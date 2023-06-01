@@ -5,6 +5,8 @@ namespace Assets.Sashka.Infastructure
     public class BootstrapState : IState
     {
         private const string MyInitial = "MyInitial";
+        private const string MenuScene = "MenuScene";
+
         private readonly GameStateMachine _stateMachine;
         private readonly ScenLoader _scenLoader;
 
@@ -21,7 +23,7 @@ namespace Assets.Sashka.Infastructure
         }
 
         private void LoadMenu() => 
-            _stateMachine.Enter<LoadMenuState, string>("MenuScene");
+            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
 
         private void RegisterServices()
         {

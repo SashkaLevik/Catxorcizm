@@ -24,7 +24,7 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Start()
         {
-            Spawn();
+            Invoke(nameof(Spawn), 2f);
         }
 
         private void Spawn()

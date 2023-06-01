@@ -17,6 +17,7 @@ namespace Assets.Sashka.Infastructure
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, scenLoader),
                 [typeof(LoadMenuState)] = new LoadMenuState(this, scenLoader),
+                [typeof(LoadPortState)] = new LoadPortState(this, scenLoader),
             };
         }
 

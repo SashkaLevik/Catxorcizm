@@ -1941,7 +1941,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
@@ -2733,6 +2733,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519420032}
     m_Modifications:
+    - target: {fileID: 780957393, guid: 5c150c30c8e3e7f40b4f2b3ac91374a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 780957393, guid: 5c150c30c8e3e7f40b4f2b3ac91374a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3402936643660976922, guid: 5c150c30c8e3e7f40b4f2b3ac91374a4, type: 3}
       propertyPath: m_Name
       value: idleCat_0

@@ -1,18 +1,18 @@
 ﻿using System;
 using CodeBase.Data;
+using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace CodeBase.Player
 {
-    public class HeroHealth : MonoBehaviour
+    public class HeroHealth : MonoBehaviour, IHealth
     {
         [SerializeField] private float _currentHP;
         [SerializeField] private float _maxHP;
 
         private State _state;
-
-        public UnityAction HealthChanged;
+        public event UnityAction HealthChanged;
 
         public float Current
         {
@@ -24,7 +24,7 @@ namespace CodeBase.Player
             }
         }
 
-        public float Max => _maxHP;
+        public float Max { get => _maxHP; set => _maxHP = value; }
 
         public void TakeDamage(int damage)
         {

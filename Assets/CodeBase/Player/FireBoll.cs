@@ -27,11 +27,11 @@ namespace CodeBase.Player
 
         private void OnTriggerEnter2D(Collider2D hit)
         {
-            Debug.Log(hit);
+            //Debug.Log(hit);
             
             if (hit.TryGetComponent(out BaseEnemy enemy))
             {
-                Debug.Log("fireBoll");
+                //Debug.Log("fireBoll");
                 enemy.GetComponent<IHealth>().TakeDamage(_damage);
                 Destroy(gameObject);
             }

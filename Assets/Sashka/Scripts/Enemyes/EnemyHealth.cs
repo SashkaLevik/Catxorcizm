@@ -38,7 +38,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         public void TakeDamage(int damage)
         {
             Current -= damage;
-            Debug.Log(Current);
+            //Debug.Log(Current);
             HealthChanged?.Invoke();
 
             if (Current <= 0)

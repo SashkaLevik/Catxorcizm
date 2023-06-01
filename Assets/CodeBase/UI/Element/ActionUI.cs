@@ -7,11 +7,17 @@ namespace CodeBase.UI.Element
 {
     public class ActionUI : MonoBehaviour
     {
-        public HPBar HpBar;
-        private HeroHealth _heroHealth;
+        [SerializeField] private HPBar _hpBar;
+        [SerializeField] private HeroHealth _heroHealth;
+
+        private void OnEnable()
+        {
+            _heroHealth.HealthChanged += UpdateHpBar;
+        }
 
         private void OnDestroy() => 
             _heroHealth.HealthChanged -= UpdateHpBar;
+
 
         public void Construct(HeroHealth heroHealth)
         {
@@ -21,6 +27,6 @@ namespace CodeBase.UI.Element
         }
 
         private void UpdateHpBar() => 
-            HpBar.SetValue(_heroHealth.Current, _heroHealth.Max);
+            _hpBar.SetValue(_heroHealth.Current, _heroHealth.Max);
     }
 }

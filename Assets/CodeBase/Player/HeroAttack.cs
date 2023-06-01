@@ -57,14 +57,14 @@ namespace CodeBase.Player
                     {
                         FireBoll fireBoll = Instantiate(_prefabFireBoll, _spawnPointFireBoll);
                         fireBoll.Init(enemy);
-                        Debug.Log("hitRange");
+                        //Debug.Log("hitRange");
                         yield return _rechargeMagicAttack;
                     }
                     else
                     {
                         OnAttack();
 
-                        Debug.Log("Hit");
+                        //Debug.Log("Hit");
                         yield return _rechargeMeleeAttack;
                     }
                 }

@@ -2,6 +2,8 @@ using Assets.Sashka.Scripts.Minions;
 using Assets.Sashka.Scripts.StaticData;
 using System.Collections;
 using System.Collections.Generic;
+using CodeBase.Player;
+using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +13,6 @@ namespace Assets.Sashka.Scripts.Enemyes
     {
         [SerializeField] private EnemyStaticData _staticData;
         [SerializeField] private Transform _attackPoint;
-        [SerializeField] private BaseMinion _baseMinion;
         [SerializeField] private LayerMask _player;
 
         private float _speed;
@@ -19,6 +20,8 @@ namespace Assets.Sashka.Scripts.Enemyes
         private float _attackRange;
         private float _attackRate;
         private float _currentSpeed;
+        private Coroutine _coroutine;
+        private BaseMinion _minion;
 
         private void Start()
         {
@@ -36,11 +39,11 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Update()
         {
             Move();
-        }        
+        }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out _baseMinion))
+            if (collision.TryGetComponent(out IHealth health))
             {
                 _currentSpeed = 0;
                 _attackRate -= Time.deltaTime;
@@ -50,11 +53,17 @@ namespace Assets.Sashka.Scripts.Enemyes
                     _attackRate = 4;
                     _baseMinion.TakeDamage(_damage);
                 }
+                _coroutine = StartCoroutine(Attack(health));
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
+            if (collision.TryGetComponent(out IHealth health))
+            {
+                Invoke(nameof(SetDefaultSpeed), 1f);
+                StopCoroutine(_coroutine);
+            }
             _baseMinion = null;
             Invoke(nameof(SetDefaultSpeed), 1f);
         }
@@ -62,19 +71,16 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void SetDefaultSpeed() =>
             _currentSpeed = _speed;
 
-
-        //private IEnumerator Attack()
-        //{
-        //    while (_baseMinion != null)
-        //    {
-        //        Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
-
-        //        hitPlayer.GetComponent<BaseMinion>().TakeDamage(_damage);
+        private IEnumerator Attack(IHealth health)
+        {
+            while (health != null)
+            {
+                health.TakeDamage(_damage);
                 
-        //        yield return new WaitForSeconds(_attackRate);
-        //        Debug.Log("Attack");
-        //    }
-        //}
+                Debug.Log("Attack");
+                yield return new WaitForSeconds(_attackRate);
+            }
+        }
 
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;

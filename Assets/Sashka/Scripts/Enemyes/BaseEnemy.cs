@@ -1,11 +1,8 @@
 using Assets.Sashka.Scripts.Minions;
 using Assets.Sashka.Scripts.StaticData;
 using System.Collections;
-using System.Collections.Generic;
-using CodeBase.Player;
 using CodeBase.Tower;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
@@ -51,7 +48,7 @@ namespace Assets.Sashka.Scripts.Enemyes
                 if (_attackRate <= 0)
                 {
                     _attackRate = 4;
-                    _baseMinion.TakeDamage(_damage);
+                    health.TakeDamage(_damage);
                 }
                 _coroutine = StartCoroutine(Attack(health));
             }
@@ -64,7 +61,8 @@ namespace Assets.Sashka.Scripts.Enemyes
                 Invoke(nameof(SetDefaultSpeed), 1f);
                 StopCoroutine(_coroutine);
             }
-            _baseMinion = null;
+            
+            health = null;
             Invoke(nameof(SetDefaultSpeed), 1f);
         }
 

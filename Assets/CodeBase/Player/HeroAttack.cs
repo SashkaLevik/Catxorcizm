@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using Assets.Sashka.Scripts.Enemyes;
-using Assets.Sashka.Scripts.Minions;
+﻿using Assets.Sashka.Scripts.Enemyes;
 using CodeBase.Data;
 using CodeBase.Tower;
 using UnityEngine;
@@ -10,70 +8,33 @@ namespace CodeBase.Player
     public class HeroAttack : MonoBehaviour
     {
         [SerializeField] private int _meleeDamage;
-        [SerializeField] private LayerMask _layerMask;
-        [SerializeField] private Transform _meleeAttack;
-        [SerializeField] private float _attackSpeed;
         [SerializeField] private float _attackAngle;
+        [SerializeField] private float _attackRate;
+        [SerializeField] private Transform _meleeAttack;
         [SerializeField] private Vector2 _sizeMeleeAttack;
-        [SerializeField] private float _spellSpeed;
-        [SerializeField] private Transform _spawnPointFireBoll;
-        [SerializeField] private FireBoll _prefabFireBoll;
-        [SerializeField] private AttackTrigger _attackTrigger;
-        
+        [SerializeField] private LayerMask _layerMask;
+
         private Stats _stats;
-        private WaitForSeconds _rechargeMeleeAttack, _rechargeMagicAttack;
         private float _distance;
-        private bool _onAttack;
 
-        private void OnEnable()
+        private void OnTriggerStay2D(Collider2D other)
         {
-            _rechargeMeleeAttack = new WaitForSeconds(_attackSpeed);
-            _rechargeMagicAttack = new WaitForSeconds(_spellSpeed);
-            _attackTrigger.AttackZoneEntered += Attacking;
-        }
-
-        private void OnDestroy()
-        {
-            _attackTrigger.AttackZoneEntered -= Attacking;
-        }
-
-        private void Attacking(BaseEnemy baseEnemy)
-        {
-            _onAttack = true;
-
-            StartCoroutine(Attack(baseEnemy));
-        }
-
-        private IEnumerator Attack(BaseEnemy enemy)
-        {
-            while (enemy != null)
+            if (other.TryGetComponent(out BaseEnemy enemy))
             {
-                while (_onAttack)
+                _attackRate -= Time.deltaTime;
+
+                if (_attackRate <= 0)
                 {
                     enemy.GetComponent<EnemyHealth>().Died += SetAttack;
-                    _distance = Vector2.Distance(transform.position, enemy.transform.position);
-
-                    if (_distance >= 2f)
-                    {
-                        FireBoll fireBoll = Instantiate(_prefabFireBoll, _spawnPointFireBoll);
-                        fireBoll.Init(enemy);
-                        //Debug.Log("hitRange");
-                        yield return _rechargeMagicAttack;
-                    }
-                    else
-                    {
-                        OnAttack();
-
-                        //Debug.Log("Hit");
-                        yield return _rechargeMeleeAttack;
-                    }
+                    _attackRate = 4;
+                    
+                    OnAttack();
                 }
             }
         }
 
         private void SetAttack(BaseEnemy enemy)
         {
-            _onAttack = false;
             enemy.GetComponent<EnemyHealth>().Died -= SetAttack;
         }
 

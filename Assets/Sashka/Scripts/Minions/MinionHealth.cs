@@ -1,5 +1,4 @@
-﻿using Assets.Sashka.Scripts.Enemyes;
-using Assets.Sashka.Scripts.StaticData;
+﻿using System;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
 using UnityEngine;
@@ -7,6 +6,7 @@ using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Minions
 {
+    [RequireComponent(typeof(BaseMinion))]
     public class MinionHealth : MonoBehaviour, IHealth
     {
         [SerializeField] private float _current;
@@ -16,6 +16,11 @@ namespace Assets.Sashka.Scripts.Minions
 
         public event UnityAction HealthChanged;
         public event UnityAction<BaseMinion> Died;
+
+        private void Start()
+        {
+            _minion = this.GetComponent<BaseMinion>();
+        }
 
         public float Current
         {

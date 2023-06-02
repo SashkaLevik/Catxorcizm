@@ -1,6 +1,4 @@
 using Assets.Sashka.Scripts.StaticData;
-using System.Collections;
-using System.Collections.Generic;
 using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
@@ -38,7 +36,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         public void TakeDamage(int damage)
         {
             Current -= damage;
-            //Debug.Log(Current);
             HealthChanged?.Invoke();
 
             if (Current <= 0)

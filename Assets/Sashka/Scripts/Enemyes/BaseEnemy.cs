@@ -38,9 +38,9 @@ namespace Assets.Sashka.Scripts.Enemyes
             Move();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D other)
         {
-            if (collision.TryGetComponent(out IHealth health))
+            if (other.TryGetComponent(out IHealth health))
             {
                 _currentSpeed = 0;
                 _attackRate -= Time.deltaTime;
@@ -50,7 +50,6 @@ namespace Assets.Sashka.Scripts.Enemyes
                     _attackRate = 4;
                     health.TakeDamage(_damage);
                 }
-                _coroutine = StartCoroutine(Attack(health));
             }
         }
 
@@ -59,26 +58,11 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (collision.TryGetComponent(out IHealth health))
             {
                 Invoke(nameof(SetDefaultSpeed), 1f);
-                StopCoroutine(_coroutine);
             }
-            
-            health = null;
-            Invoke(nameof(SetDefaultSpeed), 1f);
         }
 
         private void SetDefaultSpeed() =>
             _currentSpeed = _speed;
-
-        private IEnumerator Attack(IHealth health)
-        {
-            while (health != null)
-            {
-                health.TakeDamage(_damage);
-                
-                Debug.Log("Attack");
-                yield return new WaitForSeconds(_attackRate);
-            }
-        }
 
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;

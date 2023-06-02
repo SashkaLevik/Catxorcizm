@@ -27,8 +27,6 @@ namespace CodeBase.Player
 
         private void OnTriggerEnter2D(Collider2D hit)
         {
-            //Debug.Log(hit);
-            
             if (hit.TryGetComponent(out BaseEnemy enemy))
             {
                 //Debug.Log("fireBoll");

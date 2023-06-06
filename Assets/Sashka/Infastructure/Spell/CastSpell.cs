@@ -12,8 +12,9 @@ namespace Assets.Sashka.Infastructure.Spell
         [SerializeField] private Transform _castPos;
         [SerializeField] private BaseSpell _spell;
         [SerializeField] private BaseEnemy _target;
+        [SerializeField] private BookAnimator _animator;
 
-        private int _spellAmount = 2;
+        private int _spellAmount = 5;
 
         private void OnEnable()
         {
@@ -29,6 +30,7 @@ namespace Assets.Sashka.Infastructure.Spell
         {
             if (_spellAmount != 0)
             {
+                _animator.CastSpell();
                 Instantiate(_spell, _castPos.position, Quaternion.identity);
                 _spellAmount--;
             }            

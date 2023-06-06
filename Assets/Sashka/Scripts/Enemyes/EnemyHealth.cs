@@ -14,7 +14,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private BaseEnemy _enemy;
 
         public event UnityAction HealthChanged;
-        public event UnityAction<BaseEnemy> Died;
+        public event UnityAction<BaseEnemy> Died;        
 
         public float Current
         {
@@ -42,9 +42,9 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (Current <= 0)
             {
                 Died?.Invoke(_enemy);
-                Die();
+                //Invoke(nameof(Die), 0.6f);
             }
-        }
+        }        
 
         private void Die()
         {

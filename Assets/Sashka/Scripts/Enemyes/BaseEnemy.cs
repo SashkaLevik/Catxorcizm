@@ -13,12 +13,14 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private BaseMinion _baseMinion;
         [SerializeField] private LayerMask _player;
+        [SerializeField] private EnemyAnimator _animator;
 
         private float _speed;
         private int _damage;
         private float _attackRange;
         private float _attackRate;
         private float _currentSpeed;
+        private float _cooldown;
 
         private void Start()
         {
@@ -31,6 +33,7 @@ namespace Assets.Sashka.Scripts.Enemyes
             _damage = _staticData.Damage;
             _attackRange = _staticData.AttackRange;
             _attackRate = _staticData.AttackRate;
+            _cooldown = _staticData.AttackRate;
         }
 
         private void Update()
@@ -47,8 +50,9 @@ namespace Assets.Sashka.Scripts.Enemyes
 
                 if (_attackRate <= 0)
                 {
-                    _attackRate = 4;
+                    _animator.PlayAttack();
                     _baseMinion.TakeDamage(_damage);
+                    _attackRate = _staticData.AttackRate;
                 }
             }
         }
@@ -70,7 +74,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         //        Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
 
         //        hitPlayer.GetComponent<BaseMinion>().TakeDamage(_damage);
-                
+        //        _animator.PlayAttack();
         //        yield return new WaitForSeconds(_attackRate);
         //        Debug.Log("Attack");
         //    }

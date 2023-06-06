@@ -1,36 +1,49 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
-    [RequireComponent(typeof(EnemyHealth))]
-    public class EnemyDeath : MonoBehaviour
+    class EnemyDeath : MonoBehaviour
     {
-        [SerializeField] private EnemyHealth _health;
+        public EnemyHealth Health;
+        public EnemyAnimator Animator;
 
-        public event UnityAction Died;
+        public GameObject DeathFx;
 
-        private void Start() => _health.HealthChanged += OnHealthChanged;
+        private void Start()
+        {
+            Health.HealthChanged += OnHealthChanged;
+        }
 
-        private void OnDestroy() => _health.HealthChanged -= OnHealthChanged;
+        private void OnDestroy()
+        {
+            Health.HealthChanged -= OnHealthChanged;
+        }
 
         private void OnHealthChanged()
         {
-            if (_health.Current <= 0)
-            {
+            if (Health.Current <= 0)
                 Die();
-            }
         }
 
         private void Die()
         {
-            _health.HealthChanged -= OnHealthChanged;
-            Died?.Invoke();
+            Health.HealthChanged -= OnHealthChanged;
+            Animator.PlayDeath();
+            GameObject fx = Instantiate(DeathFx, transform.position, Quaternion.identity);
+            StartCoroutine(DestroyTimer());
+            //Destroy(fx.gameObject);
+        }
+
+        private IEnumerator DestroyTimer()
+        {
+            yield return new WaitForSeconds(0.8f);
             Destroy(gameObject);
         }
     }
 }
-

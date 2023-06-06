@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
@@ -15,7 +16,10 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private int _weakEnemyCount;
         [SerializeField] private int _mediumEnemyCount;
 
+        public int _spawnedCount;
         public List<ScriptablePrefab> _enemies;
+
+        public event UnityAction WaveCompleted;
 
         private void Awake()
         {
@@ -24,6 +28,7 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Start()
         {
+            _spawnedCount = _weakEnemyCount + _mediumEnemyCount;
             Invoke(nameof(Spawn), 2f);
         }
 
@@ -50,10 +55,20 @@ namespace Assets.Sashka.Scripts.Enemyes
                 _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += OnEnemyDied;
                 yield return delay;
             }
+
+            //WaveCompleted?.Invoke();
         }
 
         private void OnEnemyDied(BaseEnemy enemy)
         {
+            _spawnedCount--;
+
+            if (_spawnedCount == 0)
+            {
+                WaveCompleted?.Invoke();
+                Debug.Log("Completed");
+            }                           
+
             enemy.GetComponentInChildren<EnemyHealth>().Died -= OnEnemyDied;
         }
 

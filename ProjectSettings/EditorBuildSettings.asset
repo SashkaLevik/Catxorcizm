@@ -12,12 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 499a2a81a65194742830f3f2ebbd645f
   - enabled: 1
-    path: Assets/Scenes/MyInitial.unity
+    path: Assets/Scenes/MyScenes/MyInitial.unity
     guid: 7d589f86b269c6648a8c81f67aad3930
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
+    path: Assets/Scenes/MyScenes/MenuScene.unity
     guid: 419220dee632d8540829c3b0e2921e38
   - enabled: 1
-    path: Assets/Scenes/PortArea.unity
+    path: Assets/Scenes/MyScenes/MarketArea.unity
+    guid: 7eed4679cca84dd4d8a3d47210dda571
+  - enabled: 1
+    path: Assets/Scenes/MyScenes/PortArea.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MyScenes/MageArea.unity
+    guid: 1b512907bf4f66a479787fae0fa595e5
+  - enabled: 1
+    path: Assets/Scenes/MyScenes/Academy.unity
+    guid: 0c0fd3b5e08cc0e4084b82eef3109a08
   m_configObjects: {}

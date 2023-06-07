@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
+﻿using Assets.Sashka.Scripts.Minions;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
@@ -48,6 +49,10 @@ namespace CodeBase.Infrastructure.Factory
             attack.Damage = towerData.Damage;
             attack.AttackRange = towerData.AttackRange;
             attack.Cooldown = towerData.Cooldown;
+            
+            var health = tower.GetComponent<MinionHealth>();
+            health.Current = towerData.CurrentHP;
+            health.Max = towerData.MaxHP;
         
             return tower;
         }

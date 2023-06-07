@@ -8,5 +8,6 @@ namespace CodeBase.UI.Service.Factory
     { 
         GameObject CreateUIRoot();
         ShopWindow Shop { get; }
+        UpgradeWindow Upgrade { get; }
     }
 }

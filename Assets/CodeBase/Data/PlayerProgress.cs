@@ -1,17 +1,16 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CodeBase.Data
 {
-    [SerializeField]
+    [Serializable]
     public class PlayerProgress
     {
-        public Stats HeroStats;
         public State HeroState;
 
         public PlayerProgress()
         {
             HeroState = new State();
-            HeroStats = new Stats();
         }
     }
 }

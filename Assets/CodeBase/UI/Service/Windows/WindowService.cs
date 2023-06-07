@@ -19,6 +19,10 @@ namespace CodeBase.UI.Service.Windows
                 case WindowId.Shop:
                     EnableWindow(_uiFactory.Shop.gameObject);
                     break;
+                case WindowId.Upgrade:
+                    EnableWindow(_uiFactory.Upgrade.gameObject);
+                    break;
+                    
             }
         }
 

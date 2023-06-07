@@ -15,6 +15,7 @@ namespace CodeBase.Tower
         private IUIFactory _uIFactory;
         private ShopWindow _shopWindow;
         private bool _createTower;
+        private GameObject _currentTower;
 
         private string _id;
         public bool CreateTower => _createTower;
@@ -56,7 +57,12 @@ namespace CodeBase.Tower
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
         {
+            if(_currentTower != null)
+                Destroy(_currentTower);
+            
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
+            tower.GetComponent<PositionShift>().Construct(_uIFactory.Upgrade, towerTypeID);
+            _currentTower = tower;
         }
     }
 }

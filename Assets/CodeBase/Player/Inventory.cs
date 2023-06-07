@@ -17,9 +17,10 @@ namespace CodeBase.Player
             _towerStaticData = data;
         }
 
-        public void SellMinions(int indexMinions)
+        public void SellMinions(TowerStaticData data)
         {
-            _minions.RemoveAt(indexMinions);
+            _towerStaticData = data;
+            _minions.Remove(_towerStaticData);
         }
 
         public void SpawnMinions()

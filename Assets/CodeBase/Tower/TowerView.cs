@@ -3,9 +3,7 @@ using CodeBase.UI.Element;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 namespace CodeBase.Tower
 {

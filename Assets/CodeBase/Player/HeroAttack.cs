@@ -1,4 +1,5 @@
-﻿using Assets.Sashka.Scripts.Enemyes;
+﻿using System;
+using Assets.Sashka.Scripts.Enemyes;
 using CodeBase.Data;
 using CodeBase.Tower;
 using UnityEngine;
@@ -14,8 +15,13 @@ namespace CodeBase.Player
         [SerializeField] private Vector2 _sizeMeleeAttack;
         [SerializeField] private LayerMask _layerMask;
 
-        private Stats _stats;
+        private State _stats;
         private float _distance;
+
+        private void Update()
+        {
+            //_meleeDamage = _stats.MeleeAttack;
+        }
 
         private void OnTriggerStay2D(Collider2D other)
         {

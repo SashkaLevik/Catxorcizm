@@ -11,7 +11,7 @@ namespace CodeBase.UI.Element
         [SerializeField] private Image _imageIcon;
         [SerializeField] private TMP_Text _damageText;
         [SerializeField] private TMP_Text _cooldownText;
-        [SerializeField] private TMP_Text _attackRangeText;
+        [SerializeField] private TMP_Text _healthText;
     
         private TowerStaticData _data;
     
@@ -22,10 +22,11 @@ namespace CodeBase.UI.Element
 
         public void Show(TowerStaticData data)
         {
+            _textTitle.text = data.Name;
             _imageIcon.sprite = data.UIIcon;
             _damageText.text = data.Damage.ToString();
             _cooldownText.text = data.Cooldown.ToString();
-            _attackRangeText.text = data.AttackRange.ToString();
+            _healthText.text = data.MaxHP.ToString();
         }
 
         public void ClosePanel(GameObject panel)

@@ -8,23 +8,23 @@ namespace CodeBase.Player
 {
     public class HeroHealth : MonoBehaviour, IHealth
     {
-        [SerializeField] private float _currentHP;
-        [SerializeField] private float _maxHP;
+        // [SerializeField] private float _currentHP;
+        // [SerializeField] private float _maxHP;
 
         private State _state;
         public event UnityAction HealthChanged;
 
         public float Current
         {
-            get => _currentHP;
+            get => _state.CurrentHP;
             set
             {
-                _currentHP = value;
+                _state.CurrentHP = value;
                 HealthChanged?.Invoke();
             }
         }
 
-        public float Max { get => _maxHP; set => _maxHP = value; }
+        public float Max { get => _state.MaxHP; set => _state.MaxHP = value; }
 
         public void TakeDamage(int damage)
         {

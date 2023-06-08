@@ -1,6 +1,8 @@
+using System;
 using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
+using CodeBase.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +16,17 @@ namespace Assets.Sashka.Infastructure.Spell
         [SerializeField] private BaseEnemy _target;
         [SerializeField] private BookAnimator _animator;
 
+<<<<<<< HEAD
         private int _spellAmount = 5;
+=======
+        private int _spellAmount = 2;
+        private State _stateHero;
+
+        private void Update()
+        {
+            //_stateHero.SpellAmount = _spellAmount;
+        }
+>>>>>>> remotes/origin/HeroStats
 
         private void OnEnable()
         {

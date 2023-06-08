@@ -1,16 +1,19 @@
 using Assets.Sashka.Scripts.Minions;
 using Assets.Sashka.Scripts.StaticData;
 using System.Collections;
-using System.Collections.Generic;
+using CodeBase.Tower;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.Events;
+=======
+
+>>>>>>> remotes/origin/HeroStats
 namespace Assets.Sashka.Scripts.Enemyes
 {
     public class BaseEnemy : MonoBehaviour
     {
         [SerializeField] private EnemyStaticData _staticData;
         [SerializeField] private Transform _attackPoint;
-        [SerializeField] private BaseMinion _baseMinion;
         [SerializeField] private LayerMask _player;
         [SerializeField] private EnemyAnimator _animator;
 
@@ -19,7 +22,12 @@ namespace Assets.Sashka.Scripts.Enemyes
         private float _attackRange;
         private float _attackRate;
         private float _currentSpeed;
+<<<<<<< HEAD
         private float _cooldown;
+=======
+        private Coroutine _coroutine;
+        private BaseMinion _minion;
+>>>>>>> remotes/origin/HeroStats
 
         private void Start()
         {
@@ -38,33 +46,41 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Update()
         {
             Move();
-        }        
+        }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D other)
         {
-            if (collision.TryGetComponent(out _baseMinion))
+            if (other.TryGetComponent(out IHealth health))
             {
                 _currentSpeed = 0;
                 _attackRate -= Time.deltaTime;
 
                 if (_attackRate <= 0)
                 {
+<<<<<<< HEAD
                     _animator.PlayAttack();
                     _baseMinion.TakeDamage(_damage);
                     _attackRate = _staticData.AttackRate;
+=======
+                    _attackRate = 4;
+                    health.TakeDamage(_damage);
+>>>>>>> remotes/origin/HeroStats
                 }
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            _baseMinion = null;
-            Invoke(nameof(SetDefaultSpeed), 1f);
+            if (collision.TryGetComponent(out IHealth health))
+            {
+                Invoke(nameof(SetDefaultSpeed), 1f);
+            }
         }
 
         private void SetDefaultSpeed() =>
             _currentSpeed = _speed;
 
+<<<<<<< HEAD
 
         //private IEnumerator Attack()
         //{
@@ -79,6 +95,8 @@ namespace Assets.Sashka.Scripts.Enemyes
         //    }
         //}
 
+=======
+>>>>>>> remotes/origin/HeroStats
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;
     }

@@ -11,6 +11,7 @@ namespace CodeBase.UI.Element
     {
         [SerializeField] private Inventory _inventory;
         [SerializeField] private TowerSpawner _towerSpawner;
+        
         public Button Button;
         public WindowId WindowId;
         public TowerSpawner TowerSpawner => _towerSpawner;
@@ -22,19 +23,12 @@ namespace CodeBase.UI.Element
 
         private void OnEnable()
         {
-            //_towerSpawner.ShiftTower += ShowOpenWindow;
             Button.onClick.AddListener(Open);
         }
 
         private void OnDisable()
         {
-            //_towerSpawner.ShiftTower -= ShowOpenWindow;
             Button.onClick.RemoveListener(Open);
-        }
-
-        private void ShowOpenWindow(bool active)
-        {
-            this.gameObject.SetActive(!active);
         }
 
         private void Open()

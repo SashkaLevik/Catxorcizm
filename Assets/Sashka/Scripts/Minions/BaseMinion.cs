@@ -14,7 +14,6 @@ namespace Assets.Sashka.Scripts.Minions
         [SerializeField] private float _speed;
         [SerializeField] private int _fireDelay;
         [SerializeField] private List<BaseEnemy> _enemies;
-        [SerializeField] private int _health;
 
         public BaseEnemy Enemy => _enemy;
 
@@ -42,21 +41,6 @@ namespace Assets.Sashka.Scripts.Minions
                 //_enemies.Add(_enemy);
                 //Attack();
             }
-        }
-
-        public void TakeDamage(int damage)
-        {
-            _health -= damage;
-
-            if (_health <= 0)
-            {
-                Die();
-            }
-        }
-
-        private void Die()
-        {
-            Destroy(gameObject);
         }
 
         private void Attack()

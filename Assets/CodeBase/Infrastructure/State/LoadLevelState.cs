@@ -48,7 +48,13 @@ namespace CodeBase.Infrastructure.State
             uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
                 hero.GetComponent<PlayerMoney>(), 
                 hero.GetComponent<Inventory>());
+
+            uiRoot.GetComponentInChildren<UpgradeWindow>(true).Construct(
+                hero.GetComponent<PlayerMoney>(),
+                hero.GetComponent<Inventory>());
             
+            hud.GetComponentInChildren<UpgradePlayer>(true).Construct(hero.GetComponent<PlayerMoney>());
+
             foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
             {
                 towerSpawner.Construct(_uiFactory);

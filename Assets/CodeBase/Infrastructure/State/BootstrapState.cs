@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Tower;
 using CodeBase.UI.Service.Factory;
@@ -40,6 +41,7 @@ namespace CodeBase.Infrastructure.State
             RegisterStaticData();
             
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
+            _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
             _services.RegisterSingle<IUIFactory>(new UIFactory(_services.Single<IAssetProvider>(),
                 _services.Single<IStaticDataService>()));

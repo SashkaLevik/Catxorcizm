@@ -1,12 +1,11 @@
 using Assets.Sashka.Scripts.StaticData;
-using System.Collections;
-using System.Collections.Generic;
+using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
-    public class EnemyHealth : MonoBehaviour
+    public class EnemyHealth : MonoBehaviour, IHealth
     {
         [SerializeField] private float _current;
         [SerializeField] private float _max;

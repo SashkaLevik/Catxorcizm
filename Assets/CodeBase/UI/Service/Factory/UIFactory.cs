@@ -12,6 +12,7 @@ namespace CodeBase.UI.Service.Factory
         private readonly IStaticDataService _staticData;
         private Transform _uiRoot;
         private ShopWindow _shop;
+        private UpgradeWindow _upgrade;
 
         public UIFactory(IAssetProvider assets, IStaticDataService staticData)
         {
@@ -20,11 +21,13 @@ namespace CodeBase.UI.Service.Factory
         }
 
         public ShopWindow Shop => _shop;
+        public UpgradeWindow Upgrade => _upgrade;
 
         public GameObject CreateUIRoot()
         {
             _uiRoot = _assets.Instantiate(UIRootPath).transform;
             _shop = GetShop();
+            _upgrade = GetUpgrade();
 
             return _uiRoot.gameObject;
         }
@@ -34,6 +37,13 @@ namespace CodeBase.UI.Service.Factory
             ShopWindow shop = _uiRoot.gameObject.GetComponentInChildren<ShopWindow>();
             shop.gameObject.SetActive(false);
             return shop;
+        }
+        
+        private UpgradeWindow GetUpgrade()
+        {
+            UpgradeWindow upgrade = _uiRoot.gameObject.GetComponentInChildren<UpgradeWindow>();
+            upgrade.gameObject.SetActive(false);
+            return upgrade;
         }
     }
 }

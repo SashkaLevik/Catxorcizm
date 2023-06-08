@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 21151581592738960}
   - component: {fileID: 4472396796644772875}
   - component: {fileID: 6435125020218896142}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 3987506948601530084}
   - component: {fileID: 5479635503426452154}
   - component: {fileID: 4921122885537584571}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4700634775853586974}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4938880796906296229}
   - component: {fileID: 4605732700927842062}
   - component: {fileID: 6252834663041446585}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,10 +265,14 @@ GameObject:
   - component: {fileID: 5511776551895093756}
   - component: {fileID: 7346705552024786997}
   - component: {fileID: 6920217941594071307}
+<<<<<<< HEAD
   - component: {fileID: 1852312526871818445}
   - component: {fileID: 5410571845606634594}
   - component: {fileID: 330204912031019189}
   m_Layer: 0
+=======
+  m_Layer: 7
+>>>>>>> remotes/origin/HeroStats
   m_Name: Crab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,6 +389,7 @@ MonoBehaviour:
   _staticData: {fileID: 11400000, guid: 28e1b64f9e0f73848a5e47032fc0d5e2, type: 2}
   _attackPoint: {fileID: 4700634775853586974}
   _baseMinion: {fileID: 0}
+  _heroHealth: {fileID: 0}
   _player:
     serializedVersion: 2
     m_Bits: 64
@@ -477,7 +482,7 @@ GameObject:
   - component: {fileID: 2191892256513590476}
   - component: {fileID: 4540501311475739075}
   - component: {fileID: 1966877024539045370}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Current
   m_TagString: Untagged
   m_Icon: {fileID: 0}

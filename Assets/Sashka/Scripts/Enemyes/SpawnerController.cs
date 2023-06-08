@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using Assets.Sashka.Infastructure.Tresures;
 using Assets.Sashka.Infastructure.UI;
 using System.Collections;
@@ -5,6 +6,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+=======
+using UnityEngine;
+>>>>>>> remotes/origin/HeroStats
 
 namespace Assets.Sashka.Scripts.Enemyes
 {

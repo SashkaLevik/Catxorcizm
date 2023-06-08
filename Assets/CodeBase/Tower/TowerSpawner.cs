@@ -57,12 +57,17 @@ namespace CodeBase.Tower
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
         {
-            if(_currentTower != null)
-                Destroy(_currentTower);
+            DestroyMinions();
             
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
             tower.GetComponent<PositionShift>().Construct(_uIFactory.Upgrade, towerTypeID);
             _currentTower = tower;
+        }
+
+        public void DestroyMinions()
+        {
+            if (_currentTower != null)
+                Destroy(_currentTower);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace CodeBase.Tower
     public class PositionShift : MonoBehaviour
     {
         [SerializeField] private Transform _attackTrigger;
+        [SerializeField] private float _timeDragTrigger;
         
         private Vector3 _offset;
         private Transform _currentPosition;
@@ -42,7 +43,7 @@ namespace CodeBase.Tower
         private IEnumerator DragTrigger()
         {
             _dragTrigger = false;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(_timeDragTrigger);
             _dragTrigger = true;
         }
 
@@ -77,27 +78,28 @@ namespace CodeBase.Tower
                     }
                     else
                     {
-                        transform.localPosition = Vector3.zero;
-                        transform.GetComponent<Collider2D>().enabled = true;
-                        _attackTrigger.GetComponentInChildren<Collider2D>().enabled = true;
+                        ReturnToCurrentPosition();
                     }
                 }
                 else
                 {
-                    transform.localPosition = Vector3.zero;
-                    transform.GetComponent<Collider2D>().enabled = true;
-                    _attackTrigger.GetComponentInChildren<Collider2D>().enabled = true; 
+                    ReturnToCurrentPosition();
                 }
             }
             else
             {
-                transform.localPosition = Vector3.zero;
-                transform.GetComponent<Collider2D>().enabled = true;
-                _attackTrigger.GetComponentInChildren<Collider2D>().enabled = true;
+                ReturnToCurrentPosition();
                 _panel.gameObject.SetActive(true);
                 _panel.UpgradeData(_typeID);
                 _panel.MaxLevelMinions();
             }
+        }
+
+        private void ReturnToCurrentPosition()
+        {
+            transform.localPosition = Vector3.zero;
+            transform.GetComponent<Collider2D>().enabled = true;
+            _attackTrigger.GetComponentInChildren<Collider2D>().enabled = true;
         }
 
         private void NewPosition(RaycastHit2D hitInfo)
@@ -106,9 +108,7 @@ namespace CodeBase.Tower
             _currentPosition.GetComponent<TowerSpawner>().IsCreateTower();
 
             _currentPosition = transform.parent;
-            transform.localPosition = Vector3.zero;
-            transform.GetComponent<Collider2D>().enabled = true;
-            _attackTrigger.GetComponentInChildren<Collider2D>().enabled = true;
+            ReturnToCurrentPosition();
             transform.parent.GetComponent<TowerSpawner>().IsCreateTower();
         }
     }

@@ -303,3 +303,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackTrigger: {fileID: 488120654901083890}
+  _timeDragTrigger: 0.3

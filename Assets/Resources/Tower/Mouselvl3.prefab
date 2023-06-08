@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackTrigger: {fileID: 5021543851502159907}
+  _timeDragTrigger: 0.3
 --- !u!114 &9078983873434683624
 MonoBehaviour:
   m_ObjectHideFlags: 0

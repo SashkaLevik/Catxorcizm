@@ -23,6 +23,12 @@ namespace CodeBase.Player
             _minions.Remove(_towerStaticData);
         }
 
+        public void Sell()
+        {
+            _position.DestroyMinions();
+            _position.IsCreateTower();
+        }
+
         public void SpawnMinions()
         {
             _position.BuyTowerSpawn(_towerStaticData);

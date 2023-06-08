@@ -86,7 +86,6 @@ namespace CodeBase.UI.Forms
             {
                 _playerMoney.SellMinions(_currentData);
                 _inventory.SellMinions(_currentData);
-                //удалить оюъект
                 _playerMoney.BuyTower(data);
                 _inventory.BuyMinions(data);
                 _inventory.SpawnMinions();
@@ -106,11 +105,8 @@ namespace CodeBase.UI.Forms
             {
                 _playerMoney.SellMinions(data);
                 _inventory.SellMinions(data);
-                Destroy(data.GameObject());
-            }
-            else
-            {
-                return;
+                _inventory.Sell();
+                gameObject.SetActive(false);
             }
         }
     }

@@ -26,13 +26,13 @@ namespace Assets.Sashka.Infastructure.CameraLogic
 
         private void OnEnable()
         {
-            //_spawnerController.CurrentSpawner.WaveCompleted += StopMoving;
+            //_spawnerController.WaveCompleted += StopMoving;
         }
 
         private void StopMoving()
         {
             Debug.Log("Stoped");
-            //_currentSpeed = 0;
+            _currentSpeed = 0;
         }
     }
 }

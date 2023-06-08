@@ -13,24 +13,30 @@ namespace Assets.Sashka.Infastructure.UI
     {
         [SerializeField] private Button _nextWave;
         [SerializeField] private SpawnerController _spawner;
+       
 
         private void Start()
         {
-           // _nextWave.gameObject.SetActive(false);
+           _nextWave.gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
             _nextWave.onClick.AddListener(_spawner.NextWave);
+            _nextWave.onClick.AddListener(HideButton);
+            _spawner.WaveCompleted += ShowButton;
         }
 
         public void ShowButton()
         {
             Debug.Log("Show");
-            _nextWave.gameObject.SetActive(true);            
+            _nextWave.gameObject.SetActive(true);
         }
 
         public void HideButton()
-            => _nextWave.gameObject.SetActive(false);
+        {
+            _nextWave.gameObject.SetActive(false);
+            //_spawner.WaveCompleted -= ShowButton;
+        }
     }
 }

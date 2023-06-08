@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.Tresures
 {
-    class Treasure : MonoBehaviour
+    public class Treasure : MonoBehaviour
     {
         
     }

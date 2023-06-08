@@ -13,13 +13,14 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private Transform[] _spawnPoints;
         [SerializeField] private BaseEnemy _spawnedEnemy;
         [SerializeField] private float _timeBetweenSpawn;
-        [SerializeField] private int _weakEnemyCount;
-        [SerializeField] private int _mediumEnemyCount;
+        [SerializeField] private int _weakCount;
+        [SerializeField] private int _mediumCount;
+        [SerializeField] private SpawnerController _controller;
 
-        public int _spawnedCount;
         public List<ScriptablePrefab> _enemies;
 
-        public event UnityAction WaveCompleted;
+        public int Weak => _weakCount;
+        public int Medium => _mediumCount;
 
         private void Awake()
         {
@@ -28,13 +29,12 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Start()
         {
-            _spawnedCount = _weakEnemyCount + _mediumEnemyCount;
             Invoke(nameof(Spawn), 2f);
         }
 
         private void Spawn()
         {
-            StartCoroutine(SpawnEnemies(_weakEnemyCount, _mediumEnemyCount));
+            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount));
         }
 
         private IEnumerator SpawnEnemies(int weakCount, int mediumCount)
@@ -45,32 +45,17 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Weak);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
-                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += OnEnemyDied;
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
                 yield return delay;
             }
             for (int i = 0; i < mediumCount; i++)
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Medium);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
-                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += OnEnemyDied;
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
                 yield return delay;
             }
-
-            //WaveCompleted?.Invoke();
-        }
-
-        private void OnEnemyDied(BaseEnemy enemy)
-        {
-            _spawnedCount--;
-
-            if (_spawnedCount == 0)
-            {
-                WaveCompleted?.Invoke();
-                Debug.Log("Completed");
-            }                           
-
-            enemy.GetComponentInChildren<EnemyHealth>().Died -= OnEnemyDied;
-        }
+        }        
 
         private T GetRandomEnemy<T>(EnemyTypeID type) where T : BaseEnemy
         {

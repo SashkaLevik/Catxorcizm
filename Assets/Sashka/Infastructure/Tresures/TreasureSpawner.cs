@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.Tresures
 {
-    class TreasureSpawner : MonoBehaviour
+    public class TreasureSpawner : MonoBehaviour
     {
         private const string Loot = "Loot";
 
@@ -21,12 +21,13 @@ namespace Assets.Sashka.Infastructure.Tresures
 
         public void SpawnTreasure()
         {
+            Debug.Log("Treasure");
+
             for (int i = 0; i < _spawnPoints.Length; i++)
             {
                 var randomTreasure = GetRandomTresure<Treasure>();
                 Instantiate(randomTreasure, _spawnPoints[i]);
-            }            
-            Debug.Log("Treasure");
+            }
         }
 
         private T GetRandomTresure<T>() where T : Treasure 

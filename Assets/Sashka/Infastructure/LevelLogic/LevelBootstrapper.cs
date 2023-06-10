@@ -37,6 +37,9 @@ namespace Assets.Sashka.Infastructure
             _levelScreen.MageLoaded -= OnMageLoaded;
             _levelScreen.AcademyLoaded -= OnAcademyLoaded;
         }
+        private void OnMenuLoaded()
+        {
+        }
 
         private void OnAcademyLoaded()
         {

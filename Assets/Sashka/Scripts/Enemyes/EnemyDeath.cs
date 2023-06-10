@@ -37,7 +37,6 @@ namespace Assets.Sashka.Scripts.Enemyes
             Animator.PlayDeath();
             GameObject fx = Instantiate(DeathFx, transform.position, Quaternion.identity);
             StartCoroutine(DestroyTimer());
-            //Destroy(fx.gameObject);
         }
 
         private IEnumerator DestroyTimer()

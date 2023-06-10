@@ -1,3 +1,4 @@
+using Assets.Sashka.Infastructure.UI;
 using Assets.Sashka.Scripts.Enemyes;
 using System;
 using System.Collections;
@@ -10,29 +11,26 @@ namespace Assets.Sashka.Infastructure.CameraLogic
     {
         [SerializeField] private float _speed;
         [SerializeField] private SpawnerController _spawnerController;
+        [SerializeField] private GameScreen _gameScreen;
 
         private float _currentSpeed;
 
         private void Start()
-        {
-            _currentSpeed = _speed;
-        }
+            => _currentSpeed = _speed;
 
         private void FixedUpdate()
-        {
-            transform.position += Vector3.right * _currentSpeed * Time.deltaTime;
-
-        }
+            => transform.position += Vector3.right * _currentSpeed * Time.deltaTime;
 
         private void OnEnable()
         {
-            //_spawnerController.WaveCompleted += StopMoving;
+            _spawnerController.WaveCompleted += StopMoving;
+            _gameScreen.WaveStarted += SetDefaultSpeed;
         }
 
         private void StopMoving()
-        {
-            Debug.Log("Stoped");
-            _currentSpeed = 0;
-        }
+            => _currentSpeed = 0;
+
+        private void SetDefaultSpeed()
+            => _currentSpeed = _speed;
     }
 }

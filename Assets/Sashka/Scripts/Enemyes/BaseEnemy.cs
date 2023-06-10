@@ -3,11 +3,7 @@ using Assets.Sashka.Scripts.StaticData;
 using System.Collections;
 using CodeBase.Tower;
 using UnityEngine;
-<<<<<<< HEAD
-using UnityEngine.Events;
-=======
-
->>>>>>> remotes/origin/HeroStats
+//using UnityEngine.Events;
 namespace Assets.Sashka.Scripts.Enemyes
 {
     public class BaseEnemy : MonoBehaviour
@@ -22,12 +18,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         private float _attackRange;
         private float _attackRate;
         private float _currentSpeed;
-<<<<<<< HEAD
         private float _cooldown;
-=======
-        private Coroutine _coroutine;
-        private BaseMinion _minion;
->>>>>>> remotes/origin/HeroStats
 
         private void Start()
         {
@@ -57,14 +48,9 @@ namespace Assets.Sashka.Scripts.Enemyes
 
                 if (_attackRate <= 0)
                 {
-<<<<<<< HEAD
                     _animator.PlayAttack();
-                    _baseMinion.TakeDamage(_damage);
-                    _attackRate = _staticData.AttackRate;
-=======
                     _attackRate = 4;
                     health.TakeDamage(_damage);
->>>>>>> remotes/origin/HeroStats
                 }
             }
         }
@@ -80,23 +66,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void SetDefaultSpeed() =>
             _currentSpeed = _speed;
 
-<<<<<<< HEAD
-
-        //private IEnumerator Attack()
-        //{
-        //    while (_baseMinion != null)
-        //    {
-        //        Collider2D hitPlayer = Physics2D.OverlapCircle(_attackPoint.position, _attackRange, _player);
-
-        //        hitPlayer.GetComponent<BaseMinion>().TakeDamage(_damage);
-        //        _animator.PlayAttack();
-        //        yield return new WaitForSeconds(_attackRate);
-        //        Debug.Log("Attack");
-        //    }
-        //}
-
-=======
->>>>>>> remotes/origin/HeroStats
         private void Move() =>
             transform.position += Vector3.left * _currentSpeed * Time.deltaTime;
     }

@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ebb15836e21b048a165a80fd559e88, type: 3}
   m_Name: MediumEnemy
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 5511776551895093756, guid: 72a80733c64724e4da996ec049508257, type: 3}
+  _enemyPrefab: {fileID: 1795369824702691363, guid: f418805ffb2aa334dbf618387a110d1d, type: 3}
   _prefabs:
-  - {fileID: 5511776551895093756, guid: 72a80733c64724e4da996ec049508257, type: 3}
-  - {fileID: 5511776551895093756, guid: cede76dcfb16a3f42baed94905ddd88f, type: 3}
-  - {fileID: 5511776551895093756, guid: b8eca37a18a45374a8e6e1e4cdc7fb2f, type: 3}
+  - {fileID: 2463603299169214201, guid: 898366df9f813704cb5b335de6b71342, type: 3}
+  - {fileID: 1795369824702691363, guid: f418805ffb2aa334dbf618387a110d1d, type: 3}
   _enemyType: 1

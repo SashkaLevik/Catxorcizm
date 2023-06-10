@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ebb15836e21b048a165a80fd559e88, type: 3}
   m_Name: WeakEnemy
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 8018914941233781183, guid: 23af6a06c1c967f4999c3ef96f370184, type: 3}
+  _enemyPrefab: {fileID: 8704485357563961513, guid: a6790a6611d8b8c488dc9822d8ace906, type: 3}
   _prefabs:
   - {fileID: 8704485357563961513, guid: a6790a6611d8b8c488dc9822d8ace906, type: 3}
-  - {fileID: 5511776551895093756, guid: 2f2db0bede5c8214e8aec5023eb379da, type: 3}
+  - {fileID: 8704485357563961513, guid: a6790a6611d8b8c488dc9822d8ace906, type: 3}
   - {fileID: 6424360428671862975, guid: 25ee3b618aa3ad548a5a1145c55d292f, type: 3}
   - {fileID: 8316090026820725854, guid: aff95a821f1e19443bf1905872a34377, type: 3}
   - {fileID: 5138089602558357112, guid: 6a7093d42e7114e44bde9aa61d2943a8, type: 3}

@@ -24,7 +24,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         
         public void DestroyFx()
         {
-            Debug.Log("Die");
             Destroy(gameObject);
         }
     }

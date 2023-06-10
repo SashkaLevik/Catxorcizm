@@ -22,9 +22,10 @@ namespace Assets.Sashka.Infastructure
             _scenLoader.Load(MyInitial, onLoaded: LoadMenu);
         }
 
-        private void LoadMenu() => 
+        private void LoadMenu() =>
             _stateMachine.Enter<LoadMenuState, string>(MenuScene);
 
+        
         private void RegisterServices()
         {
         }

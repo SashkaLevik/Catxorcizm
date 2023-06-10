@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4845862156183862679}
   - component: {fileID: 4845862156183862672}
   - component: {fileID: 4845862156183862763}
+  - component: {fileID: 8883250885169146807}
   m_Layer: 6
   m_Name: Dragonlvl3
   m_TagString: Untagged
@@ -273,3 +274,16 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: 822d3040d89fec2419e31f8a1d034578, type: 2}
   _minion: {fileID: 0}
+--- !u!114 &8883250885169146807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4845862156183862673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeDragTrigger: 0.2

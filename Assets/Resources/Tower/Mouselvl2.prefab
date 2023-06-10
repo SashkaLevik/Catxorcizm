@@ -302,5 +302,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackTrigger: {fileID: 488120654901083890}
-  _timeDragTrigger: 0.3
+  _timeDragTrigger: 0.2

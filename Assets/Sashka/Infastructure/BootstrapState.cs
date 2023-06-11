@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {
@@ -9,8 +11,9 @@ namespace Assets.Sashka.Infastructure
 
         private readonly GameStateMachine _stateMachine;
         private readonly ScenLoader _scenLoader;
+        private readonly Loading _curtain;
 
-        public BootstrapState(GameStateMachine stateMachine, ScenLoader scenLoader)
+        public BootstrapState(GameStateMachine stateMachine, ScenLoader scenLoader)//, Loading curtain)
         {
             _stateMachine = stateMachine;
             _scenLoader = scenLoader;
@@ -19,17 +22,22 @@ namespace Assets.Sashka.Infastructure
         public void Enter()
         {
             //RegisterServices();
+            //_curtain.Show();
             _scenLoader.Load(MyInitial, onLoaded: LoadMenu);
         }
 
-        private void LoadMenu() =>
+        private void LoadMenu()
+        {
+            //_curtain.Hide();
             _stateMachine.Enter<LoadMenuState, string>(MenuScene);
+        }
 
-        
+
+
         private void RegisterServices()
         {
         }
-
+        
         public void Exit()
         {
             

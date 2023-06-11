@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {
@@ -11,16 +12,17 @@ namespace Assets.Sashka.Infastructure
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(ScenLoader scenLoader)
+        public GameStateMachine(ScenLoader scenLoader, Loading curtain)
         {
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, scenLoader),
-                [typeof(LoadMenuState)] = new LoadMenuState(this, scenLoader),
+                [typeof(LoadMenuState)] = new LoadMenuState(this, scenLoader, curtain),
                 [typeof(LoadMarketState)] = new LoadMarketState(this, scenLoader),
                 [typeof(LoadPortState)] = new LoadPortState(this, scenLoader),
                 [typeof(LoadMageState)] = new LoadMageState(this, scenLoader),
                 [typeof(LoadAcademyState)] = new LoadAcademyState(this, scenLoader),
+                [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }
 

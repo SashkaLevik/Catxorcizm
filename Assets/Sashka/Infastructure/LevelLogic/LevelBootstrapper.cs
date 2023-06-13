@@ -19,7 +19,7 @@ namespace Assets.Sashka.Infastructure
         {
             _game = new Game(this, Curtain);
 
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
 
         private void OnEnable()

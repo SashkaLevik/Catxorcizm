@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3572585690206549924}
   - component: {fileID: 7767680341052663714}
   - component: {fileID: 6949902245935072816}
-  - component: {fileID: 7296133034793136393}
+  - component: {fileID: 5425180422937602572}
   m_Layer: 0
   m_Name: MagicWand_19 3
   m_TagString: Untagged
@@ -125,7 +125,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.83, y: 4.24}
   m_EdgeRadius: 0
---- !u!114 &7296133034793136393
+--- !u!114 &5425180422937602572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -15,12 +15,11 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private float _speed;
         private int _damage;
-        public float _attackTime;
         private float _attackRange;
         private float _attackRate;
         private float _currentSpeed;
         private float _cooldown;
-        public bool _canAttack = true;
+        private bool _canAttack = true;
 
         private void Start()
         {
@@ -39,16 +38,13 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Update()
         {
             Move();
-            //ResetAttack();
         }
 
         private void OnTriggerStay2D(Collider2D other)
-        {
-            
+        {            
             if (other.TryGetComponent(out IHealth health) && _canAttack)
             {
                 _currentSpeed = 0;
-
                 _animator.PlayAttack();
                 health.TakeDamage(_damage);
                 StartCoroutine(ResetAttack());

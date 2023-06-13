@@ -24,7 +24,7 @@ namespace Assets.Sashka.Infastructure.UI
 
         private void Start()
         {
-            _nextWave.gameObject.SetActive(false);
+            //_nextWave.gameObject.SetActive(false);
             _levelComplete.gameObject.SetActive(false);
             _audio.Play();
         }

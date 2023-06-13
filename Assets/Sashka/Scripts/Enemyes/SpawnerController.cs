@@ -12,47 +12,56 @@ namespace Assets.Sashka.Scripts.Enemyes
     {
         [SerializeField] private EnemySpawner _firstWave;
         [SerializeField] private EnemySpawner _secondWave;
-        //[SerializeField] private EnemySpawner _thirdWave;
+        [SerializeField] private EnemySpawner _thirdWave;
         [SerializeField] private EnemySpawner[] _spawners;
-        //[SerializeField] private TreasureSpawner _treasureSpawner;
+        [SerializeField] private TreasureSpawner _treasureSpawner;
 
         public int _spawned;
-        private int _currentSpawnerIndex;
-        public int _wavesCount;
+        public int _currentSpawnerIndex;
+        public int _wavesCount;        
         public EnemySpawner _currentSpawner;
+        private bool _canChange = false;
 
         public event UnityAction WaveCompleted;
         public event UnityAction LevelCompleted;
 
         private void Awake()
         {
+            _firstWave.gameObject.SetActive(false);
             _secondWave.gameObject.SetActive(false);
-            //_thirdWave.gameObject.SetActive(false);
+            _thirdWave.gameObject.SetActive(false);
             SetSpawner(_currentSpawnerIndex);
-            _wavesCount = _spawners.Length - 1;
+            _wavesCount = _spawners.Length;
         }
 
         private void OnEnable()
         {
+            WaveCompleted += _treasureSpawner.SpawnTreasure;
         }
 
         private void OnDisable()
         {
+            WaveCompleted -= _treasureSpawner.SpawnTreasure;
         }
 
         private void SetSpawner(int index)
         {
             _currentSpawner = _spawners[index];
-            _spawned = _currentSpawner.Weak + _currentSpawner.Medium;
+            _spawned = _currentSpawner.Weak + _currentSpawner.Medium + _currentSpawner.Strong;
         }
 
         public void NextWave()
         {
-            if (_currentSpawnerIndex != _wavesCount)
+            if (_currentSpawnerIndex != _spawners.Length)
             {
-                SetSpawner(++_currentSpawnerIndex);
                 _spawners[_currentSpawnerIndex].gameObject.SetActive(true);
-                //WaveCompleted -= _treasureSpawner.SpawnTreasure;
+                if (_canChange == true)
+                {
+                    SetSpawner(++_currentSpawnerIndex);
+                    _spawners[_currentSpawnerIndex].gameObject.SetActive(true);
+                }
+                _canChange = true;
+                
             }
         }
 
@@ -63,6 +72,8 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (_spawned == 0)
             {
                 WaveCompleted?.Invoke();
+                _wavesCount--;
+                Debug.Log("WaveComplete");
                 CheckLastWave();
             }
 
@@ -71,8 +82,12 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void CheckLastWave()
         {
-            if (_currentSpawner == _spawners[_wavesCount] && _spawned == 0)
+            if (_wavesCount == 0 && _spawned == 0)
+            {
                 LevelCompleted?.Invoke();
+                Debug.Log("LevelComplete");
+            }
+                
         }
     }
 }

@@ -16,7 +16,10 @@ namespace Assets.Sashka.Infastructure.CameraLogic
         private float _currentSpeed;
 
         private void Start()
-            => _currentSpeed = _speed;
+        {
+            _currentSpeed = _speed;
+            StopMoving();
+        }            
 
         private void FixedUpdate()
             => transform.position += Vector3.right * _currentSpeed * Time.deltaTime;
@@ -25,12 +28,22 @@ namespace Assets.Sashka.Infastructure.CameraLogic
         {
             _spawnerController.WaveCompleted += StopMoving;
             _gameScreen.WaveStarted += SetDefaultSpeed;
+            _spawnerController.LevelCompleted += StopMoving;
+        }
+        private void OnDisable()
+        {
+            _spawnerController.WaveCompleted -= StopMoving;
+            _gameScreen.WaveStarted -= SetDefaultSpeed;
+            _spawnerController.LevelCompleted -= StopMoving;
+        }
+        private void StopMoving()
+        {
+            _currentSpeed = 0;
         }
 
-        private void StopMoving()
-            => _currentSpeed = 0;
-
         private void SetDefaultSpeed()
-            => _currentSpeed = _speed;
+        {
+            _currentSpeed = _speed;
+        }
     }
 }

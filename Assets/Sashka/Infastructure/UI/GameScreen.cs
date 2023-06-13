@@ -1,4 +1,5 @@
-﻿using Assets.Sashka.Scripts.Enemyes;
+﻿using Assets.Sashka.Infastructure.Audio;
+using Assets.Sashka.Scripts.Enemyes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,30 +7,33 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Sashka.Infastructure.UI
 {
-    public class GameScreen : MonoBehaviour
+    public class GameScreen : MonoBehaviour, ICoroutineRunner
     {
         [SerializeField] private Button _nextWave;
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawner;
-
+        [SerializeField] private AudioSource _audio;
+        
         public event UnityAction WaveStarted;
-        public event UnityAction MenuLoaded;
+        //public event UnityAction MenuLoaded;        
 
         private void Start()
         {
-            _nextWave.gameObject.SetActive(false);
+            //_nextWave.gameObject.SetActive(false);
             _levelComplete.gameObject.SetActive(false);
+            _audio.Play();
         }
 
         private void OnEnable()
         {
+            _spawner.WaveCompleted += ShowButton;
             _nextWave.onClick.AddListener(_spawner.NextWave);
             _nextWave.onClick.AddListener(HideButton);
-            _spawner.WaveCompleted += ShowButton;
             _spawner.LevelCompleted += CompleteLevel;
             _levelComplete.onClick.AddListener(LoadMenu);
         }
@@ -58,6 +62,8 @@ namespace Assets.Sashka.Infastructure.UI
         }
 
         private void LoadMenu()
-            => MenuLoaded?.Invoke();        
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

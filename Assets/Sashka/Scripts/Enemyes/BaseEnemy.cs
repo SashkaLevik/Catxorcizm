@@ -19,6 +19,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         private float _attackRate;
         private float _currentSpeed;
         private float _cooldown;
+        private bool _canAttack = true;
 
         private void Start()
         {
@@ -40,18 +41,13 @@ namespace Assets.Sashka.Scripts.Enemyes
         }
 
         private void OnTriggerStay2D(Collider2D other)
-        {
-            if (other.TryGetComponent(out IHealth health))
+        {            
+            if (other.TryGetComponent(out IHealth health) && _canAttack)
             {
                 _currentSpeed = 0;
-                _attackRate -= Time.deltaTime;
-
-                if (_attackRate <= 0)
-                {
-                    _animator.PlayAttack();
-                    _attackRate = 4;
-                    health.TakeDamage(_damage);
-                }
+                _animator.PlayAttack();
+                health.TakeDamage(_damage);
+                StartCoroutine(ResetAttack());
             }
         }
 
@@ -61,6 +57,13 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 Invoke(nameof(SetDefaultSpeed), 1f);
             }
+        }
+
+        private IEnumerator ResetAttack()
+        {
+            _canAttack = false;
+            yield return new WaitForSeconds(_attackRate);
+            _canAttack = true;
         }
 
         private void SetDefaultSpeed() =>

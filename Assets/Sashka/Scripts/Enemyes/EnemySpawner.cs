@@ -15,12 +15,14 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private float _timeBetweenSpawn;
         [SerializeField] private int _weakCount;
         [SerializeField] private int _mediumCount;
+        [SerializeField] private int _strongCount;
         [SerializeField] private SpawnerController _controller;
 
         public List<ScriptablePrefab> _enemies;
 
         public int Weak => _weakCount;
         public int Medium => _mediumCount;
+        public int Strong => _strongCount;
 
         private void Awake()
         {
@@ -34,10 +36,10 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Spawn()
         {
-            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount));
+            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount, _strongCount));
         }
 
-        private IEnumerator SpawnEnemies(int weakCount, int mediumCount)
+        private IEnumerator SpawnEnemies(int weakCount, int mediumCount, int strongCount)
         {
             var delay = new WaitForSeconds(_timeBetweenSpawn);
 
@@ -51,6 +53,13 @@ namespace Assets.Sashka.Scripts.Enemyes
             for (int i = 0; i < mediumCount; i++)
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Medium);
+                _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
+                yield return delay;
+            }
+            for (int i = 0; i < strongCount; i++)
+            {
+                var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Strong);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
                 _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
                 yield return delay;

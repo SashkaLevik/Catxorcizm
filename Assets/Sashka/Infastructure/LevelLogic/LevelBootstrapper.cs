@@ -10,15 +10,16 @@ namespace Assets.Sashka.Infastructure
 {
     class LevelBootstrapper : MonoBehaviour, ICoroutineRunner
     {
-        [SerializeField] private LevelScreen _levelScreen;
+        public Loading Curtain;
 
+        [SerializeField] private LevelScreen _levelScreen;
         private Game _game;
 
         private void Awake()
         {
-            _game = new Game(this);
+            _game = new Game(this, Curtain);
 
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
 
         private void OnEnable()
@@ -39,6 +40,7 @@ namespace Assets.Sashka.Infastructure
         }
         private void OnMenuLoaded()
         {
+            Debug.Log("LoadMenu");
         }
 
         private void OnAcademyLoaded()

@@ -16,14 +16,14 @@ namespace Assets.Sashka.Infastructure.UI
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _howToPlay;
         [SerializeField] private GameRules _gameRules;
-        [SerializeField] private AudioController _audio;
+        [SerializeField] private AudioSource _audio;
 
         public event UnityAction GameStarted;
         public event UnityAction ShowRules;
 
         private void Start()
         {
-            _audio.MainTheme.Play();
+            _audio.Play();
         }
 
         private void OnEnable()

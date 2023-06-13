@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Service.Factory;
 
 namespace CodeBase.Infrastructure.State
@@ -17,7 +19,9 @@ namespace CodeBase.Infrastructure.State
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain,
-                    services.Single<IGameFactory>(), services.Single<IUIFactory>()),
+                    services.Single<IGameFactory>(), services.Single<IUIFactory>(), services.Single<IPersistentProgressService>()),
+                [typeof(LoadProgressState)] = new LoadProgressState(this,
+                    services.Single<IPersistentProgressService>(),services.Single<ISaveLoadService>()),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }

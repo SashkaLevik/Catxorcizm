@@ -1,12 +1,13 @@
 ﻿using System;
 using Assets.Sashka.Scripts.Enemyes;
 using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Tower;
 using UnityEngine;
 
 namespace CodeBase.Player
 {
-    public class HeroAttack : MonoBehaviour
+    public class HeroAttack : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private int _meleeDamage;
         [SerializeField] private float _attackAngle;
@@ -15,12 +16,23 @@ namespace CodeBase.Player
         [SerializeField] private Vector2 _sizeMeleeAttack;
         [SerializeField] private LayerMask _layerMask;
 
-        private State _stats;
+        private State _state;
         private float _distance;
 
-        private void Update()
+        public int MeleeDamage
         {
-            //_meleeDamage = _stats.MeleeAttack;
+            get => _state.MeleeAttack;
+            set => _state.MeleeAttack = value;
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            _state = progress.HeroState;
+            _meleeDamage = _state.MeleeAttack;
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
         }
 
         private void OnTriggerStay2D(Collider2D other)
@@ -48,7 +60,7 @@ namespace CodeBase.Player
         {
             foreach (Collider2D enemy in Hit(_meleeAttack, _sizeMeleeAttack))
             {
-                enemy.GetComponent<IHealth>().TakeDamage(_meleeDamage);
+                enemy.GetComponent<IHealth>().TakeDamage(_state.MeleeAttack);
             }
         }
 

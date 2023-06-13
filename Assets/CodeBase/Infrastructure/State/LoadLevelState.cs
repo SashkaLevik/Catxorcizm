@@ -1,9 +1,11 @@
 ﻿using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Player;
 using CodeBase.Tower;
+using CodeBase.UI.Element;
 using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Factory;
-using CodeBase.UI.Service.Windows;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
@@ -17,15 +19,17 @@ namespace CodeBase.Infrastructure.State
         private readonly LoadingCurtain _loadingCurtain;
         private readonly IGameFactory _gameFactory;
         private readonly IUIFactory _uiFactory;
+        private readonly IPersistentProgressService _progressService;
 
         public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
-            IGameFactory gameFactory, IUIFactory uiFactory)
+            IGameFactory gameFactory, IUIFactory uiFactory, IPersistentProgressService progressService)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _loadingCurtain = loadingCurtain;
             _gameFactory = gameFactory;
             _uiFactory = uiFactory;
+            _progressService = progressService;
         }
 
         public void Enter(string sceneName)
@@ -39,34 +43,45 @@ namespace CodeBase.Infrastructure.State
 
         private void OnLoaded()
         {
-            //InitUiRoot();
-
-            GameObject uiRoot = _uiFactory.CreateUIRoot();
-            GameObject hud = _gameFactory.CreateHud();
-            GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
-
-            uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
-                hero.GetComponent<PlayerMoney>(), 
-                hero.GetComponent<Inventory>());
-
-            uiRoot.GetComponentInChildren<UpgradeWindow>(true).Construct(
-                hero.GetComponent<PlayerMoney>(),
-                hero.GetComponent<Inventory>());
-            
-            hud.GetComponentInChildren<UpgradePlayer>(true).Construct(hero.GetComponent<PlayerMoney>());
-
-            foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
-            {
-                towerSpawner.Construct(_uiFactory);
-            }
-            
+            InitGameWorld();
+            InformProgressReaders();
             //CameraFollow(hero);
 
             _stateMachine.Enter<GameLoopState>();
         }
 
-        private void InitUiRoot() =>
-            _uiFactory.CreateUIRoot();
+        private void InitGameWorld()
+        {
+            GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
+            GameObject hud = _gameFactory.CreateHud();
+            InitUiRoot(hero);
+
+            hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
+
+            foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
+            {
+                towerSpawner.Construct(_uiFactory);
+            }
+        }
+
+        private void InitUiRoot(GameObject hero)
+        {
+            GameObject uiRoot = _uiFactory.CreateUIRoot();
+            
+            uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
+                hero.GetComponent<PlayerMoney>(),
+                hero.GetComponent<Inventory>());
+
+            uiRoot.GetComponentInChildren<UpgradeWindow>(true).Construct(
+                hero.GetComponent<PlayerMoney>(),
+                hero.GetComponent<Inventory>());
+        }
+
+        private void InformProgressReaders()
+        {
+            foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
+                progressReader.LoadProgress(_progressService.Progress);
+        }
 
         // private void CameraFollow(GameObject hero) =>
         //     Camera.main.GetComponent<CameraFollow>().Follow(hero);

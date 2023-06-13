@@ -1,5 +1,7 @@
-﻿using Assets.Sashka.Scripts.Minions;
+﻿using System.Collections.Generic;
+using Assets.Sashka.Scripts.Minions;
 using CodeBase.Infrastructure.AssetManagement;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
@@ -11,6 +13,9 @@ namespace CodeBase.Infrastructure.Factory
 {
     public class GameFactory : IGameFactory
     {
+        public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
+        public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
+
         private GameObject _heroGameObject;
         
         private readonly IAssetProvider _assets;
@@ -27,6 +32,8 @@ namespace CodeBase.Infrastructure.Factory
         public GameObject CreateHero(GameObject at)
         {
             var hero = _assets.Instantiate(path: AssetPath.HeroPath, at: at.transform.position);
+
+            RegisterProgressWatchers(hero);
             
             foreach (OpenWindowButton windowButton in hero.GetComponentsInChildren<OpenWindowButton>())
                 windowButton.Construct(_windowService);
@@ -55,6 +62,28 @@ namespace CodeBase.Infrastructure.Factory
             health.Max = towerData.MaxHP;
         
             return tower;
+        }
+
+        public void Cleanup()
+        {
+            ProgressReaders.Clear();
+            ProgressWriters.Clear();
+        }
+
+        private void RegisterProgressWatchers(GameObject hero)
+        {
+            foreach (ISavedProgressReader progressReader in hero.GetComponentsInChildren<ISavedProgressReader>())
+            {
+                Register(progressReader);
+            }
+        }
+
+        private void Register(ISavedProgressReader progressReader)
+        {
+            if (progressReader is ISavedProgress progressWriter)
+                ProgressWriters.Add(progressWriter);
+
+            ProgressReaders.Add(progressReader);
         }
     }
 }

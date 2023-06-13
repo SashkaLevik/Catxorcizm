@@ -1,16 +1,13 @@
-﻿using System;
-using CodeBase.Data;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace CodeBase.Player
 {
-    public class HeroHealth : MonoBehaviour, IHealth
+    public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
     {
-        // [SerializeField] private float _currentHP;
-        // [SerializeField] private float _maxHP;
-
         private State _state;
         public event UnityAction HealthChanged;
 
@@ -32,6 +29,16 @@ namespace CodeBase.Player
                 return;
 
             Current -= damage;
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            _state = progress.HeroState;
+            Debug.Log("загрузить данные Жизней");
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
         }
     }
 }

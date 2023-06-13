@@ -44,6 +44,7 @@ namespace CodeBase.Infrastructure.Factory
         public GameObject CreateHud()
         {
             GameObject hud = _assets.Instantiate(AssetPath.HudPath);
+            RegisterProgressWatchers(hud);
             return hud;
         }
 

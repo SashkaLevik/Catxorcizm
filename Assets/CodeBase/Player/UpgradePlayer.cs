@@ -63,10 +63,10 @@ namespace CodeBase.Player
         {
             if (_levelHero % _levelSpellAmount == 0)
             {
-                _levelHero += 1;
+                _levelHero ++;
                 _attackDamage += _stepMeleeDamage * (_levelHero - 1);
                 _maxHp += _stepHealth * (_levelHero - 1);
-                _spellAmount += 1;
+                _spellAmount ++;
             }
             else
             {

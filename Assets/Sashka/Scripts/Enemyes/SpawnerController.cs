@@ -55,6 +55,7 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (_currentSpawnerIndex != _spawners.Length)
             {
                 _spawners[_currentSpawnerIndex].gameObject.SetActive(true);
+
                 if (_canChange == true)
                 {
                     SetSpawner(++_currentSpawnerIndex);

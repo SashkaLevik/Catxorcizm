@@ -13,6 +13,7 @@ namespace Assets.Sashka.Infastructure.Tresures
         [SerializeField] private Transform[] _spawnPoints;
 
         public List<Treasure> _treasures;
+        public List<Treasure> _spawnedTreasures;
 
         private void Awake()
         {
@@ -27,6 +28,7 @@ namespace Assets.Sashka.Infastructure.Tresures
             {
                 var randomTreasure = GetRandomTresure<Treasure>();
                 Instantiate(randomTreasure, _spawnPoints[i]);
+                _spawnedTreasures.Add(randomTreasure);
             }
         }
 

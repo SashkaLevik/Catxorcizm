@@ -26,7 +26,6 @@ namespace Assets.Sashka.Infastructure.UI
         private void Start()
         {
             _animator = GetComponent<Animator>();
-            _gameRules.SetActive(false);
         }
 
         private void OnEnable()

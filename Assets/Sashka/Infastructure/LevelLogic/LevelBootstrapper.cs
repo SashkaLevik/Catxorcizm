@@ -19,7 +19,7 @@ namespace Assets.Sashka.Infastructure
         {
             _game = new Game(this, Curtain);
 
-            //DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this);
         }
 
         private void OnEnable()
@@ -37,11 +37,7 @@ namespace Assets.Sashka.Infastructure
             _levelScreen.PortLoaded -= OnPortAreaLoad;
             _levelScreen.MageLoaded -= OnMageLoaded;
             _levelScreen.AcademyLoaded -= OnAcademyLoaded;
-        }
-        private void OnMenuLoaded()
-        {
-            Debug.Log("LoadMenu");
-        }
+        }        
 
         private void OnAcademyLoaded()
         {

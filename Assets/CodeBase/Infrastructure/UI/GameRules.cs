@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using TMPro;
-namespace Assets.Sashka.Infastructure.UI
+
+namespace CodeBase.Infrastructure.UI
 {
     class GameRules : MonoBehaviour
     {

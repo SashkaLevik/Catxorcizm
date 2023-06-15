@@ -1,13 +1,18 @@
-﻿using System;
-using CodeBase.Data;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.LevelLogic;
+using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
-using UnityEngine.SceneManagement;
+using Unity.VisualScripting.FullSerializer;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
     public class LoadProgressState: IState
     {
+        private const string MenuScene = "MenuScene";
+        private const string PortArea = "PortArea";
+        
         private readonly GameStateMachine _gameStateMachine;
         private readonly IPersistentProgressService _progressService;
         private readonly ISaveLoadService _saveLoadService;
@@ -23,7 +28,7 @@ namespace CodeBase.Infrastructure.State
         {
             LoadProgressOrInitNew();
             
-            _gameStateMachine.Enter<LoadLevelState, string>("Main");
+            _gameStateMachine.Enter<LoadPortState, string>(_progressService.Progress.WorldData.Level);
         }
 
         public void Exit()
@@ -36,21 +41,12 @@ namespace CodeBase.Infrastructure.State
                 _saveLoadService.LoadProgress() 
                 ?? NewProgress();
         }
+        
         private PlayerProgress NewProgress()
         {
-            var progress =  new PlayerProgress(initialLevel: "Main")
-            {
-                HeroState =
-                {
-                    CurrentHP = 4,
-                    MaxHP = 4,
-                    MeleeAttack = 3,
-                    SpellAmount = 2,
-                    Price = 50,
-                    Level = 1
-                }
-            };
-
+            Debug.Log("new Stats");
+            
+            var progress =  new PlayerProgress(initialLevel: PortArea);
             progress.HeroState.ResetHP();
 
             return progress;

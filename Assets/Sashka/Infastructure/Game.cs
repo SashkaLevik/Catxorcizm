@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Sashka.Infastructure;
+using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {

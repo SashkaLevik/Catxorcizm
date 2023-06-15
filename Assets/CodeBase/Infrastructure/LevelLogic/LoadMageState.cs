@@ -1,20 +1,22 @@
-﻿namespace Assets.Sashka.Infastructure
+﻿using CodeBase.Infrastructure.State;
+
+namespace CodeBase.Infrastructure.LevelLogic
 {
     public class LoadMageState : IState
     {
         private const string MageArea = "MageArea";
         private GameStateMachine gameStateMachine;
-        private ScenLoader _scenLoader;
+        private SceneLoader _sceneLoader;
 
-        public LoadMageState(GameStateMachine gameStateMachine, ScenLoader scenLoader)
+        public LoadMageState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
         {
             this.gameStateMachine = gameStateMachine;
-            this._scenLoader = scenLoader;
+            this._sceneLoader = sceneLoader;
         }
 
         public void Enter()
         {
-            _scenLoader.Load(MageArea);
+            _sceneLoader.Load(MageArea);
         }
 
         public void Exit()

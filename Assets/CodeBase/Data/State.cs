@@ -12,5 +12,15 @@ namespace CodeBase.Data
         public int Price;
         public int Level;
         public void ResetHP() => CurrentHP = MaxHP;
+
+        public State()
+        {
+            CurrentHP = 4;
+            MaxHP = 4;
+            MeleeAttack = 3;
+            SpellAmount = 2;
+            Price = 50;
+            Level = 1;
+        }
     }
 }

@@ -1,20 +1,22 @@
-﻿namespace Assets.Sashka.Infastructure
+﻿using CodeBase.Infrastructure.State;
+
+namespace CodeBase.Infrastructure.LevelLogic
 {
     public class LoadMarketState : IState
     {
         private const string MarketArea = "MarketArea";
         private GameStateMachine gameStateMachine;
-        private ScenLoader _scenLoader;
+        private SceneLoader _sceneLoader;
 
-        public LoadMarketState(GameStateMachine gameStateMachine, ScenLoader scenLoader)
+        public LoadMarketState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
         {
             this.gameStateMachine = gameStateMachine;
-            this._scenLoader = scenLoader;
+            this._sceneLoader = sceneLoader;
         }
 
         public void Enter()
         {
-            _scenLoader.Load(MarketArea);
+            _sceneLoader.Load(MarketArea);
         }
 
         public void Exit()

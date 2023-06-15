@@ -1,14 +1,8 @@
-﻿using Assets.Sashka.Infastructure.Audio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Assets.Sashka.Infastructure.UI
+namespace CodeBase.Infrastructure.UI
 {
     public class MenuScreen : MonoBehaviour
     {

@@ -11,6 +11,8 @@ namespace CodeBase.Tower
 {
     public class TowerSpawner : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _sprite;
+        
         private IGameFactory _factory;
         private IUIFactory _uIFactory;
         private ShopWindow _shopWindow;
@@ -30,6 +32,7 @@ namespace CodeBase.Tower
         public void IsCreateTower()
         {
             _createTower = !_createTower;
+            _sprite.enabled = !_sprite.enabled;
             ShiftTower?.Invoke(_createTower);
         }
 
@@ -52,6 +55,7 @@ namespace CodeBase.Tower
         {
             Spawner(data.TowerTypeID, transform);
             _createTower = true;
+            _sprite.enabled = false;
             ShiftTower?.Invoke(_createTower);
         }
 

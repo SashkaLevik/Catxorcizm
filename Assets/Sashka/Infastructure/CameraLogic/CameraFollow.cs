@@ -1,8 +1,8 @@
-using Assets.Sashka.Infastructure.UI;
 using Assets.Sashka.Scripts.Enemyes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CodeBase.Infrastructure.UI;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.CameraLogic

@@ -1,18 +1,21 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.Service.StaticData;
-using CodeBase.Tower;
 using CodeBase.UI.Service.Factory;
 using CodeBase.UI.Service.Windows;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
     public class BootstrapState : IState
     {
-        private const string Initial = "Initial";
+        private const string Initial = "MyInitial";
+        private const string MenuScene = "MenuScene";
+        
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
@@ -63,8 +66,11 @@ namespace CodeBase.Infrastructure.State
             _services.RegisterSingle(staticData);
         }
 
-        private void EnterLoadLevel() =>
-            _stateMachine.Enter<LoadProgressState>();
+        private void EnterLoadLevel()
+        {
+            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
+            //_stateMachine.Enter<LoadProgressState>();
+        }
 
         // private static IInputService InputService()
         // {

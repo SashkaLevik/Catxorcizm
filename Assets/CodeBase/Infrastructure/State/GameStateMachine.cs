@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Service.Factory;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -18,10 +20,19 @@ namespace CodeBase.Infrastructure.State
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain,
-                    services.Single<IGameFactory>(), services.Single<IUIFactory>(), services.Single<IPersistentProgressService>()),
-                [typeof(LoadProgressState)] = new LoadProgressState(this,
+                [typeof(LoadMenuState)] = new LoadMenuState(this, sceneLoader, loadingCurtain),
+
+                [typeof(LoadProgressState)] = new LoadProgressState(this, 
                     services.Single<IPersistentProgressService>(),services.Single<ISaveLoadService>()),
+                
+                [typeof(LoadPortState)] = new LoadPortState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(), 
+                    services.Single<IUIFactory>(), services.Single<IPersistentProgressService>()),
+                
+                
+                [typeof(LoadMarketState)] = new LoadMarketState(this, sceneLoader),
+                [typeof(LoadMageState)] = new LoadMageState(this, sceneLoader),
+                [typeof(LoadAcademyState)] = new LoadAcademyState(this, sceneLoader),
+
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }

@@ -1,18 +1,16 @@
-﻿using Assets.Sashka.Infastructure.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CodeBase.Infrastructure.State;
+using CodeBase.Infrastructure.UI;
 using UnityEngine;
 
-namespace Assets.Sashka.Infastructure
+namespace CodeBase.Infrastructure.LevelLogic
 {
     class LevelBootstrapper : MonoBehaviour, ICoroutineRunner
     {
-        public Loading Curtain;
+        public LoadingCurtain Curtain;
 
         [SerializeField] private LevelScreen _levelScreen;
+        
+        private const string PortArea = "PortArea";
         private Game _game;
 
         private void Awake()
@@ -41,22 +39,23 @@ namespace Assets.Sashka.Infastructure
 
         private void OnAcademyLoaded()
         {
-            _game._stateMachine.Enter<LoadAcademyState>();
+            _game.StateMachine.Enter<LoadAcademyState>();
         }
 
         private void OnMageLoaded()
         {
-            _game._stateMachine.Enter<LoadMageState>();
+            _game.StateMachine.Enter<LoadMageState>();
         }
 
         private void OnMarketLoaded()
         {
-            _game._stateMachine.Enter<LoadMarketState>();
+            _game.StateMachine.Enter<LoadMarketState>();
         }
 
         private void OnPortAreaLoad()
         {
-            _game._stateMachine.Enter<LoadPortState>();
+            _game.StateMachine.Enter<LoadPortState, string>(PortArea);
+            _game.StateMachine.Enter<LoadProgressState>();
         }
     }
 }

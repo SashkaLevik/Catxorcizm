@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using CodeBase.Infrastructure.LevelLogic;
+using Sashka.Infastructure;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
@@ -29,7 +31,7 @@ namespace Assets.Sashka.Infastructure
         private void LoadMenu()
         {
             //_curtain.Hide();
-            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
+            //_stateMachine.Enter<LoadMenuState, string>(MenuScene);
         }
 
 

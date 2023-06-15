@@ -1,4 +1,8 @@
-﻿using CodeBase.Data;
+﻿using System;
+using CodeBase.Data;
+using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Tower;
 using UnityEngine;
@@ -10,6 +14,11 @@ namespace CodeBase.Player
     {
         private State _state;
         public event UnityAction HealthChanged;
+
+        private void Awake()
+        {
+            IPersistentProgressService progress = AllServices.Container.Single<IPersistentProgressService>();
+        }
 
         public float Current
         {
@@ -33,8 +42,8 @@ namespace CodeBase.Player
 
         public void LoadProgress(PlayerProgress progress)
         {
+           Debug.Log("загрузить данные Жизней");
             _state = progress.HeroState;
-            Debug.Log("загрузить данные Жизней");
         }
 
         public void UpdateProgress(PlayerProgress progress)

@@ -1,18 +1,12 @@
-﻿using Assets.Sashka.Infastructure.Audio;
-using Assets.Sashka.Scripts.Enemyes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assets.Sashka.Scripts.Enemyes;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Assets.Sashka.Infastructure.UI
+namespace CodeBase.Infrastructure.UI
 {
-    public class GameScreen : MonoBehaviour, ICoroutineRunner
+    public class GameScreen : MonoBehaviour
     {
         [SerializeField] private Button _nextWave;
         [SerializeField] private Button _levelComplete;

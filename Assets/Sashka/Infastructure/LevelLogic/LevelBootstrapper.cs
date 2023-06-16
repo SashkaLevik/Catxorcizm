@@ -1,4 +1,5 @@
-﻿using Assets.Sashka.Infastructure.UI;
+﻿using Assets.Sashka.Infastructure.Services;
+using Assets.Sashka.Infastructure.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +9,24 @@ using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {
-    class LevelBootstrapper : MonoBehaviour, ICoroutineRunner
+    class LevelBootstrapper : MonoBehaviour//, ICoroutineRunner
     {
+        private const string PortArea = "PortArea";
+        private const string MarketArea = "MarketArea";
+        private const string MageArea = "MageArea";
+        private const string Academy = "Academy";
         public Loading Curtain;
 
         [SerializeField] private LevelScreen _levelScreen;
-        private Game _game;
+       // private Game _game;
+        private IGameStateMachine _stateMachine;
 
         private void Awake()
         {
-            _game = new Game(this, Curtain);
+            _stateMachine = AllServices.Container.Single<IGameStateMachine>();
+            //_game = new Game(this, Curtain);
 
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
         }
 
         private void OnEnable()
@@ -41,22 +48,22 @@ namespace Assets.Sashka.Infastructure
 
         private void OnAcademyLoaded()
         {
-            _game._stateMachine.Enter<LoadAcademyState>();
+            _stateMachine.Enter<LoadMenuState, string>(Academy);
         }
 
         private void OnMageLoaded()
         {
-            _game._stateMachine.Enter<LoadMageState>();
+            _stateMachine.Enter<LoadMenuState, string>(MageArea);
         }
 
         private void OnMarketLoaded()
         {
-            _game._stateMachine.Enter<LoadMarketState>();
+            _stateMachine.Enter<LoadMenuState, string>(MarketArea);
         }
 
         private void OnPortAreaLoad()
         {
-            _game._stateMachine.Enter<LoadPortState>();
+            _stateMachine.Enter<LoadMenuState, string>(PortArea);
         }
     }
 }

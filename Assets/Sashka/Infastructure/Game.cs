@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Sashka.Infastructure.Services;
+using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {
@@ -8,7 +9,7 @@ namespace Assets.Sashka.Infastructure
 
         public Game(ICoroutineRunner coroutineRunner, Loading curtain)
         {
-            _stateMachine = new GameStateMachine(new ScenLoader(coroutineRunner), curtain);
+            _stateMachine = new GameStateMachine(new ScenLoader(coroutineRunner), curtain, AllServices.Container );
         }        
     }
 }

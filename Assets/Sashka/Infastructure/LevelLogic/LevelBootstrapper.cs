@@ -9,24 +9,22 @@ using UnityEngine;
 
 namespace Assets.Sashka.Infastructure
 {
-    class LevelBootstrapper : MonoBehaviour//, ICoroutineRunner
+    class LevelBootstrapper : MonoBehaviour
     {
         private const string PortArea = "PortArea";
         private const string MarketArea = "MarketArea";
         private const string MageArea = "MageArea";
         private const string Academy = "Academy";
+
         public Loading Curtain;
 
         [SerializeField] private LevelScreen _levelScreen;
-       // private Game _game;
+
         private IGameStateMachine _stateMachine;
 
         private void Awake()
         {
             _stateMachine = AllServices.Container.Single<IGameStateMachine>();
-            //_game = new Game(this, Curtain);
-
-            //DontDestroyOnLoad(this);
         }
 
         private void OnEnable()

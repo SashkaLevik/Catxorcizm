@@ -1,12 +1,14 @@
 ﻿using System;
-
+using UnityEngine.SceneManagement;
+using UnityEngine;
 namespace Assets.Sashka.Infastructure
 {
-    public class LoadMenuState : IPayLoadedState<string>, IState
+    public class LoadMenuState : MonoBehaviour, IPayLoadedState<string>, IState
     {
         private readonly GameStateMachine _gameStateMachine;
         private readonly ScenLoader _scenLoader;
         private readonly Loading _curtain;
+        
         public LoadMenuState(GameStateMachine gameStateMachine, ScenLoader scenLoader, Loading curtain)
         {
             _gameStateMachine = gameStateMachine;
@@ -20,10 +22,15 @@ namespace Assets.Sashka.Infastructure
             _scenLoader.Load(sceneName, OnLoaded);
         }
                     
-
         private void OnLoaded()
         {
-            _gameStateMachine.Enter<GameLoopState>();
+            if (GetSceneIndex() == 1)
+            {
+                _gameStateMachine.Enter<GameLoopState>();
+                Debug.Log("EnterLoop");
+            }
+            else
+                Debug.Log("LoadProgres");
         }
 
         public void Exit()
@@ -35,6 +42,10 @@ namespace Assets.Sashka.Infastructure
         {
             //_curtain.Show();
             //_scenLoader.Load(MenuScene);
+        }
+        private int GetSceneIndex()
+        {
+            return SceneManager.GetActiveScene().buildIndex;
         }
     }
 }

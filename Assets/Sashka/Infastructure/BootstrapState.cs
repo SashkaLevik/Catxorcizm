@@ -32,8 +32,6 @@ namespace Assets.Sashka.Infastructure
             _stateMachine.Enter<LoadMenuState, string>(MenuScene);
         }
 
-
-
         private void RegisterServices()
         {
             _services.RgisterSingle<IGameStateMachine>(_stateMachine);

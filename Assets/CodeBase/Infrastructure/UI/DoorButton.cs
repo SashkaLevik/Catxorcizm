@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure.UI
 {
@@ -11,6 +12,6 @@ namespace CodeBase.Infrastructure.UI
             => _open.Play();
 
         public void CloseDoor()
-            => _close.Play();
+            => _close.Play();       
     }
 }

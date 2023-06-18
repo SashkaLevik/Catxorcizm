@@ -1,23 +1,27 @@
-﻿using CodeBase.Infrastructure.State;
+﻿using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.State;
 using CodeBase.Infrastructure.UI;
+using CodeBase.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
-    class LevelBootstrapper : MonoBehaviour, ICoroutineRunner
+    class LevelBootstrapper : MonoBehaviour
     {
-        public LoadingCurtain Curtain;
-
         [SerializeField] private LevelScreen _levelScreen;
+        [SerializeField] private ButtonLevel buttonLevel;
+        
+        public LoadingCurtain Curtain;
         
         private const string PortArea = "PortArea";
-        private Game _game;
+        private const string MarketArea = "MarketArea";
+        private const string MageArea = "MageArea";
+        private const string Academy = "Academy";
+        private IGameStateMachine _stateMachine;
 
         private void Awake()
         {
-            _game = new Game(this, Curtain);
-
-            DontDestroyOnLoad(this);
+            _stateMachine = AllServices.Container.Single<IGameStateMachine>();
         }
 
         private void OnEnable()
@@ -35,27 +39,27 @@ namespace CodeBase.Infrastructure.LevelLogic
             _levelScreen.PortLoaded -= OnPortAreaLoad;
             _levelScreen.MageLoaded -= OnMageLoaded;
             _levelScreen.AcademyLoaded -= OnAcademyLoaded;
-        }        
+        }
 
         private void OnAcademyLoaded()
         {
-            _game.StateMachine.Enter<LoadAcademyState>();
+            _stateMachine.Enter<LoadMenuState, string>(Academy);
         }
 
         private void OnMageLoaded()
         {
-            _game.StateMachine.Enter<LoadMageState>();
+            _stateMachine.Enter<LoadMenuState, string>(MageArea);
         }
 
         private void OnMarketLoaded()
         {
-            _game.StateMachine.Enter<LoadMarketState>();
+            _stateMachine.Enter<LoadMenuState, string>(MarketArea);
         }
 
         private void OnPortAreaLoad()
         {
-            _game.StateMachine.Enter<LoadPortState, string>(PortArea);
-            _game.StateMachine.Enter<LoadProgressState>();
+            _stateMachine.Enter<LoadMenuState, string>(PortArea);
+            _stateMachine.Enter<LoadProgressState>();
         }
     }
 }

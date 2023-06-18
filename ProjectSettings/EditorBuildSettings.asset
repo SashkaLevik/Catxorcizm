@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MyScenes/MenuScene.unity
     guid: 419220dee632d8540829c3b0e2921e38
   - enabled: 1
-    path: Assets/Scenes/MyScenes/MarketArea.unity
-    guid: 7eed4679cca84dd4d8a3d47210dda571
-  - enabled: 1
     path: Assets/Scenes/MyScenes/PortArea.unity
     guid: 277fc45d730a9b4479cdb0cf8a86a88a
+  - enabled: 1
+    path: Assets/Scenes/MyScenes/MarketArea.unity
+    guid: 7eed4679cca84dd4d8a3d47210dda571
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

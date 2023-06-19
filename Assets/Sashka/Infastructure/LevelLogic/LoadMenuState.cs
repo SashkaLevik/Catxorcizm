@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 namespace Assets.Sashka.Infastructure
 {
-    public class LoadMenuState : MonoBehaviour, IPayLoadedState<string>, IState
+    public class LoadMenuState : IPayLoadedState<string>, IState
     {
         private readonly GameStateMachine _gameStateMachine;
         private readonly ScenLoader _scenLoader;
@@ -24,13 +24,7 @@ namespace Assets.Sashka.Infastructure
                     
         private void OnLoaded()
         {
-            if (GetSceneIndex() == 1)
-            {
-                _gameStateMachine.Enter<GameLoopState>();
-                Debug.Log("EnterLoop");
-            }
-            else
-                Debug.Log("LoadProgres");
+            _gameStateMachine.Enter<GameLoopState>();
         }
 
         public void Exit()

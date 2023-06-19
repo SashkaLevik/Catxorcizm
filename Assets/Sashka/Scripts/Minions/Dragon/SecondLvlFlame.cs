@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Minions.Dragon
 {
-    public class SecondLevelFlame : DragonFlame
+    public class SecondLvlFlame : DragonFlame
     {
         [SerializeField] private AudioSource _flameSound;
 

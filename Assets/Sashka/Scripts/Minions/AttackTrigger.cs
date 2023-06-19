@@ -1,6 +1,7 @@
 using System;
 using Assets.Sashka.Scripts.Enemyes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Minions
 {

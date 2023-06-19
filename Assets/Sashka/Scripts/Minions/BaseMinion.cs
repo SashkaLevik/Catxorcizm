@@ -9,16 +9,9 @@ namespace Assets.Sashka.Scripts.Minions
     {        
         [SerializeField] protected Transform _firePos;
         [SerializeField] protected BaseEnemy _enemy;
-        [SerializeField] protected float _speed;
-        [SerializeField] protected int _fireDelay;        
-
-        private void Update()
-            => Move();
+        [SerializeField] protected int _fireDelay;                
 
         public void Init(BaseEnemy enemy)
-            => _enemy = enemy;                
-
-        private void Move()
-            => transform.position += Vector3.right * _speed * Time.deltaTime;
+            => _enemy = enemy;                        
     }
 }

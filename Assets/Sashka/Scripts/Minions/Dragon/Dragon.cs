@@ -26,7 +26,7 @@ namespace Assets.Sashka.Scripts.Minions.Dragon
         {
             if (collision.TryGetComponent(out _enemy)) { StartAttack(); }
         }
-
+        
         public void StartAttack()
             => StartCoroutine(Shoot());
 

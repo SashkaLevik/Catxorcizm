@@ -1,23 +1,26 @@
-﻿using CodeBase.Infrastructure.State;
+﻿using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.State;
 using CodeBase.Infrastructure.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
-    class LevelBootstrapper : MonoBehaviour, ICoroutineRunner
+    class LevelBootstrapper : MonoBehaviour
     {
-        public LoadingCurtain Curtain;
-
-        [SerializeField] private LevelScreen _levelScreen;
         
         private const string PortArea = "PortArea";
-        private Game _game;
+        private const string Academy = "Academy";
+        private const string MageArea = "MageArea";
+        private const string MarketArea = "MarketArea";
+
+        [SerializeField] private LevelScreen _levelScreen;
+
+        public LoadingCurtain Curtain;
+        private IGameStateMachine _stateMachine;
 
         private void Awake()
         {
-            _game = new Game(this, Curtain);
-
-            DontDestroyOnLoad(this);
+            _stateMachine = AllServices.Container.Single<IGameStateMachine>();
         }
 
         private void OnEnable()
@@ -39,23 +42,23 @@ namespace CodeBase.Infrastructure.LevelLogic
 
         private void OnAcademyLoaded()
         {
-            _game.StateMachine.Enter<LoadAcademyState>();
+            _stateMachine.Enter<LoadMenuState, string>(Academy);
         }
 
         private void OnMageLoaded()
         {
-            _game.StateMachine.Enter<LoadMageState>();
+            _stateMachine.Enter<LoadMenuState, string>(MageArea);
         }
 
         private void OnMarketLoaded()
         {
-            _game.StateMachine.Enter<LoadMarketState>();
+            _stateMachine.Enter<LoadMenuState, string>(MarketArea);
         }
 
         private void OnPortAreaLoad()
         {
-            _game.StateMachine.Enter<LoadPortState, string>(PortArea);
-            _game.StateMachine.Enter<LoadProgressState>();
+            _stateMachine.Enter<LoadMenuState, string>(PortArea);
+            _stateMachine.Enter<LoadProgressState>();
         }
     }
 }

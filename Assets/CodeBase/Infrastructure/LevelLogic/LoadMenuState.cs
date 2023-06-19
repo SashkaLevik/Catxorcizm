@@ -1,10 +1,10 @@
 ﻿using CodeBase.Infrastructure.State;
-using GameLoopState = CodeBase.Infrastructure.State.GameLoopState;
-using GameStateMachine = CodeBase.Infrastructure.State.GameStateMachine;
-
+//using GameLoopState = CodeBase.Infrastructure.State.GameLoopState;
+//using GameStateMachine = CodeBase.Infrastructure.State.GameStateMachine;
+//using CodeBase.Infrastructure.State;
 namespace CodeBase.Infrastructure.LevelLogic
 {
-    public class LoadMenuState : IPayloadedState<string>
+    public class LoadMenuState : IPayloadedState<string>, IState
     {
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;

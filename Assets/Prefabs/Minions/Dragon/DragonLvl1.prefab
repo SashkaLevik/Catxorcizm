@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 231095439424118579}
   - component: {fileID: 6316949360399762491}
   m_Layer: 6
-  m_Name: Dragon
+  m_Name: DragonLvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,6 @@ MonoBehaviour:
   _enemy: {fileID: 0}
   _speed: 0
   _fireDelay: 4
-  _flameSound: {fileID: 6316949360399762491}
   _flame: {fileID: 9044344668054973333, guid: 618eabd0565bada4298563e2bf1431a4, type: 3}
 --- !u!114 &8712746897088750137
 MonoBehaviour:

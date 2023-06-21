@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assets.Sashka.Infastructure.Services
 {
-    interface IService
+    public interface IService
     {
     }
 }

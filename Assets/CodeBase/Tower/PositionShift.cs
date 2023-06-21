@@ -1,12 +1,8 @@
-using System;
 using System.Collections;
 using Assets.Sashka.Scripts.Minions;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
-using CodeBase.UI.Service.Windows;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace CodeBase.Tower
 {
@@ -17,6 +13,8 @@ namespace CodeBase.Tower
         private Camera _camera;
         private Vector3 _offset;
         private Transform _currentPosition;
+        private TowerSpawner _selectSpawner;
+        private TowerSpawner _currentSpawner;
         private bool _dragTrigger = true;
         private UpgradeWindow _panel;
         private TowerTypeID _typeID;
@@ -25,6 +23,8 @@ namespace CodeBase.Tower
         private void Start()
         {
             _currentPosition = transform.parent;
+            _selectSpawner = _currentPosition.GetComponent<TowerSpawner>();
+            _currentSpawner = _selectSpawner;
             _camera = Camera.main;
         }
 
@@ -41,16 +41,13 @@ namespace CodeBase.Tower
             
             RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
 
+            Debug.Log(hitInfo + " ap");
+
             if (hitInfo.collider.gameObject.TryGetComponent(out MinionHealth minion))
             {
-                print(hitInfo + " взял коллайдер");
-                //_offset = gameObject.transform.position - GetMouseWorldPosition();
+                print(hitInfo.collider.gameObject + " взял коллайдер");
                 transform.GetComponent<Collider2D>().enabled = false;
                 StartCoroutine(DragTrigger());
-            }
-            else
-            {
-                print("нет");
             }
         }
 
@@ -92,8 +89,6 @@ namespace CodeBase.Tower
         
                 foreach (RaycastHit2D hit2D in hitInfo)
                 {
-                    Debug.Log(hit2D.collider + " отпустил");
-        
                     if (hit2D.collider.TryGetComponent(out TowerSpawner spawner))
                     {
                         if (!spawner.CreateTower)
@@ -118,6 +113,7 @@ namespace CodeBase.Tower
                 ReturnToCurrentPosition();
                 _panel.gameObject.SetActive(true);
                 _panel.UpgradeData(_typeID);
+                _panel.ShowMinions(_typeID);
                 _panel.MaxLevelMinions();
             }
         }
@@ -130,12 +126,17 @@ namespace CodeBase.Tower
 
         private void NewPosition(RaycastHit2D hitInfo)
         {
+            _currentSpawner = _currentPosition.GetComponent<TowerSpawner>();
             transform.parent = hitInfo.collider.transform;
-            _currentPosition.GetComponent<TowerSpawner>().IsCreateTower();
+            _selectSpawner.IsCreateTower();
 
             _currentPosition = transform.parent;
             ReturnToCurrentPosition();
-            transform.parent.GetComponent<TowerSpawner>().IsCreateTower();
+            _selectSpawner = _currentPosition.GetComponent<TowerSpawner>();
+            _selectSpawner.IsCreateTower();
+            _selectSpawner.ChildMinion(_currentSpawner);
+            _currentSpawner.ObjectOffset();
+            
         }
     }
 }

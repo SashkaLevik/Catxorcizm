@@ -1,21 +1,22 @@
 ﻿using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.State;
 using CodeBase.Infrastructure.UI;
+using CodeBase.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
     class LevelBootstrapper : MonoBehaviour
     {
+        [SerializeField] private LevelScreen _levelScreen;
+        [SerializeField] private ButtonLevel buttonLevel;
+        
+        public LoadingCurtain Curtain;
         
         private const string PortArea = "PortArea";
-        private const string Academy = "Academy";
-        private const string MageArea = "MageArea";
         private const string MarketArea = "MarketArea";
-
-        [SerializeField] private LevelScreen _levelScreen;
-
-        public LoadingCurtain Curtain;
+        private const string MageArea = "MageArea";
+        private const string Academy = "Academy";
         private IGameStateMachine _stateMachine;
 
         private void Awake()
@@ -38,7 +39,7 @@ namespace CodeBase.Infrastructure.LevelLogic
             _levelScreen.PortLoaded -= OnPortAreaLoad;
             _levelScreen.MageLoaded -= OnMageLoaded;
             _levelScreen.AcademyLoaded -= OnAcademyLoaded;
-        }        
+        }
 
         private void OnAcademyLoaded()
         {

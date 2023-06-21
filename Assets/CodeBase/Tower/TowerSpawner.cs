@@ -22,6 +22,7 @@ namespace CodeBase.Tower
         private string _id;
         public bool CreateTower => _createTower;
         public event UnityAction<bool> ShiftTower;
+        public event UnityAction<TowerSpawner> CreateMinion;
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -72,6 +73,20 @@ namespace CodeBase.Tower
         {
             if (_currentTower != null)
                 Destroy(_currentTower);
+        }
+
+        public void ObjectOffset()
+        {
+            if (!_createTower)
+            {
+                _currentTower = null;
+            }
+        }
+
+        public void ChildMinion(TowerSpawner position)
+        {
+            _currentTower = position._currentTower;
+            CreateMinion?.Invoke(this);
         }
     }
 }

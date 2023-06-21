@@ -2000,8 +2000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5557087124ba8d41bb6c5d7e0422cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Curtain: {fileID: 4279604049646536900, guid: e191eb485f319cc40845a563e4eca6e0, type: 3}
   _levelScreen: {fileID: 227046238}
+  buttonLevel: {fileID: 0}
+  Curtain: {fileID: 4279604049646536900, guid: e191eb485f319cc40845a563e4eca6e0, type: 3}
 --- !u!1 &858777690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,8 +3756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5557087124ba8d41bb6c5d7e0422cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Curtain: {fileID: 0}
   _levelScreen: {fileID: 227046238}
+  buttonLevel: {fileID: 0}
+  Curtain: {fileID: 0}
 --- !u!4 &1583364985
 Transform:
   m_ObjectHideFlags: 0

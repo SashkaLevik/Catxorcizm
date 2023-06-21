@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4002402099776450795}
   - component: {fileID: 4002402099776450788}
   - component: {fileID: 4002402099776450789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.5721145, y: -0.22921205}
+  m_Offset: {x: 5.306291, y: -0.22921205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.330327, y: 0.63280416}
+  m_Size: {x: 8.861974, y: 0.63280416}
   m_EdgeRadius: 0
 --- !u!114 &4002402099776450789
 MonoBehaviour:
@@ -197,7 +197,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34351966, y: -0.1747165}
+  m_Offset: {x: 0.24198163, y: 0.016634464}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -208,7 +208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2251916, y: 0.822885}
+  m_Size: {x: 1.1470482, y: 1.371979}
   m_EdgeRadius: 0
 --- !u!114 &4002402100498963800
 MonoBehaviour:
@@ -223,11 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePos: {fileID: 4002402101427969794}
-  _flame: {fileID: 2596393433241041113, guid: 6f88a7e08d458a64db0d5f6f31df83e8, type: 3}
   _enemy: {fileID: 0}
   _speed: 0.5
   _fireDelay: 2
-  _enemies: []
 --- !u!114 &4462958961420548042
 MonoBehaviour:
   m_ObjectHideFlags: 0

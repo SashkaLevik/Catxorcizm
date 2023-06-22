@@ -17,6 +17,9 @@ namespace CodeBase.Infrastructure
 
         private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
         {
+            yield return
+                new WaitForEndOfFrame();
+            
             if (SceneManager.GetActiveScene().name == nextScene)
             {
                 onLoaded?.Invoke();

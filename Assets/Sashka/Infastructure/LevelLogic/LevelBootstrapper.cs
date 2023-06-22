@@ -1,5 +1,5 @@
 ﻿using Assets.Sashka.Infastructure.Services;
-using Assets.Sashka.Infastructure.UI;
+using CodeBase.Infrastructure.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

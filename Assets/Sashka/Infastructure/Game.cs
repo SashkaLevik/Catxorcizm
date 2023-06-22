@@ -1,4 +1,5 @@
 ﻿using Assets.Sashka.Infastructure.Services;
+using Sashka.Infastructure;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure

@@ -7,10 +7,20 @@ namespace CodeBase.Data
     {
         public float CurrentHP;
         public float MaxHP;
-        public int MeleeAttack = 3;
-        public int SpellAmount = 2;
+        public int MeleeAttack;
+        public int SpellAmount;
         public int Price;
-        public int Level = 1;
+        public int Level;
         public void ResetHP() => CurrentHP = MaxHP;
+
+        public State()
+        {
+            CurrentHP = 4;
+            MaxHP = 4;
+            MeleeAttack = 3;
+            SpellAmount = 2;
+            Price = 50;
+            Level = 1;
+        }
     }
 }

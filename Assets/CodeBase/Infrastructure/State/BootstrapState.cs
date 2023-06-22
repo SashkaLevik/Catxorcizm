@@ -1,18 +1,21 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.Service.StaticData;
-using CodeBase.Tower;
 using CodeBase.UI.Service.Factory;
 using CodeBase.UI.Service.Windows;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
     public class BootstrapState : IState
     {
-        private const string Initial = "Initial";
-        private const string Main = "Main";
+        private const string Initial = "MyInitial";
+        private const string MenuScene = "MenuScene";
+        
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly AllServices _services;
@@ -40,6 +43,7 @@ namespace CodeBase.Infrastructure.State
             //_services.RegisterSingle<IInputService>(InputService());
             RegisterStaticData();
             
+            _services.RegisterSingle<IGameStateMachine>(_stateMachine);
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
@@ -51,6 +55,9 @@ namespace CodeBase.Infrastructure.State
                 _services.Single<IAssetProvider>(),
                 _services.Single<IStaticDataService>(),
                 _services.Single<IWindowService>()));
+            
+            _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), 
+                _services.Single<IGameFactory>()));
         }
 
         private void RegisterStaticData()
@@ -60,8 +67,11 @@ namespace CodeBase.Infrastructure.State
             _services.RegisterSingle(staticData);
         }
 
-        private void EnterLoadLevel() =>
-            _stateMachine.Enter<LoadLevelState, string>(Main);
+        private void EnterLoadLevel()
+        {
+            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
+            //_stateMachine.Enter<LoadProgressState>();
+        }
 
         // private static IInputService InputService()
         // {

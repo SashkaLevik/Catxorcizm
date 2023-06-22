@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
+using Assets.Sashka.Infastructure;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Sashka.Infastructure
+namespace Sashka.Infastructure
 {
     public class ScenLoader
     {

@@ -1,4 +1,5 @@
 ﻿using Assets.Sashka.Infastructure.Services;
+using Sashka.Infastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,10 +20,10 @@ namespace Assets.Sashka.Infastructure
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, scenLoader, services),
                 [typeof(LoadMenuState)] = new LoadMenuState(this, scenLoader, curtain),
-                [typeof(LoadMarketState)] = new LoadMarketState(this, scenLoader),
-                //[typeof(LoadPortState)] = new LoadPortState(this, scenLoader),
-                [typeof(LoadMageState)] = new LoadMageState(this, scenLoader),
-                [typeof(LoadAcademyState)] = new LoadAcademyState(this, scenLoader),
+                //[typeof(LoadMarketState)] = new LoadMarketState(this, scenLoader),
+                ////[typeof(LoadPortState)] = new LoadPortState(this, scenLoader),
+                //[typeof(LoadMageState)] = new LoadMageState(this, scenLoader),
+                //[typeof(LoadAcademyState)] = new LoadAcademyState(this, scenLoader),
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }

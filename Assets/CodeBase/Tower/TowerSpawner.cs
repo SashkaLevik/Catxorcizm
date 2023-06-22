@@ -11,6 +11,8 @@ namespace CodeBase.Tower
 {
     public class TowerSpawner : MonoBehaviour
     {
+        [SerializeField] private SpriteRenderer _sprite;
+        
         private IGameFactory _factory;
         private IUIFactory _uIFactory;
         private ShopWindow _shopWindow;
@@ -20,6 +22,7 @@ namespace CodeBase.Tower
         private string _id;
         public bool CreateTower => _createTower;
         public event UnityAction<bool> ShiftTower;
+        public event UnityAction<TowerSpawner> CreateMinion;
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -30,6 +33,7 @@ namespace CodeBase.Tower
         public void IsCreateTower()
         {
             _createTower = !_createTower;
+            _sprite.enabled = !_sprite.enabled;
             ShiftTower?.Invoke(_createTower);
         }
 
@@ -52,6 +56,7 @@ namespace CodeBase.Tower
         {
             Spawner(data.TowerTypeID, transform);
             _createTower = true;
+            _sprite.enabled = false;
             ShiftTower?.Invoke(_createTower);
         }
 
@@ -68,6 +73,20 @@ namespace CodeBase.Tower
         {
             if (_currentTower != null)
                 Destroy(_currentTower);
+        }
+
+        public void ObjectOffset()
+        {
+            if (!_createTower)
+            {
+                _currentTower = null;
+            }
+        }
+
+        public void ChildMinion(TowerSpawner position)
+        {
+            _currentTower = position._currentTower;
+            CreateMinion?.Invoke(this);
         }
     }
 }

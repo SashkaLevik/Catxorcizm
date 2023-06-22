@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Sashka.Infastructure;
+
 namespace Assets.Sashka.Infastructure
 {
     public class LoadMenuState : IPayLoadedState<string>, IState

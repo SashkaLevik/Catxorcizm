@@ -1,15 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CodeBase.Player
 {
     public class Inventory : MonoBehaviour
     {
+        [SerializeField] private List<TowerSpawner> _spawners;
+
         [SerializeField] private List<TowerStaticData> _minions;
         private TowerStaticData _towerStaticData;
         private TowerSpawner _position;
+
+        private void OnEnable()
+        {
+            foreach (TowerSpawner spawner in _spawners)
+            {
+                spawner.CreateMinion += SpawnerOnCreateMinion;
+            }
+        }
+
+        private void OnDisable()
+        {
+            foreach (TowerSpawner spawner in _spawners)
+            {
+                spawner.CreateMinion -= SpawnerOnCreateMinion;
+            }
+        }
 
         public void BuyMinions(TowerStaticData data)
         {
@@ -35,6 +56,11 @@ namespace CodeBase.Player
         }
 
         public void SetSpawnPosition(TowerSpawner position)
+        {
+            _position = position;
+        }
+
+        private void SpawnerOnCreateMinion(TowerSpawner position)
         {
             _position = position;
         }

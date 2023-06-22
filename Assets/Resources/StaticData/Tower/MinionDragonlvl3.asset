@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
+  m_Name: MinionDragonlvl3
+  m_EditorClassIdentifier: 
+  Name: Dragon lvl 3
+  Level: 3
+  CurrentHP: 10
+  MaxHP: 10
+  Damage: 20
+  AttackRange: 8
+  Cooldown: 2.1
+  UIIcon: {fileID: 1354363114, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
+  Price: 220
+  Prefab: {fileID: 3633012848645008126, guid: 447de61407693dd40adff0f887766904, type: 3}
+  TowerTypeID: 5

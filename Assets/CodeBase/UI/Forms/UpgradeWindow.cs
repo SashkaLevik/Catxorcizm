@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Player;
+using CodeBase.UI.Element;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,8 +13,8 @@ namespace CodeBase.UI.Forms
     public class UpgradeWindow : BaseWindow
     {
         [SerializeField] private Button _upgradeButton;
-        [SerializeField] private Button _sellButton;
         [SerializeField] private List<TowerStaticData> _data;
+        [SerializeField] private OpenPanelMinions _panelMinions;
 
         private TowerStaticData _currentData;
         private TowerStaticData _nextUpgrade;
@@ -53,6 +54,17 @@ namespace CodeBase.UI.Forms
             }
         }
 
+        public void ShowMinions(TowerTypeID typeID)
+        {
+            foreach (TowerStaticData staticData in _data)
+            {
+                if (staticData.TowerTypeID == typeID)
+                {
+                    _panelMinions.Show(staticData);
+                }
+            }
+        }
+
         private void Update()
         {
             _currentMoney = _playerMoney.CurrentMoney;
@@ -61,13 +73,11 @@ namespace CodeBase.UI.Forms
         private void OnEnable()
         {
             _upgradeButton.onClick.AddListener(UpdateBuy);
-            _sellButton.onClick.AddListener(SellMinions);
         }
 
         private void OnDisable()
         {
             _upgradeButton.onClick.RemoveListener(UpdateBuy);
-            _sellButton.onClick.RemoveListener(SellMinions);
         }
 
         private void UpdateBuy()
@@ -92,11 +102,6 @@ namespace CodeBase.UI.Forms
                 data.ResetHP();
                 gameObject.SetActive(false);
             }
-        }
-
-        private void SellMinions()
-        {
-            TrySell(_currentData);
         }
 
         private void TrySell(TowerStaticData data)

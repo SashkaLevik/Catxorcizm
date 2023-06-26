@@ -120,7 +120,7 @@ namespace CodeBase.UI.Element
                         _panel.gameObject.SetActive(true);
                         _panel.UpgradeData(_data);
                         _panel.ShowMinions(_data);
-                        _panel.MaxLevelMinions();
+                        _panel.MaxLevelMinions(_data);
                     }
                 }
             }

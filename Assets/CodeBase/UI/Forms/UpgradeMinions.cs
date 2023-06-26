@@ -30,12 +30,9 @@ namespace CodeBase.UI.Forms
             _inventory = inventory;
         }
 
-        public void MaxLevelMinions()
+        public void MaxLevelMinions(TowerStaticData data)
         {
-            if (_currentData.Level == _maxLevel)
-            {
-                _upgradeButton.interactable = false;
-            }
+            _upgradeButton.interactable = data.Level != _maxLevel;
         }
 
         public void UpgradeData(TowerStaticData data)

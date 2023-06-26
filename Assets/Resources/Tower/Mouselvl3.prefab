@@ -85,9 +85,8 @@ GameObject:
   - component: {fileID: 5021543851708523927}
   - component: {fileID: 5021543851708523920}
   - component: {fileID: 5021543851708524011}
-  - component: {fileID: -4459153786969513861}
   - component: {fileID: 9078983873434683624}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Mouselvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePos: {fileID: 5021543853136717770}
   _enemy: {fileID: 0}
-  _speed: 0.5
   _fireDelay: 2
 --- !u!114 &5021543851708524011
 MonoBehaviour:
@@ -242,19 +240,6 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: ef8dcf119098f714e9144dbac448d677, type: 2}
   _minion: {fileID: 0}
---- !u!114 &-4459153786969513861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021543851708523921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
 --- !u!114 &9078983873434683624
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace CodeBase.UI.Forms
 {
-    public class UpgradeWindow : BaseWindow
+    public class UpgradeMinions : BaseWindow
     {
         [SerializeField] private Button _upgradeButton;
         [SerializeField] private List<TowerStaticData> _data;
@@ -38,27 +38,27 @@ namespace CodeBase.UI.Forms
             }
         }
 
-        public void UpgradeData(TowerTypeID typeID)
+        public void UpgradeData(TowerStaticData data)
         {
             foreach (TowerStaticData staticData in _data)
             {
-                if (staticData.TowerTypeID == typeID)
+                if (staticData.TowerTypeID == data.TowerTypeID)
                 {
                     _currentData = staticData;
                 }
 
-                if (staticData.TowerTypeID == typeID+1)
+                if (staticData.TowerTypeID == data.TowerTypeID+1)
                 {
                     _nextUpgrade = staticData;
                 }
             }
         }
 
-        public void ShowMinions(TowerTypeID typeID)
+        public void ShowMinions(TowerStaticData data)
         {
             foreach (TowerStaticData staticData in _data)
             {
-                if (staticData.TowerTypeID == typeID)
+                if (staticData.TowerTypeID == data.TowerTypeID)
                 {
                     _panelMinions.Show(staticData);
                 }
@@ -94,6 +94,7 @@ namespace CodeBase.UI.Forms
 
             if (_currentCostOfGold <= _currentMoney)
             {
+                _inventory.CurrentData(_currentData);
                 _playerMoney.SellMinions(_currentData);
                 _inventory.SellMinions(_currentData);
                 _playerMoney.BuyTower(data);

@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 5531531876064319284}
   - component: {fileID: 1988754796936118708}
   - component: {fileID: 4800342036228460662}
-  - component: {fileID: 6780946238271094920}
   - component: {fileID: 7615954576377614670}
   m_Layer: 0
   m_Name: Dragon2Lvl
@@ -278,7 +277,6 @@ MonoBehaviour:
   _enemy: {fileID: 0}
   _fireDelay: 0
   _flame: {fileID: 3015942767132267414, guid: 10469e8e1b2d7944bbb249ff6b6ee11c, type: 3}
-  _trigger: {fileID: 8847949004730374140}
 --- !u!114 &4800342036228460662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,19 +293,6 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: 258505311b481bf4cb2879869b889b8b, type: 2}
   _minion: {fileID: 0}
---- !u!114 &6780946238271094920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810767956856886537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
 --- !u!114 &7615954576377614670
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,6 +48,12 @@ namespace CodeBase.Infrastructure.Factory
             return hud;
         }
 
+        public GameObject CreateDraggableItem()
+        {
+            var draggableItem = _assets.Instantiate(AssetPath.DraggableItemPath);
+            return draggableItem;
+        }
+
         public GameObject CreatTower(TowerTypeID typeId, Transform parent)
         {
             TowerStaticData towerData = _staticData.ForTower(typeId);

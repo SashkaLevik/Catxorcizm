@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MinionArcherlvl1
   m_EditorClassIdentifier: 
   Name: Archer lvl 1
+  Level: 1
   CurrentHP: 4
   MaxHP: 4
   Damage: 10

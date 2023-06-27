@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6949902245935072816}
   - component: {fileID: 5425180422937602572}
   m_Layer: 0
-  m_Name: MagicWand_19 3
+  m_Name: IronShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03adaef3ad86c9d4590c68cff75dee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _icon: {fileID: -855077143, guid: 81f5405e5b54f0e4187996d510286995, type: 3}
 --- !u!61 &6949902245935072816
 BoxCollider2D:
   m_ObjectHideFlags: 0

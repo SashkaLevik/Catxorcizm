@@ -12,13 +12,10 @@ namespace Assets.Sashka.Infastructure.Tresures
 {
     class DragAndDrop : MonoBehaviour
     {
-        private bool _isCorrectDrop;
-        private bool _isDroped;        
         private Vector3 _startPosition;
         private Vector3 _offset;
         private Camera _camera;
         private Vector3 _mousePosition;
-        private Vector3 _screenPosition;
 
         public Vector3 StartPosition => _startPosition;
 
@@ -27,14 +24,20 @@ namespace Assets.Sashka.Infastructure.Tresures
 
         private void Start()
         {
-            _isDroped = false;
             _startPosition = transform.position;
         }        
 
         private void OnMouseDown()
         {
             _offset = transform.position - GetMousePosition();
-            _isDroped = false;
+
+            var rayOrigin = _camera.transform.position;
+            var rayDirection = GetMousePosition() - rayOrigin;
+
+            RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
+            transform.GetComponent<Collider2D>().enabled = false;
+
+            Debug.Log(hitInfo.collider.name);
         }
            
         private void OnMouseDrag() 
@@ -42,27 +45,23 @@ namespace Assets.Sashka.Infastructure.Tresures
 
         private void OnMouseUp()
         {
-            _isDroped = true;           
-            if(_isCorrectDrop == false) { StartCoroutine(Return()); }
-        }
+            transform.GetComponent<Collider2D>().enabled = true;
 
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            if (_isDroped)
+            var rayOrigin = _camera.transform.position;
+            var rayDirection = GetMousePosition() - rayOrigin;
+
+            RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
+            Debug.Log(hitInfo.collider.name);
+
+            if (hitInfo.collider.gameObject.TryGetComponent(out BaseMinion minion))
             {
-                if (collision.TryGetComponent(out BaseMinion minion))
-                {
-                    Debug.Log(minion);
-                    _isCorrectDrop = true;
-                }                
+                Debug.Log(minion.name);
             }
-        }
-
-        private IEnumerator Return()
-        {
-            yield return new WaitForSeconds(0.2f);
-            transform.position = _startPosition;
-        }
+            else
+            {
+                transform.position = _startPosition;
+            }     
+        }        
 
         private Vector3 GetMousePosition()
         {
@@ -70,12 +69,7 @@ namespace Assets.Sashka.Infastructure.Tresures
             {
                 _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
                 _mousePosition.z = 0;                
-            }
-            else if (Input.touchCount > 0)
-            {
-                _screenPosition = _camera.ScreenToWorldPoint(Input.GetTouch(0).position);
-                _screenPosition.z = 0;
-            }
+            }            
             return _mousePosition;
         }        
     }

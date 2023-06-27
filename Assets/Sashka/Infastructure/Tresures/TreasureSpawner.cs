@@ -20,6 +20,11 @@ namespace Assets.Sashka.Infastructure.Tresures
             _treasures = Resources.LoadAll<Treasure>(Loot).ToList();
         }
 
+        private void Start()
+        {
+            SpawnTreasure();
+        }
+
         public void SpawnTreasure()
         {
             Debug.Log("Treasure");

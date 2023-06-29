@@ -13,32 +13,32 @@ namespace Assets.Sashka.Scripts.Enemyes
     {
         //[SerializeField] private AudioSource[] _dieSounds;
         [SerializeField] private EnemyDieSound _audioController;
-        public EnemyHealth Health;
-        public EnemyAnimator Animator;
+        [SerializeField] private EnemyHealth _health;
+        [SerializeField] private EnemyAnimator _animator;
 
         public GameObject DeathFx;
 
         private void Start()
         {
-            Health.HealthChanged += OnHealthChanged;
+            _health.HealthChanged += OnHealthChanged;
         }
 
         private void OnDestroy()
         {
-            Health.HealthChanged -= OnHealthChanged;
+            _health.HealthChanged -= OnHealthChanged;
         }
 
         private void OnHealthChanged()
         {
-            if (Health.Current <= 0)
+            if (_health.Current <= 0)
                 Die();
         }
 
         private void Die()
         {
             AudioSource dieSound;
-            Health.HealthChanged -= OnHealthChanged;
-            Animator.PlayDeath();
+            _health.HealthChanged -= OnHealthChanged;
+            _animator.PlayDeath();
             dieSound = _audioController.GetRandomSound();
             dieSound.Play();
             GameObject fx = Instantiate(DeathFx, transform.position, Quaternion.identity);

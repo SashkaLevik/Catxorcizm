@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 588084649097341178}
   - component: {fileID: 2288744596184609755}
   - component: {fileID: 9132155047701363131}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 2197629062928183627}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 672818614845609836}
 --- !u!114 &672818614845609836
 MonoBehaviour:
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 5634245118532211387}
-  Health: {fileID: 8232676234197046740}
-  Animator: {fileID: 672818614845609836}
+  _health: {fileID: 8232676234197046740}
+  _animator: {fileID: 672818614845609836}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &8232676234197046740
 MonoBehaviour:

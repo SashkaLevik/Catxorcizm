@@ -28,11 +28,6 @@ namespace CodeBase.Infrastructure.State
                 [typeof(LoadPortState)] = new LoadPortState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(),
                     services.Single<IUIFactory>(), services.Single<IPersistentProgressService>()),
 
-
-                //[typeof(LoadMarketState)] = new LoadMarketState(this, sceneLoader),
-                //[typeof(LoadMageState)] = new LoadMageState(this, sceneLoader),
-                //[typeof(LoadAcademyState)] = new LoadAcademyState(this, sceneLoader),
-
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };
         }

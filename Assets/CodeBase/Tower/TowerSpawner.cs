@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Infrastructure.Factory;
+﻿using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
@@ -18,11 +17,13 @@ namespace CodeBase.Tower
         private ShopWindow _shopWindow;
         private bool _createTower;
         private GameObject _currentTower;
-
+        
         private string _id;
-        public bool CreateTower => _createTower;
-        public event UnityAction<bool> ShiftTower;
+        private TowerStaticData _data;
         public event UnityAction<TowerSpawner> CreateMinion;
+        public bool CreateTower => _createTower;
+        public TowerStaticData Data => _data;
+
 
         public void Construct(IUIFactory uiFactory)
         {
@@ -34,7 +35,6 @@ namespace CodeBase.Tower
         {
             _createTower = !_createTower;
             _sprite.enabled = !_sprite.enabled;
-            ShiftTower?.Invoke(_createTower);
         }
 
         private void Awake()
@@ -55,9 +55,9 @@ namespace CodeBase.Tower
         public void BuyTowerSpawn(TowerStaticData data)
         {
             Spawner(data.TowerTypeID, transform);
+            _data = data;
             _createTower = true;
             _sprite.enabled = false;
-            ShiftTower?.Invoke(_createTower);
         }
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
@@ -65,7 +65,6 @@ namespace CodeBase.Tower
             DestroyMinions();
             
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
-            tower.GetComponent<PositionShift>().Construct(_uIFactory.Upgrade, towerTypeID);
             _currentTower = tower;
         }
 
@@ -80,12 +79,14 @@ namespace CodeBase.Tower
             if (!_createTower)
             {
                 _currentTower = null;
+                _data = null;
             }
         }
 
         public void ChildMinion(TowerSpawner position)
         {
             _currentTower = position._currentTower;
+            _data = position._data;
             CreateMinion?.Invoke(this);
         }
     }

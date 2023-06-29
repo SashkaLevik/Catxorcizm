@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 5021543851708523927}
   - component: {fileID: 5021543851708523920}
   - component: {fileID: 5021543851708524011}
-  - component: {fileID: -4459153786969513861}
   - component: {fileID: 9078983873434683624}
-  m_Layer: 6
+  - component: {fileID: 8548109759738000001}
+  m_Layer: 10
   m_Name: Mouselvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ Transform:
   m_GameObject: {fileID: 5021543851708523921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5021543853136717770}
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 640060313, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
+  m_Sprite: {fileID: 2103238187, guid: bb454c3c67e488740b43a34cbecf3174, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -201,7 +201,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.91, y: 1.81}
+    oldSize: {x: 1.34, y: 1.27}
     newSize: {x: 7.68, y: 7.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -217,14 +217,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021543851708523921}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _missile: {fileID: 0}
   _firePos: {fileID: 5021543853136717770}
   _enemy: {fileID: 0}
-  _speed: 0.5
   _fireDelay: 2
 --- !u!114 &5021543851708524011
 MonoBehaviour:
@@ -242,19 +242,6 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: ef8dcf119098f714e9144dbac448d677, type: 2}
   _minion: {fileID: 0}
---- !u!114 &-4459153786969513861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021543851708523921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
 --- !u!114 &9078983873434683624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +257,26 @@ MonoBehaviour:
   Damage: 0
   AttackRange: 0
   Cooldown: 0
+--- !u!95 &8548109759738000001
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5021543851708523921}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a23846e66050264aabea23edca9221b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5021543853136717771
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021543853136717771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0.556, y: 0.077, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

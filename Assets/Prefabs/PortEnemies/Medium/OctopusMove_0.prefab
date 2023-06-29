@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6721707064879378066}
   - component: {fileID: 6146112357937628253}
   - component: {fileID: 5741193180330737715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OctopusMove_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 8680108683076002724}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 6719185643533411425}
 --- !u!114 &6719185643533411425
 MonoBehaviour:
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 788696377163397824}
-  Health: {fileID: 6721707064879378066}
-  Animator: {fileID: 6719185643533411425}
+  _health: {fileID: 6721707064879378066}
+  _animator: {fileID: 6719185643533411425}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &6721707064879378066
 MonoBehaviour:

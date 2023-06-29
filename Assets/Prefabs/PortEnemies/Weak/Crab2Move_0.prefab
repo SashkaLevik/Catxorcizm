@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8643054311369221197}
   - component: {fileID: 7793659945685673114}
   - component: {fileID: 4892731992380642809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crab2Move_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 4381966906944786584}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 5570910040886434475}
 --- !u!114 &5570910040886434475
 MonoBehaviour:
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 8289720731797409301}
-  Health: {fileID: 8643054311369221197}
-  Animator: {fileID: 5570910040886434475}
+  _health: {fileID: 8643054311369221197}
+  _animator: {fileID: 5570910040886434475}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &8643054311369221197
 MonoBehaviour:

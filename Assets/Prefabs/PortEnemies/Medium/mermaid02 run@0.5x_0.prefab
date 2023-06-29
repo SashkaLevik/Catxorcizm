@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 6080700188136799919}
   - component: {fileID: 5005361521187464979}
   - component: {fileID: 8582757328137852780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mermaid02 run@0.5x_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 8136659072585164896}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 8410183610944173751}
 --- !u!114 &8410183610944173751
 MonoBehaviour:
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 5457661676152930516}
-  Health: {fileID: 6080700188136799919}
-  Animator: {fileID: 8410183610944173751}
+  _health: {fileID: 6080700188136799919}
+  _animator: {fileID: 8410183610944173751}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &6080700188136799919
 MonoBehaviour:

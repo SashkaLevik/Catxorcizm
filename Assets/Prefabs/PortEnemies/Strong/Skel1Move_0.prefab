@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5886120070625447506}
   - component: {fileID: 6755502060175611510}
   - component: {fileID: 4053251402926539782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skel1Move_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 6025500510958387369}
   _player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1088
   _animator: {fileID: 3309224291258082861}
 --- !u!114 &3309224291258082861
 MonoBehaviour:
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 2646575657729501118}
-  Health: {fileID: 5886120070625447506}
-  Animator: {fileID: 3309224291258082861}
+  _health: {fileID: 5886120070625447506}
+  _animator: {fileID: 3309224291258082861}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &5886120070625447506
 MonoBehaviour:

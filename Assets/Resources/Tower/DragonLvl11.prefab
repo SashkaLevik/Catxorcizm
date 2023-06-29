@@ -12,12 +12,11 @@ GameObject:
   - component: {fileID: 8712746897088750148}
   - component: {fileID: 8712746897088750150}
   - component: {fileID: 8712746897088750149}
-  - component: {fileID: 7085577784921113242}
-  - component: {fileID: 8712746897088750137}
   - component: {fileID: 231095439424118579}
-  - component: {fileID: 8896256984910095961}
+  - component: {fileID: 7247887706965731527}
+  - component: {fileID: 8712746897088750137}
   - component: {fileID: 5461077195547110837}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: DragonLvl11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,39 +139,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9236314, y: 0.9370791}
   m_EdgeRadius: 0
---- !u!114 &7085577784921113242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712746897088750147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 024310fb136c5c64ba7b3c9584dc90a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firePos: {fileID: 8712746898479128600}
-  _enemy: {fileID: 0}
-  _fireDelay: 4
-  _flame: {fileID: 9044344668054973333, guid: 618eabd0565bada4298563e2bf1431a4, type: 3}
-  _trigger: {fileID: 8712746897966354431}
---- !u!114 &8712746897088750137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8712746897088750147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdefb0e04055470c8871267173bd8d87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _current: 0
-  _max: 0
-  _staticData: {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
-  _minion: {fileID: 7085577784921113242}
 --- !u!95 &231095439424118579
 Animator:
   serializedVersion: 4
@@ -193,7 +159,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8896256984910095961
+--- !u!114 &7247887706965731527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,10 +168,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 8712746897088750147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
+  _missile: {fileID: 9044344668054973333, guid: 618eabd0565bada4298563e2bf1431a4, type: 3}
+  _firePos: {fileID: 8712746898479128600}
+  _enemy: {fileID: 0}
+  _fireDelay: 3
+--- !u!114 &8712746897088750137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712746897088750147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdefb0e04055470c8871267173bd8d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _current: 0
+  _max: 0
+  _staticData: {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
+  _minion: {fileID: 7247887706965731527}
 --- !u!114 &5461077195547110837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +217,7 @@ GameObject:
   - component: {fileID: 8712746897966354417}
   - component: {fileID: 8712746897966354430}
   - component: {fileID: 8712746897966354431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +252,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.6139548, y: -0.071591705}
+  m_Offset: {x: 4.119643, y: -0.071591705}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -278,7 +263,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.8}
+  m_Size: {x: 6.9886227, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &8712746897966354431
 MonoBehaviour:

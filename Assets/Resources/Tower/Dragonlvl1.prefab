@@ -86,8 +86,7 @@ GameObject:
   - component: {fileID: 4002402100498963800}
   - component: {fileID: 4462958961420548042}
   - component: {fileID: 5038047914409950491}
-  - component: {fileID: 7678582666341946556}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Dragonlvl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,14 +216,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4002402100498963801}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _missile: {fileID: 9044344668054973333, guid: 618eabd0565bada4298563e2bf1431a4, type: 3}
   _firePos: {fileID: 4002402101427969794}
   _enemy: {fileID: 0}
-  _speed: 0.5
   _fireDelay: 2
 --- !u!114 &4462958961420548042
 MonoBehaviour:
@@ -257,19 +256,6 @@ MonoBehaviour:
   Damage: 0
   AttackRange: 0
   Cooldown: 0
---- !u!114 &7678582666341946556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4002402100498963801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
 --- !u!1 &4002402101427969795
 GameObject:
   m_ObjectHideFlags: 0

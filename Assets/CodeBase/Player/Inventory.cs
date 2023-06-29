@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CodeBase.Player
 {
@@ -42,6 +39,11 @@ namespace CodeBase.Player
         {
             _towerStaticData = data;
             _minions.Remove(_towerStaticData);
+        }
+
+        public void CurrentData(TowerStaticData data)
+        {
+            _towerStaticData = data;
         }
 
         public void Sell()

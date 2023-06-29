@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 916125322213012988}
   - component: {fileID: 68774511021203565}
   - component: {fileID: 3199084242448294566}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ThingMove_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 4155924907674867391}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 1521933292027308704}
 --- !u!114 &1521933292027308704
 MonoBehaviour:
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 8987757161343364337}
-  Health: {fileID: 916125322213012988}
-  Animator: {fileID: 1521933292027308704}
+  _health: {fileID: 916125322213012988}
+  _animator: {fileID: 1521933292027308704}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &916125322213012988
 MonoBehaviour:

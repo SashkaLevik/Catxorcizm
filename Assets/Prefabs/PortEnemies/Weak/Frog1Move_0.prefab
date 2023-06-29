@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3980988605587665396}
   - component: {fileID: 3571665106829558313}
   - component: {fileID: 3782776189423367070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Frog1Move_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   _attackPoint: {fileID: 5929025228498897890}
   _player:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   _animator: {fileID: 6025566868613849955}
 --- !u!114 &6025566868613849955
 MonoBehaviour:
@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioController: {fileID: 5744151243057456949}
-  Health: {fileID: 3980988605587665396}
-  Animator: {fileID: 6025566868613849955}
+  _health: {fileID: 3980988605587665396}
+  _animator: {fileID: 6025566868613849955}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &3980988605587665396
 MonoBehaviour:

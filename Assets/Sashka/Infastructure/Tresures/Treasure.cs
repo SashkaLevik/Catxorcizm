@@ -1,17 +1,44 @@
-﻿using Assets.Sashka.Scripts.Minions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.Tresures
 {
     public class Treasure : MonoBehaviour
     {
-        [SerializeField] private Sprite _icon;
+        [SerializeField] private ItemData _itemData;
+        [SerializeField] private TMP_Text _descriptionText;
+        [SerializeField] private GameObject _description;
 
-        public Sprite Icon => _icon;
+        private void Awake()
+        {
+            _descriptionText.text = _itemData.Description;
+        }        
+
+        public ItemData ItemData => _itemData;
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.TryGetComponent(out InventoryHolder inventory))
+            {
+                if (inventory.Inventory.AddItem(ItemData))
+                {
+                    Debug.Log("Added");
+                }
+                else
+                {
+                    this.GetComponentInChildren<DragAndDrop>().SetStartPosition();
+                }
+            }
+        }
+
+        private void OnMouseEnter()
+        {
+            _description.SetActive(true);
+        }
+
+        private void OnMouseExit()
+        {
+            _description.SetActive(false);
+        }
     }
 }

@@ -56,7 +56,8 @@ namespace CodeBase.Infrastructure.LevelLogic
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
             hero.transform.SetParent(Camera.main.transform);
             GameObject hud = _gameFactory.CreateHud();
-            InitUiRoot(hero);
+            GameObject additionalTool = _gameFactory.CreateDraggableItem();
+            InitUiRoot(hero, additionalTool);
 
             hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
 
@@ -66,7 +67,7 @@ namespace CodeBase.Infrastructure.LevelLogic
             }
         }
 
-        private void InitUiRoot(GameObject hero)
+        private void InitUiRoot(GameObject hero, GameObject additionalTool)
         {
             GameObject uiRoot = _uiFactory.CreateUIRoot();
             
@@ -74,9 +75,11 @@ namespace CodeBase.Infrastructure.LevelLogic
                 hero.GetComponent<PlayerMoney>(),
                 hero.GetComponent<Inventory>());
 
-            uiRoot.GetComponentInChildren<UpgradeWindow>(true).Construct(
+            uiRoot.GetComponentInChildren<UpgradeMinions>(true).Construct(
                 hero.GetComponent<PlayerMoney>(),
                 hero.GetComponent<Inventory>());
+            
+            additionalTool.GetComponent<DraggableItem>().Construct(uiRoot.GetComponentInChildren<UpgradeMinions>(true), hero.GetComponent<Inventory>());
         }
 
         private void InformProgressReaders()
@@ -84,23 +87,5 @@ namespace CodeBase.Infrastructure.LevelLogic
             foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
                 progressReader.LoadProgress(_progressService.Progress);
         }
-
-        // public void Exit()
-        // {
-        // }
-        //
-        // private void LoadHero()
-        // {
-        //     Debug.Log("OnLoaded");
-        //     var initialPoint = GameObject.FindWithTag("InitialPoint");
-        //     GameObject hero = Instantiate("Hero/player/player", point: initialPoint.transform.position);
-        //     hero.transform.SetParent(Camera.main.transform);
-        // }
-        //
-        // private static GameObject Instantiate(string path, Vector3 point)
-        // {
-        //     var prefab = Resources.Load<GameObject>(path);
-        //     return Object.Instantiate(prefab, point, Quaternion.identity);
-        // }        
     }
 }

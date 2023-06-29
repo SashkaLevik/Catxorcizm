@@ -27,6 +27,9 @@ namespace Assets.Sashka.Infastructure.Tresures
             _startPosition = transform.position;
         }        
 
+        public void SetStartPosition()
+            => transform.position = _startPosition;
+
         private void OnMouseDown()
         {
             _offset = transform.position - GetMousePosition();
@@ -58,9 +61,7 @@ namespace Assets.Sashka.Infastructure.Tresures
                 Debug.Log(minion.name);
             }
             else
-            {
-                transform.position = _startPosition;
-            }     
+                SetStartPosition();
         }        
 
         private Vector3 GetMousePosition()

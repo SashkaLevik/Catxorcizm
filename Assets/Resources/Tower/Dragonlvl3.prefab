@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3633012847313348772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0.531, y: -0.062, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 3633012848645008127}
   - component: {fileID: 3633012848645008004}
   - component: {fileID: 7429634087253671748}
-  - component: {fileID: 63267834315059532}
-  m_Layer: 6
+  - component: {fileID: 3997393016566758300}
+  m_Layer: 10
   m_Name: Dragonlvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 3633012848645008126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3633012847313348773}
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 1354363114, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
+  m_Sprite: {fileID: -1390215739, guid: fefbcc965f9697c458f621df53ae0a99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -232,7 +232,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 1.73}
+    oldSize: {x: 1.18, y: 1.03}
     newSize: {x: 7.68, y: 7.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -248,14 +248,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3633012848645008126}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _missile: {fileID: 2470567233628834249, guid: 8a35fa5b7d65bc041bbd913f64db396b, type: 3}
   _firePos: {fileID: 3633012847313348773}
   _enemy: {fileID: 0}
-  _speed: 0.5
   _fireDelay: 2
 --- !u!114 &3633012848645008004
 MonoBehaviour:
@@ -288,16 +288,23 @@ MonoBehaviour:
   Damage: 0
   AttackRange: 0
   Cooldown: 0
---- !u!114 &63267834315059532
-MonoBehaviour:
+--- !u!95 &3997393016566758300
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3633012848645008126}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e4106a08a36dc40b29343bdf8fca62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _timeDragTrigger: 0.2
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a2804375cf32d349b82341bc008b883, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

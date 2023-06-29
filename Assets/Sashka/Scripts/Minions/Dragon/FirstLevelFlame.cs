@@ -2,7 +2,7 @@
 
 namespace Assets.Sashka.Scripts.Minions.Dragon
 {
-    public class FirstLevelFlame : DragonFlame
+    public class FirstLevelFlame : Missile
     {
         [SerializeField] private AudioSource _flameSound;
 

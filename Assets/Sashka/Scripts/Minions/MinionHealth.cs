@@ -52,6 +52,14 @@ namespace Assets.Sashka.Scripts.Minions
             }
         }
 
+        public void Heal(float heal)
+        {
+            Current += heal;
+            HealthChanged?.Invoke();
+
+            if (Current > Max) { Current = Max; }            
+        }
+
         private void Die()
         {
             Destroy(_minion.gameObject);

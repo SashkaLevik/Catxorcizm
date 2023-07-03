@@ -16,9 +16,10 @@ MonoBehaviour:
   Level: 3
   CurrentHP: 7
   MaxHP: 7
-  Damage: 17
+  Damage: 1
   AttackRange: 8
-  Cooldown: 1
+  Cooldown: 3
+  MissileSpeed: 4
   UIIcon: {fileID: 640060313, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
   Price: 170
   Prefab: {fileID: 5021543851708523921, guid: bb3de417ebbb6ea44954a89b88107443, type: 3}

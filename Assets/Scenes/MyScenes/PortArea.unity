@@ -1229,6 +1229,10 @@ PrefabInstance:
       value: TestDragon
       objectReference: {fileID: 0}
     - target: {fileID: 403441493875458817, guid: 47b5631e681695440a1a8cad6c6dcdf0, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 403441493875458817, guid: 47b5631e681695440a1a8cad6c6dcdf0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2713,9 +2717,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6924eca10bd7e7d469de743bec5460df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.83
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

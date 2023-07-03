@@ -20,15 +20,13 @@ namespace Assets.Sashka.Infastructure.Tresures
         {
             if (collision.TryGetComponent(out InventoryHolder inventory))
             {
+                Debug.Log("AddToInv");
+
                 if (inventory.Inventory.AddItem(ItemData))
                 {
                     Debug.Log("Added");
-                }
-                else
-                {
-                    this.GetComponentInChildren<DragAndDrop>().SetStartPosition();
-                }
-            }
+                }                
+            }            
         }
 
         private void OnMouseEnter()

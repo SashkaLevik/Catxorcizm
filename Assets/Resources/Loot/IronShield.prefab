@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7767680341052663714}
   - component: {fileID: 6949902245935072816}
   - component: {fileID: 5425180422937602572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: IronShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516911617859987129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.3525}
+  m_LocalPosition: {x: -0.0757, y: -0.1134, z: 0}
+  m_LocalScale: {x: 0.14652, y: 0.14652, z: 0.25824147}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7953414003550313716}

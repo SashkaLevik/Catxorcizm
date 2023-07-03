@@ -148,9 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc1c5be78ee29348889f5f81660b009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _damage: 1
+  _speed: 0
+  _damage: 0
   _target: {fileID: 0}
+  _towerData: {fileID: 11400000, guid: ef8dcf119098f714e9144dbac448d677, type: 2}
   _arrowSound: {fileID: 4521951584247763274}
 --- !u!82 &4521951584247763274
 AudioSource:

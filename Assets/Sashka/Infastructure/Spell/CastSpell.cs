@@ -13,10 +13,9 @@ namespace Assets.Sashka.Infastructure.Spell
         [SerializeField] private Button _cast;
         [SerializeField] private Transform _castPos;
         [SerializeField] private BaseSpell _spell;
-        [SerializeField] private BaseEnemy _target;
         [SerializeField] private BookAnimator _animator;
         [SerializeField] private AudioSource _bookSound;
-        [SerializeField] private AudioSource _meleeSound;
+        //[SerializeField] private AudioSource _meleeSound;
 
         public int _spellAmount = 5;
 

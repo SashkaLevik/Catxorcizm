@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d6fbc5a146c614f9e6bc6b42d29d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _damage: 1
+  _speed: 0
+  _damage: 0
   _target: {fileID: 0}
-  _baseMinion: {fileID: 0}
+  _towerData: {fileID: 11400000, guid: d69c64eaaf5993d4b9e86ddcadb0b1e4, type: 2}
   _flameSound: {fileID: 9135394072684767527}
 --- !u!95 &8431507299385778306
 Animator:

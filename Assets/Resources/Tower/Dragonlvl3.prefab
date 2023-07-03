@@ -77,7 +77,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.3939047, y: -0.22921205}
+  m_Offset: {x: 5.298367, y: -0.058040127}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -88,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.686747, y: 0.63280416}
+  m_Size: {x: 8.877822, y: 0.64076555}
   m_EdgeRadius: 0
 --- !u!114 &3633012847876572994
 MonoBehaviour:
@@ -114,9 +114,8 @@ GameObject:
   - component: {fileID: 3633012848645008121}
   - component: {fileID: 3633012848645008123}
   - component: {fileID: 3633012848645008120}
-  - component: {fileID: 3633012848645008127}
+  - component: {fileID: 809442167811327691}
   - component: {fileID: 3633012848645008004}
-  - component: {fileID: 7429634087253671748}
   - component: {fileID: 3997393016566758300}
   m_Layer: 10
   m_Name: Dragonlvl3
@@ -134,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 3633012848645008126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3633012847313348773}
@@ -228,7 +227,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3206377, y: -0.13569582}
+  m_Offset: {x: 0.13354272, y: 0.0076110065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -239,9 +238,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3393564, y: 1.3555727}
+  m_Size: {x: 1.315472, y: 0.8938063}
   m_EdgeRadius: 0
---- !u!114 &3633012848645008127
+--- !u!114 &809442167811327691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,13 +249,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3633012848645008126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
+  m_Script: {fileID: 11500000, guid: 613e1ceed5e33a04299631c08079cb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missile: {fileID: 2470567233628834249, guid: 8a35fa5b7d65bc041bbd913f64db396b, type: 3}
   _firePos: {fileID: 3633012847313348773}
   _enemy: {fileID: 0}
-  _fireDelay: 2
+  _cooldown: 0
+  _damage: 0
+  _towerData: {fileID: 11400000, guid: 2e419005d0534c24c8f429eab95d4e36, type: 2}
+  _missile: {fileID: 2470567233628834249, guid: 8a35fa5b7d65bc041bbd913f64db396b, type: 3}
 --- !u!114 &3633012848645008004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,21 +274,6 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: 258505311b481bf4cb2879869b889b8b, type: 2}
   _minion: {fileID: 0}
---- !u!114 &7429634087253671748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3633012848645008126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4177c5f119c042608870c48a974ae633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 0
-  AttackRange: 0
-  Cooldown: 0
 --- !u!95 &3997393016566758300
 Animator:
   serializedVersion: 4

@@ -1,13 +1,21 @@
 ﻿using Assets.Sashka.Scripts.Enemyes;
+using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Minions
 {
     public class Missile : MonoBehaviour
     {
-        [SerializeField] protected int _speed;
+        [SerializeField] protected float _speed;
         [SerializeField] protected int _damage;
         [SerializeField] private BaseEnemy _target;
+        [SerializeField] private TowerStaticData _towerData;
+
+        private void Awake()
+        {
+            _speed = _towerData.MissileSpeed;
+            _damage = _towerData.Damage;
+        }
 
         private void Update()
         {

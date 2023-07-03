@@ -114,10 +114,10 @@ GameObject:
   - component: {fileID: 9053299736789226754}
   - component: {fileID: 9053299736789226752}
   - component: {fileID: 9053299736789226755}
-  - component: {fileID: 9053299736789226756}
+  - component: {fileID: 4119353791922266937}
   - component: {fileID: 9053299736789226879}
-  - component: {fileID: 6640131378911125588}
   - component: {fileID: 9046122549128958143}
+  - component: {fileID: 8361856933658942187}
   m_Layer: 10
   m_Name: Mouselvl1
   m_TagString: Untagged
@@ -241,7 +241,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9266718, y: 1.2214015}
   m_EdgeRadius: 0
---- !u!114 &9053299736789226756
+--- !u!114 &4119353791922266937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,13 +250,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 9053299736789226757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b899646da347a4797d13635b1a473c, type: 3}
+  m_Script: {fileID: 11500000, guid: 613e1ceed5e33a04299631c08079cb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _missile: {fileID: 0}
   _firePos: {fileID: 9053299736095037278}
   _enemy: {fileID: 0}
-  _fireDelay: 2
+  _cooldown: 0
+  _damage: 0
+  _towerData: {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
+  _missile: {fileID: 3135399294367844303, guid: 7e19d24ab5799d64fb42c72ba636355b, type: 3}
 --- !u!114 &9053299736789226879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,21 +275,6 @@ MonoBehaviour:
   _max: 0
   _staticData: {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
   _minion: {fileID: 0}
---- !u!114 &6640131378911125588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9053299736789226757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4177c5f119c042608870c48a974ae633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 0
-  AttackRange: 0
-  Cooldown: 0
 --- !u!95 &9046122549128958143
 Animator:
   serializedVersion: 4
@@ -308,3 +295,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8361856933658942187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053299736789226757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86984302a52118b4a96ccb0fed5d096e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventorySize: 0
+  _inventory:
+    _slots: []

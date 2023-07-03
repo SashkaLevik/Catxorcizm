@@ -10,7 +10,7 @@ namespace Assets.Sashka.Infastructure.Tresures
     [CreateAssetMenu(menuName = "Item/Equipment")]
     public class Equipment : ItemData
     {
-        public float AtkModifier;
+        public int AtkModifier;
         public float DfsModifier;
         public float AtkSpdModifier;
 

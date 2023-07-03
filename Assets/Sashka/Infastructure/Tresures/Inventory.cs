@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,29 +37,6 @@ namespace Assets.Sashka.Infastructure.Tresures
         {
             freeSlot = Slots.FirstOrDefault(slot => slot.ItemData == null);
             return freeSlot == null ? false : true;
-        }
-
-        //public Inventory(int size)
-        //{
-        //    _slots = new List<Slot>(size);
-
-        //    for (int i = 0; i < size; i++)
-        //    {
-        //        _slots.Add(new Slot());
-        //    }
-        //}
-        //public void AddItem(ItemData item)
-        //{
-        //    foreach (Slot slot in _slots)
-        //    {
-        //        if (slot.IsEmpty)
-        //        {
-        //            slot._itemData = item;
-        //            slot.SetIcon(item.Icon);
-        //        }
-        //    }
-        //}
-
-        
+        }                
     }
 }

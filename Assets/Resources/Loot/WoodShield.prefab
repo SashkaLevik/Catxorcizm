@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7767680341052663714}
   - component: {fileID: 4467813448174719318}
   - component: {fileID: 3384890612597808478}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WoodShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516911617859987129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.3525}
+  m_LocalPosition: {x: -0.1115, y: -0.1555, z: 0}
+  m_LocalScale: {x: 0.122039996, y: 0.122039996, z: 0.21509549}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2249549755433214071}

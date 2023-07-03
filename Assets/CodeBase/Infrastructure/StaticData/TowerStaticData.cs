@@ -10,9 +10,11 @@ namespace CodeBase.Infrastructure.StaticData
         [Range(1f, 30f)] public float CurrentHP;
         [Range(1f, 30f)] public float MaxHP;
         [Range(1, 50)] public int Damage;
-        [Range(1f, 10f)] public float AttackRange;
+        [Range(1f, 10f)] public float Defence;
         [Range(1f, 3f)] public float Cooldown;
-    
+        [Range(1f, 5f)] public float MissileSpeed;
+
+
         public Sprite UIIcon;
         public int Price;
         public GameObject Prefab;

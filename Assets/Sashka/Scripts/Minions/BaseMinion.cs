@@ -9,21 +9,22 @@ namespace Assets.Sashka.Scripts.Minions
 {
     public class BaseMinion : MonoBehaviour
     {
-        private const string Attack = "Attack";
+        protected const string Attack = "Attack";
 
-        [SerializeField] private Missile _missile;
         [SerializeField] protected Transform _firePos;
         [SerializeField] protected BaseEnemy _enemy;
-        [SerializeField] protected int _fireDelay;
+        [SerializeField] protected float _cooldown;
         [SerializeField] protected float _damage;
-        //[SerializeField] protected TowerStaticData _towerData;
+        [SerializeField] protected float _defence;
+        [SerializeField] protected TowerStaticData _towerData;
 
-        private Animator _animator;
-        private bool _canAttack = true;
+        protected Animator _animator;
+        protected bool _canAttack = true;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            _cooldown = _towerData.Cooldown;
         }
 
         public void Init(BaseEnemy enemy)
@@ -35,36 +36,17 @@ namespace Assets.Sashka.Scripts.Minions
             {
                 treasure.ItemData.Use();
                 //var equipment = GetComponentInChildren<Equipment>();
-                //_towerData.Cooldown -= equipment.AtkSpdModifier;
+                //_cooldown -= equipment.AtkSpdModifier;
+                //_damage += equipment.AtkModifier;
+                //_defence += equipment.DfsModifier;
             }
         }        
                 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.TryGetComponent(out BaseEnemy enemy)) { StartAttack(); }
+            if (collision.TryGetComponent(out _enemy)) { StartAttack(); }
         }
             
-        public void StartAttack()
-            => StartCoroutine(Shoot());
-
-        private IEnumerator Shoot()
-        {
-            if (_canAttack)
-            {
-                _canAttack = false;
-                var delay = new WaitForSeconds(4f);
-                _animator.SetTrigger(Attack);
-                Invoke(nameof(SetFlame), 0.3f);
-                yield return delay;
-                _canAttack = true;
-            }
-        }
-
-        private void SetFlame()
-        {
-            Debug.Log("Missile");
-            Missile missile = Instantiate(_missile, _firePos.position, Quaternion.identity);
-            missile.Init(_enemy);
-        }
+        public virtual void StartAttack() { }        
     }
 }

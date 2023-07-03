@@ -1,10 +1,5 @@
 ﻿using Assets.Sashka.Scripts.Minions;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CodeBase.Tower;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -39,8 +34,6 @@ namespace Assets.Sashka.Infastructure.Tresures
 
             RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
             transform.GetComponent<Collider2D>().enabled = false;
-
-            Debug.Log(hitInfo.collider.name);
         }
            
         private void OnMouseDrag() 
@@ -49,19 +42,33 @@ namespace Assets.Sashka.Infastructure.Tresures
         private void OnMouseUp()
         {
             transform.GetComponent<Collider2D>().enabled = true;
-
+            
             var rayOrigin = _camera.transform.position;
             var rayDirection = GetMousePosition() - rayOrigin;
 
             RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
             Debug.Log(hitInfo.collider.name);
 
-            if (hitInfo.collider.gameObject.TryGetComponent(out BaseMinion minion))
+            if (hitInfo.collider != null)
             {
-                Debug.Log(minion.name);
+                if (hitInfo.transform.TryGetComponent(out MinionHealth minion))
+                {
+                    Debug.Log("Hit" + minion.name);                    
+                }
+                else
+                    SetStartPosition();
             }
-            else
-                SetStartPosition();
+            //if (hitInfo.collider.gameObject.TryGetComponent(out TowerSpawner spawner))
+            //{
+            //    var minion = spawner.GetComponentInChildren<BaseMinion>();
+            //    Debug.Log("Hit" + minion.name);
+            //    if (minion == null)
+            //    {
+            //        Debug.Log("NoMinionHere");
+            //    }
+            //}
+            //else
+            //    SetStartPosition();
         }        
 
         private Vector3 GetMousePosition()

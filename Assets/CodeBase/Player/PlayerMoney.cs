@@ -35,7 +35,16 @@ namespace CodeBase.Player
         {
             if (_currentSoul > 0)
             {
-                _currentSoul -= heroState.Price;
+                _currentSoul -= heroState.PriceLevel;
+                CurrentSoulChanged?.Invoke(_currentSoul);
+            }
+        }
+        
+        public void BuyUpgradeHeroSpell(State heroState)
+        {
+            if (_currentSoul > 0)
+            {
+                _currentSoul -= heroState.PriceSpell;
                 CurrentSoulChanged?.Invoke(_currentSoul);
             }
         }

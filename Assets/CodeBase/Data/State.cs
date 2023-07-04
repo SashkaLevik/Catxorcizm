@@ -9,18 +9,20 @@ namespace CodeBase.Data
         public float MaxHP;
         public int MeleeAttack;
         public int SpellAmount;
-        public int Price;
+        public int PriceLevel;
+        public int PriceSpell;
         public int Level;
         public void ResetHP() => CurrentHP = MaxHP;
 
         public State()
         {
+            Level = 1;
             CurrentHP = 4;
             MaxHP = 4;
             MeleeAttack = 3;
             SpellAmount = 2;
-            Price = 50;
-            Level = 1;
+            PriceLevel = 50;
+            PriceSpell = 50;
         }
     }
 }

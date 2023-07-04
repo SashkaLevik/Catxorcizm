@@ -72,13 +72,5 @@ namespace CodeBase.Infrastructure.State
             _stateMachine.Enter<LoadMenuState, string>(MenuScene);
             //_stateMachine.Enter<LoadProgressState>();
         }
-
-        // private static IInputService InputService()
-        // {
-        //     if (Application.isEditor)
-        //         return new StandaloneInputService();
-        //     else
-        //         return new MobileInputService();
-        // }
     }
 }

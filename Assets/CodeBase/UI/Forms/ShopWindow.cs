@@ -56,7 +56,7 @@ namespace CodeBase.UI.Forms
             _isOpen = true;
             Opened?.Invoke(_isOpen);
 
-            foreach (var view in _towerViews)
+            foreach (TowerView view in _towerViews)
             {
                 view.SellButtonClick += TrySellBuy;
                 view.Highlighted += _panelMinions.Show;
@@ -65,7 +65,7 @@ namespace CodeBase.UI.Forms
 
         private void OnDisable()
         {
-            foreach (var view in _towerViews)
+            foreach (TowerView view in _towerViews)
             {
                 view.SellButtonClick -= TrySellBuy;
                 view.Highlighted -= _panelMinions.Show;

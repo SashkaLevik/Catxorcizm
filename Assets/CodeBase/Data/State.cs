@@ -5,22 +5,26 @@ namespace CodeBase.Data
     [Serializable]
     public class State
     {
+        public int Level;
         public float CurrentHP;
         public float MaxHP;
         public int MeleeAttack;
         public int SpellAmount;
-        public int Price;
-        public int Level;
+        public int PriceLevel;
+        public int PriceSpell;
+        public int PriceNewMinions;
         public void ResetHP() => CurrentHP = MaxHP;
 
         public State()
         {
-            CurrentHP = 10;
-            MaxHP = 10;
+            Level = 1;
+            CurrentHP = 4;
+            MaxHP = 4;
             MeleeAttack = 3;
             SpellAmount = 2;
-            Price = 50;
-            Level = 1;
+            PriceLevel = 250;
+            PriceSpell = 220;
+            PriceNewMinions = 150;
         }
     }
 }

@@ -3,12 +3,13 @@ using Assets.Sashka.Scripts.Enemyes;
 using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Sashka.Infastructure.Spell
 {
-    public class CastSpell : MonoBehaviour
+    public class CastSpell : MonoBehaviour, ISavedProgressReader
     {
         [SerializeField] private Button _cast;
         [SerializeField] private Transform _castPos;
@@ -17,17 +18,19 @@ namespace Assets.Sashka.Infastructure.Spell
         [SerializeField] private AudioSource _bookSound;
         //[SerializeField] private AudioSource _meleeSound;
 
-        public int _spellAmount = 5;
+        public int _spellAmount;
 
-        private void OnEnable()
+        public void LoadProgress(PlayerProgress progress)
         {
+            _spellAmount = progress.HeroState.SpellAmount;
+            Debug.Log("load data Hero SpellAmount");
+        }
+
+        private void OnEnable() => 
             _cast.onClick.AddListener(Cast);
-        }
 
-        private void OnDisable()
-        {
+        private void OnDisable() => 
             _cast.onClick.RemoveListener(Cast);
-        }
 
         private void Cast()
         {
@@ -44,7 +47,6 @@ namespace Assets.Sashka.Infastructure.Spell
         private void Spell()
         {
             Debug.Log("Spel");
-
         }
     }
 }

@@ -8,6 +8,7 @@ namespace CodeBase.Data
     {
         public State HeroState;
         public WorldData WorldData;
+        public int NumberOfMinions = 2;
 
         public PlayerProgress(string initialLevel)
         {

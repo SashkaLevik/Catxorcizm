@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4251568795773834243}
   - component: {fileID: 5038229133558156384}
   - component: {fileID: 5855944877157463938}
-  - component: {fileID: 6989006808588164631}
   - component: {fileID: 638743776429642113}
   - component: {fileID: 741323033172014746}
   - component: {fileID: 5575464265423873362}
@@ -182,22 +181,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &6989006808588164631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40803309135729015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ea25e02b2b486e8340bdcf6dc38e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stepMeleeDamage: 1
-  _stepHealth: 2
-  _levelSpellAmount: 4
-  _playerMoney: {fileID: 40803309135729012}
 --- !u!114 &638743776429642113
 MonoBehaviour:
   m_ObjectHideFlags: 0

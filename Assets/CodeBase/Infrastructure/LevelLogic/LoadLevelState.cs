@@ -1,5 +1,4 @@
-﻿using Assets.Sashka.Scripts.Enemyes;
-using CodeBase.Infrastructure.Factory;
+﻿using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
@@ -12,7 +11,7 @@ using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
-    public class LoadPortState : IPayloadedState<string>
+    public class LoadLevelState : IPayloadedState<string>
     {
         private const string InitialPointTag = "InitialPoint";
         private readonly GameStateMachine _gameStateMachine;
@@ -24,7 +23,7 @@ namespace CodeBase.Infrastructure.LevelLogic
         private IState _stateImplementation;
         private Camera _camera;
 
-        public LoadPortState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+        public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
             IGameFactory gameFactory, IUIFactory uiFactory, IPersistentProgressService progressService)
         {
             _gameStateMachine = gameStateMachine;
@@ -60,8 +59,6 @@ namespace CodeBase.Infrastructure.LevelLogic
             InitHud(hero);
             GameObject additionalTool = _gameFactory.CreateDraggableItem();
             InitUiRoot(hero, additionalTool);
-
-            //hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
 
             foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
             {

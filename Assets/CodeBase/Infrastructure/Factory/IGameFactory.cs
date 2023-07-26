@@ -10,6 +10,7 @@ namespace CodeBase.Infrastructure.Factory
     {
         GameObject CreateHero(GameObject at);
         GameObject CreateHud();
+        GameObject CreatHudAcademy();
         GameObject CreateDraggableItem();
         GameObject CreatTower(TowerTypeID typeId, Transform parent);
         List<ISavedProgressReader> ProgressReaders { get; }

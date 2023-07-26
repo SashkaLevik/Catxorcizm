@@ -25,8 +25,11 @@ namespace CodeBase.Infrastructure.State
                 [typeof(LoadProgressState)] = new LoadProgressState(this, 
                     services.Single<IPersistentProgressService>(),services.Single<ISaveLoadService>()),
 
-                [typeof(LoadPortState)] = new LoadPortState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(),
                     services.Single<IUIFactory>(), services.Single<IPersistentProgressService>()),
+                
+                [typeof(LoadAcademyState)] = new LoadAcademyState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(),
+                    services.Single<IPersistentProgressService>()),
 
                 [typeof(GameLoopState)] = new GameLoopState(this),
             };

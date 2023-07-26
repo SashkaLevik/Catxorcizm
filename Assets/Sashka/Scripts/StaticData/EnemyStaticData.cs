@@ -9,9 +9,9 @@ namespace Assets.Sashka.Scripts.StaticData
     {
         public float Health;
         public int Damage;
-        public float AttackRange;
-        public float AttackRate;
+        public float Cooldown;
         public float Speed;
+        public int Reward;
     }
 }
 

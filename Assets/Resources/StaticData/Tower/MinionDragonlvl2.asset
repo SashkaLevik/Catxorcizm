@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dragon lvl 2
   Level: 2
-  CurrentHP: 7
-  MaxHP: 7
-  Damage: 2
-  AttackRange: 8
-  Cooldown: 3
+  CurrentHP: 12
+  MaxHP: 12
+  Damage: 4
+  Defence: 0
+  Cooldown: 2.5
   MissileSpeed: 3
   UIIcon: {fileID: 1506674194, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  Price: 90
+  ItemIcon: {fileID: 0}
+  Price: 120
   Prefab: {fileID: 8810767956856886537, guid: 3a7b842b32f2f4a418c76afbba24ebb5, type: 3}
   TowerTypeID: 4

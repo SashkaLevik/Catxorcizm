@@ -165,6 +165,7 @@ MonoBehaviour:
   _audioController: {fileID: 6014797948644755750}
   _health: {fileID: 9130613877803119651}
   _animator: {fileID: 4357500616529196267}
+  _soulPrefab: {fileID: 2013414147876821180, guid: 760c8bbe87ea41e42a6e8c7b861602fd, type: 3}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &9130613877803119651
 MonoBehaviour:
@@ -320,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.1209
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.y

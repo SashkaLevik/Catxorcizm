@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.Tresures
 {
-    [CreateAssetMenu(menuName = "Item/Equipment")]
+    
     public class Equipment : ItemData
     {
-        public int AtkModifier;
-        public float DfsModifier;
-        public float AtkSpdModifier;
+        //public override void Use(TowerStaticData data, float damage, float defence, float cooldown, float health)
+        //{
+        //    base.Use(data, damage, defence, cooldown, health);
+        //    data.ItemIcon = Icon;
+        //    damage += AtkModifier;
+        //    defence += DfsModifier;
+        //    cooldown -= AtkSpdModifier;
+        //    health += HealthModifier;
+        //}
 
-        public override void Use()
-        {
-            base.Use();
-            Debug.Log("EquipItem");
-        }
+        //public override void Use(TowerStaticData data, float damage, float defence, float cooldown, float health)
+        //{
+        //    base.Use();
+        //    Debug.Log("EquipItem");
+        //}
     }
 }

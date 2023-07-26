@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Archer lvl 3
   Level: 3
-  CurrentHP: 7
-  MaxHP: 7
-  Damage: 1
-  AttackRange: 8
+  CurrentHP: 15
+  MaxHP: 15
+  Damage: 3
+  Defence: 0
   Cooldown: 3
   MissileSpeed: 4
   UIIcon: {fileID: 640060313, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  Price: 170
+  ItemIcon: {fileID: 0}
+  Price: 100
   Prefab: {fileID: 5021543851708523921, guid: bb3de417ebbb6ea44954a89b88107443, type: 3}
   TowerTypeID: 2

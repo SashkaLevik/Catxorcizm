@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dragon lvl 1
   Level: 1
-  CurrentHP: 5
-  MaxHP: 5
-  Damage: 2
-  AttackRange: 6
+  CurrentHP: 10
+  MaxHP: 10
+  Damage: 3
+  Defence: 0
   Cooldown: 3
   MissileSpeed: 3
   UIIcon: {fileID: -1010086091, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
+  ItemIcon: {fileID: 0}
   Price: 80
   Prefab: {fileID: 8712746897088750147, guid: 1b9319aa4abc3a541a3019e7f6f82d02, type: 3}
   TowerTypeID: 3

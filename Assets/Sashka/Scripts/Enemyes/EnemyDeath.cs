@@ -1,20 +1,15 @@
-﻿//using System;
-using Assets.Sashka.Infastructure.Audio;
+﻿using Assets.Sashka.Infastructure.Audio;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
     class EnemyDeath : MonoBehaviour
     {
-        //[SerializeField] private AudioSource[] _dieSounds;
         [SerializeField] private EnemyDieSound _audioController;
         [SerializeField] private EnemyHealth _health;
         [SerializeField] private EnemyAnimator _animator;
+        [SerializeField] private Soul _soulPrefab;
 
         public GameObject DeathFx;
 
@@ -42,6 +37,8 @@ namespace Assets.Sashka.Scripts.Enemyes
             dieSound = _audioController.GetRandomSound();
             dieSound.Play();
             GameObject fx = Instantiate(DeathFx, transform.position, Quaternion.identity);
+            var soul = Instantiate(_soulPrefab, transform.position, Quaternion.identity);
+            soul.Init(GetComponentInChildren<BaseEnemy>());
             StartCoroutine(DestroyTimer());
         }
 
@@ -49,12 +46,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             yield return new WaitForSeconds(0.8f);
             Destroy(gameObject);
-        }
-
-        //private AudioSource GetRandomSound()
-        //{
-        //    int randomSound = Random.Range(0, _dieSounds.Length);
-        //    return _dieSounds[randomSound];
-        //}
+        }        
     }
 }

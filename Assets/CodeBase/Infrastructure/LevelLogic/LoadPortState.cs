@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Factory;
+﻿using Assets.Sashka.Scripts.Enemyes;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
@@ -55,11 +56,12 @@ namespace CodeBase.Infrastructure.LevelLogic
         {
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
             hero.transform.SetParent(Camera.main.transform);
-            GameObject hud = _gameFactory.CreateHud();
+            //GameObject hud = _gameFactory.CreateHud();
+            InitHud(hero);
             GameObject additionalTool = _gameFactory.CreateDraggableItem();
             InitUiRoot(hero, additionalTool);
 
-            hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
+            //hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
 
             foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
             {
@@ -80,6 +82,13 @@ namespace CodeBase.Infrastructure.LevelLogic
                 hero.GetComponent<Inventory>());
             
             additionalTool.GetComponent<DraggableItem>().Construct(uiRoot.GetComponentInChildren<UpgradeMinions>(true), hero.GetComponent<Inventory>());
+        }
+
+        private void InitHud(GameObject hero)
+        {
+            GameObject hud = _gameFactory.CreateHud();
+            hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>(), hero.GetComponent<PlayerMoney>());
+            //hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
         }
 
         private void InformProgressReaders()

@@ -24,10 +24,10 @@ namespace CodeBase.Player
 
         public void BuyTower(TowerStaticData data)
         {
-            if (_currentMoney > 0)
+            if (_currentSoul >= data.Price)
             {
-                _currentMoney -= data.Price;
-                CurrentMoneyChanged?.Invoke(_currentMoney);
+                _currentSoul -= data.Price;
+                CurrentSoulChanged?.Invoke(_currentSoul);
             }
         }
 
@@ -45,5 +45,11 @@ namespace CodeBase.Player
             _currentMoney += data.Price;
             CurrentMoneyChanged?.Invoke(_currentMoney);
         }
+
+        public void AddMoney(int reward)
+        {
+            _currentSoul += reward;
+            CurrentSoulChanged?.Invoke(_currentSoul);
+        }        
     }
 }

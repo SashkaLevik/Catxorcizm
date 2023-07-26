@@ -1,8 +1,10 @@
-﻿using CodeBase.Infrastructure.Factory;
+﻿using Assets.Sashka.Scripts.Minions;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Factory;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +13,8 @@ namespace CodeBase.Tower
     public class TowerSpawner : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _sprite;
+        [SerializeField] private MinionHealth _minionHealth;
+
         
         private IGameFactory _factory;
         private IUIFactory _uIFactory;
@@ -22,9 +26,9 @@ namespace CodeBase.Tower
         private TowerStaticData _data;
         public event UnityAction<TowerSpawner> CreateMinion;
         public bool CreateTower => _createTower;
+        public MinionHealth MinionHealth => _minionHealth;
         public TowerStaticData Data => _data;
-
-
+        
         public void Construct(IUIFactory uiFactory)
         {
             _uIFactory = uiFactory;
@@ -60,18 +64,28 @@ namespace CodeBase.Tower
             _sprite.enabled = false;
         }
 
+        private void OnMinionDie(BaseMinion minion)
+        {
+            _createTower = false;
+            _sprite.enabled = true;
+            _data = null;
+            _minionHealth.Died -= OnMinionDie;
+        }        
+
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
         {
             DestroyMinions();
             
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
             _currentTower = tower;
-        }
+            _minionHealth = _currentTower.gameObject.GetComponent<MinionHealth>();
+            _minionHealth.Died += OnMinionDie;
+        }        
 
         public void DestroyMinions()
         {
             if (_currentTower != null)
-                Destroy(_currentTower);
+                Destroy(_currentTower);            
         }
 
         public void ObjectOffset()
@@ -88,6 +102,8 @@ namespace CodeBase.Tower
             _currentTower = position._currentTower;
             _data = position._data;
             CreateMinion?.Invoke(this);
+            _minionHealth = GetComponentInChildren<MinionHealth>();
+            _minionHealth.Died += OnMinionDie;
         }
     }
 }

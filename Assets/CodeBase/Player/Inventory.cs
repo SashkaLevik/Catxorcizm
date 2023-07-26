@@ -17,7 +17,7 @@ namespace CodeBase.Player
         {
             foreach (TowerSpawner spawner in _spawners)
             {
-                spawner.CreateMinion += SpawnerOnCreateMinion;
+                spawner.CreateMinion += SpawnerOnCreateMinion;                
             }
         }
 
@@ -42,9 +42,7 @@ namespace CodeBase.Player
         }
 
         public void CurrentData(TowerStaticData data)
-        {
-            _towerStaticData = data;
-        }
+            => _towerStaticData = data;
 
         public void Sell()
         {
@@ -53,18 +51,12 @@ namespace CodeBase.Player
         }
 
         public void SpawnMinions()
-        {
-            _position.BuyTowerSpawn(_towerStaticData);
-        }
+            => _position.BuyTowerSpawn(_towerStaticData);
 
         public void SetSpawnPosition(TowerSpawner position)
-        {
-            _position = position;
-        }
+            => _position = position;
 
         private void SpawnerOnCreateMinion(TowerSpawner position)
-        {
-            _position = position;
-        }
+            => _position = position;
     }
 }

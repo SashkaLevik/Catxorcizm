@@ -155,6 +155,7 @@ namespace CodeBase.UI.Element
             _selectSpawner.IsCreateTower();
             _selectSpawner.ChildMinion(_currentSpawner);
             _currentSpawner.ObjectOffset();
+            Debug.Log("NewPos");
         }
     }
 }

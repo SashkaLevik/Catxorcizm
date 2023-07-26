@@ -64,7 +64,7 @@ namespace CodeBase.UI.Forms
 
         private void Update()
         {
-            _currentMoney = _playerMoney.CurrentMoney;
+            _currentMoney = _playerMoney.CurrentSoul;
         }
 
         private void OnEnable()
@@ -79,7 +79,7 @@ namespace CodeBase.UI.Forms
 
         private void UpdateBuy()
         {
-            TryBuy(_nextUpgrade);
+            TryBuy(_nextUpgrade);            
         }
 
         private void TryBuy(TowerStaticData data)
@@ -92,7 +92,7 @@ namespace CodeBase.UI.Forms
             if (_currentCostOfGold <= _currentMoney)
             {
                 _inventory.CurrentData(_currentData);
-                _playerMoney.SellMinions(_currentData);
+                //_playerMoney.SellMinions(_currentData);
                 _inventory.SellMinions(_currentData);
                 _playerMoney.BuyTower(data);
                 _inventory.BuyMinions(data);

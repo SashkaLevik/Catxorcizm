@@ -11,7 +11,6 @@ namespace Assets.Sashka.Infastructure.CameraLogic
     {
         [SerializeField] private float _speed;
         [SerializeField] private SpawnerController _spawnerController;
-        [SerializeField] private GameScreen _gameScreen;
 
         private float _currentSpeed;
 
@@ -27,13 +26,13 @@ namespace Assets.Sashka.Infastructure.CameraLogic
         private void OnEnable()
         {
             _spawnerController.WaveCompleted += StopMoving;
-            _gameScreen.WaveStarted += SetDefaultSpeed;
+            _spawnerController.WaveStarted += SetDefaultSpeed;
             _spawnerController.LevelCompleted += StopMoving;
         }
         private void OnDisable()
         {
             _spawnerController.WaveCompleted -= StopMoving;
-            _gameScreen.WaveStarted -= SetDefaultSpeed;
+            _spawnerController.WaveStarted -= SetDefaultSpeed;
             _spawnerController.LevelCompleted -= StopMoving;
         }
         private void StopMoving()

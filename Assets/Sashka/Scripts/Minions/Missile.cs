@@ -31,11 +31,10 @@ namespace Assets.Sashka.Scripts.Minions
             => _target = target;
 
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public virtual void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out BaseEnemy enemy))
             {
-                Debug.Log("Hit");
                 enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
                 Destroy(gameObject);
             }

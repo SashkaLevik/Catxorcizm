@@ -47,7 +47,7 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Weak);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
-                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;                
                 yield return delay;
             }
             for (int i = 0; i < mediumCount; i++)

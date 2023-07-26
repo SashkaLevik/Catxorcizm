@@ -3,6 +3,9 @@ using Assets.Sashka.Scripts.StaticData;
 using System.Collections;
 using CodeBase.Tower;
 using UnityEngine;
+using CodeBase.UI.Element;
+using CodeBase.Player;
+using Assets.Sashka.Scripts.Minions.Eagle;
 //using UnityEngine.Events;
 namespace Assets.Sashka.Scripts.Enemyes
 {
@@ -15,11 +18,12 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private float _speed;
         private int _damage;
-        private float _attackRange;
-        private float _attackRate;
-        private float _currentSpeed;
+        private int _reward;
+        public float _currentSpeed;
         private float _cooldown;
         private bool _canAttack = true;
+
+        public int Reward => _reward;
 
         private void Start()
         {
@@ -30,15 +34,12 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             _speed = _staticData.Speed;
             _damage = _staticData.Damage;
-            _attackRange = _staticData.AttackRange;
-            _attackRate = _staticData.AttackRate;
-            _cooldown = _staticData.AttackRate;
+            _reward = _staticData.Reward;
+            _cooldown = _staticData.Cooldown;
         }
 
         private void Update()
-        {
-            Move();
-        }
+            => Move();
 
         private void OnTriggerStay2D(Collider2D other)
         {            
@@ -62,7 +63,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         private IEnumerator ResetAttack()
         {
             _canAttack = false;
-            yield return new WaitForSeconds(_attackRate);
+            yield return new WaitForSeconds(_cooldown);
             _canAttack = true;
         }
 
@@ -70,6 +71,16 @@ namespace Assets.Sashka.Scripts.Enemyes
             _currentSpeed = _speed;
 
         private void Move() =>
-            transform.position += Vector3.left * _currentSpeed * Time.deltaTime;
+            transform.position += Vector3.left * _currentSpeed * Time.deltaTime;        
+
+        public void OnTornadoEnter(float modifier)
+            => StartCoroutine(ReduceSpeed(modifier));
+
+        private IEnumerator ReduceSpeed(float modifier)
+        {
+            _currentSpeed -= modifier;
+            yield return new WaitForSeconds(1.5f);
+            SetDefaultSpeed();
+        }
     }
 }

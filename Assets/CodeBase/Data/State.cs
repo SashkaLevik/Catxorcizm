@@ -15,8 +15,8 @@ namespace CodeBase.Data
 
         public State()
         {
-            CurrentHP = 4;
-            MaxHP = 4;
+            CurrentHP = 10;
+            MaxHP = 10;
             MeleeAttack = 3;
             SpellAmount = 2;
             Price = 50;

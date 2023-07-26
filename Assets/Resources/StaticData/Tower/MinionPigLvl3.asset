@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
+  m_Name: MinionPigLvl3
+  m_EditorClassIdentifier: 
+  Name: Pig Lvl 3
+  Level: 3
+  CurrentHP: 28
+  MaxHP: 28
+  Damage: 3
+  Defence: 0
+  Cooldown: 3
+  MissileSpeed: 0
+  UIIcon: {fileID: 1799066006, guid: 90ed24c017be24e499427b9dd248b851, type: 3}
+  ItemIcon: {fileID: 0}
+  Price: 130
+  Prefab: {fileID: 7620369883719918790, guid: 3dde88790b8543f4490ac5e0acc5dcc4, type: 3}
+  TowerTypeID: 14

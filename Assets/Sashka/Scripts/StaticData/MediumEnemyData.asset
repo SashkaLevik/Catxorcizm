@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e02822513b22e4995748b39ed1a8bc, type: 3}
   m_Name: MediumEnemyData
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 12
   Damage: 2
-  AttackRange: 1
-  AttackRate: 2
-  Speed: 0.5
+  Cooldown: 3
+  Speed: 0.4
+  Reward: 30

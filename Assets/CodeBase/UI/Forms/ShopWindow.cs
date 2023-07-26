@@ -48,7 +48,7 @@ namespace CodeBase.UI.Forms
 
         private void Update()
         {
-            _currentMoney = _playerMoney.CurrentMoney;
+            _currentMoney = _playerMoney.CurrentSoul;
         }
 
         private void OnEnable()

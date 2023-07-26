@@ -138,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12184632, y: 0.02707699}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -149,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.05, y: 1.06}
+  m_Size: {x: 0.8063073, y: 0.74590725}
   m_EdgeRadius: 0
 --- !u!114 &2463603299169214201
 MonoBehaviour:
@@ -169,6 +169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1088
   _animator: {fileID: 733263089612756752}
+  _currentSpeed: 0
 --- !u!114 &733263089612756752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +197,7 @@ MonoBehaviour:
   _audioController: {fileID: 993478672488123575}
   _health: {fileID: 3906165839377990243}
   _animator: {fileID: 733263089612756752}
+  _soulPrefab: {fileID: 2013414147876821180, guid: 760c8bbe87ea41e42a6e8c7b861602fd, type: 3}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &3906165839377990243
 MonoBehaviour:
@@ -320,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.1209
+      value: 0.083
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.718
+      value: 0.736
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

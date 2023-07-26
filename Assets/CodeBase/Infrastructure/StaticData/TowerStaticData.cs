@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Assets.Sashka.Infastructure.Tresures;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure.StaticData
 {
@@ -16,6 +18,7 @@ namespace CodeBase.Infrastructure.StaticData
 
 
         public Sprite UIIcon;
+        public Sprite ItemIcon;
         public int Price;
         public GameObject Prefab;
 

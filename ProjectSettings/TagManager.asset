@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - InitialPoint
+  - SoulCounter
+  - SpawnerController
+  - Hero
   layers:
   - Default
   - TransparentFX

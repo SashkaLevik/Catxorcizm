@@ -13,7 +13,11 @@ namespace CodeBase.Player
     public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
     {
         private State _state;
+        //public HeroAttack Attack;
+
         public event UnityAction HealthChanged;
+        public event UnityAction Died;
+
 
         private void Awake()
         {
@@ -34,10 +38,10 @@ namespace CodeBase.Player
 
         public void TakeDamage(int damage)
         {
-            if (Current <= 0)
-                return;
-
             Current -= damage;
+
+            if (Current <= 0)
+                Die();
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -48,6 +52,16 @@ namespace CodeBase.Player
 
         public void UpdateProgress(PlayerProgress progress)
         {
+        }
+
+        private void Die()
+        {
+            Died?.Invoke();
+            //Attack.enabled = false;
+            Destroy(gameObject);
+            //Animator.PlayDeath();
+
+            //Instantiate(DeathFx, transform.position, Quaternion.identity);
         }
     }
 }

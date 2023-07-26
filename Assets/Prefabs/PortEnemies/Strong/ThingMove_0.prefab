@@ -196,6 +196,7 @@ MonoBehaviour:
   _audioController: {fileID: 8987757161343364337}
   _health: {fileID: 916125322213012988}
   _animator: {fileID: 1521933292027308704}
+  _soulPrefab: {fileID: 2013414147876821180, guid: 760c8bbe87ea41e42a6e8c7b861602fd, type: 3}
   DeathFx: {fileID: 8967506366178881894, guid: a78ed976230e82c4088dcd107640b46e, type: 3}
 --- !u!114 &916125322213012988
 MonoBehaviour:

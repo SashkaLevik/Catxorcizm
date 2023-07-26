@@ -41,34 +41,18 @@ namespace Assets.Sashka.Infastructure.Tresures
 
         private void OnMouseUp()
         {
-            transform.GetComponent<Collider2D>().enabled = true;
-            
-            var rayOrigin = _camera.transform.position;
-            var rayDirection = GetMousePosition() - rayOrigin;
+            Vector2 clickPosition = GetMousePosition();
+            RaycastHit2D[] hitInfo = Physics2D.RaycastAll(clickPosition, Vector2.zero);
 
-            RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
-            Debug.Log(hitInfo.collider.name);
-
-            if (hitInfo.collider != null)
+            foreach (RaycastHit2D hit in hitInfo)
             {
-                if (hitInfo.transform.TryGetComponent(out MinionHealth minion))
+                if (hit.collider.TryGetComponent(out BaseMinion minion))
                 {
-                    Debug.Log("Hit" + minion.name);                    
+                    Debug.Log(minion.name);
                 }
-                else
-                    SetStartPosition();
             }
-            //if (hitInfo.collider.gameObject.TryGetComponent(out TowerSpawner spawner))
-            //{
-            //    var minion = spawner.GetComponentInChildren<BaseMinion>();
-            //    Debug.Log("Hit" + minion.name);
-            //    if (minion == null)
-            //    {
-            //        Debug.Log("NoMinionHere");
-            //    }
-            //}
-            //else
-            //    SetStartPosition();
+            transform.GetComponent<Collider2D>().enabled = true;
+            Invoke(nameof(SetStartPosition), 0.2f);
         }        
 
         private Vector3 GetMousePosition()

@@ -8,6 +8,7 @@ namespace Assets.Sashka.Scripts.Minions
 {
     public class RangeMinion : BaseMinion
     {
+        [SerializeField] private Transform _firePos;
         [SerializeField] private Missile _missile;
 
         public override void StartAttack()
@@ -27,7 +28,6 @@ namespace Assets.Sashka.Scripts.Minions
 
         private void SetFlame()
         {
-            Debug.Log("Missile");
             Missile missile = Instantiate(_missile, _firePos.position, Quaternion.identity);
             missile.Init(_enemy);
         }

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f99ab98896101b439f6efc9bb928d80, type: 3}
   m_Name: IronShield
   m_EditorClassIdentifier: 
-  Description: Some Text
+  Description: 'Iron Shield '
   Icon: {fileID: -855077143, guid: 81f5405e5b54f0e4187996d510286995, type: 3}
   ItemType: 1
   AtkModifier: 0
-  DfsModifier: 0
-  AtkSpdModifier: 0
+  DfsModifier: 3
+  Cooldown: 1
+  HealthModifier: 0
+  Price: 0

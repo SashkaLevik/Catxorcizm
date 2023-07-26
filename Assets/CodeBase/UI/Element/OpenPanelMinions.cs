@@ -1,3 +1,4 @@
+using Assets.Sashka.Infastructure.Tresures;
 using CodeBase.Infrastructure.StaticData;
 using TMPro;
 using UnityEngine;
@@ -12,9 +13,10 @@ namespace CodeBase.UI.Element
         [SerializeField] private TMP_Text _damageText;
         [SerializeField] private TMP_Text _cooldownText;
         [SerializeField] private TMP_Text _healthText;
+        [SerializeField] private Image _itemIcon;
     
-        private TowerStaticData _data;
-    
+        private TowerStaticData _data;        
+
         public void OpenPanel(GameObject panel)
         {
             panel.SetActive(true);
@@ -26,7 +28,15 @@ namespace CodeBase.UI.Element
             _imageIcon.sprite = data.UIIcon;
             _damageText.text = data.Damage.ToString();
             _cooldownText.text = data.Cooldown.ToString();
-            _healthText.text = data.MaxHP.ToString();
+            _healthText.text = data.MaxHP.ToString();            
+            
+            _itemIcon.sprite = data.ItemIcon;
+            _itemIcon.color = new Color(1, 1, 1, 1);
+
+            if (data.ItemIcon == null)
+            {
+                _itemIcon.color = Color.clear;
+            }            
         }
 
         public void ClosePanel(GameObject panel)

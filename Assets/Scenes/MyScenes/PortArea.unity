@@ -413,6 +413,7 @@ MonoBehaviour:
   - {fileID: 1328886594}
   - {fileID: 851859786}
   - {fileID: 469552942}
+  _appearEffect: {fileID: 2957398402996071321, guid: d529ec523dc5a53438d2658dd9aea864, type: 3}
   _spawnerController: {fileID: 1276082689}
   _treasures:
   - {fileID: 7767680341052663714, guid: 83391ea9d7a5b2044b4eff9b404c29e9, type: 3}
@@ -1826,11 +1827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3805714744928226685, guid: 61a27c9a9e2f6594cac8bf275c2a6c4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.772287
+      value: 29.18
       objectReference: {fileID: 0}
     - target: {fileID: 3805714744928226685, guid: 61a27c9a9e2f6594cac8bf275c2a6c4d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.87042457
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 3805714744928226685, guid: 61a27c9a9e2f6594cac8bf275c2a6c4d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2576,7 +2577,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 95.28494, y: 1.74}
+  m_Size: {x: 95.18274, y: 1.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2590,7 +2591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424881902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.2826, y: 2.17, z: 0}
+  m_LocalPosition: {x: 42.2314, y: 2.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2623,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101416899193428045, guid: e476c016a179a0642ab583f637a45f6c, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5101416899193428045, guid: e476c016a179a0642ab583f637a45f6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3397,7 +3398,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1920106313
 GameObject:

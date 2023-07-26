@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MyScenes/MarketArea.unity
     guid: 7eed4679cca84dd4d8a3d47210dda571
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MyScenes/MageArea.unity
     guid: 1b512907bf4f66a479787fae0fa595e5

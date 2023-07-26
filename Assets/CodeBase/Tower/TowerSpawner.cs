@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Factory;
+﻿using Assets.Sashka.Scripts.Minions;
+using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
@@ -17,7 +18,7 @@ namespace CodeBase.Tower
         private ShopWindow _shopWindow;
         private bool _createTower;
         private GameObject _currentTower;
-        
+
         private string _id;
         private TowerStaticData _data;
         public event UnityAction<TowerSpawner> CreateMinion;

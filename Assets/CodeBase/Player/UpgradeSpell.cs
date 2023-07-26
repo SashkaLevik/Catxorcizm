@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Element;
@@ -8,36 +9,32 @@ namespace CodeBase.Player
 {
     public class UpgradeSpell : MonoBehaviour, ISavedProgress
     {
-        [SerializeField] private List<SpellView> _upgrade;
+        [SerializeField] private List<SpellView> _upgradeSpellViews;
         [SerializeField] private PlayerMoney _playerMoney;
+        [SerializeField] private int _defaultSpellCount = 2;
 
-        private List<SpellView> _upgradeSpell = new();
         private State _heroStats;
-        private int _currentMoney;
         private int _currentCostOfGold;
+        private int _maxLevelUpgrade;
         private int _currentSoul;
         private int _spellAmount;
-        private int _maxLevelUpgrade;
 
         public void LoadProgress(PlayerProgress progress)
         {
-            _spellAmount = progress.HeroState.SpellAmount;
-            Debug.Log("load data Hero SpellAmount");
+            _heroStats = progress.HeroState;
+            _spellAmount = _heroStats.SpellAmount;
         }
 
         public void UpdateProgress(PlayerProgress progress)
         {
-            Debug.Log("save Hero SpellAmount");
             progress.HeroState.SpellAmount = _spellAmount;
         }
-
-        private void Awake()
+        
+        private void Start()
         {
-            for (int i = 0; i < _upgrade.Count; i++)
-            {
-                _upgradeSpell.Add(_upgrade[i]);
-                _maxLevelUpgrade = i + 1 + _spellAmount;
-            }
+            OpenSpellView();
+            
+            _maxLevelUpgrade = _upgradeSpellViews.Count + _defaultSpellCount;
         }
 
         private void Update()
@@ -47,7 +44,7 @@ namespace CodeBase.Player
 
         private void OnEnable()
         {
-            foreach (SpellView upgradeSpell in _upgradeSpell)
+            foreach (SpellView upgradeSpell in _upgradeSpellViews)
             {
                 upgradeSpell.SellButtonClick += TrySellBuy;
             }
@@ -55,24 +52,32 @@ namespace CodeBase.Player
 
         private void OnDisable()
         {
-            foreach (SpellView upgradeSpell in _upgradeSpell)
+            foreach (SpellView upgradeSpell in _upgradeSpellViews)
             {
                 upgradeSpell.SellButtonClick -= TrySellBuy;
             }
         }
 
-        private void TrySellBuy(State state, SpellView spellView)
+        private void OpenSpellView()
+        {
+            for (int i = 0; i < _spellAmount - _defaultSpellCount; i++)
+            {
+                _upgradeSpellViews[i].BuyUpgrade();
+            }
+        }
+
+        private void TrySellBuy(SpellView spellView)
         {
             if (_spellAmount <= _maxLevelUpgrade)
             {
-                _currentCostOfGold = state.PriceSpell;
-                
+                _currentCostOfGold = _heroStats.PriceSpell * (_spellAmount + 1);
+
                 if (_currentSoul <= 0)
                     return;
 
                 if (_currentCostOfGold <= _currentSoul)
                 {
-                    _playerMoney.BuyUpgradeHeroSpell(state);
+                    _playerMoney.BuyUpgradeHeroSpell(_heroStats, _spellAmount);
                     _spellAmount += 1;
                     spellView.BuyUpgrade();
                 }

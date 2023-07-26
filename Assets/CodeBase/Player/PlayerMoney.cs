@@ -9,10 +9,10 @@ namespace CodeBase.Player
     {
         [SerializeField] private int _currentMoney;
         [SerializeField] private int _currentSoul;
-    
+
         private int _currentMoneyLevel;
         public event UnityAction<int> CurrentMoneyChanged;
-        public event UnityAction<int> CurrentSoulChanged; 
+        public event UnityAction<int> CurrentSoulChanged;
 
         public int CurrentMoney => _currentMoney;
         public int CurrentSoul => _currentSoul;
@@ -35,16 +35,25 @@ namespace CodeBase.Player
         {
             if (_currentSoul > 0)
             {
-                _currentSoul -= heroState.PriceLevel;
+                _currentSoul -= heroState.PriceLevel * (heroState.Level + 1);
                 CurrentSoulChanged?.Invoke(_currentSoul);
             }
         }
-        
-        public void BuyUpgradeHeroSpell(State heroState)
+
+        public void BuyUpgradeHeroSpell(State heroState, int stepUpgrade)
         {
             if (_currentSoul > 0)
             {
-                _currentSoul -= heroState.PriceSpell;
+                _currentSoul -= heroState.PriceSpell * (stepUpgrade + 1);
+                CurrentSoulChanged?.Invoke(_currentSoul);
+            }
+        }
+
+        public void BuyOpenNewMinions(State heroState, int stepUpgrade)
+        {
+            if (_currentSoul > 0)
+            {
+                _currentSoul -= heroState.PriceNewMinions * (stepUpgrade + 1);
                 CurrentSoulChanged?.Invoke(_currentSoul);
             }
         }

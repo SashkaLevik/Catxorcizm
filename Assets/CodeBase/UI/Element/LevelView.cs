@@ -1,20 +1,15 @@
-﻿using System;
-using CodeBase.Data;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CodeBase.UI.Element
 {
-    public class SpellView : MonoBehaviour
+    public class LevelView : MonoBehaviour
     {
         [SerializeField] private Button _sellButton;
-        [SerializeField] private Image _icon;
         [SerializeField] private Image _iconOpen;
 
-        public bool BuySpell;
-        
-        public event UnityAction<SpellView> SellButtonClick;
+        public event UnityAction<LevelView> SellButtonClick;
 
         private void OnEnable()
         {
@@ -33,10 +28,23 @@ namespace CodeBase.UI.Element
 
         public void BuyUpgrade()
         {
-            BuySpell = !BuySpell;
-            _icon.gameObject.SetActive(false);
+            ActiveLevel();
+        }
+
+        private void ActiveLevel()
+        {
             _iconOpen.gameObject.SetActive(true);
             _sellButton.interactable = false;
+        }
+        
+        public void OpenPanel(GameObject panel)
+        {
+            panel.SetActive(true);
+        }
+        
+        public void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
         }
     }
 }

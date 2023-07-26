@@ -1,26 +1,58 @@
-﻿using CodeBase.Infrastructure.State;
+﻿using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
+using CodeBase.Infrastructure.State;
+using CodeBase.Player;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
-    public class LoadAcademyState : IState
+    public class LoadAcademyState : IPayloadedState<string>
     {
+        private const string InitialPointTag = "InitialPoint";
         private const string Academy = "Academy";
-        private GameStateMachine _gameStateMachine;
-        private SceneLoader _sceneLoader;
+        private readonly GameStateMachine _gameStateMachine;
+        private readonly SceneLoader _sceneLoader;
+        private readonly LoadingCurtain _loadingCurtain;
+        private readonly IGameFactory _gameFactory;
+        private readonly IPersistentProgressService _progressService;
 
-        public LoadAcademyState(GameStateMachine gameStateMachine, SceneLoader sceneLoader)
+        public LoadAcademyState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
+            IGameFactory gameFactory, IPersistentProgressService progressService)
         {
-            this._gameStateMachine = gameStateMachine;
-            this._sceneLoader = sceneLoader;
+            _gameStateMachine = gameStateMachine;
+            _loadingCurtain = loadingCurtain;
+            _sceneLoader = sceneLoader;
+            _gameFactory = gameFactory;
+            _progressService = progressService;
         }
 
-        public void Enter()
+        public void Enter(string sceneName)
         {
-            _sceneLoader.Load(Academy);
+            _loadingCurtain.Show();
+            _sceneLoader.Load(sceneName, OnLoaded);
         }
 
-        public void Exit()
+        public void Exit() => 
+            _loadingCurtain.Hide();
+
+        private void OnLoaded()
         {
+            InitGameWorld();
+            InformProgressReaders();
+
+            _gameStateMachine.Enter<GameLoopState>();
+        }
+        
+        private void InitGameWorld()
+        {
+            GameObject hud = _gameFactory.CreatHudAcademy();
+        }
+
+        private void InformProgressReaders()
+        {
+            foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
+                progressReader.LoadProgress(_progressService.Progress);
         }
     }
 }

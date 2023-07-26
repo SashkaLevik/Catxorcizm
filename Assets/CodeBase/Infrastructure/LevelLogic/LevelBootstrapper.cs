@@ -1,4 +1,6 @@
 ﻿using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
 using CodeBase.Infrastructure.UI;
 using CodeBase.UI;
@@ -10,9 +12,9 @@ namespace CodeBase.Infrastructure.LevelLogic
     {
         [SerializeField] private LevelScreen _levelScreen;
         [SerializeField] private ButtonLevel buttonLevel;
-        
+
         public LoadingCurtain Curtain;
-        
+
         private const string PortArea = "PortArea";
         private const string MarketArea = "MarketArea";
         private const string MageArea = "MageArea";
@@ -43,23 +45,22 @@ namespace CodeBase.Infrastructure.LevelLogic
 
         private void OnAcademyLoaded()
         {
-            _stateMachine.Enter<LoadMenuState, string>(Academy);
+            _stateMachine.Enter<LoadAcademyState, string>(Academy);
         }
 
         private void OnMageLoaded()
         {
-            _stateMachine.Enter<LoadMenuState, string>(MageArea);
+            _stateMachine.Enter<LoadLevelState, string>(MageArea);
         }
 
         private void OnMarketLoaded()
         {
-            _stateMachine.Enter<LoadMenuState, string>(MarketArea);
+            _stateMachine.Enter<LoadLevelState, string>(MarketArea);
         }
 
         private void OnPortAreaLoad()
         {
-            _stateMachine.Enter<LoadMenuState, string>(PortArea);
-            _stateMachine.Enter<LoadProgressState>();
+            _stateMachine.Enter<LoadLevelState, string>(PortArea);
         }
     }
 }

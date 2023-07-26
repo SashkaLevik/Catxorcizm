@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Assets.Sashka.Infastructure.Spell
 {
-    public class CastSpell : MonoBehaviour, ISavedProgress
+    public class CastSpell : MonoBehaviour, ISavedProgressReader
     {
         [SerializeField] private Button _cast;
         [SerializeField] private Transform _castPos;
@@ -25,8 +25,6 @@ namespace Assets.Sashka.Infastructure.Spell
             _spellAmount = progress.HeroState.SpellAmount;
             Debug.Log("load data Hero SpellAmount");
         }
-
-        public void UpdateProgress(PlayerProgress progress){ }
 
         private void OnEnable() => 
             _cast.onClick.AddListener(Cast);

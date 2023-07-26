@@ -69,8 +69,7 @@ namespace CodeBase.Infrastructure.State
 
         private void EnterLoadLevel()
         {
-            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
-            //_stateMachine.Enter<LoadProgressState>();
+            _stateMachine.Enter<LoadProgressState>();
         }
     }
 }

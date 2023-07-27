@@ -10,7 +10,7 @@ using UnityEngine.Events;
 
 namespace CodeBase.Player
 {
-    public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
+    public class HeroHealth : MonoBehaviour, IHealth, ISavedProgressReader
     {
         private State _state;
         //public HeroAttack Attack;
@@ -48,10 +48,6 @@ namespace CodeBase.Player
         {
            Debug.Log("загрузить данные Жизней");
             _state = progress.HeroState;
-        }
-
-        public void UpdateProgress(PlayerProgress progress)
-        {
         }
 
         private void Die()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CodeBase.Player;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
+using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
 
 namespace CodeBase.UI.Element
@@ -11,7 +12,7 @@ namespace CodeBase.UI.Element
     {
         [SerializeField] private List<MinionView> _upgradeMinionViews;
         [SerializeField] private PlayerMoney _playerMoney;
-        [SerializeField] private int _defaultSpellCount = 2;
+        [SerializeField] private int _defaultMinionsCount = 1;
         
         private State _heroStats;
         private int _maxMinions;
@@ -77,7 +78,7 @@ namespace CodeBase.UI.Element
         
         private void OpenMinions()
         {
-            for (int i = 0; i < _countMinions - _defaultSpellCount; i++)
+            for (int i = 0; i < _countMinions - _defaultMinionsCount; i++)
             {
                 _upgradeMinionViews[i].BuyUpgrade();
             }

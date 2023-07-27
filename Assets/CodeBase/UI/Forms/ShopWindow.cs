@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Player;
 using CodeBase.Tower;
@@ -8,7 +10,7 @@ using UnityEngine;
 
 namespace CodeBase.UI.Forms
 {
-    public class ShopWindow : BaseWindow
+    public class ShopWindow : BaseWindow, ISavedProgressReader
     {
         [SerializeField] private List<TowerStaticData> _items;
         [SerializeField] private List<TowerView> _towerViewPrefabs;
@@ -22,17 +24,31 @@ namespace CodeBase.UI.Forms
         
         public event Action<bool> Opened;
         private bool _isOpen;
+        private int _countMinions;
+        private readonly int _defaultMinionsCount = 1;
 
         public void Construct(PlayerMoney playerMoney, Inventory inventory)
         {
             _playerMoney = playerMoney;
             _inventory = inventory;
         }
+        
+        public void LoadProgress(PlayerProgress progress)
+        {
+            Debug.Log("zagruzka minions");
+            _countMinions = progress.NumberOfMinions;
+        }
 
         public void Inactive()
         {
             _isOpen = false;
             Opened?.Invoke(_isOpen);
+        }
+
+        private void Start()
+        {
+            CloseMinions();
+            OpenMinions();
         }
 
         protected override void OnAwake()
@@ -85,6 +101,22 @@ namespace CodeBase.UI.Forms
                 _inventory.BuyMinions(data);
                 _inventory.SpawnMinions();
                 gameObject.SetActive(false);
+            }
+        }
+        
+        private void CloseMinions()
+        {
+            foreach (TowerView towerView in _towerViewPrefabs)
+            {
+                towerView.CloseMinions();
+            }
+        }
+        
+        private void OpenMinions()
+        {
+            for (int i = 0; i <= _countMinions - _defaultMinionsCount; i++)
+            {
+                _towerViewPrefabs[i].OpenMinions();
             }
         }
     }

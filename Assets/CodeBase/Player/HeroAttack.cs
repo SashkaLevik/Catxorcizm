@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace CodeBase.Player
 {
-    public class HeroAttack : MonoBehaviour, ISavedProgress
+    public class HeroAttack : MonoBehaviour, ISavedProgressReader
     {
         [SerializeField] private int _meleeDamage;
         [SerializeField] private float _attackAngle;
@@ -29,10 +29,6 @@ namespace CodeBase.Player
         {
             _state = progress.HeroState;
             _meleeDamage = _state.MeleeAttack;
-        }
-
-        public void UpdateProgress(PlayerProgress progress)
-        {
         }
 
         private void OnTriggerStay2D(Collider2D other)

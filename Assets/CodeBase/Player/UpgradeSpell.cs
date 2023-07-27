@@ -29,11 +29,11 @@ namespace CodeBase.Player
         {
             progress.HeroState.SpellAmount = _spellAmount;
         }
-        
+
         private void Start()
         {
             OpenSpellView();
-            
+
             _maxLevelUpgrade = _upgradeSpellViews.Count + _defaultSpellCount;
         }
 

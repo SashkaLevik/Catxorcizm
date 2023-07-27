@@ -85,12 +85,14 @@ namespace CodeBase.Infrastructure.LevelLogic
         {
             GameObject hud = _gameFactory.CreateHud();
             hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>(), hero.GetComponent<PlayerMoney>());
-            //hud.GetComponentInChildren<UpgradePlayerUI>(true).Construct(hero.GetComponent<UpgradePlayer>());
         }
 
         private void InformProgressReaders()
         {
             foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
+                progressReader.LoadProgress(_progressService.Progress);
+
+            foreach (ISavedProgressReader progressReader in _uiFactory.ProgressReaders)
                 progressReader.LoadProgress(_progressService.Progress);
         }
     }

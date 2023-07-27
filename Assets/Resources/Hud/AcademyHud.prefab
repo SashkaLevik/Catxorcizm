@@ -221,7 +221,7 @@ MonoBehaviour:
   - {fileID: 6167420937700581438}
   - {fileID: 4811386442215815281}
   _playerMoney: {fileID: 1720189032}
-  _defaultSpellCount: 2
+  _defaultMinionsCount: 1
 --- !u!1 &1372528972399070498
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 1372528972403056788}
   - component: {fileID: 1372528972403056787}
   - component: {fileID: 8218101270773683536}
+  - component: {fileID: 3819339220390229560}
   m_Layer: 5
   m_Name: DogCage
   m_TagString: Untagged
@@ -416,11 +417,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528972403056788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528972803318209}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &8218101270773683536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +449,68 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972403056787}
   _iconOpenImage: {fileID: 1372528972403056788}
   _iconColorImage: {fileID: 1372528972808457688}
+  _data: {fileID: 0}
+--- !u!114 &3819339220390229560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972403056785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8218101270773683536}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7315500655732250111}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8218101270773683536}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7315500655732250111}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8218101270773683536}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7315500655732250111}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1372528972415227351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,10 +1226,10 @@ RectTransform:
   m_Father: {fileID: 1372528973164837305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.03980347, y: 0.32720023}
-  m_AnchorMax: {x: 0.96019655, y: 0.67289996}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1.1392002, y: -0.74769974}
+  m_AnchorMin: {x: 0, y: 0.32720023}
+  m_AnchorMax: {x: 1, y: 0.6767037}
+  m_AnchoredPosition: {x: -0.000015258789, y: -0.5}
+  m_SizeDelta: {x: -0.5539999, y: -1.748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972704196650
 CanvasRenderer:
@@ -1211,7 +1286,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.75
+  m_fontSize: 52.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1401,6 +1476,7 @@ GameObject:
   - component: {fileID: 1372528972803318210}
   - component: {fileID: 1372528972803318209}
   - component: {fileID: 6167420937700581438}
+  - component: {fileID: 1637464735549749817}
   m_Layer: 5
   m_Name: PigCage
   m_TagString: Untagged
@@ -1506,11 +1582,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528972803318210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528974089807294}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &6167420937700581438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,6 +1614,68 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972803318209}
   _iconOpenImage: {fileID: 1372528972803318210}
   _iconColorImage: {fileID: 1372528973993302144}
+  _data: {fileID: 0}
+--- !u!114 &1637464735549749817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972803318223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6167420937700581438}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3743986124322468386}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6167420937700581438}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3743986124322468386}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6167420937700581438}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3743986124322468386}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1372528972808457670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,9 +2335,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.93600005, y: 0.5335988}
-  m_AnchoredPosition: {x: 0.7236023, y: -0.51519775}
-  m_SizeDelta: {x: -0.8768997, y: -0.5284996}
+  m_AnchorMax: {x: 1, y: 0.6472532}
+  m_AnchoredPosition: {x: 0.5739975, y: -0.104003906}
+  m_SizeDelta: {x: -1.1760006, y: 0.29399872}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528973164837308
 CanvasRenderer:
@@ -2543,7 +2693,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973355322638}
   _icon: {fileID: 1372528973732767245}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528973525915439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,7 +3379,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1372528973754974112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528972403056787}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &9044214699209130098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3246,6 +3407,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973754974127}
   _iconOpenImage: {fileID: 1372528973754974112}
   _iconColorImage: {fileID: 1372528973627118259}
+  _data: {fileID: 0}
 --- !u!114 &4226897654035182662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,7 +3420,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9044214699209130098}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6850609405813515374}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9044214699209130098}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6850609405813515374}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9044214699209130098}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6850609405813515374}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1372528973763703620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,7 +3852,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973901027398}
   _icon: {fileID: 1372528972470728936}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528973993302158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,7 +4065,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974049639161}
   _icon: {fileID: 1372528973525915425}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528974089807292
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +4078,7 @@ GameObject:
   - component: {fileID: 1372528974089807295}
   - component: {fileID: 1372528974089807294}
   - component: {fileID: 4811386442215815281}
+  - component: {fileID: 3873423387382844748}
   m_Layer: 5
   m_Name: EagleCage
   m_TagString: Untagged
@@ -3975,7 +4184,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528974089807295}
   m_OnClick:
     m_PersistentCalls:
@@ -3995,6 +4204,68 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974089807294}
   _iconOpenImage: {fileID: 1372528974089807295}
   _iconColorImage: {fileID: 1372528972633277875}
+  _data: {fileID: 0}
+--- !u!114 &3873423387382844748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528974089807292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4811386442215815281}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: OpenPanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6829630601897885887}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4811386442215815281}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6829630601897885887}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4811386442215815281}
+          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
+          m_MethodName: ClosePanel
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 6829630601897885887}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1372528974208169162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4971,6 +5242,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5194,6 +5469,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909629322858030777, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}

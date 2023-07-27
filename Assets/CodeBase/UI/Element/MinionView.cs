@@ -1,19 +1,18 @@
-﻿using System;
-using CodeBase.Data;
+using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CodeBase.UI.Element
 {
-    public class SpellView : MonoBehaviour
+    public class MinionView : MonoBehaviour
     {
         [SerializeField] private Button _sellButton;
-        [SerializeField] private Image _icon;
-        [SerializeField] private Image _iconOpen;
+        [SerializeField] private Image _iconOpenImage;
+        [SerializeField] private Image _iconColorImage;
+        [SerializeField] private TowerStaticData _data;
 
-        public event UnityAction<SpellView> SellButtonClick;
-
+        public event UnityAction<MinionView> SellButtonClick;
         private void OnEnable()
         {
             _sellButton.onClick.AddListener(OnButtonClick);
@@ -28,14 +27,14 @@ namespace CodeBase.UI.Element
         {
             SellButtonClick?.Invoke(this);
         }
-
+    
         public void BuyUpgrade()
         {
-            _icon.gameObject.SetActive(false);
-            _iconOpen.gameObject.SetActive(true);
+            _iconOpenImage.enabled = false;
+            _iconColorImage.color = new Color(1f,1f,1f,1f);
             _sellButton.interactable = false;
         }
-
+    
         public void OpenPanel(GameObject panel)
         {
             panel.SetActive(true);

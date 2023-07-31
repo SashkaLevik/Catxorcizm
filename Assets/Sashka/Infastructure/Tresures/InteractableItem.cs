@@ -6,11 +6,15 @@ namespace Assets.Sashka.Infastructure.Tresures
     public class InteractableItem : MonoBehaviour
     {
         [SerializeField] private PrizeSoul _prizeSoul;
-        [SerializeField] private AudioSource _jingle;
+
+        private void OnMouseOver()
+            => transform.localScale = new Vector3(1.3f, 1.3f, 0);
+
+        private void OnMouseExit()
+            => transform.localScale = new Vector3(1, 1, 0);
 
         private void OnMouseDown()
         {
-            _jingle.Play();
             Instantiate(_prizeSoul, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

@@ -48,6 +48,13 @@ namespace CodeBase.Infrastructure.Factory
             return hud;
         }
 
+        public GameObject CreatHudAcademy()
+        {
+            GameObject hudAcademy = _assets.Instantiate(AssetPath.HudAcademyPath);
+            RegisterProgressWatchers(hudAcademy);
+            return hudAcademy;
+        }
+
         public GameObject CreateDraggableItem()
         {
             var draggableItem = _assets.Instantiate(AssetPath.DraggableItemPath);

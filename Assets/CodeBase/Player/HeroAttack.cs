@@ -18,6 +18,12 @@ namespace CodeBase.Player
 
         private State _state;
         private float _distance;
+        private Animator _animator;
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         public int MeleeDamage
         {
@@ -42,7 +48,7 @@ namespace CodeBase.Player
                 _attackRate -= Time.deltaTime;
 
                 if (_attackRate <= 0)
-                {
+                {                    
                     enemy.GetComponent<EnemyHealth>().Died += SetAttack;
                     _attackRate = 4;
                     
@@ -60,6 +66,7 @@ namespace CodeBase.Player
         {
             foreach (Collider2D enemy in Hit(_meleeAttack, _sizeMeleeAttack))
             {
+                _animator.SetTrigger("Attack");
                 enemy.GetComponent<IHealth>().TakeDamage(_state.MeleeAttack);
             }
         }

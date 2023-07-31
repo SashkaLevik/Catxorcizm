@@ -15,11 +15,13 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private LayerMask _player;
         [SerializeField] private EnemyAnimator _animator;
+        [SerializeField] private AudioSource _attackSound;
 
+        private IHealth _health;
         private float _speed;
         private int _damage;
         private int _reward;
-        public float _currentSpeed;
+        private float _currentSpeed;
         private float _cooldown;
         private bool _canAttack = true;
 
@@ -43,11 +45,12 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void OnTriggerStay2D(Collider2D other)
         {            
-            if (other.TryGetComponent(out IHealth health) && _canAttack)
+            if (other.TryGetComponent(out _health) && _canAttack)
             {
                 _currentSpeed = 0;
+                _attackSound.Play();
                 _animator.PlayAttack();
-                health.TakeDamage(_damage);
+                _health.TakeDamage(_damage);
                 StartCoroutine(ResetAttack());
             }
         }
@@ -60,11 +63,18 @@ namespace Assets.Sashka.Scripts.Enemyes
             }
         }
 
-        private IEnumerator ResetAttack()
+        protected IEnumerator ResetAttack()
         {
             _canAttack = false;
             yield return new WaitForSeconds(_cooldown);
             _canAttack = true;
+        }
+
+        private IEnumerator ReduceSpeed(float modifier)
+        {
+            _currentSpeed -= modifier;
+            yield return new WaitForSeconds(1.2f);
+            SetDefaultSpeed();
         }
 
         private void SetDefaultSpeed() =>
@@ -75,12 +85,5 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         public void OnTornadoEnter(float modifier)
             => StartCoroutine(ReduceSpeed(modifier));
-
-        private IEnumerator ReduceSpeed(float modifier)
-        {
-            _currentSpeed -= modifier;
-            yield return new WaitForSeconds(1.5f);
-            SetDefaultSpeed();
-        }
     }
 }

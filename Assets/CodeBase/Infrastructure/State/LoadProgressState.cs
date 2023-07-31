@@ -1,9 +1,7 @@
 ﻿using CodeBase.Data;
 using CodeBase.Infrastructure.LevelLogic;
-using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
@@ -27,8 +25,8 @@ namespace CodeBase.Infrastructure.State
         public void Enter()
         {
             LoadProgressOrInitNew();
-            
-            _gameStateMachine.Enter<LoadPortState, string>(_progressService.Progress.WorldData.Level);
+            _gameStateMachine.Enter<LoadMenuState, string>(MenuScene);
+            //_gameStateMachine.Enter<LoadPortState, string>(_progressService.Progress.WorldData.Level);
         }
 
         public void Exit()
@@ -37,6 +35,8 @@ namespace CodeBase.Infrastructure.State
         
         private void LoadProgressOrInitNew()
         {
+            Debug.Log("создан новый прогресс");
+            
             _progressService.Progress = 
                 _saveLoadService.LoadProgress() 
                 ?? NewProgress();
@@ -46,7 +46,7 @@ namespace CodeBase.Infrastructure.State
         {
             Debug.Log("new Stats");
             
-            var progress =  new PlayerProgress(initialLevel: PortArea);
+            var progress =  new PlayerProgress(initialLevel: MenuScene);
             progress.HeroState.ResetHP();
 
             return progress;

@@ -11,13 +11,14 @@ namespace Assets.Sashka.Infastructure.CameraLogic
     {
         [SerializeField] private float _speed;
         [SerializeField] private SpawnerController _spawnerController;
-
+        [SerializeField] private AudioSource _portMusic;
         private float _currentSpeed;
 
         private void Start()
         {
             _currentSpeed = _speed;
             StopMoving();
+            _portMusic.Play();
         }            
 
         private void FixedUpdate()
@@ -36,13 +37,9 @@ namespace Assets.Sashka.Infastructure.CameraLogic
             _spawnerController.LevelCompleted -= StopMoving;
         }
         private void StopMoving()
-        {
-            _currentSpeed = 0;
-        }
+            => _currentSpeed = 0;
 
         private void SetDefaultSpeed()
-        {
-            _currentSpeed = _speed;
-        }
+            => _currentSpeed = _speed;
     }
 }

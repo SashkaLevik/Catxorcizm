@@ -47,7 +47,7 @@ namespace CodeBase.Player
 
         public void TrySellBuy()
         {
-            _currentCostOfSoul = _heroStats.Price;
+            _currentCostOfSoul = _heroStats.PriceLevel;
 
             if (_currentSoul <= 0)
                 return;

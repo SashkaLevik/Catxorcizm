@@ -48,14 +48,14 @@ namespace Assets.Sashka.Scripts.Enemyes
         {            
             foreach (var spawner in _spawners)
             {
-                _enemiesCount += spawner.Weak + spawner.Medium + spawner.Strong;
+                _enemiesCount += spawner.Weak + spawner.Medium + spawner.Strong + spawner.Boss;
             }
         }
 
         private void SetSpawner(int index)
         {
             _currentSpawner = _spawners[index];
-            _spawned = _currentSpawner.Weak + _currentSpawner.Medium + _currentSpawner.Strong;
+            _spawned = _currentSpawner.Weak + _currentSpawner.Medium + _currentSpawner.Strong + _currentSpawner.Boss;
         }
 
         public void NextWave()

@@ -1642,8 +1642,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 6
-  _mediumCount: 4
+  _weakCount: 3
+  _mediumCount: 0
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1276082689}
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   _spawnPoints:
   - {fileID: 826979592}
   - {fileID: 284222948}
-  _bossSpawnPoint: {fileID: 1098649816}
+  _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 2
@@ -2408,13 +2408,13 @@ MonoBehaviour:
   _spawnPoints:
   - {fileID: 826979592}
   - {fileID: 284222948}
-  _bossSpawnPoint: {fileID: 1098649816}
+  _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 4
-  _weakCount: 0
+  _weakCount: 4
   _mediumCount: 0
   _strongCount: 0
-  _bossCount: 1
+  _bossCount: 0
   _controller: {fileID: 1276082689}
   _enemies: []
 --- !u!4 &1920106315

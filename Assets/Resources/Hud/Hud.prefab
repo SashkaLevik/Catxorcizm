@@ -822,7 +822,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9189148805331238567}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3344223215751902884}
+        m_TargetAssemblyTypeName: CodeBase.UI.Element.ReturnMenu, Assembly-CSharp
+        m_MethodName: ClickMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3344223215751902884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1136,7 @@ GameObject:
   - component: {fileID: 102216555686039943}
   - component: {fileID: 8224454297833237701}
   - component: {fileID: 2278101992510430720}
+  - component: {fileID: 6967841674670585611}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
@@ -1302,6 +1315,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentSoul: 100
+--- !u!114 &6967841674670585611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583826824757915217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409e9cbff57c40adb4f393dfbb2cba5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heroHealth: {fileID: 0}
+  _extraLiveText: {fileID: 4857190529974158218}
 --- !u!1 &4800913093768660597
 GameObject:
   m_ObjectHideFlags: 0

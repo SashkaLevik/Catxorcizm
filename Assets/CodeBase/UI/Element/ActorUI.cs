@@ -3,7 +3,6 @@ using CodeBase.Player;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using Assets.Sashka.Infastructure.Spell;
 
@@ -24,8 +23,8 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _nextWave;
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
-        [SerializeField] private RewardCalculation _reward;        
-
+        [SerializeField] private RewardCalculation _reward;
+        
         private GameObject _spawner;       
 
         public SpawnerController Spawner => _spawnerController;

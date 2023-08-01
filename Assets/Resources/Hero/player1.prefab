@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 40803309135729013}
   - component: {fileID: 40803309135729014}
   - component: {fileID: 4757678890221362453}
-  - component: {fileID: 40803309135729012}
   - component: {fileID: 4251568795773834243}
   - component: {fileID: 5038229133558156384}
   - component: {fileID: 5855944877157463938}
@@ -121,19 +120,6 @@ MonoBehaviour:
   - {fileID: 1151284719812983207}
   - {fileID: 5619677473289276617}
   _minions: []
---- !u!114 &40803309135729012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40803309135729015}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentSoul: 100
 --- !u!114 &4251568795773834243
 MonoBehaviour:
   m_ObjectHideFlags: 0

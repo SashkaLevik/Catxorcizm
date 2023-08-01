@@ -1091,10 +1091,10 @@ MonoBehaviour:
   CloseButton: {fileID: 1184367851227390257}
   _items:
   - {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
+  - {fileID: 11400000, guid: d69c64eaaf5993d4b9e86ddcadb0b1e4, type: 2}
   - {fileID: 11400000, guid: b6a266a667574f14282f191a131adaae, type: 2}
   - {fileID: 11400000, guid: aa4978c57528a90438fee535e7bc807d, type: 2}
   - {fileID: 11400000, guid: 98d9e4af887a2774d8d9ec114ed40573, type: 2}
-  - {fileID: 11400000, guid: d69c64eaaf5993d4b9e86ddcadb0b1e4, type: 2}
   _towerViewPrefabs:
   - {fileID: 3648068124146694631}
   - {fileID: 8883932515618957017}

@@ -7,9 +7,9 @@ public class MoneyUI : MonoBehaviour
     [SerializeField] private TMP_Text _money;
     [SerializeField] private PlayerMoney _playerMoney;
 
-    private void Start()
+    private void Awake()
     {
-        _money.text = _playerMoney.CurrentSoul.ToString();
+        _money.text = _playerMoney.CurrentMoneyLevel.ToString();
     }
 
     private void OnEnable()
@@ -24,6 +24,6 @@ public class MoneyUI : MonoBehaviour
 
     private void OnChangeMoney(int arg0)
     {
-        _money.text = _playerMoney.CurrentSoul.ToString();
+        _money.text = _playerMoney.CurrentMoneyLevel.ToString();
     }
 }

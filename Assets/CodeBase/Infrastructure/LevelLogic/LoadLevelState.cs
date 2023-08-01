@@ -1,3 +1,4 @@
+using Assets.Sashka.Infastructure.Spell;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
@@ -84,6 +85,7 @@ namespace CodeBase.Infrastructure.LevelLogic
         private void InitHud(GameObject hero, GameObject hud)
         {
             hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>(), hero.GetComponent<CastSpell>());
+            hud.GetComponent<ExtraLives>().Construct(hero.GetComponent<HeroHealth>());
         }
 
         private void InformProgressReaders()

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSoul: 1500
+  _currentSoul: 0
 --- !u!1 &1372528972371397346
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   - {fileID: 6167420937700581438}
   - {fileID: 4811386442215815281}
   _playerMoney: {fileID: 1720189032}
-  _defaultSpellCount: 2
+  _defaultMinionsCount: 1
 --- !u!114 &8712060677374908955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +451,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972403056787}
   _iconOpenImage: {fileID: 1372528972403056788}
   _iconColorImage: {fileID: 1372528972808457688}
+  _data: {fileID: 0}
 --- !u!1 &1372528972415227351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1542,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972803318209}
   _iconOpenImage: {fileID: 1372528972803318210}
   _iconColorImage: {fileID: 1372528973993302144}
+  _data: {fileID: 0}
 --- !u!1 &1372528972808457670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,7 +2123,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.15
+  m_fontSize: 64.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2558,7 +2560,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973355322638}
   _icon: {fileID: 1372528973732767245}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528973525915439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2928,7 +2929,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.55
+  m_fontSize: 41.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3261,6 +3262,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973754974127}
   _iconOpenImage: {fileID: 1372528973754974112}
   _iconColorImage: {fileID: 1372528973627118259}
+  _data: {fileID: 0}
 --- !u!114 &4226897654035182662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3657,7 +3659,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973901027398}
   _icon: {fileID: 1372528972470728936}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528973993302158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,7 +3872,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974049639161}
   _icon: {fileID: 1372528973525915425}
   _iconOpen: {fileID: 0}
-  BuySpell: 0
 --- !u!1 &1372528974089807292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4010,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974089807294}
   _iconOpenImage: {fileID: 1372528974089807295}
   _iconColorImage: {fileID: 1372528972633277875}
+  _data: {fileID: 0}
 --- !u!1 &1372528974208169162
 GameObject:
   m_ObjectHideFlags: 0

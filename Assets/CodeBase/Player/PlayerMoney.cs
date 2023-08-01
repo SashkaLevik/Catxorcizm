@@ -14,6 +14,7 @@ namespace CodeBase.Player
         public event UnityAction<int> CurrentSoulChanged;
         public event UnityAction<int> CurrentSoulLevelChanged;
         public int CurrentSoul => _currentSoul;
+        public int CurrentMoneyLevel => _currentMoneyLevel;
 
         private void Start()
         {
@@ -77,6 +78,7 @@ namespace CodeBase.Player
         {
             _currentMoneyLevel += _currentSoul;
             progress.CurrentSoul = _currentMoneyLevel;
+            Debug.Log("сохранение money");
         }
 
         public void LoadProgress(PlayerProgress progress)

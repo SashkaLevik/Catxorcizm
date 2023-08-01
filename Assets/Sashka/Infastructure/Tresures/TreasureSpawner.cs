@@ -21,12 +21,7 @@ namespace Assets.Sashka.Infastructure.Tresures
         private void Awake()
         {
             _treasures = Resources.LoadAll<Treasure>(Loot).ToList();
-        }
-
-        private void Start()
-        {
-            StartCoroutine(SpawnLoot());
-        }
+        }        
 
         private void OnEnable()
         {
@@ -65,8 +60,6 @@ namespace Assets.Sashka.Infastructure.Tresures
         }       
 
         private T GetRandomTresure<T>() where T : Treasure 
-            => (T)_treasures.OrderBy(o => Random.value).First();       
-        
-        
+            => (T)_treasures.OrderBy(o => Random.value).First();                       
     }
 }

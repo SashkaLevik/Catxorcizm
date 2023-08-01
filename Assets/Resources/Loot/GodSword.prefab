@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_Sprite: {fileID: 859699741, guid: b918c520cf62336469bc0ac05e16daa7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   _itemData: {fileID: 11400000, guid: d328352a688da024c9f18ba3490f213a, type: 2}
   _descriptionText: {fileID: 452247075574726418}
   _description: {fileID: 3061318712084237576}
+  _treasureSpawner: {fileID: 0}
 --- !u!114 &304509100843340016
 MonoBehaviour:
   m_ObjectHideFlags: 0

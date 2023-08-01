@@ -9,6 +9,7 @@ namespace Assets.Sashka.Scripts.Enemyes
 {
     public class RewardCalculation : MonoBehaviour
     {
+        [SerializeField] private Image _rewardWindow;
         [SerializeField] private Image _oneStar;
         [SerializeField] private Image _twoStars;
         [SerializeField] private Image _threeStars;
@@ -30,8 +31,9 @@ namespace Assets.Sashka.Scripts.Enemyes
         }
 
         public void GetReward()
-        {
+        {           
             _actorUI.Spawner.CalculatePercentage();
+            _rewardWindow.gameObject.SetActive(true);
 
             if (_actorUI.Spawner.KilledEnemies <= _lowPercent)
             {

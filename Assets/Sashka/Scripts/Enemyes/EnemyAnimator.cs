@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using UnityEngine;
 namespace Assets.Sashka.Scripts.Enemyes
 {
-    class EnemyAnimator : MonoBehaviour
+    public class EnemyAnimator : MonoBehaviour
     {
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int Die = Animator.StringToHash("Die");

@@ -63,7 +63,7 @@ namespace CodeBase.Infrastructure.UI
 
         private void OpenTutorial()
         {
-            //_menuScreen.SetActive(false);
+            _menuScreen.SetActive(false);
             _tutorialScreen.SetActive(true);
             ShowRules?.Invoke();
         }

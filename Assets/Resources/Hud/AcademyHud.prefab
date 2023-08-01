@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentMoney: 0
-  _currentSoul: 15000
+  _currentSoul: 1500
 --- !u!1 &1372528972371397346
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 1372528972371397351}
   - component: {fileID: 1372528972371397368}
   - component: {fileID: 3340129398368925156}
+  - component: {fileID: 8712060677374908955}
   m_Layer: 5
   m_Name: AcademyHud
   m_TagString: Untagged
@@ -96,6 +96,7 @@ RectTransform:
   - {fileID: 1372528972652630735}
   - {fileID: 1372528974208169163}
   - {fileID: 1720189031}
+  - {fileID: 8081313872706429343}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,8 +202,8 @@ MonoBehaviour:
   - {fileID: 8234319038399656883}
   - {fileID: 3095369222641904061}
   _playerMoney: {fileID: 1720189032}
-  _stepMeleeDamage: 5
-  _stepHealth: 10
+  _stepMeleeDamage: 1
+  _stepHealth: 2
 --- !u!114 &3340129398368925156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +222,21 @@ MonoBehaviour:
   - {fileID: 6167420937700581438}
   - {fileID: 4811386442215815281}
   _playerMoney: {fileID: 1720189032}
-  _defaultMinionsCount: 1
+  _defaultSpellCount: 2
+--- !u!114 &8712060677374908955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972371397346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73dc0e42205dc324c97856d1dd860aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: {fileID: 3247430649480022074}
+  _playerMoney: {fileID: 1720189032}
 --- !u!1 &1372528972399070498
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +326,6 @@ GameObject:
   - component: {fileID: 1372528972403056788}
   - component: {fileID: 1372528972403056787}
   - component: {fileID: 8218101270773683536}
-  - component: {fileID: 3819339220390229560}
   m_Layer: 5
   m_Name: DogCage
   m_TagString: Untagged
@@ -417,23 +431,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1372528972403056788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1372528972803318209}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8218101270773683536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,68 +451,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972403056787}
   _iconOpenImage: {fileID: 1372528972403056788}
   _iconColorImage: {fileID: 1372528972808457688}
-  _data: {fileID: 0}
---- !u!114 &3819339220390229560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372528972403056785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8218101270773683536}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: OpenPanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 7315500655732250111}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8218101270773683536}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 7315500655732250111}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8218101270773683536}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 7315500655732250111}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1372528972415227351
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,10 +484,10 @@ RectTransform:
   m_Father: {fileID: 1372528973763703621}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 131.30002, y: -3.2000122}
-  m_SizeDelta: {x: 102.4124, y: 48.5463}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 91, y: 0}
+  m_SizeDelta: {x: 184.13, y: 87.283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972415227178
 CanvasRenderer:
@@ -606,15 +546,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.4
+  m_fontSize: 43.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1226,10 +1166,10 @@ RectTransform:
   m_Father: {fileID: 1372528973164837305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.32720023}
-  m_AnchorMax: {x: 1, y: 0.6767037}
-  m_AnchoredPosition: {x: -0.000015258789, y: -0.5}
-  m_SizeDelta: {x: -0.5539999, y: -1.748}
+  m_AnchorMin: {x: 0.03980347, y: 0.32720023}
+  m_AnchorMax: {x: 0.96019655, y: 0.67289996}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1.1392002, y: -0.74769974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972704196650
 CanvasRenderer:
@@ -1286,7 +1226,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.7
+  m_fontSize: 42.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1476,7 +1416,6 @@ GameObject:
   - component: {fileID: 1372528972803318210}
   - component: {fileID: 1372528972803318209}
   - component: {fileID: 6167420937700581438}
-  - component: {fileID: 1637464735549749817}
   m_Layer: 5
   m_Name: PigCage
   m_TagString: Untagged
@@ -1582,23 +1521,11 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1372528972803318210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1372528974089807294}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6167420937700581438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,68 +1541,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528972803318209}
   _iconOpenImage: {fileID: 1372528972803318210}
   _iconColorImage: {fileID: 1372528973993302144}
-  _data: {fileID: 0}
---- !u!114 &1637464735549749817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372528972803318223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6167420937700581438}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: OpenPanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3743986124322468386}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6167420937700581438}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3743986124322468386}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6167420937700581438}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 3743986124322468386}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1372528972808457670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,10 +1650,10 @@ RectTransform:
   m_Father: {fileID: 1372528973872041999}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 131.30002, y: -3.1999817}
-  m_SizeDelta: {x: 102.4124, y: 48.5463}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 89, y: 0}
+  m_SizeDelta: {x: 181.499, y: 86.036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972811280509
 CanvasRenderer:
@@ -1847,15 +1712,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.4
+  m_fontSize: 43.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1922,10 +1787,10 @@ RectTransform:
   m_Father: {fileID: 1372528973164837305}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 64.7, y: -70.641}
-  m_SizeDelta: {x: 102.4124, y: 48.5463}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 61.618, y: 1.7149}
+  m_SizeDelta: {x: 122.76, y: 58.192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972880488290
 CanvasRenderer:
@@ -1984,7 +1849,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.4
+  m_fontSize: 29.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2061,8 +1926,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 36.98471, y: -4.807907}
-  m_SizeDelta: {x: 73.9699, y: 48.5463}
+  m_AnchoredPosition: {x: 62.476, y: -21.538}
+  m_SizeDelta: {x: 124.953, y: 82.007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972907180638
 CanvasRenderer:
@@ -2121,15 +1986,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.6
+  m_fontSize: 29.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2335,9 +2200,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 1, y: 0.6472532}
-  m_AnchoredPosition: {x: 0.5739975, y: -0.104003906}
-  m_SizeDelta: {x: -1.1760006, y: 0.29399872}
+  m_AnchorMax: {x: 0.93600005, y: 0.5335988}
+  m_AnchoredPosition: {x: 0.7236023, y: -0.51519775}
+  m_SizeDelta: {x: -0.8768997, y: -0.5284996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528973164837308
 CanvasRenderer:
@@ -2514,7 +2379,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.7
+  m_fontSize: 33.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2693,6 +2558,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973355322638}
   _icon: {fileID: 1372528973732767245}
   _iconOpen: {fileID: 0}
+  BuySpell: 0
 --- !u!1 &1372528973525915439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,19 +3245,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1372528973754974112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1372528972403056787}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &9044214699209130098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,7 +3261,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973754974127}
   _iconOpenImage: {fileID: 1372528973754974112}
   _iconColorImage: {fileID: 1372528973627118259}
-  _data: {fileID: 0}
 --- !u!114 &4226897654035182662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3420,55 +3273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9044214699209130098}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: OpenPanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6850609405813515374}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9044214699209130098}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6850609405813515374}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9044214699209130098}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6850609405813515374}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Delegates: []
 --- !u!1 &1372528973763703620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,6 +3657,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528973901027398}
   _icon: {fileID: 1372528972470728936}
   _iconOpen: {fileID: 0}
+  BuySpell: 0
 --- !u!1 &1372528973993302158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,6 +3871,7 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974049639161}
   _icon: {fileID: 1372528973525915425}
   _iconOpen: {fileID: 0}
+  BuySpell: 0
 --- !u!1 &1372528974089807292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,7 +3885,6 @@ GameObject:
   - component: {fileID: 1372528974089807295}
   - component: {fileID: 1372528974089807294}
   - component: {fileID: 4811386442215815281}
-  - component: {fileID: 3873423387382844748}
   m_Layer: 5
   m_Name: EagleCage
   m_TagString: Untagged
@@ -4184,7 +3990,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1372528974089807295}
   m_OnClick:
     m_PersistentCalls:
@@ -4204,68 +4010,6 @@ MonoBehaviour:
   _sellButton: {fileID: 1372528974089807294}
   _iconOpenImage: {fileID: 1372528974089807295}
   _iconColorImage: {fileID: 1372528972633277875}
-  _data: {fileID: 0}
---- !u!114 &3873423387382844748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372528974089807292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4811386442215815281}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: OpenPanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6829630601897885887}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4811386442215815281}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6829630601897885887}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4811386442215815281}
-          m_TargetAssemblyTypeName: MinionView, Assembly-CSharp
-          m_MethodName: ClosePanel
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 6829630601897885887}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1372528974208169162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,6 +4314,217 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1463766530150006514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5888649445036629195}
+  - component: {fileID: 2075047844783699328}
+  - component: {fileID: 4905004521587416082}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5888649445036629195
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463766530150006514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8081313872706429343}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.7, y: 8.8}
+  m_SizeDelta: {x: 139.775, y: 123.57}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2075047844783699328
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463766530150006514}
+  m_CullTransparentMesh: 1
+--- !u!114 &4905004521587416082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463766530150006514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 527568679, guid: b70e029c88d59494d9bbefb1e48ca574, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 1
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3538378199784195026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4082666211977055838}
+  - component: {fileID: 1323244494289570641}
+  - component: {fileID: 3247430649480022074}
+  m_Layer: 5
+  m_Name: MoneyText (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4082666211977055838
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538378199784195026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8081313872706429343}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 131.487, y: 0.000019073}
+  m_SizeDelta: {x: 165.789, y: 72.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1323244494289570641
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538378199784195026}
+  m_CullTransparentMesh: 1
+--- !u!114 &3247430649480022074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538378199784195026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
+  m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294922747
+  m_fontColor: {r: 0.98496795, g: 0.3160377, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3743986124322468386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +4660,44 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6791555833349438709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8081313872706429343}
+  m_Layer: 5
+  m_Name: MoneySoul
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8081313872706429343
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6791555833349438709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5888649445036629195}
+  - {fileID: 4082666211977055838}
+  m_Father: {fileID: 1372528972371397350}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -847.48, y: 318}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6829630601897885887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,10 +5235,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5469,10 +5458,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909629322858030777, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
-      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}

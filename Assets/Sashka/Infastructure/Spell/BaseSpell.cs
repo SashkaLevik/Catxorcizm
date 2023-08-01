@@ -6,22 +6,21 @@ namespace Assets.Sashka.Infastructure.Spell
 {
     public class BaseSpell : MonoBehaviour
     {
+        private const string Explode = "Explode";
+
         [SerializeField] private int _speed;
         [SerializeField] private int _damage;
+        [SerializeField] private AudioSource _fly;
+        [SerializeField] private AudioSource _explode;
 
-        private List<BaseEnemy> _enemies;
-        //[SerializeField] private BaseMinion _baseMinion;
-
-        //private const string Flame = "Flame";
-
-        //private Animator _animator;
-
+        private List<BaseEnemy> _enemies;        
+        private Animator _animator;
 
         private void Start()
         {
             _enemies = new List<BaseEnemy>();
-            //_animator = GetComponent<Animator>();
-            //_animator.Play(Flame);
+            _animator = GetComponent<Animator>();
+            _fly.Play();
         }
 
         private void Update()
@@ -34,19 +33,23 @@ namespace Assets.Sashka.Infastructure.Spell
             
             if (collision.TryGetComponent(out BaseEnemy baseEnemy))
             {
-                _enemies.Add(baseEnemy);
+                _enemies.Add(baseEnemy);               
+            }
+
+            if (collision.TryGetComponent(out Ground ground))
+            {
+                _speed = 0;
+                _explode.Play();
+                _animator.SetTrigger(Explode);
+
                 foreach (var enemy in _enemies)
                 {
                     enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
-                    Invoke(nameof(DestroyObject), 6);
                 }
-
             }
-        }
+        }               
 
-        private void DestroyObject()
-        {
-            Destroy(gameObject);
-        }
+        public void DestroyObject()
+            => Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Assets.Sashka.Infastructure.Spell;
 
 namespace CodeBase.UI.Element
 {
@@ -14,13 +15,16 @@ namespace CodeBase.UI.Element
 
         [SerializeField] private HPBar _hpBar;
         [SerializeField] private TMP_Text _soulCount;
+        [SerializeField] private TMP_Text _spellAmount;
+        [SerializeField] private TMP_Text _livesAmount;
         [SerializeField] private HeroHealth _heroHealth;
+        [SerializeField] private CastSpell _spell;
         [SerializeField] private PlayerMoney _money;
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Button _nextWave;
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
-        [SerializeField] private RewardCalculation _reward;
+        [SerializeField] private RewardCalculation _reward;        
 
         private GameObject _spawner;       
 
@@ -33,6 +37,13 @@ namespace CodeBase.UI.Element
             _levelComplete.gameObject.SetActive(false);
         }
 
+        private void Start()
+        {
+            _soulCount.text = _money.CurrentSoul.ToString();
+            _spellAmount.text = _spell.SpellAmount.ToString();
+            _canvas.worldCamera = Camera.main;
+        }
+
         private void OnEnable()
         {
             _spawnerController.LevelCompleted += _reward.GetReward;
@@ -41,13 +52,7 @@ namespace CodeBase.UI.Element
             _nextWave.onClick.AddListener(HideButton);
             _spawnerController.LevelCompleted += CompleteLevel;
             _levelComplete.onClick.AddListener(LoadMenu);
-        }
-
-        private void Start()
-        {            
-            _soulCount.text = _money.CurrentSoul.ToString();
-            _canvas.worldCamera = Camera.main;
-        }        
+        }               
 
         private void OnDestroy()
         {
@@ -63,11 +68,12 @@ namespace CodeBase.UI.Element
             _heroHealth.Died -= CompleteLevel;
         }
 
-        public void Construct(HeroHealth heroHealth, PlayerMoney money)
+        public void Construct(HeroHealth heroHealth, CastSpell spell)
         {
             _heroHealth = heroHealth;
-            _money = money;
+            _spell = spell;
             _heroHealth.HealthChanged += UpdateHpBar;
+            _spell.SpellUsed += UpdateSpellAmount;
             _money.CurrentSoulChanged += UpdateSoulCount;
             _heroHealth.Died += _reward.GetReward;
             _heroHealth.Died += CompleteLevel;
@@ -78,6 +84,9 @@ namespace CodeBase.UI.Element
 
         private void UpdateHpBar() => 
             _hpBar.SetValue(_heroHealth.Current, _heroHealth.Max);
+
+        private void UpdateSpellAmount(int amount)
+            => _spellAmount.text = amount.ToString();
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -91,9 +100,7 @@ namespace CodeBase.UI.Element
             => _nextWave.gameObject.SetActive(true);
 
         public void HideButton()
-        {
-            _nextWave.gameObject.SetActive(false);
-        }
+            => _nextWave.gameObject.SetActive(false);
 
         private void CompleteLevel()
         {
@@ -103,8 +110,6 @@ namespace CodeBase.UI.Element
         }
 
         private void LoadMenu()
-        {
-            SceneManager.LoadScene(1);
-        }
+            => SceneManager.LoadScene(1);
     }
 }

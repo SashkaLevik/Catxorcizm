@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -11,16 +12,18 @@ namespace CodeBase.Infrastructure.UI
         [SerializeField] private GameObject _gameRules;
         [SerializeField] private MenuScreen _menuScreen;
         [SerializeField] private Button _next;
+        [SerializeField] private List<Image> _images;
 
         private Animator _animator;
         private int _animNumber;
-        private int _animCount = 3;
+        private int _animCount;
 
         public event UnityAction RulesShowed;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            _animCount = _images.Count;
         }
 
         private void OnEnable()
@@ -40,14 +43,30 @@ namespace CodeBase.Infrastructure.UI
 
         private void ShowRules()
         {
-            _animator.SetTrigger(NextAnim);
             _animNumber++;
 
-            if (_animNumber == _animCount)
+            foreach (var image in _images)
             {
-                RulesShowed?.Invoke();
+                if (image.gameObject.activeSelf == false)
+                {
+                    image.gameObject.SetActive(true);                    
+                    break;
+                }
+            }            
+
+            if (_animNumber == _animCount)
+            {                
                 _animNumber = 0;
+
+                for (int i = _images.Count-1; i >= 1; i--)
+                {
+                    print(i);
+                    _images[i].gameObject.SetActive(false);
+                    
+                }
+
                 _gameRules.SetActive(false);
+                RulesShowed?.Invoke();
             }
         }
     }

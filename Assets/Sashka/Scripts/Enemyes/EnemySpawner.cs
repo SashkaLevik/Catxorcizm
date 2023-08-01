@@ -11,11 +11,13 @@ namespace Assets.Sashka.Scripts.Enemyes
         private const string Enemies = "Enemies";
 
         [SerializeField] private Transform[] _spawnPoints;
+        [SerializeField] private Transform _bossSpawnPoint;
         [SerializeField] private BaseEnemy _spawnedEnemy;
         [SerializeField] private float _timeBetweenSpawn;
         [SerializeField] private int _weakCount;
         [SerializeField] private int _mediumCount;
         [SerializeField] private int _strongCount;
+        [SerializeField] private int _bossCount;
         [SerializeField] private SpawnerController _controller;
 
         public List<ScriptablePrefab> _enemies;
@@ -23,6 +25,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         public int Weak => _weakCount;
         public int Medium => _mediumCount;
         public int Strong => _strongCount;
+        public int Boss => _bossCount;
 
         private void Awake()
         {
@@ -36,10 +39,10 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Spawn()
         {
-            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount, _strongCount));
+            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount, _strongCount, _bossCount));
         }
 
-        private IEnumerator SpawnEnemies(int weakCount, int mediumCount, int strongCount)
+        private IEnumerator SpawnEnemies(int weakCount, int mediumCount, int strongCount, int bossCount)
         {
             var delay = new WaitForSeconds(_timeBetweenSpawn);
 
@@ -61,6 +64,13 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Strong);
                 _spawnedEnemy = Instantiate(randomEnemy, GetRandomPoint());
+                _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
+                yield return delay;
+            }
+            for (int i = 0; i < bossCount; i++)
+            {
+                var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Boss);
+                _spawnedEnemy = Instantiate(randomEnemy, _bossSpawnPoint);
                 _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
                 yield return delay;
             }

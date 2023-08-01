@@ -6,6 +6,7 @@ using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Assets.Sashka.Infastructure.Spell
 {
@@ -16,9 +17,12 @@ namespace Assets.Sashka.Infastructure.Spell
         [SerializeField] private BaseSpell _spell;
         [SerializeField] private BookAnimator _animator;
         [SerializeField] private AudioSource _bookSound;
-        //[SerializeField] private AudioSource _meleeSound;
 
-        public int _spellAmount;
+        private int _spellAmount;
+
+        public int SpellAmount => _spellAmount;
+
+        public event UnityAction<int> SpellUsed;
 
         public void LoadProgress(PlayerProgress progress)
         {
@@ -40,13 +44,8 @@ namespace Assets.Sashka.Infastructure.Spell
                 _animator.CastSpell();
                 Instantiate(_spell, _castPos.position, Quaternion.identity);
                 _spellAmount--;
-                Debug.Log("Spel");
+                SpellUsed?.Invoke(_spellAmount);
             }            
-        }
-
-        private void Spell()
-        {
-            Debug.Log("Spel");
-        }
+        }        
     }
 }

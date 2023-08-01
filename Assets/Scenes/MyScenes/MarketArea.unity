@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 5351982805557508216}
+  _minionHealth: {fileID: 0}
 --- !u!61 &227472549213789465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -776,7 +777,6 @@ GameObject:
   - component: {fileID: 3869413569041664447}
   - component: {fileID: 5429391564544676316}
   - component: {fileID: 6914730488805403198}
-  - component: {fileID: 7948713434476774315}
   - component: {fileID: 359097432870120230}
   - component: {fileID: 4887099787025545454}
   - component: {fileID: 6912921998753061933}
@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 7056063979499013670}
+  _minionHealth: {fileID: 0}
 --- !u!114 &2673414784424763264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 5235544874433344110}
+  _minionHealth: {fileID: 0}
 --- !u!4 &2720915264631141788
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,6 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 8556291227839041850}
+  _minionHealth: {fileID: 0}
 --- !u!1 &2852710043285453003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 8814324316251262103}
+  _minionHealth: {fileID: 0}
 --- !u!114 &4858204869010071878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,6 +2828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 5066817045470881326}
+  _minionHealth: {fileID: 0}
 --- !u!114 &7551949719758141842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2947,22 +2952,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6857232783403991497}
   m_CullTransparentMesh: 1
---- !u!114 &7948713434476774315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018523852629609675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ea25e02b2b486e8340bdcf6dc38e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stepMeleeDamage: 1
-  _stepHealth: 2
-  _levelSpellAmount: 4
-  _playerMoney: {fileID: 1018523852629609672}
 --- !u!58 &8003464320430373640
 CircleCollider2D:
   m_ObjectHideFlags: 0

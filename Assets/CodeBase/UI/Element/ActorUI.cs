@@ -68,11 +68,10 @@ namespace CodeBase.UI.Element
             _heroHealth.Died -= CompleteLevel;
         }
 
-        public void Construct(HeroHealth heroHealth, PlayerMoney money, CastSpell spell)
+        public void Construct(HeroHealth heroHealth, CastSpell spell)
         {
             _heroHealth = heroHealth;
             _spell = spell;
-            _money = money;
             _heroHealth.HealthChanged += UpdateHpBar;
             _spell.SpellUsed += UpdateSpellAmount;
             _money.CurrentSoulChanged += UpdateSoulCount;

@@ -35,6 +35,7 @@ namespace CodeBase.Player
             progress.HeroState.Level = _levelAmount;
             progress.HeroState.MaxHP = _health;
             progress.HeroState.MeleeAttack = _damage;
+            _heroStats.ResetHP();
         }
 
         private void Start()

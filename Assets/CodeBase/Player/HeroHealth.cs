@@ -12,7 +12,7 @@ namespace CodeBase.Player
 {
     public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
     {
-        private State _state;        
+        private State _state;
         //public HeroAttack Attack;
 
         public event UnityAction HealthChanged;

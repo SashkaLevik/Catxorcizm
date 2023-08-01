@@ -712,6 +712,7 @@ GameObject:
   - component: {fileID: 7398506528262981145}
   - component: {fileID: 9189148805331238567}
   - component: {fileID: 8747838531070457648}
+  - component: {fileID: 3344223215751902884}
   m_Layer: 5
   m_Name: ToMenuButton
   m_TagString: Untagged
@@ -822,6 +823,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3344223215751902884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474562734162210108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2242cbeaaf9541fd9c808b725f6d9481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 8747838531070457648}
+  TransferTo: MenuScene
 --- !u!1 &2559825353400181995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1123,7 @@ GameObject:
   - component: {fileID: 116477763907412597}
   - component: {fileID: 102216555686039943}
   - component: {fileID: 8224454297833237701}
+  - component: {fileID: 2278101992510430720}
   m_Layer: 5
   m_Name: Hud
   m_TagString: Untagged
@@ -1221,7 +1237,7 @@ MonoBehaviour:
   _livesAmount: {fileID: 4857190529974158218}
   _heroHealth: {fileID: 0}
   _spell: {fileID: 0}
-  _money: {fileID: 0}
+  _money: {fileID: 2278101992510430720}
   _canvas: {fileID: 3583826824757915220}
   _nextWave: {fileID: 7476172363156448228}
   _levelComplete: {fileID: 8747838531070457648}
@@ -1273,6 +1289,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 87.94824, y: 109.45151}
   m_EdgeRadius: 0
+--- !u!114 &2278101992510430720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583826824757915217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentSoul: 100
 --- !u!1 &4800913093768660597
 GameObject:
   m_ObjectHideFlags: 0

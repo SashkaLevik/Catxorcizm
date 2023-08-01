@@ -58,10 +58,11 @@ namespace CodeBase.Infrastructure.LevelLogic
         {
             GameObject hero = _gameFactory.CreateHero(GameObject.FindWithTag(InitialPointTag));
             hero.transform.SetParent(Camera.main.transform);
+            GameObject hud = _gameFactory.CreateHud();
             //GameObject hud = _gameFactory.CreateHud();
-            InitHud(hero);
+            InitHud(hero, hud);
             GameObject additionalTool = _gameFactory.CreateDraggableItem();
-            InitUiRoot(hero, additionalTool);
+            InitUiRoot(hero, hud, additionalTool);
 
             foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())
             {
@@ -69,25 +70,24 @@ namespace CodeBase.Infrastructure.LevelLogic
             }
         }
 
-        private void InitUiRoot(GameObject hero, GameObject additionalTool)
+        private void InitUiRoot(GameObject hero, GameObject hud, GameObject additionalTool)
         {
             GameObject uiRoot = _uiFactory.CreateUIRoot();
             
             uiRoot.GetComponentInChildren<ShopWindow>(true).Construct(
-                hero.GetComponent<PlayerMoney>(),
+                hud.GetComponent<PlayerMoney>(),
                 hero.GetComponent<Inventory>());
 
             uiRoot.GetComponentInChildren<UpgradeMinions>(true).Construct(
-                hero.GetComponent<PlayerMoney>(),
+                hud.GetComponent<PlayerMoney>(),
                 hero.GetComponent<Inventory>());
             
             additionalTool.GetComponent<DraggableItem>().Construct(uiRoot.GetComponentInChildren<UpgradeMinions>(true), hero.GetComponent<Inventory>());
         }
 
-        private void InitHud(GameObject hero)
+        private void InitHud(GameObject hero, GameObject hud)
         {
-            GameObject hud = _gameFactory.CreateHud();
-            hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>(), hero.GetComponent<PlayerMoney>(), hero.GetComponent<CastSpell>());
+            hud.GetComponentInChildren<ActorUI>().Construct(hero.GetComponent<HeroHealth>(), hero.GetComponent<CastSpell>());
         }
 
         private void InformProgressReaders()

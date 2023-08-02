@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Element;
+using TMPro;
 using UnityEngine;
 
 namespace CodeBase.Player
@@ -13,6 +14,7 @@ namespace CodeBase.Player
         [SerializeField] private PlayerMoney _playerMoney;
         [SerializeField] private int _stepMeleeDamage;
         [SerializeField] private int _stepHealth;
+        [SerializeField] private TMP_Text _price;
 
         private State _heroStats;
         private int _currentCostOfGold;
@@ -47,6 +49,8 @@ namespace CodeBase.Player
         private void Update()
         {
             _currentSoul = _playerMoney.CurrentMoneyLevel;
+            _currentCostOfGold = _heroStats.PriceLevel * (_levelAmount);
+            _price.text = _currentCostOfGold.ToString();
         }
 
         private void OnEnable()
@@ -78,14 +82,12 @@ namespace CodeBase.Player
         {
             if (_levelAmount <= _maxLevelUpgrade)
             {
-                _currentCostOfGold = _heroStats.PriceLevel * (_heroStats.Level + 1);
-
                 if (_currentSoul <= 0)
                     return;
 
                 if (_currentCostOfGold <= _currentSoul)
                 {
-                    _playerMoney.BuyUpgradeHero(_heroStats);
+                    _playerMoney.BuyUpgradeHero(_heroStats, _levelAmount);
                     _levelAmount += 1;
                     _health += _stepHealth;
                     _damage += _stepMeleeDamage;

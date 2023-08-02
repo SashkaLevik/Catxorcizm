@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Assets.Sashka.Infastructure.Spell;
+using Assets.Sashka.Infastructure.CameraLogic;
 
 namespace CodeBase.UI.Element
 {
@@ -25,7 +26,8 @@ namespace CodeBase.UI.Element
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private RewardCalculation _reward;
         
-        private GameObject _spawner;       
+        private GameObject _spawner;
+        private CameraFollow _cameraFollow;
 
         public SpawnerController Spawner => _spawnerController;
 
@@ -34,6 +36,7 @@ namespace CodeBase.UI.Element
             _spawner = GameObject.FindGameObjectWithTag(SpawnerController);
             _spawnerController = _spawner.GetComponent<SpawnerController>();
             _levelComplete.gameObject.SetActive(false);
+            _cameraFollow = Camera.main.GetComponentInChildren<CameraFollow>();
         }
 
         private void Start()
@@ -63,8 +66,9 @@ namespace CodeBase.UI.Element
             _levelComplete.onClick.RemoveListener(LoadMenu);
             _heroHealth.HealthChanged -= UpdateHpBar;
             _money.CurrentSoulChanged -= UpdateSoulCount;
-            //_heroHealth.Died -= _reward.GetReward;
+            _heroHealth.Died -= _reward.GetReward;
             _heroHealth.Died -= CompleteLevel;
+            _heroHealth.Died -= _cameraFollow.StopMoving;
         }
 
         public void Construct(HeroHealth heroHealth, CastSpell spell)
@@ -76,6 +80,7 @@ namespace CodeBase.UI.Element
             _money.CurrentSoulChanged += UpdateSoulCount;
             _heroHealth.Died += _reward.GetReward;
             _heroHealth.Died += CompleteLevel;
+            _heroHealth.Died += _cameraFollow.StopMoving;
         }
 
         private void UpdateSoulCount(int soul)

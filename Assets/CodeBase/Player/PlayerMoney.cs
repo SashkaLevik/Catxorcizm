@@ -35,11 +35,11 @@ namespace CodeBase.Player
             }
         }
 
-        public void BuyUpgradeHero(State heroState)
+        public void BuyUpgradeHero(State heroState, int stepUpgrade)
         {
             if (_currentMoneyLevel > 0)
             {
-                _currentMoneyLevel -= heroState.PriceLevel * (heroState.Level + 1);
+                _currentMoneyLevel -= heroState.PriceLevel * (stepUpgrade);
                 CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }
@@ -48,7 +48,7 @@ namespace CodeBase.Player
         {
             if (_currentMoneyLevel > 0)
             {
-                _currentMoneyLevel -= heroState.PriceSpell * (stepUpgrade + 1);
+                _currentMoneyLevel -= heroState.PriceSpell * (stepUpgrade);
                 CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }
@@ -57,7 +57,7 @@ namespace CodeBase.Player
         {
             if (_currentMoneyLevel > 0)
             {
-                _currentMoneyLevel -= heroState.PriceNewMinions * (stepUpgrade + 1);
+                _currentMoneyLevel -= heroState.PriceNewMinions * (stepUpgrade);
                 CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }

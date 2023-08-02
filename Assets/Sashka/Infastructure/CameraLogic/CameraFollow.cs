@@ -35,11 +35,12 @@ namespace Assets.Sashka.Infastructure.CameraLogic
             _spawnerController.WaveCompleted -= StopMoving;
             _spawnerController.WaveStarted -= SetDefaultSpeed;
             _spawnerController.LevelCompleted -= StopMoving;
-        }
-        private void StopMoving()
-            => _currentSpeed = 0;
+        }        
 
         private void SetDefaultSpeed()
             => _currentSpeed = _speed;
+
+        public void StopMoving()
+            => _currentSpeed = 0;
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CodeBase.Player;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.StaticData;
 using UnityEngine;
+using TMPro;
 
 namespace CodeBase.UI.Element
 {
@@ -13,6 +13,7 @@ namespace CodeBase.UI.Element
         [SerializeField] private List<MinionView> _upgradeMinionViews;
         [SerializeField] private PlayerMoney _playerMoney;
         [SerializeField] private int _defaultMinionsCount = 1;
+        [SerializeField] private TMP_Text _price;
         
         private State _heroStats;
         private int _maxMinions;
@@ -34,12 +35,14 @@ namespace CodeBase.UI.Element
         private void Start()
         {
             OpenMinions();
-            _maxMinions = _upgradeMinionViews.Count + 1;
+            _maxMinions = _upgradeMinionViews.Count + 1;            
         }
 
         private void Update()
         {
             _currentSoul = _playerMoney.CurrentMoneyLevel;
+            _currentCostOfGold = _heroStats.PriceNewMinions * (_countMinions);
+            _price.text = _currentCostOfGold.ToString();
         }
         
         private void OnEnable()
@@ -62,8 +65,6 @@ namespace CodeBase.UI.Element
         {
             if (_countMinions <= _maxMinions)
             {
-                _currentCostOfGold = _heroStats.PriceSpell * (_countMinions + 1);
-
                 if (_currentSoul <= 0)
                     return;
 

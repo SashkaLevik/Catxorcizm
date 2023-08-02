@@ -86,10 +86,10 @@ RectTransform:
   - {fileID: 1372528972808457671}
   - {fileID: 1372528973627118258}
   - {fileID: 1372528972688099333}
-  - {fileID: 1372528972403056786}
-  - {fileID: 1372528974089807293}
-  - {fileID: 1372528972803318208}
   - {fileID: 1372528973754974126}
+  - {fileID: 1372528972403056786}
+  - {fileID: 1372528972803318208}
+  - {fileID: 1372528974089807293}
   - {fileID: 1372528973527277270}
   - {fileID: 1372528972691581160}
   - {fileID: 1372528974210689509}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 8218101270773683536}
   - component: {fileID: 6515913382480055890}
   m_Layer: 5
-  m_Name: DogCage
+  m_Name: EagleCage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +351,7 @@ RectTransform:
   m_Children:
   - {fileID: 6164574657048816468}
   m_Father: {fileID: 1372528972371397350}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6976443, y: 0.21800001}
   m_AnchorMax: {x: 0.8156778, y: 0.72700006}
@@ -435,11 +435,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528972403056788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528972803318209}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &8218101270773683536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47746414, y: 0.37841666}
   m_AnchorMax: {x: 0.5798229, y: 0.569}
-  m_AnchoredPosition: {x: 0.2536621, y: -0.009185791}
+  m_AnchoredPosition: {x: 439, y: -0.009185791}
   m_SizeDelta: {x: 0.22200012, y: -1.4515991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972633277876
@@ -1612,11 +1624,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528972803318210}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528974089807294}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &6167420937700581438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,7 +1753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.70346415, y: 0.20650238}
   m_AnchorMax: {x: 0.8083572, y: 0.5}
-  m_AnchoredPosition: {x: -0.4000244, y: 1.0000305}
+  m_AnchoredPosition: {x: 265, y: 1.0000305}
   m_SizeDelta: {x: -1.2790985, y: -0.009613037}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972808457689
@@ -3157,8 +3181,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8275359, y: 0.42941666}
   m_AnchorMax: {x: 0.93753594, y: 0.63279164}
-  m_AnchoredPosition: {x: 0.19995117, y: 1.6000061}
-  m_SizeDelta: {x: -0.08529663, y: -0.6332092}
+  m_AnchoredPosition: {x: -673.989, y: -117.17}
+  m_SizeDelta: {x: -68.459, y: -71.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528973627118260
 CanvasRenderer:
@@ -3289,7 +3313,7 @@ GameObject:
   - component: {fileID: 9044214699209130098}
   - component: {fileID: 4226897654035182662}
   m_Layer: 5
-  m_Name: DragonCage
+  m_Name: DogCage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3309,7 +3333,7 @@ RectTransform:
   m_Children:
   - {fileID: 6814313497335914049}
   m_Father: {fileID: 1372528972371397350}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.83928317, y: 0.2117107}
   m_AnchorMax: {x: 0.952, y: 0.76842135}
@@ -3397,7 +3421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1372528973754974112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1372528972403056787}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &9044214699209130098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4086,7 +4122,7 @@ GameObject:
   - component: {fileID: 4811386442215815281}
   - component: {fileID: 7934076892292828407}
   m_Layer: 5
-  m_Name: EagleCage
+  m_Name: DragonCage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4106,7 +4142,7 @@ RectTransform:
   m_Children:
   - {fileID: 8883077633790894727}
   m_Father: {fileID: 1372528972371397350}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.50928307, y: 0.24300002}
   m_AnchorMax: {x: 0.5676416, y: 0.6432893}
@@ -4190,7 +4226,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1372528974089807295}
   m_OnClick:
     m_PersistentCalls:
@@ -6857,6 +6893,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7088,6 +7128,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909629322858030777, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521925406691219375, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}

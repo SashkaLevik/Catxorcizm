@@ -948,7 +948,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1641,7 +1641,7 @@ MonoBehaviour:
   - {fileID: 284222948}
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
-  _timeBetweenSpawn: 3
+  _timeBetweenSpawn: 4
   _weakCount: 6
   _mediumCount: 4
   _strongCount: 0
@@ -2357,8 +2357,8 @@ MonoBehaviour:
   _timeBetweenSpawn: 3
   _weakCount: 2
   _mediumCount: 4
-  _strongCount: 8
-  _bossCount: 0
+  _strongCount: 4
+  _bossCount: 1
   _controller: {fileID: 1276082689}
   _enemies: []
 --- !u!4 &1818164980
@@ -2410,11 +2410,11 @@ MonoBehaviour:
   - {fileID: 284222948}
   _bossSpawnPoint: {fileID: 1098649816}
   _spawnedEnemy: {fileID: 0}
-  _timeBetweenSpawn: 4
-  _weakCount: 0
+  _timeBetweenSpawn: 4.5
+  _weakCount: 6
   _mediumCount: 0
   _strongCount: 0
-  _bossCount: 1
+  _bossCount: 0
   _controller: {fileID: 1276082689}
   _enemies: []
 --- !u!4 &1920106315

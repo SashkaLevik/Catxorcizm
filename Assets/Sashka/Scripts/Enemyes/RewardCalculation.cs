@@ -19,7 +19,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private ActorUI _actorUI;
 
         private int _lowPercent = 25; private int _mediumPercent = 50; private int _highPercent = 75;
-        private int _lowReward = 30; private int _mediumReward = 50; private int _highReward = 100;
+        private int _lowReward = 40; private int _mediumReward = 80; private int _highReward = 120;
 
         private IEnumerator SpawnSoul(int amount)
         {
@@ -39,19 +39,19 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 SetRewardValues(_lowReward, _oneStar);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(3));
+                StartCoroutine(SpawnSoul(4));
             }
             else if (_actorUI.Spawner.KilledEnemies <= _mediumPercent)
             {
                 SetRewardValues(_mediumReward, _twoStars);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(5));
+                StartCoroutine(SpawnSoul(8));
             }
             else if (_actorUI.Spawner.KilledEnemies > _highPercent)
             {
                 SetRewardValues(_highReward, _threeStars);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(10));
+                StartCoroutine(SpawnSoul(12));
             }
         }
 

@@ -17,6 +17,6 @@ MonoBehaviour:
   ItemType: 1
   AtkModifier: 0
   DfsModifier: 1
-  Cooldown: -1
+  Cooldown: -0.5
   HealthModifier: 0
   Price: 0

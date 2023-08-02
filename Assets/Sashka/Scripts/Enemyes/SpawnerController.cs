@@ -1,9 +1,6 @@
-using Assets.Sashka.Infastructure.Tresures;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
@@ -96,13 +93,10 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (_wavesCount == 0 && _spawned == 0)
             {
                 LevelCompleted?.Invoke();
-                Debug.Log("LevelComplete");
             }                
         }
 
         public void CalculatePercentage()
-        {
-            _killedEnemiesPercent = (_enemiesPercent / _enemiesCount) * _killedEnemies;
-        }
+            => _killedEnemiesPercent = (_enemiesPercent / _enemiesCount) * _killedEnemies;
     }
 }

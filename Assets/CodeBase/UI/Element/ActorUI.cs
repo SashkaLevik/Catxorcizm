@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Assets.Sashka.Infastructure.Spell;
+using Assets.Sashka.Infastructure.CameraLogic;
 
 namespace CodeBase.UI.Element
 {
@@ -26,14 +27,15 @@ namespace CodeBase.UI.Element
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private RewardCalculation _reward;        
 
-        private GameObject _spawner;       
-
+        private GameObject _spawner;
+        private CameraFollow _cameraFollow;
         public SpawnerController Spawner => _spawnerController;
 
         private void Awake()
         {
             _spawner = GameObject.FindGameObjectWithTag(SpawnerController);
             _spawnerController = _spawner.GetComponent<SpawnerController>();
+            _cameraFollow = Camera.main.GetComponentInChildren<CameraFollow>();
             _levelComplete.gameObject.SetActive(false);
         }
 
@@ -64,7 +66,8 @@ namespace CodeBase.UI.Element
             _levelComplete.onClick.RemoveListener(LoadMenu);
             _heroHealth.HealthChanged -= UpdateHpBar;
             _money.CurrentSoulChanged -= UpdateSoulCount;
-            //_heroHealth.Died -= _reward.GetReward;
+            _heroHealth.Died -= _reward.GetReward;
+            _heroHealth.Died -= _cameraFollow.StopMoving;
             _heroHealth.Died -= CompleteLevel;
         }
 
@@ -78,6 +81,7 @@ namespace CodeBase.UI.Element
             _money.CurrentSoulChanged += UpdateSoulCount;
             _heroHealth.Died += _reward.GetReward;
             _heroHealth.Died += CompleteLevel;
+            _heroHealth.Died += _cameraFollow.StopMoving;
         }
 
         private void UpdateSoulCount(int soul)
@@ -95,13 +99,7 @@ namespace CodeBase.UI.Element
             {
                 _money.AddMoney(soul.Reward);
             }
-        }
-
-        public void ShowButton()
-            => _nextWave.gameObject.SetActive(true);
-
-        public void HideButton()
-            => _nextWave.gameObject.SetActive(false);
+        }        
 
         private void CompleteLevel()
         {
@@ -112,5 +110,11 @@ namespace CodeBase.UI.Element
 
         private void LoadMenu()
             => SceneManager.LoadScene(1);
+
+        public void ShowButton()
+            => _nextWave.gameObject.SetActive(true);
+
+        public void HideButton()
+            => _nextWave.gameObject.SetActive(false);
     }
 }

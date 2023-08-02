@@ -40,7 +40,7 @@ namespace CodeBase.Player
             if (_currentMoneyLevel > 0)
             {
                 _currentMoneyLevel -= heroState.PriceLevel * (heroState.Level + 1);
-                CurrentSoulLevelChanged?.Invoke(_currentMoneyLevel);
+                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }
 
@@ -49,7 +49,7 @@ namespace CodeBase.Player
             if (_currentMoneyLevel > 0)
             {
                 _currentMoneyLevel -= heroState.PriceSpell * (stepUpgrade + 1);
-                CurrentSoulLevelChanged?.Invoke(_currentMoneyLevel);
+                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }
 
@@ -58,7 +58,7 @@ namespace CodeBase.Player
             if (_currentMoneyLevel > 0)
             {
                 _currentMoneyLevel -= heroState.PriceNewMinions * (stepUpgrade + 1);
-                CurrentSoulLevelChanged?.Invoke(_currentMoneyLevel);
+                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
             }
         }
 

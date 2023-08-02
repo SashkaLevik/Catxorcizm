@@ -46,7 +46,7 @@ namespace CodeBase.Player
 
         private void Update()
         {
-            _currentSoul = _playerMoney.CurrentSoul;
+            _currentSoul = _playerMoney.CurrentMoneyLevel;
         }
 
         private void OnEnable()

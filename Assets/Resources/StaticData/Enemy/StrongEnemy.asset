@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61e02822513b22e4995748b39ed1a8bc, type: 3}
-  m_Name: WeakEnemyData
+  m_Name: StrongEnemy
   m_EditorClassIdentifier: 
-  Health: 8
-  Damage: 2
-  Cooldown: 4
-  Speed: 0.4
-  Reward: 20
+  Health: 16
+  Damage: 3
+  Cooldown: 3
+  Speed: 0.8
+  Reward: 40

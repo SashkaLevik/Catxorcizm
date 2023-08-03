@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Player;
 using CodeBase.UI.Element;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CodeBase.UI.Forms
@@ -15,7 +13,8 @@ namespace CodeBase.UI.Forms
         [SerializeField] private Button _upgradeButton;
         [SerializeField] private List<TowerStaticData> _data;
         [SerializeField] private OpenPanelMinions _panelMinions;
-
+        [SerializeField] private TMP_Text _price;
+        
         private TowerStaticData _currentData;
         private TowerStaticData _nextUpgrade;
         private PlayerMoney _playerMoney;
@@ -60,6 +59,17 @@ namespace CodeBase.UI.Forms
                     _panelMinions.Show(staticData);
                 }
             }
+        }
+
+        public void OpenPanel(GameObject panel)
+        {
+            panel.SetActive(true);
+            _price.text = _nextUpgrade.Price.ToString();
+        }
+        
+        public void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
         }
 
         private void Update()

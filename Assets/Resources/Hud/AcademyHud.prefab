@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sellButton: {fileID: 1372528972403056787}
   _iconOpenImage: {fileID: 1372528972403056788}
-  _iconColorImage: {fileID: 1372528972808457688}
+  _iconColorImage: {fileID: 1372528972633277875}
   _data: {fileID: 0}
 --- !u!114 &6515913382480055890
 MonoBehaviour:
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.35
+  m_fontSize: 46.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3448,7 +3448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sellButton: {fileID: 1372528973754974127}
   _iconOpenImage: {fileID: 1372528973754974112}
-  _iconColorImage: {fileID: 1372528973627118259}
+  _iconColorImage: {fileID: 1372528972808457688}
   _data: {fileID: 0}
 --- !u!114 &4226897654035182662
 MonoBehaviour:
@@ -4245,7 +4245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sellButton: {fileID: 1372528974089807294}
   _iconOpenImage: {fileID: 1372528974089807295}
-  _iconColorImage: {fileID: 1372528972633277875}
+  _iconColorImage: {fileID: 1372528973627118259}
   _data: {fileID: 0}
 --- !u!114 &7934076892292828407
 MonoBehaviour:

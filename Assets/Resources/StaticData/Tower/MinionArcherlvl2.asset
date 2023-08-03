@@ -16,7 +16,7 @@ MonoBehaviour:
   Level: 2
   CurrentHP: 12
   MaxHP: 12
-  Damage: 2
+  Damage: 3
   Defence: 0
   Cooldown: 2.5
   MissileSpeed: 4

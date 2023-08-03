@@ -15,5 +15,5 @@ MonoBehaviour:
   Health: 12
   Damage: 2
   Cooldown: 3
-  Speed: 0.4
-  Reward: 30
+  Speed: 0.6
+  Reward: 50

@@ -21,7 +21,7 @@ MonoBehaviour:
   Cooldown: 2
   MissileSpeed: 4
   UIIcon: {fileID: 271550891, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  ItemIcon: {fileID: -599001400, guid: 81f5405e5b54f0e4187996d510286995, type: 3}
+  ItemIcon: {fileID: 0}
   Price: 50
   Prefab: {fileID: 9053299736789226757, guid: 683c05c4c03d1684991fab47c5145a22, type: 3}
   TowerTypeID: 0

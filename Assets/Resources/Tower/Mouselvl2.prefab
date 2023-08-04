@@ -231,7 +231,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09649652, y: 0.10521293}
+  m_Offset: {x: 0.09649652, y: 0.05759968}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -242,7 +242,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9394523, y: 1.0711169}
+  m_Size: {x: 0.9394523, y: 0.743114}
   m_EdgeRadius: 0
 --- !u!95 &2177073041124564722
 Animator:
@@ -299,9 +299,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _current: 0
   _max: 0
+  _defence: 0
   _staticData: {fileID: 11400000, guid: be46c8db229147144b9166aea71adacb, type: 2}
   _minion: {fileID: 0}
   _audioController: {fileID: 6726557635889270850}
+  _currentDefence: 0
 --- !u!114 &1386287013784974958
 MonoBehaviour:
   m_ObjectHideFlags: 0

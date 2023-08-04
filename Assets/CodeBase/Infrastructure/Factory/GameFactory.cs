@@ -65,12 +65,7 @@ namespace CodeBase.Infrastructure.Factory
         {
             TowerStaticData towerData = _staticData.ForTower(typeId);
             GameObject tower = Object.Instantiate(towerData.Prefab, parent.position, Quaternion.identity, parent);
-        
-            //var attack = tower.GetComponent<TowerAttack>();
-            //attack.Damage = towerData.Damage;
-            //attack.AttackRange = towerData.AttackRange;
-            //attack.Cooldown = towerData.Cooldown;
-            
+
             var health = tower.GetComponent<MinionHealth>();
             health.Current = towerData.CurrentHP;
             health.Max = towerData.MaxHP;

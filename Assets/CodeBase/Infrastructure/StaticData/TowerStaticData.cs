@@ -18,7 +18,7 @@ namespace CodeBase.Infrastructure.StaticData
 
 
         public Sprite UIIcon;
-        public Sprite ItemIcon;
+        //public Sprite ItemIcon;
         public int Price;
         public GameObject Prefab;
 

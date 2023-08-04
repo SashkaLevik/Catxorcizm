@@ -9,6 +9,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Start()
         {
             _appearSound.Play();
+            _currentSpeed = _speed;
         }
     }
 }

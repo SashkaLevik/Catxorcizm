@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7525686728827354279}
   - component: {fileID: 4665832229223850740}
   - component: {fileID: 8109087901071903689}
-  - component: {fileID: 8676042527848874666}
   - component: {fileID: 3540108394272180806}
   - component: {fileID: 3488317179767695737}
   - component: {fileID: 975800687968189571}
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 2043273953, guid: 89315da300f300943883e24d1468dd42, type: 3}
+  m_Sprite: {fileID: 1241211632, guid: 010fadeb281e8a340861f17b62d71ad8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,18 +109,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04972282, y: -0.019914985}
+  m_Offset: {x: -0.04972279, y: 0.070046306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.04, y: 0.99}
+    oldSize: {x: 1.35, y: 0.98}
     newSize: {x: 1.04, y: 0.99}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1394458, y: 1.9456973}
+  m_Size: {x: 1.1394458, y: 1.7657747}
   m_EdgeRadius: 0
 --- !u!114 &8109087901071903689
 MonoBehaviour:
@@ -130,7 +129,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3550216170001030939}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84bed94a291bdb847a8289f3f6668713, type: 3}
   m_Name: 
@@ -141,27 +140,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1088
   _animator: {fileID: 3540108394272180806}
-  _attackSound: {fileID: 0}
---- !u!114 &8676042527848874666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3550216170001030939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f90418f4d91a6445a853e8406f15b79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _staticData: {fileID: 11400000, guid: eeb447e778e52f449a838aad407f298e, type: 2}
-  _attackPoint: {fileID: 4009479296502333791}
-  _player:
-    serializedVersion: 2
-    m_Bits: 1088
-  _animator: {fileID: 3540108394272180806}
   _attackSound: {fileID: 7869445901514309638}
-  _appearSound: {fileID: 4962564883309120390}
 --- !u!114 &3540108394272180806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.093
+      value: 0.367
       objectReference: {fileID: 0}
     - target: {fileID: 536712972362582034, guid: 93cb496632915974d97a6be5e6c055cf, type: 3}
       propertyPath: m_AnchoredPosition.y

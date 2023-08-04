@@ -1,5 +1,6 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
-using CodeBase.Infrastructure.Service.StaticData;
+﻿using System.Collections.Generic;
+using CodeBase.Infrastructure.AssetManagement;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Forms;
 using UnityEngine;
 
@@ -9,19 +10,14 @@ namespace CodeBase.UI.Service.Factory
     {
         private const string UIRootPath = "UI/UIRoot";
         private readonly IAssetProvider _assets;
-        private readonly IStaticDataService _staticData;
         private Transform _uiRoot;
         private ShopWindow _shop;
         private UpgradeMinions _upgrade;
 
-        public UIFactory(IAssetProvider assets, IStaticDataService staticData)
-        {
-            _assets = assets;
-            _staticData = staticData;
-        }
-
+        public UIFactory(IAssetProvider assets) => _assets = assets;
         public ShopWindow Shop => _shop;
         public UpgradeMinions Upgrade => _upgrade;
+        public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
 
         public GameObject CreateUIRoot()
         {
@@ -35,6 +31,7 @@ namespace CodeBase.UI.Service.Factory
         private ShopWindow GetShop()
         {
             ShopWindow shop = _uiRoot.gameObject.GetComponentInChildren<ShopWindow>();
+            ProgressReaders.Add(shop);
             shop.gameObject.SetActive(false);
             return shop;
         }

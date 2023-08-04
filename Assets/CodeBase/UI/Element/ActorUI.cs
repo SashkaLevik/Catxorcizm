@@ -3,7 +3,6 @@ using CodeBase.Player;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using Assets.Sashka.Infastructure.Spell;
 using Assets.Sashka.Infastructure.CameraLogic;
@@ -25,18 +24,19 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _nextWave;
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
-        [SerializeField] private RewardCalculation _reward;        
-
+        [SerializeField] private RewardCalculation _reward;
+        
         private GameObject _spawner;
         private CameraFollow _cameraFollow;
+
         public SpawnerController Spawner => _spawnerController;
 
         private void Awake()
         {
             _spawner = GameObject.FindGameObjectWithTag(SpawnerController);
             _spawnerController = _spawner.GetComponent<SpawnerController>();
-            _cameraFollow = Camera.main.GetComponentInChildren<CameraFollow>();
             _levelComplete.gameObject.SetActive(false);
+            _cameraFollow = Camera.main.GetComponentInChildren<CameraFollow>();
         }
 
         private void Start()
@@ -67,15 +67,14 @@ namespace CodeBase.UI.Element
             _heroHealth.HealthChanged -= UpdateHpBar;
             _money.CurrentSoulChanged -= UpdateSoulCount;
             _heroHealth.Died -= _reward.GetReward;
-            _heroHealth.Died -= _cameraFollow.StopMoving;
             _heroHealth.Died -= CompleteLevel;
+            _heroHealth.Died -= _cameraFollow.StopMoving;
         }
 
-        public void Construct(HeroHealth heroHealth, PlayerMoney money, CastSpell spell)
+        public void Construct(HeroHealth heroHealth, CastSpell spell)
         {
             _heroHealth = heroHealth;
             _spell = spell;
-            _money = money;
             _heroHealth.HealthChanged += UpdateHpBar;
             _spell.SpellUsed += UpdateSpellAmount;
             _money.CurrentSoulChanged += UpdateSoulCount;
@@ -99,7 +98,13 @@ namespace CodeBase.UI.Element
             {
                 _money.AddMoney(soul.Reward);
             }
-        }        
+        }
+
+        public void ShowButton()
+            => _nextWave.gameObject.SetActive(true);
+
+        public void HideButton()
+            => _nextWave.gameObject.SetActive(false);
 
         private void CompleteLevel()
         {
@@ -110,11 +115,5 @@ namespace CodeBase.UI.Element
 
         private void LoadMenu()
             => SceneManager.LoadScene(1);
-
-        public void ShowButton()
-            => _nextWave.gameObject.SetActive(true);
-
-        public void HideButton()
-            => _nextWave.gameObject.SetActive(false);
     }
 }

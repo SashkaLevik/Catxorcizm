@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6592386, y: 0.06152895}
+  m_Offset: {x: 0.6592386, y: 0.024429858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2440731, y: 0.8769421}
+  m_Size: {x: 0.24407315, y: 0.83984303}
   m_EdgeRadius: 0
 --- !u!114 &8501268999130589052
 MonoBehaviour:
@@ -179,7 +179,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000014901161, y: 0.13184762}
+  m_Offset: {x: -0.00000014901161, y: 0.042191505}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -190,7 +190,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9490438, y: 1.3063049}
+  m_Size: {x: 0.9490438, y: 0.80546737}
   m_EdgeRadius: 0
 --- !u!50 &5336514575599065824
 Rigidbody2D:
@@ -247,9 +247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _current: 0
   _max: 0
+  _defence: 0
   _staticData: {fileID: 11400000, guid: 3d80444cdb97817499b61eac10fe2f00, type: 2}
   _minion: {fileID: 8657440303552368620}
   _audioController: {fileID: 4832237515808643415}
+  _currentDefence: 0
 --- !u!114 &1374572226696087369
 MonoBehaviour:
   m_ObjectHideFlags: 0

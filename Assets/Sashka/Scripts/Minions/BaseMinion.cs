@@ -22,11 +22,14 @@ namespace Assets.Sashka.Scripts.Minions
         private MinionHealth _health;
         protected Animator _animator;
         protected bool _canAttack = true;
+        private Sprite _itemIcon;
+
+        public Sprite ItemIcon => _itemIcon;
 
         public float Defence => _defence;
 
-        private void Awake()
-            => ClearSlot();
+        //private void Awake()
+        //    => ClearSlot();
 
         private void Start()
         {
@@ -52,7 +55,7 @@ namespace Assets.Sashka.Scripts.Minions
 
                     if (treasure.ItemData.ItemType == ItemType.Equipment)
                     {
-                        _towerData.ItemIcon = treasure.ItemData.Icon;
+                        _itemIcon = treasure.ItemData.Icon;
                         _cooldown += treasure.ItemData.Cooldown;
                         _damage += treasure.ItemData.AtkModifier;
                         _health.Defence += treasure.ItemData.DfsModifier;
@@ -78,8 +81,8 @@ namespace Assets.Sashka.Scripts.Minions
             if (collision.TryGetComponent(out _enemy)) { StartAttack(); }
         }
 
-        private void ClearSlot()
-            => _towerData.ItemIcon = null;        
+        //private void ClearSlot()
+        //    => _towerData.ItemIcon = null;        
 
         public virtual void StartAttack() { }
     }

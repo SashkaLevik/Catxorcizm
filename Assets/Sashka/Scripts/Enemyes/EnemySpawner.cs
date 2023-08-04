@@ -18,6 +18,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private int _strongCount;
         [SerializeField] private int _bossCount;
         [SerializeField] private SpawnerController _controller;
+        [SerializeField] protected AudioSource _bossSound;
 
         public List<ScriptablePrefab> _enemies;
 
@@ -71,6 +72,7 @@ namespace Assets.Sashka.Scripts.Enemyes
                 var randomEnemy = GetRandomEnemy<BaseEnemy>(EnemyTypeID.Boss);
                 _spawnedEnemy = Instantiate(randomEnemy, _bossSpawnPoint);
                 _spawnedEnemy.GetComponentInChildren<EnemyHealth>().Died += _controller.OnEnemyDied;
+                _bossSound.Play();
                 yield return delay;
             }
         }        

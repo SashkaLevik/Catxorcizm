@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Assets.Sashka.Scripts.Minions;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Player;
 using CodeBase.UI.Element;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CodeBase.UI.Forms
@@ -15,6 +14,7 @@ namespace CodeBase.UI.Forms
         [SerializeField] private Button _upgradeButton;
         [SerializeField] private List<TowerStaticData> _data;
         [SerializeField] private OpenPanelMinions _panelMinions;
+        [SerializeField] private TMP_Text _price;       
 
         private TowerStaticData _currentData;
         private TowerStaticData _nextUpgrade;
@@ -23,6 +23,8 @@ namespace CodeBase.UI.Forms
         private int _currentCostOfGold;
         private int _currentMoney;
         private int _maxLevel = 3;
+
+        public OpenPanelMinions PanelMinions => _panelMinions;
 
         public void Construct(PlayerMoney playerMoney, Inventory inventory)
         {
@@ -60,6 +62,17 @@ namespace CodeBase.UI.Forms
                     _panelMinions.Show(staticData);
                 }
             }
+        }
+
+        public void OpenPanel(GameObject panel)
+        {
+            panel.SetActive(true);
+            _price.text = _nextUpgrade.Price.ToString();
+        }
+        
+        public void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
         }
 
         private void Update()

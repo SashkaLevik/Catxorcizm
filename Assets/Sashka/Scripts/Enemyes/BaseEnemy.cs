@@ -11,17 +11,17 @@ namespace Assets.Sashka.Scripts.Enemyes
 {
     public class BaseEnemy : MonoBehaviour
     {
-        [SerializeField] private EnemyStaticData _staticData;
+        [SerializeField] protected EnemyStaticData _staticData;
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private LayerMask _player;
         [SerializeField] private EnemyAnimator _animator;
-        [SerializeField] private AudioSource _attackSound;
+        [SerializeField] protected AudioSource _attackSound;
 
         private IHealth _health;
-        private float _speed;
+        protected float _speed;
         private int _damage;
         private int _reward;
-        private float _currentSpeed;
+        protected float _currentSpeed;
         private float _cooldown;
         private bool _canAttack = true;
 
@@ -52,6 +52,7 @@ namespace Assets.Sashka.Scripts.Enemyes
                 _animator.PlayAttack();
                 _health.TakeDamage(_damage);
                 StartCoroutine(ResetAttack());
+                Debug.Log("EnemyAttack");
             }
         }
 

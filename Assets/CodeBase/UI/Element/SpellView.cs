@@ -12,8 +12,6 @@ namespace CodeBase.UI.Element
         [SerializeField] private Image _icon;
         [SerializeField] private Image _iconOpen;
 
-        public bool BuySpell;
-        
         public event UnityAction<SpellView> SellButtonClick;
 
         private void OnEnable()
@@ -33,10 +31,19 @@ namespace CodeBase.UI.Element
 
         public void BuyUpgrade()
         {
-            BuySpell = !BuySpell;
             _icon.gameObject.SetActive(false);
             _iconOpen.gameObject.SetActive(true);
             _sellButton.interactable = false;
+        }
+
+        public void OpenPanel(GameObject panel)
+        {
+            panel.SetActive(true);
+        }
+        
+        public void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
         }
     }
 }

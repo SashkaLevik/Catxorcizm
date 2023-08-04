@@ -4,6 +4,7 @@ using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Element;
 using UnityEngine;
+using TMPro;
 
 namespace CodeBase.Player
 {
@@ -12,6 +13,7 @@ namespace CodeBase.Player
         [SerializeField] private List<SpellView> _upgradeSpellViews;
         [SerializeField] private PlayerMoney _playerMoney;
         [SerializeField] private int _defaultSpellCount = 2;
+        [SerializeField] private TMP_Text _price;
 
         private State _heroStats;
         private int _currentCostOfGold;
@@ -29,17 +31,19 @@ namespace CodeBase.Player
         {
             progress.HeroState.SpellAmount = _spellAmount;
         }
-        
+
         private void Start()
         {
             OpenSpellView();
-            
+
             _maxLevelUpgrade = _upgradeSpellViews.Count + _defaultSpellCount;
         }
 
         private void Update()
         {
-            _currentSoul = _playerMoney.CurrentSoul;
+            _currentSoul = _playerMoney.CurrentMoneyLevel;
+            _currentCostOfGold = _heroStats.PriceSpell * (_spellAmount);
+            _price.text = _currentCostOfGold.ToString();
         }
 
         private void OnEnable()
@@ -70,8 +74,6 @@ namespace CodeBase.Player
         {
             if (_spellAmount <= _maxLevelUpgrade)
             {
-                _currentCostOfGold = _heroStats.PriceSpell * (_spellAmount + 1);
-
                 if (_currentSoul <= 0)
                     return;
 

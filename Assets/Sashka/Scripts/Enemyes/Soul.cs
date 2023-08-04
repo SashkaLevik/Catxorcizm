@@ -23,7 +23,8 @@ namespace Assets.Sashka.Scripts.Enemyes
             _target = GameObject.FindGameObjectWithTag(SoulCounter);
             transform.SetParent(_camera.transform);
             StartCoroutine(Fly());
-            _reward = _enemy.Reward;
+            //_reward = _enemy.Reward;
+            GetReward();
         }        
 
         public void Init(BaseEnemy enemy)
@@ -53,6 +54,14 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (collision.TryGetComponent(out ActorUI actionUI))
             {
                 Destroy(gameObject);
+            }
+        }
+
+        private void GetReward()
+        {
+            if (_enemy != null)
+            {
+                _reward = _enemy.Reward;
             }
         }
     }

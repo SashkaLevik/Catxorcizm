@@ -14,6 +14,7 @@ namespace CodeBase.UI.Element
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private float _timeDragTrigger;
 
+        private BaseMinion _minion;
         private Camera _camera;
         private Vector3 _prefMousePosition;
         private Vector3 _mouseDelta;
@@ -56,6 +57,7 @@ namespace CodeBase.UI.Element
                 {
                     if (hit.transform.TryGetComponent(out MinionHealth minionHealth))
                     {
+                        _minion = hit.collider.GetComponent<BaseMinion>();
                         _selected = hit.transform;
                         _currentSpawner = hit.transform.parent.GetComponent<TowerSpawner>();
                         _data = hit.transform.parent.GetComponent<TowerSpawner>().Data;
@@ -118,6 +120,7 @@ namespace CodeBase.UI.Element
                     {
                         ReturnToCurrentPosition();
                         _panel.gameObject.SetActive(true);
+                        _panel.PanelMinions.SetItemIcon(_minion);
                         _panel.UpgradeData(_data);
                         _panel.ShowMinions(_data);
                         _panel.MaxLevelMinions(_data);

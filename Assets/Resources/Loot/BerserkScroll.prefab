@@ -207,7 +207,7 @@ PrefabInstance:
 
         Atk+1, Df+1
 
-        AtkSpd+0.5'
+        AtkSpd+0.2'
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize

@@ -1,5 +1,6 @@
 ﻿using Assets.Sashka.Scripts.Enemyes;
 using CodeBase.Infrastructure.UI;
+using CodeBase.UI.Element;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,16 @@ namespace Assets.Sashka.Infastructure.Tresures
         private void Awake()
         {
             _treasures = Resources.LoadAll<Treasure>(Loot).ToList();
-        }        
+        }
 
+        private void Start()
+        {
+            SpawnTreasure();
+        }
         private void OnEnable()
         {
             _spawnerController.WaveCompleted += SpawnTreasure;
+            _spawnerController.WaveStarted += RemoveTreasures;
         }
 
         public void SpawnTreasure()

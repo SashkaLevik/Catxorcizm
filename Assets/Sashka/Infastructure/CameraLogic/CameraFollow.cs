@@ -1,4 +1,8 @@
 using Assets.Sashka.Scripts.Enemyes;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using CodeBase.Infrastructure.UI;
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.CameraLogic
@@ -31,7 +35,7 @@ namespace Assets.Sashka.Infastructure.CameraLogic
             _spawnerController.WaveCompleted -= StopMoving;
             _spawnerController.WaveStarted -= SetDefaultSpeed;
             _spawnerController.LevelCompleted -= StopMoving;
-        }
+        }        
 
         private void SetDefaultSpeed()
             => _currentSpeed = _speed;

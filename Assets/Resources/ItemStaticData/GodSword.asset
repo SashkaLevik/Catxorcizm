@@ -16,7 +16,7 @@ MonoBehaviour:
   Icon: {fileID: 859699741, guid: b918c520cf62336469bc0ac05e16daa7, type: 3}
   ItemType: 1
   AtkModifier: 3
-  DfsModifier: 3
+  DfsModifier: 0
   Cooldown: 0
   HealthModifier: 0
   Price: 0

@@ -13,7 +13,7 @@ namespace Assets.Sashka.Infastructure.Tresures
         public Sprite Icon;
         public ItemType ItemType;
 
-        public float AtkModifier;
+        public int AtkModifier;
         public float DfsModifier;
         public float Cooldown;
         public float HealthModifier;

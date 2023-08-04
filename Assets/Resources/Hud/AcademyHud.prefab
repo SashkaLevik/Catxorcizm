@@ -97,6 +97,7 @@ RectTransform:
   - {fileID: 1372528974208169163}
   - {fileID: 1720189031}
   - {fileID: 8081313872706429343}
+  - {fileID: 757983472164766057}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -540,6 +541,7 @@ GameObject:
   - component: {fileID: 1372528972415227176}
   - component: {fileID: 1372528972415227178}
   - component: {fileID: 1372528972415227177}
+  - component: {fileID: 7331888851350542397}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -666,6 +668,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7331888851350542397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972415227351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: CatUpDescription
+  FallbackText: 
 --- !u!1 &1372528972470728854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1262,7 @@ GameObject:
   - component: {fileID: 1372528972704196648}
   - component: {fileID: 1372528972704196650}
   - component: {fileID: 1372528972704196649}
+  - component: {fileID: 3230028753645403585}
   m_Layer: 5
   m_Name: sharp your claws
   m_TagString: Untagged
@@ -1301,7 +1318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfection
+  m_text: "\u0421\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u0441\u0442\u0432\u043E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -1310,7 +1327,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4285976302
   m_fontColor: {r: 0.93333334, g: 0.80784315, b: 0.4627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1328,7 +1345,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.8
+  m_fontSize: 28.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1370,6 +1387,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3230028753645403585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972704196823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Perfection
+  FallbackText: Perfection
 --- !u!1 &1372528972742582882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1412,7 @@ GameObject:
   - component: {fileID: 1372528972742582883}
   - component: {fileID: 1372528972742582885}
   - component: {fileID: 1372528972742582884}
+  - component: {fileID: 4125955294476767925}
   m_Layer: 5
   m_Name: sharp your claws
   m_TagString: Untagged
@@ -1436,7 +1468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Even sharper
+  m_text: "\u0415\u0449\u0435 \u043E\u0441\u0442\u0440\u0435\u0435"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -1445,7 +1477,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4285976302
   m_fontColor: {r: 0.93333334, g: 0.80784315, b: 0.4627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1463,7 +1495,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44
+  m_fontSize: 46.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1505,6 +1537,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4125955294476767925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972742582882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Even sharper
+  FallbackText: Even sharper
 --- !u!1 &1372528972803318223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1851,7 @@ GameObject:
   - component: {fileID: 1372528972811280507}
   - component: {fileID: 1372528972811280509}
   - component: {fileID: 1372528972811280508}
+  - component: {fileID: 5652918401311177050}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -1860,9 +1907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health + 2
-
-    Attack + 1'
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -1871,7 +1916,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4285976302
   m_fontColor: {r: 0.93333334, g: 0.80784315, b: 0.4627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1889,7 +1934,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.25
+  m_fontSize: 41.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1931,6 +1976,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5652918401311177050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972811280506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: CatUpDescription
+  FallbackText: 'Health + 2
+
+    Attack + 1'
 --- !u!1 &1372528972880488303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +2003,7 @@ GameObject:
   - component: {fileID: 1372528972880488288}
   - component: {fileID: 1372528972880488290}
   - component: {fileID: 1372528972880488289}
+  - component: {fileID: 1780239592842776303}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2068,6 +2130,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1780239592842776303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972880488303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: CatUpDescription
+  FallbackText: 
 --- !u!1 &1372528972907180635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2155,7 @@ GameObject:
   - component: {fileID: 1372528972907180636}
   - component: {fileID: 1372528972907180638}
   - component: {fileID: 1372528972907180637}
+  - component: {fileID: 7556381418641478966}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2134,9 +2211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health + 2
-
-    Attack + 1'
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -2163,7 +2238,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.8
+  m_fontSize: 28.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2205,6 +2280,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7556381418641478966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972907180635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: CatUpDescription
+  FallbackText: 'Health + 2
+
+    Attack + 1'
 --- !u!1 &1372528972970835968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,6 +2307,7 @@ GameObject:
   - component: {fileID: 1372528972970835969}
   - component: {fileID: 1372528972970835971}
   - component: {fileID: 1372528972970835970}
+  - component: {fileID: 1682766756796638893}
   m_Layer: 5
   m_Name: sharp your claws
   m_TagString: Untagged
@@ -2271,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sharp your claws
+  m_text: "\u0417\u0430\u0442\u043E\u0447\u0438\u0442\u044C \u043A\u043E\u0433\u0442\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -2298,7 +2390,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.4
+  m_fontSize: 44.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2340,6 +2432,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1682766756796638893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528972970835968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: SharpClaws
+  FallbackText: Sharp your claws
 --- !u!1 &1372528973164837304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,13 +2580,14 @@ GameObject:
   - component: {fileID: 1372528973289797662}
   - component: {fileID: 1372528973289797648}
   - component: {fileID: 1372528973289797663}
+  - component: {fileID: 4926199163534089462}
   m_Layer: 5
   m_Name: sharp your claws
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1372528973289797662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2529,7 +2636,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Like a razor
+  m_text: "\u041A\u0430\u043A \u0431\u0440\u0438\u0442\u0432\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -2556,7 +2663,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.75
+  m_fontSize: 33.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2598,6 +2705,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4926199163534089462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528973289797661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Like a razor
+  FallbackText: Like a razor
 --- !u!1 &1372528973355322636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3143,7 @@ GameObject:
   - component: {fileID: 1372528973608939696}
   - component: {fileID: 1372528973608939698}
   - component: {fileID: 1372528973608939697}
+  - component: {fileID: 222779072792423048}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3044,10 +3166,10 @@ RectTransform:
   m_Father: {fileID: 1372528974208169163}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.11100001, y: 0.06256706}
-  m_AnchorMax: {x: 0.88900006, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1}
-  m_SizeDelta: {x: 0.70219994, y: 2}
+  m_AnchorMin: {x: 0.1073845, y: 0.156}
+  m_AnchorMax: {x: 0.88538456, y: 0.890836}
+  m_AnchoredPosition: {x: 0.49974823, y: 0.20899963}
+  m_SizeDelta: {x: 0.999527, y: -0.61399984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528973608939698
 CanvasRenderer:
@@ -3077,7 +3199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to menu
+  m_text: "\u0412 \u043C\u0435\u043D\u044E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -3104,7 +3226,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.5
+  m_fontSize: 48.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3146,6 +3268,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &222779072792423048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372528973608939711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: To Menu
+  FallbackText: Back to menu
 --- !u!1 &1372528973627118257
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,6 +5278,7 @@ GameObject:
   - component: {fileID: 8128644651679231808}
   - component: {fileID: 5884156095763671742}
   - component: {fileID: 2865158602892050182}
+  - component: {fileID: 7782008480225552581}
   m_Layer: 5
   m_Name: Description (TMP)
   m_TagString: Untagged
@@ -5197,9 +5334,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pig
-
-    Heavy melee fighter'
+  m_text: "\u0421\u0432\u0438\u043D\n\u041C\u043E\u0449\u043D\u044B\u0439 \u0431\u043B\u0438\u0436\u043D\u0438\u0439
+    \u0431\u043E\u0435\u0446"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -5226,7 +5362,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.05
+  m_fontSize: 41.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5268,6 +5404,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7782008480225552581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743986124322468386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Pig
+  FallbackText: 'Pig
+
+    Heavy melee fighter'
 --- !u!1 &5053393806044784599
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,6 +5508,7 @@ GameObject:
   - component: {fileID: 8997789221809999005}
   - component: {fileID: 1642279051597688255}
   - component: {fileID: 3193477476139931115}
+  - component: {fileID: 418320487103479284}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5412,7 +5565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Spell upgrade-
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0437\u0430\u043A\u043B\u0438\u043D\u0430\u043D\u0438\u044F-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -5439,7 +5592,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.95
+  m_fontSize: 30.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5481,6 +5634,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &418320487103479284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302523894632194222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: SpellUpgrade
+  FallbackText: Spell upgrade-
 --- !u!1 &6509879805693304480
 GameObject:
   m_ObjectHideFlags: 0
@@ -5631,7 +5798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 21.4, y: -0.00000047683716}
+  m_AnchoredPosition: {x: 13.7, y: -0.00000047683716}
   m_SizeDelta: {x: 44.03, y: 37.493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &413775840135269904
@@ -5742,6 +5909,7 @@ GameObject:
   - component: {fileID: 6803632729236064991}
   - component: {fileID: 7760865946055495812}
   - component: {fileID: 909998080099243415}
+  - component: {fileID: 5584869599377291168}
   m_Layer: 5
   m_Name: Description (TMP)
   m_TagString: Untagged
@@ -5797,11 +5965,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eagle
-
-    Range fighter
-
-    Slows down enemies'
+  m_text: "\u0414\u0440\u0430\u043A\u043E\u043D \n\u041C\u043E\u0449\u043D\u044B\u0439
+    \u0434\u0430\u043B\u044C\u043D\u0438\u0439 \u0431\u043E\u0435\u0446"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -5828,7 +5993,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.7
+  m_fontSize: 41
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5870,6 +6035,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5584869599377291168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829630601897885887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Dragon
+  FallbackText: 'Dragon
+
+    Heavy range fighter'
 --- !u!1 &6850609405813515374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5881,6 +6062,7 @@ GameObject:
   - component: {fileID: 85589618879106529}
   - component: {fileID: 4654735491782555821}
   - component: {fileID: 1635338156655205201}
+  - component: {fileID: 494552237237392688}
   m_Layer: 5
   m_Name: Description (TMP)
   m_TagString: Untagged
@@ -5936,9 +6118,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dragon
-
-    Heavy range fighter'
+  m_text: "\u0421\u043E\u0431\u0430\u043A\u0430\n\u0411\u044B\u0441\u0442\u0440\u044B\u0439
+    \u0431\u043B\u0438\u0436\u043D\u0438\u0439 \u0431\u043E\u0435\u0446"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -5965,7 +6146,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.75
+  m_fontSize: 39.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6007,6 +6188,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &494552237237392688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850609405813515374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Dog
+  FallbackText: "Dog \nFast melee fighter"
 --- !u!1 &7315500655732250111
 GameObject:
   m_ObjectHideFlags: 0
@@ -6018,6 +6213,7 @@ GameObject:
   - component: {fileID: 5289389597058110642}
   - component: {fileID: 2417383636376014207}
   - component: {fileID: 8135184286970810283}
+  - component: {fileID: 2647737457284229713}
   m_Layer: 5
   m_Name: Description (TMP)
   m_TagString: Untagged
@@ -6073,7 +6269,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dog \nFast melee fighter"
+  m_text: "\u041E\u0440\u0435\u043B\n\u0414\u0430\u043B\u044C\u043D\u0438\u0439 \u0431\u043E\u0435\u0446\n\u0417\u0430\u043C\u0435\u0434\u043B\u044F\u0435\u0442
+    \u0432\u0440\u0430\u0433\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -6100,7 +6297,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.65
+  m_fontSize: 38.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6142,6 +6339,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2647737457284229713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315500655732250111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Eagle
+  FallbackText: 'Eagle
+
+    Range fighter
+
+    Slows down enemies'
 --- !u!1 &7727921553921107533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,6 +6503,7 @@ GameObject:
   - component: {fileID: 797157166494163284}
   - component: {fileID: 7402264589623340691}
   - component: {fileID: 7960642063585246557}
+  - component: {fileID: 7370654898587304730}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6311,10 +6527,10 @@ RectTransform:
   m_Father: {fileID: 5429366103462907222}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09900001, y: 0.26000002}
-  m_AnchorMax: {x: 0.74500006, y: 0.84000003}
-  m_AnchoredPosition: {x: -0.5, y: -0.26200104}
-  m_SizeDelta: {x: 0.5019989, y: 1.4759998}
+  m_AnchorMin: {x: 0.087000005, y: 0.25}
+  m_AnchorMax: {x: 0.76600003, y: 0.84000003}
+  m_AnchoredPosition: {x: -0.5549927, y: 0.23799896}
+  m_SizeDelta: {x: -0.38700008, y: 0.47599995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7402264589623340691
 CanvasRenderer:
@@ -6344,7 +6560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cat upgrade-
+  m_text: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043A\u043E\u0442\u0430-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -6371,7 +6587,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.2
+  m_fontSize: 32.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6413,6 +6629,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7370654898587304730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941105224688158816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: CatUpgrade
+  FallbackText: Cat upgrade-
 --- !u!1 &8460319462716157761
 GameObject:
   m_ObjectHideFlags: 0
@@ -6448,7 +6678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 22.4, y: 0.00000071525574}
+  m_AnchoredPosition: {x: 27.9, y: 0.00000071525574}
   m_SizeDelta: {x: 43.910004, y: 33.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7605598696035534560
@@ -6636,6 +6866,7 @@ GameObject:
   - component: {fileID: 4685274461928524521}
   - component: {fileID: 3524635277396136097}
   - component: {fileID: 2480444346064222875}
+  - component: {fileID: 6419789789546312547}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6659,10 +6890,10 @@ RectTransform:
   m_Father: {fileID: 8803084630481144690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12200001, y: 0.25}
-  m_AnchorMax: {x: 0.73600006, y: 0.82000005}
-  m_AnchoredPosition: {x: -1.5, y: -0.09000015}
-  m_SizeDelta: {x: 1.0350037, y: -0.18000007}
+  m_AnchorMin: {x: 0.098000005, y: 0.25}
+  m_AnchorMax: {x: 0.76000005, y: 0.82000005}
+  m_AnchoredPosition: {x: -0.14099121, y: -0.09000015}
+  m_SizeDelta: {x: 4.063999, y: -0.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3524635277396136097
 CanvasRenderer:
@@ -6692,7 +6923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'New minion- '
+  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C \u043C\u0438\u043D\u044C\u043E\u043D\u0430-"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -6719,7 +6950,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.6
+  m_fontSize: 32
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6761,6 +6992,82 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6419789789546312547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222456301954810080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: NewMinion
+  FallbackText: 'New minion- '
+--- !u!1001 &404228268821153886
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1372528972371397350}
+    m_Modifications:
+    - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_Name
+      value: Localization
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5924255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7000382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.833788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+--- !u!4 &757983472164766057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+  m_PrefabInstance: {fileID: 404228268821153886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1372528972276485695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6946,7 +7253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587907201998705415, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_fontSize
-      value: 36.8
+      value: 40.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490ddaea730680848a400eead68f739e, type: 3}
@@ -7307,6 +7614,10 @@ PrefabInstance:
     - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_Name
       value: 1LvlSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004866424951564796, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490ddaea730680848a400eead68f739e, type: 3}

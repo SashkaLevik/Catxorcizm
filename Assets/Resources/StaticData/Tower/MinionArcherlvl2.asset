@@ -16,12 +16,11 @@ MonoBehaviour:
   Level: 2
   CurrentHP: 12
   MaxHP: 12
-  Damage: 3
+  Damage: 2
   Defence: 0
   Cooldown: 2.5
   MissileSpeed: 4
   UIIcon: {fileID: -924273707, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  ItemIcon: {fileID: 0}
   Price: 70
   Prefab: {fileID: 488120655777076032, guid: fd302be32d38f2f40b022a06428c670b, type: 3}
   TowerTypeID: 1

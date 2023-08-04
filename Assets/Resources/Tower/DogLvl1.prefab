@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6713107567705375820}
   - component: {fileID: 7382207515139459675}
   - component: {fileID: 5085094559471294881}
+  - component: {fileID: 97932933246817035}
   m_Layer: 10
   m_Name: DogLvl1
   m_TagString: Untagged
@@ -311,6 +312,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &97932933246817035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493756138647350478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f92478c9752e64ba47a11e68a40987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpBar: {fileID: 4726870171798023351}
+  _health: {fileID: 266200261277747547}
 --- !u!1 &5069981142220848863
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +599,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ad522e5bfef89b478c6a858708055d2, type: 3}
+--- !u!114 &4726870171798023351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1924880288328791225, guid: 1ad522e5bfef89b478c6a858708055d2, type: 3}
+  m_PrefabInstance: {fileID: 6570676045556750350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e3d25357ea913448e52c4f293d4a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6655601813926973468 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 536712972362582034, guid: 1ad522e5bfef89b478c6a858708055d2, type: 3}

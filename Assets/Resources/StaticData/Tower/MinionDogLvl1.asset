@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Dog Lvl 1
   Level: 1
-  CurrentHP: 15
-  MaxHP: 15
+  CurrentHP: 16
+  MaxHP: 16
   Damage: 2
   Defence: 0
   Cooldown: 2
   MissileSpeed: 0
   UIIcon: {fileID: 72689014, guid: f024330ef4fa0be4db2f38c5350fe5c2, type: 3}
-  ItemIcon: {fileID: 859699741, guid: b918c520cf62336469bc0ac05e16daa7, type: 3}
   Price: 50
   Prefab: {fileID: 3493756138647350478, guid: 2b13aa3c639f5c6429bcf10c77d8f8d8, type: 3}
   TowerTypeID: 9

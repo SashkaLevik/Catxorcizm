@@ -103,10 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _damage: 2
+  _damage: 3
   _fly: {fileID: 6336304345218031671}
   _explode: {fileID: 1655617714540311319}
-  time: 0
 --- !u!61 &5391857664368526489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.030610979, y: 0.12754598}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.41, y: 0.63}
+  m_Size: {x: 1.6412832, y: 0.88509196}
   m_EdgeRadius: 0
 --- !u!50 &2799169526497762619
 Rigidbody2D:

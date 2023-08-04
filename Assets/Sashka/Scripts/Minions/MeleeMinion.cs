@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Sashka.Scripts.Enemyes;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Minions
@@ -8,15 +9,16 @@ namespace Assets.Sashka.Scripts.Minions
         [SerializeField] private AudioSource _attackSound;
 
         public override void StartAttack()
-            => StartCoroutine(ResetAttack());        
+            => StartCoroutine(AttackEnemy(_enemy));        
 
-        private IEnumerator ResetAttack()
+        private IEnumerator AttackEnemy(BaseEnemy enemy)
         {
             if (_canAttack)
             {
+                _canAttack = false;
                 _animator.SetTrigger(Attack);
                 _attackSound.Play();
-                _canAttack = false;
+                enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
                 yield return new WaitForSeconds(_cooldown);
                 _canAttack = true;
             }            

@@ -13,7 +13,7 @@ namespace Assets.Sashka.Scripts.Minions
 
         [SerializeField] protected BaseEnemy _enemy;
         [SerializeField] protected float _cooldown;
-        [SerializeField] protected float _damage;
+        [SerializeField] protected int _damage;
         [SerializeField] protected float _defence;
         [SerializeField] protected TowerStaticData _towerData;
         [SerializeField] protected InventoryHolder _inventory;
@@ -26,10 +26,7 @@ namespace Assets.Sashka.Scripts.Minions
 
         public Sprite ItemIcon => _itemIcon;
 
-        public float Defence => _defence;
-
-        //private void Awake()
-        //    => ClearSlot();
+        public float Defence => _defence;        
 
         private void Start()
         {
@@ -79,10 +76,7 @@ namespace Assets.Sashka.Scripts.Minions
         private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.TryGetComponent(out _enemy)) { StartAttack(); }
-        }
-
-        //private void ClearSlot()
-        //    => _towerData.ItemIcon = null;        
+        }               
 
         public virtual void StartAttack() { }
     }

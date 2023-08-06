@@ -9,7 +9,7 @@ public class MoneyUI : MonoBehaviour
 
     private void Awake()
     {
-        _money.text = _playerMoney.CurrentMoneyLevel.ToString();
+        _money.text = _playerMoney.EarnedSouls.ToString();
     }
 
     private void OnEnable()
@@ -24,6 +24,6 @@ public class MoneyUI : MonoBehaviour
 
     private void OnChangeMoney(int arg0)
     {
-        _money.text = _playerMoney.CurrentMoneyLevel.ToString();
+        _money.text = _playerMoney.EarnedSouls.ToString();
     }
 }

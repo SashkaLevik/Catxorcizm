@@ -1,6 +1,4 @@
-﻿using Assets.Sashka.Infastructure.Tresures;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace CodeBase.Infrastructure.StaticData
 {
@@ -16,13 +14,11 @@ namespace CodeBase.Infrastructure.StaticData
         [Range(1f, 3f)] public float Cooldown;
         [Range(1f, 5f)] public float MissileSpeed;
 
-
         public Sprite UIIcon;
-        //public Sprite ItemIcon;
         public int Price;
         public GameObject Prefab;
-
         public TowerTypeID TowerTypeID;
+
         public void ResetHP() => CurrentHP = MaxHP;
     }
 }

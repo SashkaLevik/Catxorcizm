@@ -23,7 +23,12 @@ namespace Assets.Sashka.Infastructure.Tresures
         {
             _treasures = Resources.LoadAll<Treasure>(Loot).ToList();
         }
-        
+
+        private void Start()
+        {
+           // SpawnTreasure();
+        }
+
         private void OnEnable()
         {
             _spawnerController.WaveCompleted += SpawnTreasure;

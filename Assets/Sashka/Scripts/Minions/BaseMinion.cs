@@ -16,7 +16,6 @@ namespace Assets.Sashka.Scripts.Minions
         [SerializeField] protected int _damage;
         [SerializeField] protected float _defence;
         [SerializeField] protected TowerStaticData _towerData;
-        [SerializeField] protected InventoryHolder _inventory;
         [SerializeField] private ItemData _itemData;
 
         private MinionHealth _health;

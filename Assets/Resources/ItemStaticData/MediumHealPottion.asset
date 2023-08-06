@@ -18,5 +18,5 @@ MonoBehaviour:
   AtkModifier: 0
   DfsModifier: 0
   Cooldown: 0
-  HealthModifier: 6
+  HealthModifier: 8
   Price: 0

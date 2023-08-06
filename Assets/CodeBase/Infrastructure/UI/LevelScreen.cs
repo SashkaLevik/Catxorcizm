@@ -18,8 +18,8 @@ namespace CodeBase.Infrastructure.UI
 
         private void Start()
         {
-            //_marketArea.interactable = false;
-            //_mageArea.interactable = false;
+            _marketArea.interactable = false;
+            _mageArea.interactable = false;
         }                
 
         private void OnEnable()

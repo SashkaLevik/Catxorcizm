@@ -48,7 +48,7 @@ namespace CodeBase.Player
 
         private void Update()
         {
-            _currentSoul = _playerMoney.CurrentMoneyLevel;
+            _currentSoul = _playerMoney.EarnedSouls;
             _currentCostOfGold = _heroStats.PriceLevel * (_levelAmount);
             _price.text = _currentCostOfGold.ToString();
         }

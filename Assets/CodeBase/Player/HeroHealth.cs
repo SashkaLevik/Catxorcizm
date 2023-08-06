@@ -12,15 +12,23 @@ namespace CodeBase.Player
     public class HeroHealth : MonoBehaviour, IHealth, ISavedProgressReader
     {
         private State _state;
-        //public HeroAttack Attack;
+        private Animator _animator;
+        private int _level;
 
         public event UnityAction HealthChanged;
         public event UnityAction Died;
 
+        public int Level => _level;
 
         private void Awake()
         {
             IPersistentProgressService progress = AllServices.Container.Single<IPersistentProgressService>();
+        }
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+            _level = _state.Level;
         }
 
         public float Current
@@ -47,16 +55,16 @@ namespace CodeBase.Player
         {
            Debug.Log("загрузить данные Жизней");
             _state = progress.HeroState;
+            _state.ResetHP();
         }
+
+        public void RemoveCat()
+            => Destroy(gameObject);
 
         private void Die()
         {
-            Died?.Invoke();
-            //Attack.enabled = false;
-            Destroy(gameObject);
-            //Animator.PlayDeath();
-
-            //Instantiate(DeathFx, transform.position, Quaternion.identity);
+            _animator.SetTrigger("Die");
+            Died?.Invoke();            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.StaticData;
+using CodeBase.UI.Element;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,22 +10,22 @@ namespace CodeBase.Player
     public class PlayerMoney : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private int _currentSoul;
+        [SerializeField] private int _startSoulIncreaseAmount;
 
-        private int _currentMoneyLevel;
+        private int _earnedSouls;
         public event UnityAction<int> CurrentSoulChanged;
-        //public event UnityAction<int> CurrentSoulLevelChanged;
+
         public int CurrentSoul => _currentSoul;
-        public int CurrentMoneyLevel => _currentMoneyLevel;
+        public int EarnedSouls => _earnedSouls;        
 
         private void Start()
         {
-            if (_currentSoul < _currentMoneyLevel)
-            {
-                _currentMoneyLevel -= _currentSoul;
-            }
-
+            //if (_currentSoul < _currentMoneyLevel)
+            //{
+            //    _currentMoneyLevel -= _currentSoul;
+            //}
             CurrentSoulChanged?.Invoke(_currentSoul);
-        }
+        }        
 
         public void BuyTower(TowerStaticData data)
         {
@@ -37,28 +38,28 @@ namespace CodeBase.Player
 
         public void BuyUpgradeHero(State heroState, int stepUpgrade)
         {
-            if (_currentMoneyLevel > 0)
+            if (_earnedSouls > 0)
             {
-                _currentMoneyLevel -= heroState.PriceLevel * (stepUpgrade);
-                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
+                _earnedSouls -= heroState.PriceLevel * (stepUpgrade);
+                CurrentSoulChanged?.Invoke(_earnedSouls);
             }
         }
 
         public void BuyUpgradeHeroSpell(State heroState, int stepUpgrade)
         {
-            if (_currentMoneyLevel > 0)
+            if (_earnedSouls > 0)
             {
-                _currentMoneyLevel -= heroState.PriceSpell * (stepUpgrade);
-                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
+                _earnedSouls -= heroState.PriceSpell * (stepUpgrade);
+                CurrentSoulChanged?.Invoke(_earnedSouls);
             }
         }
 
         public void BuyOpenNewMinions(State heroState, int stepUpgrade)
         {
-            if (_currentMoneyLevel > 0)
+            if (_earnedSouls > 0)
             {
-                _currentMoneyLevel -= heroState.PriceNewMinions * (stepUpgrade);
-                CurrentSoulChanged?.Invoke(_currentMoneyLevel);
+                _earnedSouls -= heroState.PriceNewMinions * (stepUpgrade);
+                CurrentSoulChanged?.Invoke(_earnedSouls);
             }
         }
 
@@ -76,14 +77,14 @@ namespace CodeBase.Player
 
         public void UpdateProgress(PlayerProgress progress)
         {
-            _currentMoneyLevel += _currentSoul;
-            progress.CurrentSoul = _currentMoneyLevel;
+            _earnedSouls += _currentSoul;
+            progress.CurrentSoul = _earnedSouls;
             Debug.Log("сохранение money");
         }
 
         public void LoadProgress(PlayerProgress progress)
         {
-            _currentMoneyLevel = progress.CurrentSoul;
-        }
+            _earnedSouls = progress.CurrentSoul;
+        }                        
     }
 }

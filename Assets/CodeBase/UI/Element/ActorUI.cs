@@ -25,6 +25,7 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private RewardCalculation _reward;
+        [SerializeField] private Image _treasureBackground;
         
         private GameObject _spawner;
         private CameraFollow _cameraFollow;
@@ -44,6 +45,7 @@ namespace CodeBase.UI.Element
             _soulCount.text = _money.CurrentSoul.ToString();
             _spellAmount.text = _spell.SpellAmount.ToString();
             _canvas.worldCamera = Camera.main;
+            _reward.GetExtraSoul(_heroHealth);
         }
 
         private void OnEnable()
@@ -77,14 +79,14 @@ namespace CodeBase.UI.Element
             _spell = spell;
             _heroHealth.HealthChanged += UpdateHpBar;
             _spell.SpellUsed += UpdateSpellAmount;
-            _money.CurrentSoulChanged += UpdateSoulCount;
+            _money.CurrentSoulChanged += UpdateSoulCount;           
             _heroHealth.Died += _reward.GetReward;
             _heroHealth.Died += CompleteLevel;
             _heroHealth.Died += _cameraFollow.StopMoving;
         }
 
         private void UpdateSoulCount(int soul)
-            => _soulCount.text = soul.ToString();
+            => _soulCount.text = soul.ToString();        
 
         private void UpdateHpBar() => 
             _hpBar.SetValue(_heroHealth.Current, _heroHealth.Max);
@@ -101,10 +103,16 @@ namespace CodeBase.UI.Element
         }
 
         public void ShowButton()
-            => _nextWave.gameObject.SetActive(true);
+        {
+            _nextWave.gameObject.SetActive(true);
+            _treasureBackground.gameObject.SetActive(true);
+        }            
 
         public void HideButton()
-            => _nextWave.gameObject.SetActive(false);
+        {
+            _nextWave.gameObject.SetActive(false);
+            _treasureBackground.gameObject.SetActive(false);
+        }
 
         private void CompleteLevel()
         {

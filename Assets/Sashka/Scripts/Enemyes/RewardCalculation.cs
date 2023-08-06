@@ -19,14 +19,14 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private ActorUI _actorUI;
 
         private int _lowPercent = 25; private int _mediumPercent = 50; private int _highPercent = 75;
-        private int _lowReward = 40; private int _mediumReward = 80; private int _highReward = 120;
+        private int _lowReward = 30; private int _mediumReward = 60; private int _highReward = 100;
+        private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 6; private int _highSoulsAmount = 10;                
 
-        private IEnumerator SpawnSoul(int amount)
+        public void GetExtraSoul(HeroHealth heroHealth)
         {
-            for (int i = amount; i > 0; i--)
+            if (heroHealth.Level > 1)
             {
-                Instantiate(_prizeSoulPrefab, transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(0.3f);
+                StartCoroutine(SpawnSoul(heroHealth.Level));
             }
         }
 
@@ -39,19 +39,28 @@ namespace Assets.Sashka.Scripts.Enemyes
             {
                 SetRewardValues(_lowReward, _oneStar);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(4));
+                StartCoroutine(SpawnSoul(_lowSoulsAmount));
             }
             else if (_actorUI.Spawner.KilledEnemies <= _mediumPercent)
             {
                 SetRewardValues(_mediumReward, _twoStars);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(8));
+                StartCoroutine(SpawnSoul(_mediumSoulsAmount));
             }
             else if (_actorUI.Spawner.KilledEnemies > _highPercent)
             {
                 SetRewardValues(_highReward, _threeStars);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
-                StartCoroutine(SpawnSoul(12));
+                StartCoroutine(SpawnSoul(_highSoulsAmount));
+            }
+        }
+
+        private IEnumerator SpawnSoul(int amount)
+        {
+            for (int i = amount; i > 0; i--)
+            {
+                Instantiate(_prizeSoulPrefab, transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(0.3f);
             }
         }
 
@@ -59,6 +68,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             rewardImage.gameObject.SetActive(true);            
             _rewardAmount.text = reward.ToString();
-        }
+        }        
     }
 }

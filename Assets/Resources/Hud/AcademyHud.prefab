@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentSoul: 0
+  _startSoulIncreaseAmount: 20
 --- !u!1 &1372528972371397346
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,8 +567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 91, y: 0}
-  m_SizeDelta: {x: 184.13, y: 87.283}
+  m_AnchoredPosition: {x: 91, y: 24.785}
+  m_SizeDelta: {x: 184.13, y: 136.852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972415227178
 CanvasRenderer:
@@ -597,9 +598,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health + 2
-
-    Attack + 1'
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1\n+\u0421\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u0435
+    \u0434\u0443\u0448\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45.9
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -681,7 +681,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: CatUpDescription
-  FallbackText: 
+  FallbackText: 'Health + 2
+
+    Attack + 1'
 --- !u!1 &1372528972470728854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1347,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.45
+  m_fontSize: 28.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1876,8 +1878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 89, y: 0}
-  m_SizeDelta: {x: 181.499, y: 86.036}
+  m_AnchoredPosition: {x: 106.454, y: 28.185}
+  m_SizeDelta: {x: 216.408, y: 142.407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972811280509
 CanvasRenderer:
@@ -1907,7 +1909,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1"
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1\n+\u0421\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u0435
+    \u0434\u0443\u0448\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -1934,7 +1937,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.6
+  m_fontSize: 37.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2028,8 +2031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 61.618, y: 1.7149}
-  m_SizeDelta: {x: 122.76, y: 58.192}
+  m_AnchoredPosition: {x: 91.182, y: -4.234}
+  m_SizeDelta: {x: 181.889, y: 126.148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972880488290
 CanvasRenderer:
@@ -2059,9 +2062,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health + 2
-
-    Attack + 1'
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1\n+\u0421\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u0435
+    \u0434\u0443\u0448\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -2070,7 +2072,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4285976302
   m_fontColor: {r: 0.93333334, g: 0.80784315, b: 0.4627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2088,15 +2090,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.25
+  m_fontSize: 33.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2143,7 +2145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: CatUpDescription
-  FallbackText: 
+  FallbackText: 'Health + 2
+
+    Attack + 1'
 --- !u!1 &1372528972907180635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,8 +2184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.476, y: -21.538}
-  m_SizeDelta: {x: 124.953, y: 82.007}
+  m_AnchoredPosition: {x: 104.709, y: -65.461}
+  m_SizeDelta: {x: 209.419, y: 137.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1372528972907180638
 CanvasRenderer:
@@ -2211,7 +2215,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1"
+  m_text: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+2\n\u0410\u0442\u0430\u043A\u0430+1\n+\u0421\u0442\u0430\u0440\u0442\u043E\u0432\u044B\u0435
+    \u0434\u0443\u0448\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -2238,7 +2243,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28.65
+  m_fontSize: 36.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2645,8 +2650,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285976302
-  m_fontColor: {r: 0.93333334, g: 0.80784315, b: 0.4627451, a: 1}
+    rgba: 4289545336
+  m_fontColor: {r: 0.47058827, g: 0.26666668, b: 0.6784314, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7016,6 +7021,10 @@ PrefabInstance:
     - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_Name
       value: Localization
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_RootOrder

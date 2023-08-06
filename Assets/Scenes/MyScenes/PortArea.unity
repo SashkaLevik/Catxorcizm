@@ -228,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104923128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.48, y: 1.15, z: 5.75}
+  m_LocalPosition: {x: -0.35, y: 2.28, z: 5.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -594,7 +594,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 0
+  _weakCount: 1
   _mediumCount: 12
   _strongCount: 14
   _bossCount: 1
@@ -981,7 +981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469552941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.46, y: 0, z: 0}
+  m_LocalPosition: {x: 2.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1169,7 +1169,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1709,9 +1709,9 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 1
-  _weakCount: 0
-  _mediumCount: 10
-  _strongCount: 10
+  _weakCount: 1
+  _mediumCount: 8
+  _strongCount: 12
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2336,7 +2336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328886593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2384,8 +2384,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 1.5
   _weakCount: 0
-  _mediumCount: 8
-  _strongCount: 8
+  _mediumCount: 6
+  _strongCount: 9
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2924,7 +2924,7 @@ MonoBehaviour:
   _timeBetweenSpawn: 2
   _weakCount: 0
   _mediumCount: 7
-  _strongCount: 6
+  _strongCount: 7
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}

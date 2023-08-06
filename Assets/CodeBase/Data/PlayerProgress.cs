@@ -10,6 +10,7 @@ namespace CodeBase.Data
         public State HeroState;
         public WorldData WorldData;
         public int CurrentSoul;
+        public int StartSouls = 100;
         public int NumberOfMinions = 1;
         public List<TowerStaticData> StaticData = new();
 

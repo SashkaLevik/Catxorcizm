@@ -17,6 +17,7 @@ namespace Assets.Sashka.Scripts.Minions
         [SerializeField] private TowerStaticData _staticData;
         [SerializeField] private BaseMinion _minion;
         [SerializeField] private MinionDieSound _audioController;
+        [SerializeField] private Shield _shield;
 
         private SpawnerController _spawnerController;
         public float _currentDefence;
@@ -66,7 +67,14 @@ namespace Assets.Sashka.Scripts.Minions
         }
 
         private void SetDefence()
-            => _currentDefence = _defence;
+        {
+            _currentDefence = _defence;
+
+            if (_currentDefence > 0)
+            {
+                _shield.gameObject.SetActive(true);
+            }            
+        }
 
         private void OnEnable()
         {
@@ -86,10 +94,12 @@ namespace Assets.Sashka.Scripts.Minions
         {
             if (_currentDefence != 0)
             {
+                _shield.ActivateProtect();
                 _currentDefence -= 1;
             }
-            else
+            else if(_currentDefence <= 0)
             {
+                _shield.gameObject.SetActive(false);
                 Current -= damage;
                 HealthChanged?.Invoke();
             }

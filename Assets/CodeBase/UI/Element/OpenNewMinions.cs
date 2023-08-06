@@ -40,7 +40,7 @@ namespace CodeBase.UI.Element
 
         private void Update()
         {
-            _currentSoul = _playerMoney.CurrentMoneyLevel;
+            _currentSoul = _playerMoney.EarnedSouls;
             _currentCostOfGold = _heroStats.PriceNewMinions * (_countMinions);
             _price.text = _currentCostOfGold.ToString();
         }

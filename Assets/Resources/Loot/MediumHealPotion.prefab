@@ -155,11 +155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,7 +205,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Weak Heal Potion
 
-        Heal+6'
+        Heal+8'
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize

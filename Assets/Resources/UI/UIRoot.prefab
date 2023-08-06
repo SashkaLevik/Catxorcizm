@@ -211,9 +211,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 553546629a2ac524db0a931119bbc564, type: 2}
   - {fileID: 11400000, guid: be46c8db229147144b9166aea71adacb, type: 2}
   - {fileID: 11400000, guid: ef8dcf119098f714e9144dbac448d677, type: 2}
-  - {fileID: 11400000, guid: d69c64eaaf5993d4b9e86ddcadb0b1e4, type: 2}
-  - {fileID: 11400000, guid: 258505311b481bf4cb2879869b889b8b, type: 2}
-  - {fileID: 11400000, guid: 2e419005d0534c24c8f429eab95d4e36, type: 2}
   - {fileID: 11400000, guid: b6a266a667574f14282f191a131adaae, type: 2}
   - {fileID: 11400000, guid: 3d80444cdb97817499b61eac10fe2f00, type: 2}
   - {fileID: 11400000, guid: 3e8115e9db042934badc684c7bb65b40, type: 2}
@@ -223,6 +220,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98d9e4af887a2774d8d9ec114ed40573, type: 2}
   - {fileID: 11400000, guid: 38409d7fd13d1c040993fc3c881e1ce4, type: 2}
   - {fileID: 11400000, guid: 76b8647e0cb8f5f4192658aa644a86c2, type: 2}
+  - {fileID: 11400000, guid: d69c64eaaf5993d4b9e86ddcadb0b1e4, type: 2}
+  - {fileID: 11400000, guid: 258505311b481bf4cb2879869b889b8b, type: 2}
+  - {fileID: 11400000, guid: 2e419005d0534c24c8f429eab95d4e36, type: 2}
   _panelMinions: {fileID: 5089470308221828339}
   _price: {fileID: 4848294440055840301}
 --- !u!1 &941092648722850529

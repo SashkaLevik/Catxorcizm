@@ -1,4 +1,5 @@
-﻿using CodeBase.Data;
+﻿using Agava.YandexGames;
+using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Element;
@@ -11,6 +12,8 @@ namespace CodeBase.Player
     {
         [SerializeField] private int _currentSoul;
         [SerializeField] private int _startSoulIncreaseAmount;
+        [SerializeField] private int _rewardRete;
+        [SerializeField] private GameObject _advMoney;
 
         private int _earnedSouls;
         public event UnityAction<int> CurrentSoulChanged;
@@ -85,6 +88,17 @@ namespace CodeBase.Player
         public void LoadProgress(PlayerProgress progress)
         {
             _earnedSouls = progress.CurrentSoul;
-        }                        
+        }
+        
+        public void AddAdMoney()
+        {
+            VideoAd.Show(null, ADVMoney);
+        }
+
+        private void ADVMoney()
+        {
+            _earnedSouls += _rewardRete;
+            _advMoney.SetActive(false);
+        }
     }
 }

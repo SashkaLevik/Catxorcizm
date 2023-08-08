@@ -1,4 +1,5 @@
 ﻿using System;
+using Agava.YandexGames;
 using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using TMPro;
@@ -35,6 +36,7 @@ namespace CodeBase.Player
         {
             _live -= 1;
             _extraLiveText.text = _live.ToString();
+            ShowAdsAfterDeath();
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -45,6 +47,11 @@ namespace CodeBase.Player
         public void UpdateProgress(PlayerProgress progress)
         {
             progress.HeroState.Lives = _live;
+        }
+
+        private void ShowAdsAfterDeath()
+        {
+            VideoAd.Show();
         }
     }
 }

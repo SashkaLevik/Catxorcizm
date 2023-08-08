@@ -1,6 +1,4 @@
-﻿using System;
-using Agava.YandexGames;
-using CodeBase.Data;
+﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using TMPro;
 using UnityEngine;
@@ -11,6 +9,7 @@ namespace CodeBase.Player
     {
         [SerializeField] private HeroHealth _heroHealth;
         [SerializeField] private TMP_Text _extraLiveText;
+        
         
         private int _live;
 
@@ -36,7 +35,6 @@ namespace CodeBase.Player
         {
             _live -= 1;
             _extraLiveText.text = _live.ToString();
-            ShowAdsAfterDeath();
         }
 
         public void LoadProgress(PlayerProgress progress)
@@ -47,11 +45,6 @@ namespace CodeBase.Player
         public void UpdateProgress(PlayerProgress progress)
         {
             progress.HeroState.Lives = _live;
-        }
-
-        private void ShowAdsAfterDeath()
-        {
-            VideoAd.Show();
         }
     }
 }

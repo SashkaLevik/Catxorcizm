@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Service;
+﻿using Agava.YandexGames;
+using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
@@ -46,6 +47,7 @@ namespace CodeBase.Infrastructure.LevelLogic
         private void OnAcademyLoaded()
         {
             _stateMachine.Enter<LoadAcademyState, string>(Academy);
+            ShowAds();
         }
 
         private void OnMageLoaded()
@@ -61,6 +63,12 @@ namespace CodeBase.Infrastructure.LevelLogic
         private void OnPortAreaLoad()
         {
             _stateMachine.Enter<LoadLevelState, string>(PortArea);
+            ShowAds();
+        }
+
+        private void ShowAds()
+        {
+            VideoAd.Show();
         }
     }
 }

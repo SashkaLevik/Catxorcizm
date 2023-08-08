@@ -3,6 +3,7 @@ using TMPro;
 using CodeBase.Player;
 using UnityEngine.UI;
 using System.Collections;
+using Agava.YandexGames;
 using CodeBase.UI.Element;
 
 namespace Assets.Sashka.Scripts.Enemyes
@@ -17,10 +18,12 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private TMP_Text _killedPercent;
         [SerializeField] private PrizeSoul _prizeSoulPrefab;        
         [SerializeField] private ActorUI _actorUI;
+        [SerializeField] private GameObject _advMoney;
+        [SerializeField] private int _ADVSoul;
 
         private int _lowPercent = 25; private int _mediumPercent = 50; private int _highPercent = 75;
         private int _lowReward = 30; private int _mediumReward = 60; private int _highReward = 100;
-        private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 6; private int _highSoulsAmount = 10;                
+        private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 6; private int _highSoulsAmount = 10;
 
         public void GetExtraSoul(HeroHealth heroHealth)
         {
@@ -62,6 +65,17 @@ namespace Assets.Sashka.Scripts.Enemyes
                 Instantiate(_prizeSoulPrefab, transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.3f);
             }
+        }
+        
+        public void AddAdMoney()
+        {
+            VideoAd.Show(null, ADVMoney);
+        }
+
+        private void ADVMoney()
+        {
+            StartCoroutine(SpawnSoul(_ADVSoul));
+            _advMoney.SetActive(false);
         }
 
         private void SetRewardValues(int reward, Image rewardImage)

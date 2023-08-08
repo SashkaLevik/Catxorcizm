@@ -1,8 +1,6 @@
-﻿using Agava.YandexGames;
-using CodeBase.Data;
+﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.UI.Element;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -88,17 +86,6 @@ namespace CodeBase.Player
         public void LoadProgress(PlayerProgress progress)
         {
             _earnedSouls = progress.CurrentSoul;
-        }
-        
-        public void AddAdMoney()
-        {
-            VideoAd.Show(null, ADVMoney);
-        }
-
-        private void ADVMoney()
-        {
-            _earnedSouls += _rewardRete;
-            _advMoney.SetActive(false);
         }
     }
 }

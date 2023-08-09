@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Data;
+﻿using CodeBase.Data;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using TMPro;
 using UnityEngine;
@@ -10,6 +9,7 @@ namespace CodeBase.Player
     {
         [SerializeField] private HeroHealth _heroHealth;
         [SerializeField] private TMP_Text _extraLiveText;
+        
         
         private int _live;
 

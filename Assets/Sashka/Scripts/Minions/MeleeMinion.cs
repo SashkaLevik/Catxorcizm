@@ -10,7 +10,7 @@ namespace Assets.Sashka.Scripts.Minions
 
         [SerializeField] private AudioSource _attackSound;
 
-        private void Start()
+        private void Update()
         {
             if (!PlayerPrefs.HasKey(SoundVolume))
             {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Agava.WebUtility;
 
 namespace CodeBase.Infrastructure
 {
@@ -14,6 +15,22 @@ namespace CodeBase.Infrastructure
                 return;
 
             Instantiate(BootstrapperPrefab);
+        }
+
+        private void OnEnable()
+        {
+            WebApplication.InBackgroundChangeEvent += OnInBackgroundChange;
+        }
+
+        private void OnDisable()
+        {
+            WebApplication.InBackgroundChangeEvent -= OnInBackgroundChange;
+        }
+
+        private void OnInBackgroundChange(bool inBackground)
+        {
+            AudioListener.pause = inBackground;
+            AudioListener.volume = inBackground ? 0f : 1f;
         }
     }
 }

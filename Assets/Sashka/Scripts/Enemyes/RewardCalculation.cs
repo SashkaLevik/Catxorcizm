@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Agava.YandexGames;
 using CodeBase.UI.Element;
+using UnityEngine.Events;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
@@ -25,6 +26,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         private int _lowReward = 30; private int _mediumReward = 60; private int _highReward = 100;
         private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 6; private int _highSoulsAmount = 10;
 
+
         public void GetExtraSoul(HeroHealth heroHealth)
         {
             if (heroHealth.Level > 1)
@@ -37,6 +39,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         {           
             _actorUI.Spawner.CalculatePercentage();
             _rewardWindow.gameObject.SetActive(true);
+            _advMoney.SetActive(true);
 
             if (_actorUI.Spawner.KilledEnemies <= _lowPercent)
             {
@@ -67,21 +70,27 @@ namespace Assets.Sashka.Scripts.Enemyes
             }
         }
         
-        public void AddAdMoney()
+        public void ShowRewardAdd()
         {
-            VideoAd.Show(null, ADVMoney);
-        }
-
-        private void ADVMoney()
-        {
-            StartCoroutine(SpawnSoul(_ADVSoul));
-            _advMoney.SetActive(false);
-        }
+            VideoAd.Show(OnAddOpen, OnAddClosed);
+        }        
 
         private void SetRewardValues(int reward, Image rewardImage)
         {
             rewardImage.gameObject.SetActive(true);            
             _rewardAmount.text = reward.ToString();
+        }
+
+        private void OnAddOpen()
+        {
+            AudioListener.volume = 0;
+        }
+
+        private void OnAddClosed()
+        {
+            AudioListener.volume = 1;
+            StartCoroutine(SpawnSoul(_ADVSoul));
+            _advMoney.SetActive(false);
         }        
     }
 }

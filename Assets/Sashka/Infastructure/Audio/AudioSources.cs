@@ -10,7 +10,6 @@ namespace Assets.Sashka.Infastructure.Audio
         public static AudioSources instance;
 
         [SerializeField] private AudioSource _mainTheme;
-        [SerializeField] private AudioSource _portTheme;
 
         private void Start()
         {
@@ -18,19 +17,12 @@ namespace Assets.Sashka.Infastructure.Audio
             {
                 Destroy(gameObject);
             }
-            else
+            else if(SceneManager.GetActiveScene().name == "Academy")
             {
                 instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-        }
-
-               
-
-        private void OnPortEntered()
-        {
-            _mainTheme.Stop();
-            _portTheme.Play();
-        }
+           // _mainTheme.Play();
+        }                      
     }
 }

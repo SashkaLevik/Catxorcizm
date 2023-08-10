@@ -109,7 +109,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.09975989}
+  m_Offset: {x: -0.089985, y: 0.09975988}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.16, y: 0.9300958}
+  m_Size: {x: 0.98003006, y: 0.9300958}
   m_EdgeRadius: 0
 --- !u!50 &178134580567764792
 Rigidbody2D:
@@ -160,7 +160,6 @@ MonoBehaviour:
   _damage: 0
   _defence: 0
   _towerData: {fileID: 11400000, guid: b6a266a667574f14282f191a131adaae, type: 2}
-  _inventory: {fileID: 6713107567705375820}
   _itemData: {fileID: 0}
   _attackSound: {fileID: 7382207515139459675}
 --- !u!114 &266200261277747547
@@ -374,7 +373,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7067032, y: 0.03164351}
+  m_Offset: {x: 0.72170055, y: 0.03164351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -385,7 +384,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13507938, y: 0.936713}
+  m_Size: {x: 0.5550088, y: 0.936713}
   m_EdgeRadius: 0
 --- !u!114 &3914183829869675084
 MonoBehaviour:

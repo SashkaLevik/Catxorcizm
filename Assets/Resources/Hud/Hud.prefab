@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSoul: 100
+  _currentSoul: 10000
   _startSoulIncreaseAmount: 20
   _rewardRete: 3
   _advMoney: {fileID: 8343179520379003426}

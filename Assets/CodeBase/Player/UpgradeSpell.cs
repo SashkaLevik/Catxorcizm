@@ -64,6 +64,8 @@ namespace CodeBase.Player
 
         private void OpenSpellView()
         {
+            _upgradeSpellViews[_spellAmount - 2].SellButton.interactable = true;
+
             for (int i = 0; i < _spellAmount - _defaultSpellCount; i++)
             {
                 _upgradeSpellViews[i].BuyUpgrade();

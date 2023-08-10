@@ -35,7 +35,7 @@ namespace CodeBase.UI.Element
         private void Start()
         {
             OpenMinions();
-            _maxMinions = _upgradeMinionViews.Count + 1;            
+            _maxMinions = _upgradeMinionViews.Count + 1;        
         }
 
         private void Update()

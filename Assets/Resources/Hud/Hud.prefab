@@ -1514,7 +1514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _currentSoul: 8000
+=======
+  _currentSoul: 10000
+>>>>>>> 3fda3125e796c2d658a03dd5db0d569d5e941a70
   _startSoulIncreaseAmount: 20
   _rewardRete: 3
   _advMoney: {fileID: 8343179520379003426}

@@ -79,10 +79,12 @@ namespace CodeBase.UI.Element
         
         private void OpenMinions()
         {
+            _upgradeMinionViews[_countMinions - 1].SellButton.interactable = true;
+
             for (int i = 0; i < _countMinions - _defaultMinionsCount; i++)
             {
                 _upgradeMinionViews[i].BuyUpgrade();
             }
-        }
+        }        
     }
 }

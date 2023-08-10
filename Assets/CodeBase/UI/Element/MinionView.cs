@@ -13,6 +13,9 @@ namespace CodeBase.UI.Element
         [SerializeField] private TowerStaticData _data;
 
         public event UnityAction<MinionView> SellButtonClick;
+
+        public Button SellButton => _sellButton;
+
         private void OnEnable()
         {
             _sellButton.onClick.AddListener(OnButtonClick);

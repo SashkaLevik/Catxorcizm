@@ -14,6 +14,8 @@ namespace CodeBase.UI.Element
 
         public event UnityAction<SpellView> SellButtonClick;
 
+        public Button SellButton => _sellButton;
+
         private void OnEnable()
         {
             _sellButton.onClick.AddListener(OnButtonClick);

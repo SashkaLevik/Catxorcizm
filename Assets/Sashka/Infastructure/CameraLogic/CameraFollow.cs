@@ -9,6 +9,7 @@ namespace Assets.Sashka.Infastructure.CameraLogic
 {
     public class CameraFollow : MonoBehaviour
     {
+        private const string MusicVolume = "MusicVolume";
         [SerializeField] private float _speed;
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private AudioSource _portMusic;
@@ -16,6 +17,13 @@ namespace Assets.Sashka.Infastructure.CameraLogic
 
         private void Start()
         {
+            if(!PlayerPrefs.HasKey(MusicVolume))
+            {
+                _portMusic.volume = 1;
+            }
+            else
+                _portMusic.volume = PlayerPrefs.GetFloat(MusicVolume);
+
             _currentSpeed = _speed;
             StopMoving();
             _portMusic.Play();
@@ -23,6 +31,9 @@ namespace Assets.Sashka.Infastructure.CameraLogic
 
         private void FixedUpdate()
             => transform.position += Vector3.right * _currentSpeed * Time.deltaTime;
+
+        //private void Update()
+        //    => _portMusic.volume = PlayerPrefs.GetFloat(MusicVolume);
 
         private void OnEnable()
         {

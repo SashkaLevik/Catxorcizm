@@ -5,6 +5,8 @@ namespace Assets.Sashka.Scripts.Minions.Eagle
 {
     public class FirstLvlTornado : Missile
     {
+        private const string SoundVolume = "SoundVolume";
+
         [SerializeField] private AudioSource _tornadoSound;
 
         private float _speedReduce = 0.1f;
@@ -13,6 +15,13 @@ namespace Assets.Sashka.Scripts.Minions.Eagle
 
         private void Start()
         {
+            if (!PlayerPrefs.HasKey(SoundVolume))
+            {
+                _tornadoSound.volume = 1;
+            }
+            else
+                _tornadoSound.volume = PlayerPrefs.GetFloat(SoundVolume);
+
             _animator = GetComponent<Animator>();
             _animator.Play(FirstTornado);
             _tornadoSound.Play();

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ namespace CodeBase.Infrastructure.UI
 {
     public class MenuScreen : MonoBehaviour
     {
+        private const string MusicVolume = "MusicVolume";
         [SerializeField] private GameObject _menuScreen;
         [SerializeField] private GameObject _settingsScreen;
         [SerializeField] private GameObject _levelScreen;
@@ -13,35 +15,53 @@ namespace CodeBase.Infrastructure.UI
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _howToPlay;
         [SerializeField] private Button _settings;
+        [SerializeField] private Button _mapToMenu;
+        [SerializeField] private Button _settingsToMenu;
         [SerializeField] private GameRules _gameRules;
         [SerializeField] private AudioSource _audio;
 
         public event UnityAction GameStarted;
-        public event UnityAction ShowRules;
+        public event UnityAction RulesShowed;
+        private string _disactivate = "Disactivate";
 
         private void Start()
         {
+            if (!PlayerPrefs.HasKey(MusicVolume))
+            {
+                _audio.volume = 1;
+            }
+            else
+                _audio.volume = PlayerPrefs.GetFloat(MusicVolume);
+
             _audio.Play();
             _settingsScreen.SetActive(false);
-            _levelScreen.SetActive(false);
+            //_levelScreen.SetActive(false);
             _tutorialScreen.SetActive(false);
+            CheckDisactivateKey();
         }
+
+        private void Update()
+            => _audio.volume = PlayerPrefs.GetFloat(MusicVolume);
 
         private void OnEnable()
         {
             _startButton.onClick.AddListener(OnStartButton);
             _howToPlay.onClick.AddListener(OnTutorialButton);
             _settings.onClick.AddListener(OnSettingsButton);
+            _mapToMenu.onClick.AddListener(ReturnFromMap);
+            _settingsToMenu.onClick.AddListener(ReturneFromSettings);
             _gameRules.RulesShowed += OnRulesShowed;
-        }
+        }        
 
         private void OnDisable()
         {
             _startButton.onClick.RemoveListener(OnStartButton);
             _howToPlay.onClick.RemoveListener(OnTutorialButton);
+            _mapToMenu.onClick.RemoveListener(ReturnFromMap);
+            _settingsToMenu.onClick.RemoveListener(ReturneFromSettings);
             _gameRules.RulesShowed -= OnRulesShowed;
         }
-
+        
         private void OnRulesShowed() 
             => _menuScreen.SetActive(true);
 
@@ -59,18 +79,41 @@ namespace CodeBase.Infrastructure.UI
             _menuScreen.SetActive(false);
             _levelScreen.SetActive(true);
             GameStarted?.Invoke();
+            PlayerPrefs.SetString("Disactivate", _disactivate);
+            PlayerPrefs.Save();
         }
 
         private void OpenTutorial()
         {
             _menuScreen.SetActive(false);
             _tutorialScreen.SetActive(true);
-            ShowRules?.Invoke();
+            RulesShowed?.Invoke();
         }
 
-        private void OpenSettings()
+        private void ReturneFromSettings()
         {
-            _settingsScreen.SetActive(true);
+            _menuScreen.SetActive(true);
+            _settingsScreen.SetActive(false);
         }
+
+        private void ReturnFromMap()
+        {
+            _menuScreen.SetActive(true);
+            _levelScreen.SetActive(false);
+        }
+            
+        private void OpenSettings()
+            => _settingsScreen.SetActive(true);
+
+        private void CheckDisactivateKey()
+        {
+            if (PlayerPrefs.HasKey("Disactivate"))
+            {
+                OpenMap();
+            }
+        }
+
+        private void ClearDisactivateKey()
+            => PlayerPrefs.DeleteKey(_disactivate);
     }
 }

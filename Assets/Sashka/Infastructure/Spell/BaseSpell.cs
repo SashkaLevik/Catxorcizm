@@ -7,6 +7,7 @@ namespace Assets.Sashka.Infastructure.Spell
     public class BaseSpell : MonoBehaviour
     {
         private const string Explode = "Explode";
+        private const string SoundVolume = "SoundVolume";
 
         [SerializeField] private int _speed;
         [SerializeField] private int _damage;
@@ -18,6 +19,17 @@ namespace Assets.Sashka.Infastructure.Spell
 
         private void Start()
         {
+            if (!PlayerPrefs.HasKey(SoundVolume))
+            {
+                _fly.volume = 1;
+                _explode.volume = 1;
+            }
+            else
+            {
+                _fly.volume = PlayerPrefs.GetFloat(SoundVolume);
+                _explode.volume = PlayerPrefs.GetFloat(SoundVolume);
+            }
+
             _enemies = new List<BaseEnemy>();
             _animator = GetComponent<Animator>();
             _fly.Play();

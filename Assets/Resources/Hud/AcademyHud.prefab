@@ -3342,7 +3342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412 \u043C\u0435\u043D\u044E"
+  m_text: "\u041D\u0430 \u043A\u0430\u0440\u0442\u0443"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
   m_sharedMaterial: {fileID: 6086363046611179528, guid: 30e769239f26f264aa0f75d71e79fcbb, type: 2}
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  translationName: To Menu
+  translationName: OnMap
   FallbackText: Back to menu
 --- !u!1 &1372528973627118257
 GameObject:
@@ -4601,7 +4601,7 @@ GameObject:
   - component: {fileID: 1372528974208169164}
   - component: {fileID: 1372528974208169167}
   m_Layer: 5
-  m_Name: BackToMenu
+  m_Name: OnMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

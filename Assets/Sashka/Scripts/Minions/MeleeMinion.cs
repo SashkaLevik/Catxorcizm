@@ -6,7 +6,19 @@ namespace Assets.Sashka.Scripts.Minions
 {
     public class MeleeMinion : BaseMinion
     {
+        private const string SoundVolume = "SoundVolume";
+
         [SerializeField] private AudioSource _attackSound;
+
+        private void Start()
+        {
+            if (!PlayerPrefs.HasKey(SoundVolume))
+            {
+                _attackSound.volume = 1;
+            }
+            else
+                _attackSound.volume = PlayerPrefs.GetFloat(SoundVolume);
+        }
 
         public override void StartAttack()
             => StartCoroutine(AttackEnemy(_enemy));        

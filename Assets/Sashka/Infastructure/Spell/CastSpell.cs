@@ -12,6 +12,7 @@ namespace Assets.Sashka.Infastructure.Spell
 {
     public class CastSpell : MonoBehaviour, ISavedProgressReader
     {
+        private const string SoundVolume = "SoundVolume";
         [SerializeField] private Button _cast;
         [SerializeField] private Transform _castPos;
         [SerializeField] private BaseSpell _spell;
@@ -23,6 +24,16 @@ namespace Assets.Sashka.Infastructure.Spell
         public int SpellAmount => _spellAmount;
 
         public event UnityAction<int> SpellUsed;
+
+        private void Start()
+        {
+            if (!PlayerPrefs.HasKey(SoundVolume))
+            {
+                _bookSound.volume = 1;
+            }
+            else
+                _bookSound.volume = PlayerPrefs.GetFloat(SoundVolume);
+        }
 
         public void LoadProgress(PlayerProgress progress)
         {

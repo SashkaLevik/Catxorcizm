@@ -1,14 +1,30 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using UnityEngine;
 
 namespace Assets.Sashka.Infastructure.Audio
 {
-    class EnemyDieSound : MonoBehaviour
+    public class EnemyDieSound : MonoBehaviour
     {
+        private const string SoundVolume = "SoundVolume";
+
         public AudioSource[] _dieSounds;
+
+        private void Start()
+        {
+            foreach (var sound in _dieSounds)
+            {
+                if (!PlayerPrefs.HasKey(SoundVolume)) sound.volume = 1;
+            }            
+        }
+
+        private void Update()
+        {
+            foreach (var sound in _dieSounds)
+            {
+                sound.volume = PlayerPrefs.GetFloat(SoundVolume);
+            }
+        }
+            
 
         public AudioSource GetRandomSound()
         {

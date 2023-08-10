@@ -28,7 +28,7 @@ namespace CodeBase.Infrastructure.UI
 
         private void OnEnable()
         {
-            _menuScreen.ShowRules += OpenRulesPanel;
+            _menuScreen.RulesShowed += OpenRulesPanel;
             _next.onClick.AddListener(ShowRules);
         }
 

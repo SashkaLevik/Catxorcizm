@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionEagleLvl3
   m_EditorClassIdentifier: 
-  Name: Eagle Lvl 3
+  NameRus: "\u041E\u0440\u0435\u043B \u0443\u04403"
+  NameEng: Eagle Lvl3
   Level: 3
   CurrentHP: 15
   MaxHP: 15

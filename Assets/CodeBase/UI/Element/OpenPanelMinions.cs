@@ -25,8 +25,16 @@ namespace CodeBase.UI.Element
         }
 
         public void Show(TowerStaticData data)
-        {            
-            _textTitle.text = data.Name;
+        {
+            if (Application.systemLanguage == SystemLanguage.Russian)
+            {
+                _textTitle.text = data.NameRus;
+            }
+            else if (Application.systemLanguage == SystemLanguage.English)
+            {
+                _textTitle.text = data.NameEng;
+            }
+
             _imageIcon.sprite = data.UIIcon;
             _damageText.text = data.Damage.ToString();
             _cooldownText.text = data.Cooldown.ToString();

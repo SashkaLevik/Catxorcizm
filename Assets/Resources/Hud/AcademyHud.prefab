@@ -405,7 +405,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 91b809095fa998b4282b2ffd83d9e201, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8a524de6e4138234fa007b230080c600, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -7558,7 +7558,7 @@ PrefabInstance:
       objectReference: {fileID: 3300339074314541456}
     - target: {fileID: 868903790568227045, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2739202601140061627, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_IsActive
@@ -7584,6 +7584,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1910932663, guid: d499e4901cf3bba4a91d2c1fd73101cb, type: 3}
+    - target: {fileID: 3366362794162294911, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3366362794162294911, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3909629322858030777, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7708,6 +7716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1LvlSpell (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6004866424951564796, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7723,6 +7735,10 @@ PrefabInstance:
     - target: {fileID: 7587907201998705415, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_fontSize
       value: 40.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768743005246531180, guid: 490ddaea730680848a400eead68f739e, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490ddaea730680848a400eead68f739e, type: 3}
@@ -7796,7 +7812,7 @@ PrefabInstance:
       objectReference: {fileID: 3300339072980551973}
     - target: {fileID: 868903790568227045, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2739202601140061627, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_IsActive
@@ -8083,10 +8099,6 @@ PrefabInstance:
     - target: {fileID: 4809182377587136082, guid: 490ddaea730680848a400eead68f739e, type: 3}
       propertyPath: m_Name
       value: 1LvlSpell
-      objectReference: {fileID: 0}
-    - target: {fileID: 6004866424951564796, guid: 490ddaea730680848a400eead68f739e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 490ddaea730680848a400eead68f739e, type: 3}

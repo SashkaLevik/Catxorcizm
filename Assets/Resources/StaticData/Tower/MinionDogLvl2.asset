@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionDogLvl2
   m_EditorClassIdentifier: 
-  Name: Dog Lvl 2
+  NameRus: "\u0421\u043E\u0431\u0430\u043A\u0430 \u0443\u04402"
+  NameEng: Dog Lvl2
   Level: 2
   CurrentHP: 16
   MaxHP: 16

@@ -20,7 +20,7 @@ namespace CodeBase.Player
         private int _maxLevelUpgrade;
         private int _currentSoul;
         private int _spellAmount;
-
+        public int _nextBook;
         public void LoadProgress(PlayerProgress progress)
         {
             _heroStats = progress.HeroState;
@@ -34,9 +34,10 @@ namespace CodeBase.Player
 
         private void Start()
         {
-            OpenSpellView();
-
             _maxLevelUpgrade = _upgradeSpellViews.Count + _defaultSpellCount;
+            _nextBook = _spellAmount - _defaultSpellCount;
+
+            OpenSpellView();
         }
 
         private void Update()
@@ -64,7 +65,7 @@ namespace CodeBase.Player
 
         private void OpenSpellView()
         {
-            _upgradeSpellViews[_spellAmount - 2].SellButton.interactable = true;
+            if (_nextBook < _upgradeSpellViews.Count) _upgradeSpellViews[_nextBook].SellButton.interactable = true;
 
             for (int i = 0; i < _spellAmount - _defaultSpellCount; i++)
             {

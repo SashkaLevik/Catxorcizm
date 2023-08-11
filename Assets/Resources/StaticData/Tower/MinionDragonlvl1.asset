@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionDragonlvl1
   m_EditorClassIdentifier: 
-  Name: Dragon lvl 1
+  NameRus: "\u0414\u0440\u0430\u043A\u043E\u043D \u0443\u04401"
+  NameEng: Dragon Lvl1
   Level: 1
   CurrentHP: 10
   MaxHP: 10

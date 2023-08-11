@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionPigLvl2
   m_EditorClassIdentifier: 
-  Name: Pig Lvl 2
+  NameRus: "\u0421\u0432\u0438\u043D \u0443\u04402"
+  NameEng: Pig Lvl2
   Level: 2
   CurrentHP: 20
   MaxHP: 20
@@ -21,7 +22,6 @@ MonoBehaviour:
   Cooldown: 2.5
   MissileSpeed: 0
   UIIcon: {fileID: 1153172408, guid: a274007a8f2925644b16867338f0c173, type: 3}
-  ItemIcon: {fileID: 0}
   Price: 100
   Prefab: {fileID: 6166235499883199700, guid: dc85b592e9dd26d48bf2d408aa08cd60, type: 3}
   TowerTypeID: 13

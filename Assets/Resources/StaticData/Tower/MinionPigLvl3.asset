@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionPigLvl3
   m_EditorClassIdentifier: 
-  Name: Pig Lvl 3
+  NameRus: "\u0421\u0432\u0438\u043D \u0443\u04403"
+  NameEng: Pig Lvl3
   Level: 3
   CurrentHP: 28
   MaxHP: 28
@@ -21,7 +22,6 @@ MonoBehaviour:
   Cooldown: 3
   MissileSpeed: 0
   UIIcon: {fileID: -1397591752, guid: ec25ec4795591f04fba10e2b4246d490, type: 3}
-  ItemIcon: {fileID: 0}
   Price: 130
   Prefab: {fileID: 7620369883719918790, guid: 3dde88790b8543f4490ac5e0acc5dcc4, type: 3}
   TowerTypeID: 14

@@ -5,7 +5,8 @@ namespace CodeBase.Infrastructure.StaticData
     [CreateAssetMenu(fileName = "TowerData", menuName = "StaticData/Tower")]
     public class TowerStaticData : ScriptableObject
     {
-        public string Name;
+        public string NameRus;
+        public string NameEng;
         [Range(1, 3)]public int Level = 1;
         [Range(1f, 30f)] public float CurrentHP;
         [Range(1f, 30f)] public float MaxHP;

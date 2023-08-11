@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionDragonlvl2
   m_EditorClassIdentifier: 
-  Name: Dragon lvl 2
+  NameRus: "\u0414\u0440\u0430\u043A\u043E\u043D \u0443\u04402"
+  NameEng: Dragon Lvl2
   Level: 2
   CurrentHP: 12
   MaxHP: 12
@@ -21,7 +22,6 @@ MonoBehaviour:
   Cooldown: 2.5
   MissileSpeed: 3
   UIIcon: {fileID: 1506674194, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  ItemIcon: {fileID: 0}
   Price: 120
   Prefab: {fileID: 8810767956856886537, guid: 3a7b842b32f2f4a418c76afbba24ebb5, type: 3}
   TowerTypeID: 4

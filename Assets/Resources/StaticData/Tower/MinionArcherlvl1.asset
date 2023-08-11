@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionArcherlvl1
   m_EditorClassIdentifier: 
-  Name: Archer lvl 1
+  NameRus: "\u041C\u044B\u0448\u044C \u0443\u04401"
+  NameEng: Mouse Lvl1
   Level: 1
   CurrentHP: 8
   MaxHP: 8
@@ -21,7 +22,6 @@ MonoBehaviour:
   Cooldown: 2
   MissileSpeed: 4
   UIIcon: {fileID: 271550891, guid: 3aa4c0a15dcd0e347b98e85da646fcc5, type: 3}
-  ItemIcon: {fileID: 0}
   Price: 50
   Prefab: {fileID: 9053299736789226757, guid: 683c05c4c03d1684991fab47c5145a22, type: 3}
   TowerTypeID: 0

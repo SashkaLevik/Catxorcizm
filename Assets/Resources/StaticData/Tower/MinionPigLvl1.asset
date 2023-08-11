@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionPigLvl1
   m_EditorClassIdentifier: 
-  Name: Pig Lvl 1
+  NameRus: "\u0421\u0432\u0438\u043D \u0443\u04401"
+  NameEng: Pig Lvl1
   Level: 1
   CurrentHP: 18
   MaxHP: 18

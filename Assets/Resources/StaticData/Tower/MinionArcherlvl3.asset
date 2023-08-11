@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da610c08e1204528a69f122f4dc7565c, type: 3}
   m_Name: MinionArcherlvl3
   m_EditorClassIdentifier: 
-  Name: Archer lvl 3
+  NameRus: "\u041C\u044B\u0448\u044C \u0443\u04403"
+  NameEng: Mouse Lvl3
   Level: 3
   CurrentHP: 14
   MaxHP: 14

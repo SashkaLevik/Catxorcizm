@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 8538883823588130934}
   - component: {fileID: 6682263286454157784}
   m_Layer: 0
-  m_Name: AttackSpeed
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,10 +1138,10 @@ MonoBehaviour:
   data: 0
   entries:
   - Language: English
-    Text: AttackSpd
+    Text: Cooldown
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
+    Text: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430"
     Object: {fileID: 0}
 --- !u!1 &2619102610032555193
 GameObject:

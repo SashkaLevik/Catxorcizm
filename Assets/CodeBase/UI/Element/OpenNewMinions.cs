@@ -20,7 +20,7 @@ namespace CodeBase.UI.Element
         private int _countMinions;
         private int _currentCostOfGold;
         private int _currentSoul;
-
+        private int _nextMinion;
         public void LoadProgress(PlayerProgress progress)
         {
             _heroStats = progress.HeroState;
@@ -34,8 +34,9 @@ namespace CodeBase.UI.Element
 
         private void Start()
         {
+            _maxMinions = _upgradeMinionViews.Count + 1;
+            _nextMinion = _countMinions - _defaultMinionsCount;
             OpenMinions();
-            _maxMinions = _upgradeMinionViews.Count + 1;        
         }
 
         private void Update()
@@ -79,7 +80,7 @@ namespace CodeBase.UI.Element
         
         private void OpenMinions()
         {
-            _upgradeMinionViews[_countMinions - 1].SellButton.interactable = true;
+            if(_nextMinion < _upgradeMinionViews.Count) _upgradeMinionViews[_nextMinion].SellButton.interactable = true;
 
             for (int i = 0; i < _countMinions - _defaultMinionsCount; i++)
             {

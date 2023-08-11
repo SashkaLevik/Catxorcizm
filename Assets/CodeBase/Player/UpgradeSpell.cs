@@ -20,7 +20,7 @@ namespace CodeBase.Player
         private int _maxLevelUpgrade;
         private int _currentSoul;
         private int _spellAmount;
-        public int _nextBook;
+        private int _nextBook;
         public void LoadProgress(PlayerProgress progress)
         {
             _heroStats = progress.HeroState;

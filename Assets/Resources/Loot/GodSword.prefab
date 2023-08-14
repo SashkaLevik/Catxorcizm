@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6637549192342670898}
+  - {fileID: 5418509792171002505}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,6 +143,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d569180d5bd4ee4e8c60fc995f62c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &4911904890603307966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6224230215121871083}
+    m_Modifications:
+    - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_Name
+      value: Localization
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5924255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7000382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.833788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+--- !u!4 &5418509792171002505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+  m_PrefabInstance: {fileID: 4911904890603307966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7304098866459125663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,12 +217,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.26869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.74
+      value: -1.8958
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -203,16 +278,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_text
-      value: 'God Sword
-
-        Atk+3
-
-'
+      value: "\u041C\u0435\u0447 \u0431\u043E\u0433\u043E\u0432\n\u0410\u0442\u043A+3"
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bd6ef22649dc5064bb9d3c839432b89d, type: 2}
+    - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3080377407799850475, guid: bd6ef22649dc5064bb9d3c839432b89d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
 --- !u!114 &452247075574726418 stripped
@@ -220,7 +299,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
   m_PrefabInstance: {fileID: 7304098866459125663}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8668436682220510759}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -236,3 +315,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
   m_PrefabInstance: {fileID: 7304098866459125663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8668436682220510759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094497101703100856, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+  m_PrefabInstance: {fileID: 7304098866459125663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2347975427346876959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668436682220510759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: GodSword
+  FallbackText: 'God Sword
+
+    Atk+3
+
+'

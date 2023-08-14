@@ -23,8 +23,8 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private int _ADVSoul;
 
         private int _lowPercent = 25; private int _mediumPercent = 50; private int _highPercent = 75;
-        private int _lowReward = 30; private int _mediumReward = 60; private int _highReward = 100;
-        private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 6; private int _highSoulsAmount = 10;
+        private int _lowReward = 30; private int _mediumReward = 50; private int _highReward = 100;
+        private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 5; private int _highSoulsAmount = 10;
 
 
         public void GetExtraSoul(HeroHealth heroHealth)

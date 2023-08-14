@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8038939116068472187}
+  - {fileID: 1996951817513098280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -142,6 +143,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d569180d5bd4ee4e8c60fc995f62c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1490242406502520095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2136684286892176633}
+    m_Modifications:
+    - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_Name
+      value: Localization
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5924255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7000382
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.833788
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+--- !u!4 &1996951817513098280 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+  m_PrefabInstance: {fileID: 1490242406502520095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6255531091514633430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +215,14 @@ PrefabInstance:
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,13 +274,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_text
-      value: 'Weak Heal Potion
-
-        Heal+6'
+      value: "\u0421\u043B\u0430\u0431\u043E\u0435 \u0437\u0435\u043B\u044C\u0435
+        \u043B\u0435\u0447\u0435\u043D\u0438\u044F\n\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+6"
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.1707
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
@@ -223,12 +309,33 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
   m_PrefabInstance: {fileID: 6255531091514633430}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5458708434138240366}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5458708434138240366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094497101703100856, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+  m_PrefabInstance: {fileID: 6255531091514633430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5645722585915983071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5458708434138240366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: WeakHeal
+  FallbackText: 'Weak Heal Potion
+
+    Heal+6'
 --- !u!4 &8038939116068472187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}

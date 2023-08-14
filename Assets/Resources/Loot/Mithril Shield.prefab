@@ -154,6 +154,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -203,16 +211,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_text
-      value: 'Mithril Shield
-
-        Df+3'
+      value: "\u0429\u0438\u0442 \u0438\u0437 \u043C\u0438\u0444\u0440\u0438\u043B\u0430\n\u0417\u0449\u0442+3"
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.1701
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8889801260577348737, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.039
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+--- !u!1 &1865702539198460490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2094497101703100856, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
+  m_PrefabInstance: {fileID: 357306744326507506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6433777638188757236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865702539198460490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: MithrillShield
+  FallbackText: 'Mithril Shield
+
+    Df+3'
 --- !u!4 &4446592687982502495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4125315859627714989, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
@@ -228,7 +271,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
   m_PrefabInstance: {fileID: 357306744326507506}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1865702539198460490}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}

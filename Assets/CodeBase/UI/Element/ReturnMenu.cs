@@ -2,9 +2,7 @@
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
-using CodeBase.Player;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CodeBase.UI.Element

@@ -4,7 +4,6 @@ using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.Service.StaticData;
 using CodeBase.Infrastructure.StaticData;
-using CodeBase.Tower;
 using CodeBase.UI.Element;
 using CodeBase.UI.Service.Windows;
 using UnityEngine;

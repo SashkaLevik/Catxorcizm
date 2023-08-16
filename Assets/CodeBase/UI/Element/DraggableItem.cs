@@ -18,7 +18,6 @@ namespace CodeBase.UI.Element
         private Camera _camera;
         private Vector3 _prefMousePosition;
         private Vector3 _mouseDelta;
-        private Vector3 _selectedItemStartPosition;
         private RaycastHit2D _currentHit;
 
         private Transform _selected;
@@ -43,35 +42,52 @@ namespace CodeBase.UI.Element
 
         private void Update()
         {
-            var currentMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-            currentMousePosition.z = 0;
-            _mouseDelta = currentMousePosition - _prefMousePosition;
+            DragAndDropObject();
 
             if (Input.GetMouseButtonDown(0))
             {
-                Vector2 clickPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero, Single.PositiveInfinity, _layerMask);
-                _currentHit = hit;
-
-                if (hit.collider != null)
-                {
-                    if (hit.transform.TryGetComponent(out MinionHealth minionHealth))
-                    {
-                        _minion = hit.collider.GetComponent<BaseMinion>();
-                        _selected = hit.transform;
-                        _currentSpawner = hit.transform.parent.GetComponent<TowerSpawner>();
-                        _data = hit.transform.parent.GetComponent<TowerSpawner>().Data;
-                        _playerInventory.CurrentData(_data);
-                        _playerInventory.SetSpawnPosition(_currentSpawner);
-                        
-                        _selectedItemStartPosition = _selected.transform.position;
-                        hit.transform.GetComponent<Collider2D>().enabled = false;
-                        StartCoroutine(DragTrigger());
-                        Debug.Log(hit.transform.name);
-                    }
-                }
+                SelectPart();
             }
 
+            if (Input.GetMouseButtonUp(0))
+            {
+                UpMouse();
+            }
+        }
+
+        private void SelectPart()
+        {
+            Vector2 clickPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero, Single.PositiveInfinity, _layerMask);
+            _currentHit = hit;
+
+            if (hit.collider != null)
+            {
+                if (hit.transform.TryGetComponent(out MinionHealth minionHealth))
+                {
+                    _minion = hit.collider.GetComponent<BaseMinion>();
+                    _selected = hit.transform;
+                    _selected.transform.position = clickPosition;
+
+                    _currentSpawner = hit.transform.parent.GetComponent<TowerSpawner>();
+                    _data = hit.transform.parent.GetComponent<TowerSpawner>().Data;
+
+                    _playerInventory.CurrentData(_data);
+                    _playerInventory.SetSpawnPosition(_currentSpawner);
+
+                    hit.collider.GetComponent<SpriteRenderer>().color = new Color(0.1f, 0.8f, 0.8f);
+                    hit.transform.GetComponent<Collider2D>().enabled = false;
+                    StartCoroutine(DragTrigger());
+                }
+            }
+        }
+
+        private void DragAndDropObject()
+        {
+            var currentMousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            currentMousePosition.z = 0;
+            _mouseDelta = currentMousePosition - _prefMousePosition;
+            
             if (_selected != null)
             {
                 if (_isDragEntity)
@@ -79,56 +95,53 @@ namespace CodeBase.UI.Element
                     _selected.position += new Vector3(_mouseDelta.x, _mouseDelta.y, 0);
                 }
             }
+            
+            _prefMousePosition = currentMousePosition;
+        }
 
-            if (Input.GetMouseButtonUp(0))
+        private void UpMouse()
+        {
+            if (_selected != null)
             {
-                if (_selected != null)
+                _isDragEntity = true;
+                if (_dragTrigger)
                 {
-                    _isDragEntity = true;
-                    if (_dragTrigger)
+                    Vector2 clickPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+                    RaycastHit2D[] hitInfo = Physics2D.RaycastAll(clickPosition, Vector2.zero);
+                    bool isTowerSpawner = false;
+                    RaycastHit2D currentHit = new RaycastHit2D();
+
+                    foreach (RaycastHit2D hit2D in hitInfo)
                     {
-                        Vector2 clickPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
-                        RaycastHit2D[] hitInfo = Physics2D.RaycastAll(clickPosition, Vector2.zero);
-                        bool isTowerSpawner = false;
-                        RaycastHit2D currentHit = new RaycastHit2D();
-                
-                        foreach (RaycastHit2D hit2D in hitInfo)
+                        if (hit2D.collider.TryGetComponent(out TowerSpawner spawner))
                         {
-                            Debug.Log(hit2D.collider.name + " collider Tower");
-                
-                            if (hit2D.collider.TryGetComponent(out TowerSpawner spawner))
+                            if (!spawner.CreateTower)
                             {
-                                if (!spawner.CreateTower)
-                                {
-                                    isTowerSpawner = true;
-                                    currentHit = hit2D;
-                                    Debug.Log(hit2D.collider.name + "  collider Shift");
-                                }
+                                isTowerSpawner = true;
+                                currentHit = hit2D;
                             }
                         }
-                
-                        if (isTowerSpawner == true)
-                        {
-                            NewPosition(currentHit);
-                        }
-                        else
-                        {
-                            ReturnToCurrentPosition();
-                        }
+                    }
+
+                    if (isTowerSpawner == true)
+                    {
+                        NewPosition(currentHit);
                     }
                     else
                     {
                         ReturnToCurrentPosition();
-                        _panel.gameObject.SetActive(true);
-                        _panel.PanelMinions.SetItemIcon(_minion);
-                        _panel.UpgradeData(_data);
-                        _panel.ShowMinions(_data);
-                        _panel.MaxLevelMinions(_data);
                     }
                 }
+                else
+                {
+                    ReturnToCurrentPosition();
+                    _panel.gameObject.SetActive(true);
+                    _panel.PanelMinions.SetItemIcon(_minion);
+                    _panel.UpgradeData(_data);
+                    _panel.ShowMinions(_data);
+                    _panel.MaxLevelMinions(_data);
+                }
             }
-
-            _prefMousePosition = currentMousePosition;
         }
 
         private IEnumerator DragTrigger()
@@ -143,22 +156,22 @@ namespace CodeBase.UI.Element
         {
             _currentHit.transform.localPosition = Vector3.zero;
             _currentHit.transform.GetComponent<Collider2D>().enabled = true;
+            _currentHit.collider.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             _selected = null;
         }
 
         private void NewPosition(RaycastHit2D hitInfo)
         {
-            Debug.Log(hitInfo.collider.transform.name);
             _selected.SetParent(hitInfo.collider.transform, true);
             _selected.transform.localPosition = Vector3.zero;
             _currentHit.transform.GetComponent<Collider2D>().enabled = true;
+            _currentHit.collider.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
             _selected = null;
             _currentSpawner.IsCreateTower();
             _selectSpawner = hitInfo.collider.transform.GetComponent<TowerSpawner>();
             _selectSpawner.IsCreateTower();
             _selectSpawner.ChildMinion(_currentSpawner);
             _currentSpawner.ObjectOffset();
-            Debug.Log("NewPos");
         }
     }
 }

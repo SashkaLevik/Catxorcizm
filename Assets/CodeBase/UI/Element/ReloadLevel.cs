@@ -1,5 +1,4 @@
 ﻿using CodeBase.Infrastructure;
-using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
@@ -28,6 +27,7 @@ namespace CodeBase.UI.Element
         {
             _saveLoadService.SaveProgress();
             string currentScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentScene);
         }
     }
 }

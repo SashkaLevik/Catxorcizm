@@ -7,6 +7,7 @@ namespace CodeBase.Data
     {
         public int Lives;
         public int Level;
+        public int GameLevel;
         public float CurrentHP;
         public float MaxHP;
         public int MeleeAttack;
@@ -21,6 +22,7 @@ namespace CodeBase.Data
         {
             Lives = 9;
             Level = 1;
+            GameLevel = 0;
             CurrentHP = 6;
             MaxHP = 6;
             MeleeAttack = 2;

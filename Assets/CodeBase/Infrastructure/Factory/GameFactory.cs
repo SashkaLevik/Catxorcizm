@@ -61,6 +61,12 @@ namespace CodeBase.Infrastructure.Factory
             return draggableItem;
         }
 
+        public GameObject CreateLevelController()
+        {
+            var levelController = _assets.Instantiate(AssetPath.LevelController);
+            return levelController;
+        }
+
         public GameObject CreatTower(TowerTypeID typeId, Transform parent)
         {
             TowerStaticData towerData = _staticData.ForTower(typeId);

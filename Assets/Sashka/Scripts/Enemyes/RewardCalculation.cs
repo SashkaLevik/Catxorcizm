@@ -26,7 +26,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         private int _lowReward = 30; private int _mediumReward = 50; private int _highReward = 100;
         private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 5; private int _highSoulsAmount = 10;
 
-
         public void GetExtraSoul(HeroHealth heroHealth)
         {
             if (heroHealth.Level > 1)

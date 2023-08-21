@@ -58,7 +58,7 @@ namespace CodeBase.Infrastructure.LevelLogic
             hero.transform.SetParent(Camera.main.transform);
             GameObject hud = _gameFactory.CreateHud();
             InitHud(hero, hud);
-            GameObject additionalTool = _gameFactory.CreateDraggableItem();
+            GameObject additionalTool = _gameFactory.CreateDraggableItem();            
             InitUiRoot(hero, hud, additionalTool);
 
             foreach (var towerSpawner in hero.GetComponentsInChildren<TowerSpawner>())

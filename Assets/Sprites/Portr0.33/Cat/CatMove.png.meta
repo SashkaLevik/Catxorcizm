@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 753e87c43e6b8c54aaa5dadd210b704a
+guid: 388e59f44e8a6e04fb873d9e8b7f6de5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,509 +113,521 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CatMeleeAttack_0
+      name: CatMove_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 591
-        width: 88
-        height: 121
+        x: 57
+        y: 1913
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e971f086e418704cad800a387ed0633
-      internalID: 290132938
+      spriteID: 50f8298bcb6e919449e89dd80b381ca2
+      internalID: 1311264217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_1
+      name: CatMove_2
       rect:
         serializedVersion: 2
-        x: 238
-        y: 591
-        width: 89
-        height: 121
+        x: 432
+        y: 1913
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99c2151e632ace544a4d0ff310a6ea1e
-      internalID: 870376406
+      spriteID: 5f8a134b1539b4a42bf602524e6b50ff
+      internalID: -1178539122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_2
+      name: CatMove_3
       rect:
         serializedVersion: 2
-        x: 417
-        y: 591
-        width: 97
-        height: 119
+        x: 807
+        y: 1913
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95b4c9a19dab0f849971c23ea7932f16
-      internalID: -1917067573
+      spriteID: 7e886f87f6a8e5b498b3d8bcd5a01b14
+      internalID: 32812212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_3
+      name: CatMove_4
       rect:
         serializedVersion: 2
-        x: 593
-        y: 592
-        width: 107
-        height: 118
+        x: 1182
+        y: 1913
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc2d305a0f531949b25b2d348dbec93
-      internalID: 1276116202
+      spriteID: db5d4ca4f456c38438d38868e359bc96
+      internalID: -775735673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_4
+      name: CatMove_5
       rect:
         serializedVersion: 2
-        x: 772
-        y: 591
-        width: 115
-        height: 117
+        x: 57
+        y: 1536
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e554a3fb60d3f25408d88a2f80842c13
-      internalID: 1846130760
+      spriteID: 10db4b7cf39231941ac7041347a67029
+      internalID: 96902747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_5
+      name: CatMove_6
       rect:
         serializedVersion: 2
-        x: 954
-        y: 593
-        width: 119
-        height: 115
+        x: 432
+        y: 1536
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f1d80083bfb9fe4d8a48ccac6639473
-      internalID: 563516989
+      spriteID: 6aed6d9fcc6f8e44c92c4b09a72847d0
+      internalID: 1698689300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_6
+      name: CatMove_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 404
-        width: 122
-        height: 115
+        x: 807
+        y: 1536
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3da28ff521952444db0f39bc88f0bb95
-      internalID: 1423136164
+      spriteID: 456ab7c5cf958a24a8c83ca258bcf609
+      internalID: 1126965295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_7
+      name: CatMove_9
       rect:
         serializedVersion: 2
-        x: 203
-        y: 404
-        width: 123
-        height: 115
+        x: 1182
+        y: 1536
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64599bef1b2780546a3a70e689fe6448
-      internalID: 484447241
+      spriteID: cb49ddce77438f64189229a3e790d23f
+      internalID: -1373372712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_8
+      name: CatMove_12
       rect:
         serializedVersion: 2
-        x: 389
-        y: 404
-        width: 125
-        height: 115
+        x: 57
+        y: 1164
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3373fdc519b8ef8409f6f5a284aae64e
-      internalID: 347656846
+      spriteID: 1c0a6b3e8ef4c0f48bfad075ebbe30b7
+      internalID: -1803379269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_9
+      name: CatMove_13
       rect:
         serializedVersion: 2
-        x: 612
-        y: 404
-        width: 90
-        height: 121
+        x: 432
+        y: 1166
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08395f8b61dafbd4ea63acbbc97da7ae
-      internalID: -685549588
+      spriteID: 82061515a2c06394ea17c9355439ccce
+      internalID: 683987265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_10
+      name: CatMove_14
       rect:
         serializedVersion: 2
-        x: 788
-        y: 404
-        width: 102
-        height: 121
+        x: 807
+        y: 1168
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b97f762f385dda94e9d90c687667fec4
-      internalID: 50635885
+      spriteID: 13ba9b7e10529a4468d64a4e69d89c59
+      internalID: 2012158804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_11
+      name: CatMove_15
       rect:
         serializedVersion: 2
-        x: 965
-        y: 404
-        width: 112
-        height: 123
+        x: 1182
+        y: 1169
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954600b338028084db1f1b4266841e19
-      internalID: -2049888719
+      spriteID: 05ad76bbab0fd9d4bb514c17695b912e
+      internalID: -1722578093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_12
+      name: CatMove_16
       rect:
         serializedVersion: 2
-        x: 29
-        y: 216
-        width: 119
-        height: 123
+        x: 57
+        y: 793
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 546b41cf4fe15bc4ea490511adfad8f9
-      internalID: 876581513
+      spriteID: 3e3b4d0d7665aae4eadb0a5ccbb1876b
+      internalID: -881762486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_13
+      name: CatMove_18
       rect:
         serializedVersion: 2
-        x: 216
-        y: 216
-        width: 117
-        height: 122
+        x: 432
+        y: 793
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ffc86eec68a454bba5995175765ff6
-      internalID: -378034810
+      spriteID: bfdb4cb2d9636814ca1a9c53ed155b41
+      internalID: -306646208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_14
+      name: CatMove_19
       rect:
         serializedVersion: 2
-        x: 405
-        y: 215
-        width: 112
-        height: 122
+        x: 807
+        y: 793
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b0bf0e7be69e4349b42e93fa8eb12d0
-      internalID: -256943375
+      spriteID: 9f3bc6840e0d8394b95792032a9f39d0
+      internalID: -515250448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_15
+      name: CatMove_20
       rect:
         serializedVersion: 2
-        x: 593
-        y: 215
-        width: 110
-        height: 121
+        x: 1182
+        y: 791
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46b319cfa31a1b54f8541041b143f8d4
-      internalID: -1264860258
+      spriteID: 0af4cab2fb4303f4fbeec7c631318e9a
+      internalID: 1004829743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_16
+      name: CatMove_21
       rect:
         serializedVersion: 2
-        x: 780
-        y: 215
-        width: 109
-        height: 120
+        x: 57
+        y: 418
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d717ea341cc6644283eabd2933b5654
-      internalID: 1443685113
+      spriteID: 6fd33186b8f172443bff9037e97f83a9
+      internalID: 1688526532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_17
+      name: CatMove_22
       rect:
         serializedVersion: 2
-        x: 963
-        y: 215
-        width: 118
-        height: 119
+        x: 431
+        y: 418
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ba282558104dc24e9ee4887713a7f99
-      internalID: 1203984039
+      spriteID: b459417dc0c5c5844b6c7776b754dcb4
+      internalID: -1133451316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_18
+      name: CatMove_24
       rect:
         serializedVersion: 2
-        x: 32
-        y: 28
-        width: 113
-        height: 118
+        x: 807
+        y: 418
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45c5c199d0f0734e8526c523019732b
-      internalID: -1572048886
+      spriteID: f0b119a043945de4aaf7b5c0e9ce6b46
+      internalID: 1689213875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_19
+      name: CatMove_25
       rect:
         serializedVersion: 2
-        x: 225
-        y: 28
-        width: 103
-        height: 118
+        x: 1182
+        y: 418
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 358e1594793134b4bb72e2dff4583a2f
-      internalID: -1186319984
+      spriteID: 588a805155aa5c44d86a2d7548439eab
+      internalID: 1649215985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_20
+      name: CatMove_30
       rect:
         serializedVersion: 2
-        x: 421
-        y: 28
-        width: 94
-        height: 119
+        x: 57
+        y: 45
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a74758fcdad7cfd479402fb4f3d4538f
-      internalID: -148195061
+      spriteID: cd4cc85a18a2fb84ebe6744675d3f555
+      internalID: 1963976028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_21
+      name: CatMove_32
       rect:
         serializedVersion: 2
-        x: 618
-        y: 28
-        width: 84
-        height: 119
+        x: 431
+        y: 45
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef10a1c2b3bbebb4b9138e4abc68a09c
-      internalID: -2087154575
+      spriteID: 4a5609c5b0bd64c46a1c4a90ca0c12fb
+      internalID: 401361245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_22
+      name: CatMove_33
       rect:
         serializedVersion: 2
-        x: 802
-        y: 28
-        width: 85
-        height: 123
+        x: 807
+        y: 45
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbcb1b0cf10f1db4b9ef9bbd28ae009b
-      internalID: -1668761389
+      spriteID: 98b1b5d954fa5b840ad10a4d2957737f
+      internalID: -121502718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CatMeleeAttack_23
+      name: CatMove_34
       rect:
         serializedVersion: 2
-        x: 989
-        y: 28
-        width: 85
-        height: 123
+        x: 1182
+        y: 45
+        width: 243
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019836457c477aa459b3278200725156
-      internalID: 1420529702
+      spriteID: 5fcd036fe9041734fa86db7e2c609179
+      internalID: -421291298
       vertices: []
       indices: 
       edges: []
@@ -631,30 +643,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CatMeleeAttack_10: 50635885
-      CatMeleeAttack_11: -2049888719
-      CatMeleeAttack_5: 563516989
-      CatMeleeAttack_6: 1423136164
-      CatMeleeAttack_12: 876581513
-      CatMeleeAttack_4: 1846130760
-      CatMeleeAttack_16: 1443685113
-      CatMeleeAttack_23: 1420529702
-      CatMeleeAttack_14: -256943375
-      CatMeleeAttack_15: -1264860258
-      CatMeleeAttack_2: -1917067573
-      CatMeleeAttack_19: -1186319984
-      CatMeleeAttack_22: -1668761389
-      CatMeleeAttack_17: 1203984039
-      CatMeleeAttack_20: -148195061
-      CatMeleeAttack_0: 290132938
-      CatMeleeAttack_9: -685549588
-      CatMeleeAttack_18: -1572048886
-      CatMeleeAttack_21: -2087154575
-      CatMeleeAttack_8: 347656846
-      CatMeleeAttack_3: 1276116202
-      CatMeleeAttack_7: 484447241
-      CatMeleeAttack_13: -378034810
-      CatMeleeAttack_1: 870376406
+      CatMove_11: -1617165790
+      CatMove_12: -1803379269
+      CatMove_21: 1688526532
+      CatMove_26: 718070991
+      CatMove_35: 783346267
+      CatMove_30: 1963976028
+      CatMove_0: 1311264217
+      CatMove_32: 401361245
+      CatMove_15: -1722578093
+      CatMove_6: 1698689300
+      CatMove_5: 96902747
+      CatMove_3: 32812212
+      CatMove_16: -881762486
+      CatMove_17: -130699725
+      CatMove_19: -515250448
+      CatMove_27: 96675909
+      CatMove_33: -121502718
+      CatMove_1: -511329583
+      CatMove_14: 2012158804
+      CatMove_25: 1649215985
+      CatMove_18: -306646208
+      CatMove_23: 905453915
+      CatMove_31: 1060175822
+      CatMove_34: -421291298
+      CatMove_13: 683987265
+      CatMove_9: -1373372712
+      CatMove_10: -1512800548
+      CatMove_29: 1801588016
+      CatMove_24: 1689213875
+      CatMove_2: -1178539122
+      CatMove_4: -775735673
+      CatMove_20: 1004829743
+      CatMove_22: -1133451316
+      CatMove_8: 1126965295
+      CatMove_7: -33044875
+      CatMove_28: -2117203191
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

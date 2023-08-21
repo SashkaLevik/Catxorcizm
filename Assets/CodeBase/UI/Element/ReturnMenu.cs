@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.LevelLogic;
+﻿using Assets.Sashka.Scripts.Enemyes;
+using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
@@ -22,7 +23,7 @@ namespace CodeBase.UI.Element
         {
             _stateMachine = AllServices.Container.Single<IGameStateMachine>();
             _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
-        }
+        }        
 
         public void ClickMenu()
         {

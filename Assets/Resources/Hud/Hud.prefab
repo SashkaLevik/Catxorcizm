@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4c7d40155a4e60bffdb6907d7e1256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSoul: 100
+  _currentSoul: 10000
   _startSoulIncreaseAmount: 20
   _rewardRete: 3
   _advMoney: {fileID: 8343179520379003426}
@@ -3311,7 +3311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039497597632938945, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_RootOrder
-      value: 48
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 6298312584271703515, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_RootOrder

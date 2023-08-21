@@ -6,10 +6,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Assets.Sashka.Infastructure.Spell;
 using Assets.Sashka.Infastructure.CameraLogic;
+using CodeBase.Infrastructure.Service.SaveLoad;
+using CodeBase.Data;
 
 namespace CodeBase.UI.Element
 {
-    public class ActorUI : MonoBehaviour
+    public class ActorUI : MonoBehaviour, ISavedProgress
     {
         private const string SpawnerController = "SpawnerController";
 
@@ -29,6 +31,7 @@ namespace CodeBase.UI.Element
         
         private GameObject _spawner;
         private CameraFollow _cameraFollow;
+        private int _gameLevel;
 
         public SpawnerController Spawner => _spawnerController;
 
@@ -55,7 +58,6 @@ namespace CodeBase.UI.Element
             _nextWave.onClick.AddListener(_spawnerController.NextWave);
             _nextWave.onClick.AddListener(HideButton);
             _spawnerController.LevelCompleted += CompleteLevel;
-            _levelComplete.onClick.AddListener(LoadMenu);
         }               
 
         private void OnDestroy()
@@ -65,11 +67,10 @@ namespace CodeBase.UI.Element
             _nextWave.onClick.RemoveListener(_spawnerController.NextWave);
             _nextWave.onClick.RemoveListener(HideButton);
             _spawnerController.LevelCompleted -= CompleteLevel;
-            _levelComplete.onClick.RemoveListener(LoadMenu);
             _heroHealth.HealthChanged -= UpdateHpBar;
             _money.CurrentSoulChanged -= UpdateSoulCount;
             _heroHealth.Died -= _reward.GetReward;
-            _heroHealth.Died -= CompleteLevel;
+            _heroHealth.Died -= OnHeroDie;
             _heroHealth.Died -= _cameraFollow.StopMoving;
         }
 
@@ -81,7 +82,7 @@ namespace CodeBase.UI.Element
             _spell.SpellUsed += UpdateSpellAmount;
             _money.CurrentSoulChanged += UpdateSoulCount;           
             _heroHealth.Died += _reward.GetReward;
-            _heroHealth.Died += CompleteLevel;
+            _heroHealth.Died += OnHeroDie;
             _heroHealth.Died += _cameraFollow.StopMoving;
         }
 
@@ -114,14 +115,30 @@ namespace CodeBase.UI.Element
             _treasureBackground.gameObject.SetActive(false);
         }
 
-        private void CompleteLevel()
+        private void OnHeroDie()
         {
             HideButton();
             _levelComplete.gameObject.SetActive(true);
             _spawnerController.WaveCompleted -= ShowButton;
         }
 
-        private void LoadMenu()
-            => SceneManager.LoadScene(1);
+        private void CompleteLevel()
+        {
+            _gameLevel++;
+            HideButton();
+            _levelComplete.gameObject.SetActive(true);
+            _spawnerController.WaveCompleted -= ShowButton;
+        }        
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
+            progress.HeroState.GameLevel = _gameLevel;
+            Debug.Log("GameLevelSaved");
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            _gameLevel = progress.HeroState.GameLevel;
+        }
     }
 }

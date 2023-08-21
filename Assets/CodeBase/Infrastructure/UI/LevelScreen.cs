@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using CodeBase.Data;
+using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -9,17 +14,28 @@ namespace CodeBase.Infrastructure.UI
         [SerializeField] private Button _portArea;
         [SerializeField] private Button _marketArea;
         [SerializeField] private Button _mageArea;
-        [SerializeField] private Button _academy;
+        [SerializeField] private Button _academy;        
+        [SerializeField] private List<Button> _buttons;
+        [SerializeField] private List<Image> _images;
 
+        private int _gameLevel;
+        private IPersistentProgressService _loadService;
         public event UnityAction PortLoaded;
         public event UnityAction MarketLoaded;
         public event UnityAction MageLoaded;
         public event UnityAction AcademyLoaded;
 
+        private void Awake()
+        {
+            _loadService = AllServices.Container.Single<IPersistentProgressService>();
+            _gameLevel = _loadService.Progress.HeroState.GameLevel;
+        }
+
         private void Start()
         {
             _marketArea.interactable = false;
             _mageArea.interactable = false;
+            OpenLevels();
         }                
 
         private void OnEnable()
@@ -29,7 +45,6 @@ namespace CodeBase.Infrastructure.UI
             _mageArea.onClick.AddListener(LoadMage);
             _academy.onClick.AddListener(LoadAcademy);
         }
-
 
         private void OnDisable()
         {
@@ -59,6 +74,18 @@ namespace CodeBase.Infrastructure.UI
             PortLoaded?.Invoke();
         }        
 
-
+        public void OpenLevels()
+        {
+            if (_gameLevel > 0)
+            {
+                for (int i = 0; i < _gameLevel - 1; i++)
+                {
+                    _buttons[i].interactable = false;
+                    _images[i].gameObject.SetActive(false);
+                    _buttons[_gameLevel].interactable = true;
+                }
+            }
+                                    
+        }        
     }    
 }

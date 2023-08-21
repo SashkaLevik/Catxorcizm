@@ -21,7 +21,6 @@ namespace CodeBase.Infrastructure.LevelLogic
             _sceneLoader.Load(sceneName, OnLoaded);
         }
 
-
         private void OnLoaded()
         {
             _gameStateMachine.Enter<GameLoopState>();

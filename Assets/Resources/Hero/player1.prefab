@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5038229133558156384}
   - component: {fileID: 5855944877157463938}
   - component: {fileID: 638743776429642113}
+  - component: {fileID: 321817418019071223}
   - component: {fileID: 741323033172014746}
   - component: {fileID: 5575464265423873362}
   - component: {fileID: 5863072667293893009}
@@ -183,6 +184,18 @@ MonoBehaviour:
   _spell: {fileID: 8200551365954740459, guid: e1d84eea7572b334f94ee168db342f31, type: 3}
   _animator: {fileID: 6055383911413654657}
   _bookSound: {fileID: 5575464265423873362}
+--- !u!114 &321817418019071223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40803309135729015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf09315073c6cf347995bdd2838775f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &741323033172014746
 Animator:
   serializedVersion: 4

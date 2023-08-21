@@ -52,7 +52,6 @@ namespace Assets.Sashka.Scripts.Enemyes
                 _animator.PlayAttack();
                 _health.TakeDamage(_damage);
                 StartCoroutine(ResetAttack());
-                Debug.Log("EnemyAttack");
             }
         }
 
@@ -73,9 +72,12 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private IEnumerator ReduceSpeed(float modifier)
         {
-            _currentSpeed -= modifier;
-            yield return new WaitForSeconds(1.2f);
-            SetDefaultSpeed();
+            if (_currentSpeed != 0)
+            {
+                _currentSpeed -= modifier;
+                yield return new WaitForSeconds(1.2f);
+                SetDefaultSpeed();
+            }            
         }
 
         private void SetDefaultSpeed() =>

@@ -7,6 +7,9 @@ namespace Assets.CodeBase.Infrastructure.UI
     {
         [SerializeField] private Image _doorIcon;
 
+        private void Start()
+            => _doorIcon.color = new Color(255, 255, 255, 255);
+
         public void Show()
             => Invoke(nameof(AlfaOn), 0.2f);
 

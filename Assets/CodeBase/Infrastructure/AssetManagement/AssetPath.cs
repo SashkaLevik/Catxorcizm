@@ -6,5 +6,6 @@
         public const string HudPath = "Hud/Hud";
         public const string HudAcademyPath = "Hud/AcademyHud";
         public const string DraggableItemPath = "UI/DragbbleMinions";
+        public const string LevelController = "UI/LevelController";
     }
 }

@@ -62,7 +62,7 @@ namespace CodeBase.Infrastructure.LevelLogic
         private void OnPortAreaLoad()
         {
             _stateMachine.Enter<LoadLevelState, string>(PortArea);
-            ShowInterstitial();
+            //ShowInterstitial();
         }        
 
         private void ShowInterstitial()

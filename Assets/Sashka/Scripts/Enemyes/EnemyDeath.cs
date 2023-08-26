@@ -25,8 +25,7 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void OnHealthChanged()
         {
-            if (_health.Current <= 0)
-                Die();
+            if (_health.Current <= 0) Die();
         }
 
         private void Die()

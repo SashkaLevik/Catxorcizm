@@ -18,19 +18,17 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] protected AudioSource _attackSound;
 
         private IHealth _health;
-        protected float _speed;
         private int _damage;
         private int _reward;
-        protected float _currentSpeed;
         private float _cooldown;
         private bool _canAttack = true;
+        protected float _speed;
+        protected float _currentSpeed;
 
         public int Reward => _reward;
 
         private void Start()
-        {
-            _currentSpeed = _speed;
-        }
+            => _currentSpeed = _speed;
 
         private void OnEnable()
         {
@@ -45,13 +43,17 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void OnTriggerStay2D(Collider2D other)
         {            
-            if (other.TryGetComponent(out _health) && _canAttack)
+            if (other.TryGetComponent(out _health))
             {
                 _currentSpeed = 0;
-                _attackSound.Play();
-                _animator.PlayAttack();
-                _health.TakeDamage(_damage);
-                StartCoroutine(ResetAttack());
+
+                if (_canAttack)
+                {
+                    _attackSound.Play();
+                    _animator.PlayAttack();
+                    _health.TakeDamage(_damage);
+                    StartCoroutine(ResetAttack());
+                }                
             }
         }
 

@@ -26,13 +26,20 @@ namespace Assets.Sashka.Infastructure.Tresures
 
         private void Start()
         {
-           // SpawnTreasure();
+            //SpawnTreasure();
         }
 
         private void OnEnable()
         {
             _spawnerController.WaveCompleted += SpawnTreasure;
             _spawnerController.WaveStarted += RemoveTreasures;
+            _spawnerController.LevelCompleted += RemoveTreasures;
+        }
+
+        private void OnDestroy()
+        {
+            _spawnerController.WaveCompleted -= SpawnTreasure;
+            _spawnerController.WaveStarted -= RemoveTreasures;
         }
 
         public void SpawnTreasure()
@@ -46,10 +53,7 @@ namespace Assets.Sashka.Infastructure.Tresures
             {
                 var treasure = _spawnPoints[i].GetComponentInChildren<Treasure>();
 
-                if (treasure != null)
-                {
-                    Destroy(treasure.gameObject);
-                }
+                if (treasure != null) Destroy(treasure.gameObject);
             }
         }
 

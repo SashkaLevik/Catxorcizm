@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ebb15836e21b048a165a80fd559e88, type: 3}
+  m_Name: MediumEnemy
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 342543991726148300, guid: 2d99a7395c518e1449c87ad6adbb3c3f, type: 3}
+  _prefabs:
+  - {fileID: 342543991726148300, guid: 7585f625de7f8234f89a769e459caa58, type: 3}
+  - {fileID: 342543991726148300, guid: a2bf04f0d3a8f7742a7ff779576f219f, type: 3}
+  - {fileID: 342543991726148300, guid: 2d99a7395c518e1449c87ad6adbb3c3f, type: 3}
+  - {fileID: 342543991726148300, guid: 0d17ce2ce959e5c47ac7f16f8709c2c9, type: 3}
+  _enemyType: 1

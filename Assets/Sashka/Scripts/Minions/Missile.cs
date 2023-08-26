@@ -10,12 +10,10 @@ namespace Assets.Sashka.Scripts.Minions
         [SerializeField] protected int _damage;
         [SerializeField] private BaseEnemy _target;
         [SerializeField] private TowerStaticData _towerData;
+        [SerializeField] private BaseMinion _baseMinion;
 
         private void Awake()
-        {
-            _speed = _towerData.MissileSpeed;
-            _damage = _towerData.Damage;
-        }
+            => _speed = _towerData.MissileSpeed;
 
         private void Update()
         {
@@ -25,11 +23,15 @@ namespace Assets.Sashka.Scripts.Minions
             }
             else
                 Destroy(gameObject);
+
+            if (_baseMinion != null) _damage = _baseMinion.Damage;
         }
 
         public void Init(BaseEnemy target)
             => _target = target;
 
+        public void InitMinion(BaseMinion minion)
+            => _baseMinion = minion;
 
         public virtual void OnTriggerEnter2D(Collider2D collision)
         {

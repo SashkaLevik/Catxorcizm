@@ -24,8 +24,8 @@ namespace Assets.Sashka.Scripts.Minions
         private Sprite _itemIcon;
 
         public Sprite ItemIcon => _itemIcon;
-
-        public float Defence => _defence;        
+        public float Defence => _defence;
+        public int Damage => _damage;
 
         private void Start()
         {
@@ -37,9 +37,7 @@ namespace Assets.Sashka.Scripts.Minions
         }
 
         public void Init(BaseEnemy enemy)
-        {
-            _enemy = enemy;
-        }
+            => _enemy = enemy;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

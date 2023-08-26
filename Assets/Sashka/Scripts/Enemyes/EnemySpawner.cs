@@ -7,17 +7,18 @@ namespace Assets.Sashka.Scripts.Enemyes
 {
     public class EnemySpawner : MonoBehaviour
     {
-        private const string Enemies = "Enemies";
+        protected const string PortEnemies = "EnemiesScriptable/PortEnemies";
+        protected const string MarketEnemies = "EnemiesScriptable/MarketEnemies";
 
-        [SerializeField] private Transform[] _spawnPoints;
-        [SerializeField] private Transform _bossSpawnPoint;
-        [SerializeField] private BaseEnemy _spawnedEnemy;
-        [SerializeField] private float _timeBetweenSpawn;
-        [SerializeField] private int _weakCount;
-        [SerializeField] private int _mediumCount;
-        [SerializeField] private int _strongCount;
-        [SerializeField] private int _bossCount;
-        [SerializeField] private SpawnerController _controller;
+        [SerializeField] protected Transform[] _spawnPoints;
+        [SerializeField] protected Transform _bossSpawnPoint;
+        [SerializeField] protected BaseEnemy _spawnedEnemy;
+        [SerializeField] protected float _timeBetweenSpawn;
+        [SerializeField] protected int _weakCount;
+        [SerializeField] protected int _mediumCount;
+        [SerializeField] protected int _strongCount;
+        [SerializeField] protected int _bossCount;
+        [SerializeField] protected SpawnerController _controller;
         [SerializeField] protected AudioSource _bossSound;
 
         public List<ScriptablePrefab> _enemies;
@@ -27,10 +28,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         public int Strong => _strongCount;
         public int Boss => _bossCount;
 
-        private void Awake()
-        {
-            _enemies = Resources.LoadAll<ScriptablePrefab>(Enemies).ToList();
-        }
+        protected virtual void Awake() { }        
 
         private void Start()
         {

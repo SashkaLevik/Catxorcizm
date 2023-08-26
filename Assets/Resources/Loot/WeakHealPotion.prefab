@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_text
       value: "\u0421\u043B\u0430\u0431\u043E\u0435 \u0437\u0435\u043B\u044C\u0435
-        \u043B\u0435\u0447\u0435\u043D\u0438\u044F\n\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+6"
+        \u043B\u0435\u0447\u0435\u043D\u0438\u044F\n\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435+10"
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_fontSize

@@ -23,7 +23,6 @@ namespace Assets.Sashka.Scripts.Enemyes
             _target = GameObject.FindGameObjectWithTag(SoulCounter);
             transform.SetParent(_camera.transform);
             StartCoroutine(Fly());
-            //_reward = _enemy.Reward;
             GetReward();
         }        
 

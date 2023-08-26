@@ -15,8 +15,8 @@ MonoBehaviour:
   Description: IronHelmet
   Icon: {fileID: 1651976530, guid: b918c520cf62336469bc0ac05e16daa7, type: 3}
   ItemType: 1
-  AtkModifier: 1
-  DfsModifier: 1
+  AtkModifier: 0
+  DfsModifier: 2
   Cooldown: 0
   HealthModifier: 0
   Price: 0

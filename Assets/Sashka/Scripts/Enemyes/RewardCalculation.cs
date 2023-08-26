@@ -30,7 +30,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             if (heroHealth.Level > 1)
             {
-                StartCoroutine(SpawnSoul(heroHealth.Level));
+                StartCoroutine(SpawnSoul(heroHealth.Level + 1));
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -35,7 +34,6 @@ namespace CodeBase.Infrastructure.UI
 
             _audio.Play();
             _settingsScreen.SetActive(false);
-            //_levelScreen.SetActive(false);
             _tutorialScreen.SetActive(false);
             CheckDisactivateKey();
         }

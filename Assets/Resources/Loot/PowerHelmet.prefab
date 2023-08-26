@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
       propertyPath: m_text
-      value: "\u041C\u043E\u0433\u0443\u0447\u0438\u0439 \u0448\u043B\u0435\u043C\n\u0410\u0442\u043A+2,
+      value: "\u041C\u043E\u0433\u0443\u0447\u0438\u0439 \u0448\u043B\u0435\u043C\n\u0410\u0442\u043A+1,
         \u0417\u0449\u0442+2"
       objectReference: {fileID: 0}
     - target: {fileID: 7141560473852713101, guid: 82d1019577ff9484894aac8ea104b2ea, type: 3}
@@ -264,6 +264,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4799356220976798285}
     m_Modifications:
+    - target: {fileID: 507334555203469138, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: entries.Array.data[0].Text
+      value: 'Power helmet
+
+        Atk+1, Df+2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 507334555203469138, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: entries.Array.data[1].Text
+      value: "\u041C\u043E\u0433\u0443\u0447\u0438\u0439 \u0448\u043B\u0435\u043C\n\u0410\u0442\u043A+1,
+        \u0417\u0449\u0442+2"
+      objectReference: {fileID: 0}
     - target: {fileID: 1087899185929128245, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_Name
       value: Localization
@@ -311,6 +322,16 @@ PrefabInstance:
     - target: {fileID: 1087899185929128247, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454450476218340380, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: entries.Array.data[0].Text
+      value: 'Iron helmet
+
+        Df+2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1454450476218340380, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}
+      propertyPath: entries.Array.data[1].Text
+      value: "\u0421\u0442\u0430\u043B\u044C\u043D\u043E\u0439 \u0448\u043B\u0435\u043C\n\u0417\u0449\u0442+2"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a4d232d045c4344aa880db3bfc3bec, type: 3}

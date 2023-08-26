@@ -1,6 +1,4 @@
 ﻿using CodeBase.Data;
-using CodeBase.Infrastructure.Service;
-using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,27 +7,21 @@ using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure.UI
 {
-    class LevelScreen : MonoBehaviour
+    class LevelScreen : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private Button _portArea;
         [SerializeField] private Button _marketArea;
         [SerializeField] private Button _mageArea;
         [SerializeField] private Button _academy;        
         [SerializeField] private List<Button> _buttons;
-        [SerializeField] private List<Image> _images;
+        [SerializeField] private List<Image> _fogImages;
 
         private int _gameLevel;
-        private IPersistentProgressService _loadService;
+
         public event UnityAction PortLoaded;
         public event UnityAction MarketLoaded;
         public event UnityAction MageLoaded;
         public event UnityAction AcademyLoaded;
-
-        private void Awake()
-        {
-            _loadService = AllServices.Container.Single<IPersistentProgressService>();
-            _gameLevel = _loadService.Progress.HeroState.GameLevel;
-        }
 
         private void Start()
         {
@@ -54,38 +46,35 @@ namespace CodeBase.Infrastructure.UI
             _academy.onClick.RemoveListener(LoadAcademy);
         }
 
+        public void UpdateProgress(PlayerProgress progress)
+            => progress.HeroState.GameLevel = _gameLevel;
+
+        public void LoadProgress(PlayerProgress progress)
+            => _gameLevel = progress.HeroState.GameLevel;
+
         private void LoadAcademy()
-        {
-            AcademyLoaded?.Invoke();
-        }
+            => AcademyLoaded?.Invoke();
 
         private void LoadMage()
-        {
-            MageLoaded?.Invoke();
-        }
+            => MageLoaded?.Invoke();
 
         private void LoadMarket()
-        {
-            MarketLoaded?.Invoke();
-        }
+            => MarketLoaded?.Invoke();
 
         private void LoadPort()
-        {
-            PortLoaded?.Invoke();
-        }        
+            => PortLoaded?.Invoke();
 
-        public void OpenLevels()
+        private void OpenLevels()
         {
             if (_gameLevel > 0)
             {
-                for (int i = 0; i < _gameLevel - 1; i++)
+                for (int i = 0; i < _gameLevel; i++)
                 {
                     _buttons[i].interactable = false;
-                    _images[i].gameObject.SetActive(false);
+                    _fogImages[i].gameObject.SetActive(false);
                     _buttons[_gameLevel].interactable = true;
                 }
-            }
-                                    
+            }                                    
         }        
     }    
 }

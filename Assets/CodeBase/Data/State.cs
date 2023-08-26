@@ -29,8 +29,8 @@ namespace CodeBase.Data
             SpellAmount = 2;
 
             PriceLevel = 250;
-            PriceSpell = 200;
-            PriceNewMinions = 150;
+            PriceSpell = 100;
+            PriceNewMinions = 200;
         }
     }
 }

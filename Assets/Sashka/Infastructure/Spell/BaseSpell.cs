@@ -56,7 +56,10 @@ namespace Assets.Sashka.Infastructure.Spell
 
                 foreach (var enemy in _enemies)
                 {
-                    enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
+                    if (enemy != null)
+                    {
+                        enemy.GetComponentInChildren<EnemyHealth>().TakeDamage(_damage);
+                    }
                 }
             }
         }               

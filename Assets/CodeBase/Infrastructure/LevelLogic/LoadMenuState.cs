@@ -1,4 +1,8 @@
-﻿using CodeBase.Infrastructure.State;
+﻿using CodeBase.Infrastructure.Factory;
+using CodeBase.Infrastructure.Service.PersistentProgress;
+using CodeBase.Infrastructure.Service.SaveLoad;
+using CodeBase.Infrastructure.State;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic
 {
@@ -7,34 +11,49 @@ namespace CodeBase.Infrastructure.LevelLogic
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
+        private readonly IGameFactory _gameFactory;
+        private readonly IPersistentProgressService _progressService;
 
-        public LoadMenuState(GameStateMachine  gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain)
+        public LoadMenuState(GameStateMachine  gameStateMachine, SceneLoader sceneLoader, LoadingCurtain curtain,
+            IGameFactory gameFactory, IPersistentProgressService progressService)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _curtain = curtain;
+            _gameFactory = gameFactory;
+            _progressService = progressService;
         }
 
         public void Enter(string sceneName)
         {
             _curtain.Show();
             _sceneLoader.Load(sceneName, OnLoaded);
-        }
-
-        private void OnLoaded()
-        {
-            _gameStateMachine.Enter<GameLoopState>();
-        }
+        }        
 
         public void Exit()
         {
             _curtain.Hide();
         }
 
-        public void Enter()
+        public void Enter() { }        
+
+        private void OnLoaded()
         {
-            //_curtain.Show();
-            //_scenLoader.Load(MenuScene);
+            InitGameWorld();
+            InformProgressReaders();
+
+            _gameStateMachine.Enter<GameLoopState>();
+        }
+
+        private void InitGameWorld()
+        {
+            GameObject hud = _gameFactory.CreateHudMenu();
+        }            
+
+        private void InformProgressReaders()
+        {
+            foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
+                progressReader.LoadProgress(_progressService.Progress);
         }
     }
 }

@@ -20,16 +20,17 @@ namespace Assets.Sashka.Scripts.Minions
             {
                 _canAttack = false;
                 _animator.SetTrigger(Attack);
-                Invoke(nameof(SetFlame), 0.3f);
+                Invoke(nameof(SetArrow), 0.3f);
                 yield return new WaitForSeconds(_cooldown);
                 _canAttack = true;
             }
         }
 
-        private void SetFlame()
+        private void SetArrow()
         {
             Missile missile = Instantiate(_missile, _firePos.position, Quaternion.identity);
             missile.Init(_enemy);
+            missile.InitMinion(this);
         }
     }
 }

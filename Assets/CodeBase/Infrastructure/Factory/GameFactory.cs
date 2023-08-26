@@ -61,10 +61,11 @@ namespace CodeBase.Infrastructure.Factory
             return draggableItem;
         }
 
-        public GameObject CreateLevelController()
+        public GameObject CreateHudMenu()
         {
-            var levelController = _assets.Instantiate(AssetPath.LevelController);
-            return levelController;
+            GameObject hudMenu = _assets.Instantiate(AssetPath.HudMenuPath);
+            RegisterProgressWatchers(hudMenu);
+            return hudMenu;
         }
 
         public GameObject CreatTower(TowerTypeID typeId, Transform parent)

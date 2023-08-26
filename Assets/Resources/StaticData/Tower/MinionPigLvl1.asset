@@ -15,8 +15,8 @@ MonoBehaviour:
   NameRus: "\u0421\u0432\u0438\u043D \u0443\u04401"
   NameEng: Pig Lvl1
   Level: 1
-  CurrentHP: 18
-  MaxHP: 18
+  CurrentHP: 14
+  MaxHP: 14
   Damage: 2
   Defence: 0
   Cooldown: 2

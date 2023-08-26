@@ -8,7 +8,6 @@ namespace CodeBase.Player
     public class Inventory : MonoBehaviour
     {
         [SerializeField] private List<TowerSpawner> _spawners;
-
         [SerializeField] private List<TowerStaticData> _minions;
         private TowerStaticData _towerStaticData;
         private TowerSpawner _position;

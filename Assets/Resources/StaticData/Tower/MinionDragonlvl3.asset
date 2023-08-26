@@ -15,8 +15,8 @@ MonoBehaviour:
   NameRus: "\u0414\u0440\u0430\u043A\u043E\u043D \u0443\u04403"
   NameEng: Dragon Lvl3
   Level: 3
-  CurrentHP: 15
-  MaxHP: 15
+  CurrentHP: 14
+  MaxHP: 14
   Damage: 6
   Defence: 0
   Cooldown: 3

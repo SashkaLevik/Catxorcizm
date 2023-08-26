@@ -595,8 +595,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 1.2
   _weakCount: 8
-  _mediumCount: 8
-  _strongCount: 6
+  _mediumCount: 14
+  _strongCount: 10
   _bossCount: 1
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -1710,8 +1710,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 1.5
   _weakCount: 8
-  _mediumCount: 8
-  _strongCount: 4
+  _mediumCount: 12
+  _strongCount: 8
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2384,8 +2384,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 1.5
   _weakCount: 8
-  _mediumCount: 6
-  _strongCount: 2
+  _mediumCount: 10
+  _strongCount: 4
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}

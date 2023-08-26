@@ -8,6 +8,6 @@ namespace CodeBase.Infrastructure.Service.StaticData
     {
         void Load();
         TowerStaticData ForTower(TowerTypeID typeID);
-        WindowConfig ForWindow(WindowId windowID);  
+        WindowConfig ForWindow(WindowId windowID);
     }
 }

@@ -15,8 +15,8 @@ MonoBehaviour:
   NameRus: "\u0421\u043E\u0431\u0430\u043A\u0430 \u0443\u04402"
   NameEng: Dog Lvl2
   Level: 2
-  CurrentHP: 16
-  MaxHP: 16
+  CurrentHP: 14
+  MaxHP: 14
   Damage: 3
   Defence: 0
   Cooldown: 1.5

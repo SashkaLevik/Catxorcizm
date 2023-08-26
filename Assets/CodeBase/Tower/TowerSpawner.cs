@@ -15,7 +15,6 @@ namespace CodeBase.Tower
         [SerializeField] private SpriteRenderer _sprite;
         [SerializeField] private MinionHealth _minionHealth;
 
-        
         private IGameFactory _factory;
         private IUIFactory _uIFactory;
         private ShopWindow _shopWindow;
@@ -47,6 +46,24 @@ namespace CodeBase.Tower
             _factory = AllServices.Container.Single<IGameFactory>();
         }
 
+        private void Update()
+        {
+            if (!_createTower)
+            {
+                return;
+            }
+            else
+            {
+                _minionHealth = _currentTower.gameObject.GetComponent<MinionHealth>();
+                _minionHealth.Died += OnMinionDie;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            _minionHealth.Died -= OnMinionDie;
+        }
+
         private void ShopOnOpened(bool open)
         {
         }
@@ -64,12 +81,13 @@ namespace CodeBase.Tower
             _sprite.enabled = false;
         }
 
-        private void OnMinionDie(BaseMinion minion)
+        private void OnMinionDie(TowerStaticData staticData)
         {
-            _createTower = false;
-            _sprite.enabled = true;
+            IsCreateTower();
+            _currentTower = null;
+            _data = staticData;
+            _minionHealth = null;
             _data = null;
-            _minionHealth.Died -= OnMinionDie;
         }        
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
@@ -79,7 +97,6 @@ namespace CodeBase.Tower
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
             _currentTower = tower;
             _minionHealth = _currentTower.gameObject.GetComponent<MinionHealth>();
-            _minionHealth.Died += OnMinionDie;
         }        
 
         public void DestroyMinions()
@@ -94,6 +111,7 @@ namespace CodeBase.Tower
             {
                 _currentTower = null;
                 _data = null;
+                _minionHealth = null;
             }
         }
 
@@ -102,8 +120,6 @@ namespace CodeBase.Tower
             _currentTower = position._currentTower;
             _data = position._data;
             CreateMinion?.Invoke(this);
-            _minionHealth = GetComponentInChildren<MinionHealth>();
-            _minionHealth.Died += OnMinionDie;
         }
     }
 }

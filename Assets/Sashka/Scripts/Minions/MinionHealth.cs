@@ -1,4 +1,5 @@
-﻿using Assets.Sashka.Infastructure.Audio;
+﻿using System;
+using Assets.Sashka.Infastructure.Audio;
 using Assets.Sashka.Scripts.Enemyes;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
@@ -24,7 +25,7 @@ namespace Assets.Sashka.Scripts.Minions
 
         public event UnityAction DefenceChanged;
         public event UnityAction HealthChanged;
-        public event UnityAction<BaseMinion> Died;
+        public event Action<TowerStaticData> Died;
 
         private void Awake()
             => _spawnerController = FindObjectOfType<SpawnerController>();
@@ -106,7 +107,7 @@ namespace Assets.Sashka.Scripts.Minions
             
             if (Current <= 0)
             {
-                Died?.Invoke(_minion);
+                Died?.Invoke(_staticData);
                 Die();
             }
         }

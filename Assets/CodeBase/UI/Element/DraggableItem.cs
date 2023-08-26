@@ -70,7 +70,7 @@ namespace CodeBase.UI.Element
                     _selected.transform.position = clickPosition;
 
                     _currentSpawner = hit.transform.parent.GetComponent<TowerSpawner>();
-                    _data = hit.transform.parent.GetComponent<TowerSpawner>().Data;
+                    _data = _currentSpawner.Data;
 
                     _playerInventory.CurrentData(_data);
                     _playerInventory.SetSpawnPosition(_currentSpawner);

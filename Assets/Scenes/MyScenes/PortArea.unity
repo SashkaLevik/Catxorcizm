@@ -3043,9 +3043,9 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1098649816}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 4
-  _weakCount: 5
+  _weakCount: 0
   _mediumCount: 0
-  _strongCount: 0
+  _strongCount: 1
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 1920106316}

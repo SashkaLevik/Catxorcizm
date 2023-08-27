@@ -171,7 +171,7 @@ namespace CodeBase.UI.Element
             _selectSpawner = hitInfo.collider.transform.GetComponent<TowerSpawner>();
             _selectSpawner.IsCreateTower();
             _selectSpawner.ChildMinion(_currentSpawner);
-            _currentSpawner.ObjectOffset();
+            _currentSpawner.ObjectOffset(_currentSpawner);
         }
     }
 }

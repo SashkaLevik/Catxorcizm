@@ -25,7 +25,7 @@ namespace Assets.Sashka.Scripts.Minions
 
         public event UnityAction DefenceChanged;
         public event UnityAction HealthChanged;
-        public event Action<TowerStaticData> Died;
+        public event Action Died;
 
         private void Awake()
             => _spawnerController = FindObjectOfType<SpawnerController>();
@@ -107,7 +107,6 @@ namespace Assets.Sashka.Scripts.Minions
             
             if (Current <= 0)
             {
-                Died?.Invoke(_staticData);
                 Die();
             }
         }
@@ -132,6 +131,7 @@ namespace Assets.Sashka.Scripts.Minions
         {
             yield return new WaitForSeconds(0.8f);
             Destroy(gameObject);
+            Died?.Invoke();
         }
     }
 }

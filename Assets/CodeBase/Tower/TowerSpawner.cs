@@ -46,19 +46,6 @@ namespace CodeBase.Tower
             _factory = AllServices.Container.Single<IGameFactory>();
         }
 
-        private void Update()
-        {
-            if (!_createTower)
-            {
-                return;
-            }
-            else
-            {
-                _minionHealth = _currentTower.gameObject.GetComponent<MinionHealth>();
-                _minionHealth.Died += OnMinionDie;
-            }
-        }
-
         private void OnDestroy()
         {
             _minionHealth.Died -= OnMinionDie;
@@ -81,13 +68,14 @@ namespace CodeBase.Tower
             _sprite.enabled = false;
         }
 
-        private void OnMinionDie(TowerStaticData staticData)
+        private void OnMinionDie()
         {
-            IsCreateTower();
+            print("pf");
             _currentTower = null;
-            _data = staticData;
             _minionHealth = null;
             _data = null;
+            _createTower = false;
+            _sprite.enabled = true;
         }        
 
         private void Spawner(TowerTypeID towerTypeID, Transform parent)
@@ -96,7 +84,8 @@ namespace CodeBase.Tower
             
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
             _currentTower = tower;
-            _minionHealth = _currentTower.gameObject.GetComponent<MinionHealth>();
+            _minionHealth = GetComponentInChildren<MinionHealth>();
+            _minionHealth.Died += OnMinionDie;
         }        
 
         public void DestroyMinions()
@@ -105,13 +94,13 @@ namespace CodeBase.Tower
                 Destroy(_currentTower);            
         }
 
-        public void ObjectOffset()
+        public void ObjectOffset(TowerSpawner position)
         {
-            if (!_createTower)
+            if (!position._createTower)
             {
-                _currentTower = null;
-                _data = null;
-                _minionHealth = null;
+                position._currentTower = null;
+                position._data = null;
+                position._minionHealth = null;
             }
         }
 

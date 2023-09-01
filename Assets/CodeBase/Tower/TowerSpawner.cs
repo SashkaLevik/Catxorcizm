@@ -27,7 +27,7 @@ namespace CodeBase.Tower
         public bool CreateTower => _createTower;
         public MinionHealth MinionHealth => _minionHealth;
         public TowerStaticData Data => _data;
-        
+
         public void Construct(IUIFactory uiFactory)
         {
             _uIFactory = uiFactory;

@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.LevelLogic;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -41,6 +42,7 @@ namespace CodeBase.Infrastructure.State
         
         private PlayerProgress NewProgress()
         {
+            Debug.Log("new hero");
             var progress =  new PlayerProgress(initialLevel: MenuScene);
             progress.HeroState.ResetHP();
 

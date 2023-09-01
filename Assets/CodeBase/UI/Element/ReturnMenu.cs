@@ -12,6 +12,7 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _button;
 
         public string TransferTo;
+        private const string MenuScene = "MenuScene";
         private IGameStateMachine _stateMachine;
 
         private ISaveLoadService _saveLoadService;
@@ -26,6 +27,13 @@ namespace CodeBase.UI.Element
         {
             _saveLoadService.SaveProgress();
             _stateMachine.Enter<LoadMenuState, string>(TransferTo);
+        }
+        
+        public void ResetProgress()
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+            _stateMachine.Enter<LoadMenuState, string>(MenuScene);
         }
     }
 }

@@ -15,8 +15,8 @@ MonoBehaviour:
   NameRus: "\u0414\u0440\u0430\u043A\u043E\u043D \u0443\u04401"
   NameEng: Dragon Lvl1
   Level: 1
-  CurrentHP: 10
-  MaxHP: 10
+  CurrentHP: 12
+  MaxHP: 12
   Damage: 3
   Defence: 0
   Cooldown: 3

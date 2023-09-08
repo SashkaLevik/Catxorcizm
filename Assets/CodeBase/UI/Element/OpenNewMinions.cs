@@ -112,6 +112,7 @@ namespace CodeBase.UI.Element
             _refuseImage.gameObject.SetActive(true);
             yield return new WaitForSeconds(3f);
             _refuseImage.gameObject.SetActive(false);
+            Debug.Log("Refuse");
         }        
     }
 }

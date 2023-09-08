@@ -11,7 +11,7 @@ namespace CodeBase.Player
         [SerializeField] private int _currentSoul;
         [SerializeField] private int _startSoulIncreaseAmount;
         [SerializeField] private int _rewardRete;
-        [SerializeField] private GameObject _advMoney;
+        //[SerializeField] private GameObject _advMoney;
 
         private int _earnedSouls;
         public event UnityAction<int> CurrentSoulChanged;

@@ -81,9 +81,12 @@ namespace CodeBase.Infrastructure.Factory
         }
 
         public void Cleanup()
-        {
+        {            
             ProgressReaders.Clear();
             ProgressWriters.Clear();
+            
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
         }
 
         private void RegisterProgressWatchers(GameObject hero)

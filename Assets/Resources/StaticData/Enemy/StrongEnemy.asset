@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StrongEnemy
   m_EditorClassIdentifier: 
   Health: 18
-  Damage: 3
+  Damage: 5
   Cooldown: 3
   Speed: 0.55
   Reward: 40

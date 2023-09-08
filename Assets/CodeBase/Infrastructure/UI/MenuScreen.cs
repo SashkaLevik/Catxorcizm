@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using CodeBase.Infrastructure.Service;
+using CodeBase.Infrastructure.Service.SaveLoad;
+using CodeBase.Infrastructure.State;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -22,6 +25,13 @@ namespace CodeBase.Infrastructure.UI
         public event UnityAction GameStarted;
         public event UnityAction RulesShowed;
         private string _disactivate = "Disactivate";
+
+        private ISaveLoadService _saveLoadService;
+
+        private void Awake()
+        {
+            _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
+        }
 
         private void Start()
         {
@@ -90,6 +100,7 @@ namespace CodeBase.Infrastructure.UI
 
         private void ReturneFromSettings()
         {
+            _saveLoadService.SaveProgress();
             _menuScreen.SetActive(true);
             _settingsScreen.SetActive(false);
         }

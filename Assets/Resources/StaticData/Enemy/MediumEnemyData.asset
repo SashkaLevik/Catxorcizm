@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MediumEnemyData
   m_EditorClassIdentifier: 
   Health: 15
-  Damage: 2
+  Damage: 3
   Cooldown: 3
   Speed: 0.5
   Reward: 30

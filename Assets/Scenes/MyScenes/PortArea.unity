@@ -639,7 +639,7 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 0
-  _mediumCount: 6
+  _mediumCount: 5
   _strongCount: 5
   _bossCount: 1
   _controller: {fileID: 1276082689}
@@ -1051,8 +1051,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 2
-  _mediumCount: 4
+  _weakCount: 4
+  _mediumCount: 1
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1276082689}
@@ -1147,6 +1147,7 @@ Transform:
   - {fileID: 826979592}
   - {fileID: 284222948}
   - {fileID: 1098649816}
+  - {fileID: 1719691250}
   - {fileID: 104923131}
   - {fileID: 727931861}
   - {fileID: 2025672437}
@@ -1526,9 +1527,9 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 1
-  _mediumCount: 4
-  _strongCount: 2
+  _weakCount: 3
+  _mediumCount: 3
+  _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -1574,7 +1575,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &727931862
 MonoBehaviour:
@@ -1738,8 +1739,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 1
-  _mediumCount: 5
-  _strongCount: 5
+  _mediumCount: 3
+  _strongCount: 4
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2068,8 +2069,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 3
-  _mediumCount: 1
+  _weakCount: 5
+  _mediumCount: 0
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1276082689}
@@ -2273,7 +2274,7 @@ MonoBehaviour:
   - {fileID: 1370948521}
   - {fileID: 755461906}
   - {fileID: 217706652}
-  _enemiesCount: 0
+  _treasureBackground: {fileID: 1719691248}
 --- !u!4 &1276082690
 Transform:
   m_ObjectHideFlags: 0
@@ -2345,8 +2346,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 0
-  _mediumCount: 5
-  _strongCount: 4
+  _mediumCount: 4
+  _strongCount: 3
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2891,6 +2892,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parallaxEffect: {x: 0.25, y: 0}
+--- !u!1 &1719691248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033937382464320522, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+  m_PrefabInstance: {fileID: 9033937380811740154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1719691250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+  m_PrefabInstance: {fileID: 9033937380811740154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1781777487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3805714744928226685, guid: bb506da7510f9884c93fb260fe35a8be, type: 3}
@@ -2947,8 +2958,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 1
-  _mediumCount: 5
-  _strongCount: 3
+  _mediumCount: 3
+  _strongCount: 2
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -3080,7 +3091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4978283931649437049, guid: ccd57c1f1c64aec43bcf38b7c7900453, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4978283931649437049, guid: ccd57c1f1c64aec43bcf38b7c7900453, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3399,7 +3410,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 304948150024017716, guid: 6e0f9f4ed26282743a62d679aa50b17b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 304948150024017716, guid: 6e0f9f4ed26282743a62d679aa50b17b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3451,3 +3462,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0f9f4ed26282743a62d679aa50b17b, type: 3}
+--- !u!1001 &9033937380811740154
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 519420032}
+    m_Modifications:
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2411
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1132
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320520, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320522, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_Name
+      value: lootFon
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033937382464320522, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}

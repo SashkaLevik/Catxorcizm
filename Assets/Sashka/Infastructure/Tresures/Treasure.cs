@@ -18,14 +18,6 @@ namespace Assets.Sashka.Infastructure.Tresures
         private void Start()
             => _treasureSpawner = GetComponentInParent<TreasureSpawner>();
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.TryGetComponent(out BaseMinion minion))
-            {
-                Debug.Log("Minion");
-            }           
-        }
-
         private void OnMouseEnter()
             => _description.SetActive(true);
 

@@ -21,6 +21,7 @@ namespace CodeBase.Player
         private int _currentSoul;
         private int _spellAmount;
         private int _nextBook;
+
         public void LoadProgress(PlayerProgress progress)
         {
             _heroStats = progress.HeroState;
@@ -28,9 +29,7 @@ namespace CodeBase.Player
         }
 
         public void UpdateProgress(PlayerProgress progress)
-        {
-            progress.HeroState.SpellAmount = _spellAmount;
-        }
+            => progress.HeroState.SpellAmount = _spellAmount;
 
         private void Start()
         {

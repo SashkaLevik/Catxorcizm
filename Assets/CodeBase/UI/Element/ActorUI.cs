@@ -27,11 +27,11 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private RewardCalculation _reward;
-        [SerializeField] private Image _treasureBackground;
         
         private GameObject _spawner;
         private CameraFollow _cameraFollow;
         private int _gameLevel;
+        private int _difficult;
 
         public SpawnerController Spawner => _spawnerController;
 
@@ -53,18 +53,18 @@ namespace CodeBase.UI.Element
 
         private void OnEnable()
         {
+            _spawnerController.LevelCompleted += CompleteLevel;
             _spawnerController.LevelCompleted += _reward.GetReward;
             _spawnerController.WaveCompleted += ShowButton;
-            _nextWave.onClick.AddListener(_spawnerController.NextWave);
+            _nextWave.onClick.AddListener(()=>_spawnerController.NextWave(_difficult));
             _nextWave.onClick.AddListener(HideButton);
-            _spawnerController.LevelCompleted += CompleteLevel;
         }               
 
         private void OnDestroy()
         {
             _spawnerController.LevelCompleted -= _reward.GetReward;
             _spawnerController.WaveCompleted -= ShowButton;
-            _nextWave.onClick.RemoveListener(_spawnerController.NextWave);
+            _nextWave.onClick.RemoveListener(()=>_spawnerController.NextWave(_difficult));
             _nextWave.onClick.RemoveListener(HideButton);
             _spawnerController.LevelCompleted -= CompleteLevel;
             _heroHealth.HealthChanged -= UpdateHpBar;
@@ -86,6 +86,29 @@ namespace CodeBase.UI.Element
             _heroHealth.Died += _cameraFollow.StopMoving;
         }
 
+        public bool IsGameComplete()
+        {
+            if (_spawnerController.IsLevelComplete == true && _gameLevel == 3)
+                return true;
+
+            return false;
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+            => progress.HeroState.GameLevel = _gameLevel;
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            _gameLevel = progress.HeroState.GameLevel;
+            _difficult = progress.HeroState.Difficult;
+        }
+
+        public void ShowButton()
+            => _nextWave.gameObject.SetActive(true);
+
+        public void HideButton()
+            => _nextWave.gameObject.SetActive(false);
+
         private void UpdateSoulCount(int soul)
             => _soulCount.text = soul.ToString();        
 
@@ -101,24 +124,11 @@ namespace CodeBase.UI.Element
             {
                 _money.AddMoney(soul.Reward);
             }
-        }
-
-        public void ShowButton()
-        {
-            _nextWave.gameObject.SetActive(true);
-            _treasureBackground.gameObject.SetActive(true);
-        }            
-
-        public void HideButton()
-        {
-            _nextWave.gameObject.SetActive(false);
-            _treasureBackground.gameObject.SetActive(false);
-        }
+        }        
 
         private void OnHeroDie()
         {
             HideButton();
-            _levelComplete.gameObject.SetActive(true);
             _spawnerController.WaveCompleted -= ShowButton;
         }
 
@@ -126,19 +136,7 @@ namespace CodeBase.UI.Element
         {
             _gameLevel++;
             HideButton();
-            _levelComplete.gameObject.SetActive(true);
             _spawnerController.WaveCompleted -= ShowButton;
-        }        
-
-        public void UpdateProgress(PlayerProgress progress)
-        {
-            progress.HeroState.GameLevel = _gameLevel;
-            Debug.Log("GameLevelSaved");
-        }
-
-        public void LoadProgress(PlayerProgress progress)
-        {
-            _gameLevel = progress.HeroState.GameLevel;
-        }
+        }                
     }
 }

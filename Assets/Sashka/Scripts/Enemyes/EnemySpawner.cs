@@ -1,3 +1,5 @@
+using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,10 +7,11 @@ using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour, ISavedProgressReader
     {
         protected const string PortEnemies = "EnemiesScriptable/PortEnemies";
         protected const string MarketEnemies = "EnemiesScriptable/MarketEnemies";
+        protected const string MageEnemies = "EnemiesScriptable/MageEnemies";
 
         [SerializeField] protected Transform[] _spawnPoints;
         [SerializeField] protected Transform _bossSpawnPoint;
@@ -21,6 +24,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] protected SpawnerController _controller;
         [SerializeField] protected AudioSource _bossSound;
 
+        private State _heroStats;
         public List<ScriptablePrefab> _enemies;
 
         public int Weak => _weakCount;
@@ -32,7 +36,13 @@ namespace Assets.Sashka.Scripts.Enemyes
 
         private void Start()
         {
+            //SetDifficult(_heroStats.Difficult);
             Invoke(nameof(Spawn), 2f);
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            _heroStats = progress.HeroState;
         }
 
         private void Spawn()
@@ -85,6 +95,18 @@ namespace Assets.Sashka.Scripts.Enemyes
             int randomPoint = Random.Range(0, _spawnPoints.Length);
             return _spawnPoints[randomPoint];
         }
+
+        public void SetDifficult(int difficultIndicator)
+        {
+            if (_weakCount > 0)
+                _weakCount += difficultIndicator;
+
+            if (_mediumCount > 0)
+                _mediumCount += difficultIndicator;
+
+            if (_strongCount > 0)
+                _strongCount += difficultIndicator;            
+        }        
     }
 }
 

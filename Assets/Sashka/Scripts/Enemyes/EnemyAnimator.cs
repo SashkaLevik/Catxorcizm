@@ -1,5 +1,5 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+
 namespace Assets.Sashka.Scripts.Enemyes
 {
     public class EnemyAnimator : MonoBehaviour
@@ -15,9 +15,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         }
 
         public void PlayAttack()
-            => _animator.SetTrigger(Attack);
-
-        public void PlayDeath()
-            => _animator.SetTrigger(Die);
+            => _animator.SetTrigger(Attack);        
     }
 }

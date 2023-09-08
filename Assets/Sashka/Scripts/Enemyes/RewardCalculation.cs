@@ -15,16 +15,24 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] private Image _oneStar;
         [SerializeField] private Image _twoStars;
         [SerializeField] private Image _threeStars;
+        [SerializeField] private Image _endGameImage;
         [SerializeField] private TMP_Text _rewardAmount;
         [SerializeField] private TMP_Text _killedPercent;
         [SerializeField] private PrizeSoul _prizeSoulPrefab;        
         [SerializeField] private ActorUI _actorUI;
         [SerializeField] private GameObject _advMoney;
+        [SerializeField] private Button _soulsForAdd;
         [SerializeField] private int _ADVSoul;
 
         private int _lowPercent = 25; private int _mediumPercent = 50; private int _highPercent = 75;
         private int _lowReward = 30; private int _mediumReward = 50; private int _highReward = 100;
         private int _lowSoulsAmount = 3; private int _mediumSoulsAmount = 5; private int _highSoulsAmount = 10;
+
+        private void OnEnable()
+            => _soulsForAdd.onClick.AddListener(ShowRewardAdd);
+
+        private void OnDisable()
+            => _soulsForAdd.onClick.RemoveListener(ShowRewardAdd);
 
         public void GetExtraSoul(HeroHealth heroHealth)
         {
@@ -34,13 +42,21 @@ namespace Assets.Sashka.Scripts.Enemyes
             }
         }
 
+        public void ShowRewardAdd()
+            => VideoAd.Show(OnAddOpen, OnAddClosed);
+
         public void GetReward()
         {           
             _actorUI.Spawner.CalculatePercentage();
             _rewardWindow.gameObject.SetActive(true);
             _advMoney.SetActive(true);
 
-            if (_actorUI.Spawner.KilledEnemies <= _lowPercent)
+            if (_actorUI.IsGameComplete())
+            {
+                _rewardWindow.gameObject.SetActive(false);
+                _endGameImage.gameObject.SetActive(true);
+            }
+            else if (_actorUI.Spawner.KilledEnemies <= _lowPercent)
             {
                 SetRewardValues(_lowReward, _oneStar);
                 _killedPercent.text = _actorUI.Spawner.KilledEnemies.ToString();
@@ -67,12 +83,7 @@ namespace Assets.Sashka.Scripts.Enemyes
                 Instantiate(_prizeSoulPrefab, transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(0.3f);
             }
-        }
-        
-        public void ShowRewardAdd()
-        {
-            VideoAd.Show(OnAddOpen, OnAddClosed);
-        }        
+        }                        
 
         private void SetRewardValues(int reward, Image rewardImage)
         {
@@ -89,7 +100,7 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             AudioListener.volume = 1;
             StartCoroutine(SpawnSoul(_ADVSoul));
-            _advMoney.SetActive(false);
+            _soulsForAdd.gameObject.SetActive(false);
         }        
     }
 }

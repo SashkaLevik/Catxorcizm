@@ -12,10 +12,10 @@ namespace CodeBase.Plugins
         private const int textureQuality = 4;
     
 
-        private void Start()
-        {
-            RenderTexture.active.antiAliasing = Application.isMobilePlatform ? textureQualityMobile : textureQuality;
-        }
+        //private void Start()
+        //{
+        //    RenderTexture.active.antiAliasing = Application.isMobilePlatform ? textureQualityMobile : textureQuality;
+        //}
 
         private void Awake()
         {
@@ -25,7 +25,8 @@ namespace CodeBase.Plugins
         private IEnumerator Init()
         {
 #if !UNITY_WEBGL || UNITY_EDITOR
-            yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f);
+            
 #elif YANDEX_GAMES
         while(YandexGamesSdk.IsInitialized == false)
         {
@@ -34,8 +35,6 @@ namespace CodeBase.Plugins
 
         YandexGamesSdk.CallbackLogging = true;
 #endif
-
-            //GameAnalytics.Initialize();
             SceneManager.LoadScene(_nameScene);
         }
     }

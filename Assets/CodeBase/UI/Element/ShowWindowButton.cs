@@ -11,7 +11,7 @@ namespace CodeBase.UI.Element
         {
             foreach (OpenWindowButton windowButton in _buttons)
             {
-                windowButton.gameObject.SetActive(!windowButton.TowerSpawner.CreateTower);
+                windowButton.gameObject.SetActive(!windowButton.TowerSpawner.IsTowerCreated);
             }
         }
     }

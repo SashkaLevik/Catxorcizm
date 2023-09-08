@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Sashka.Scripts.Minions;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
 using UnityEngine;
@@ -51,7 +52,9 @@ namespace CodeBase.Player
         }
 
         public void SpawnMinions()
-            => _position.BuyTowerSpawn(_towerStaticData);
+        {
+            _position.BuyTowerSpawn(_towerStaticData);
+        }            
 
         public void SetSpawnPosition(TowerSpawner position)
             => _position = position;

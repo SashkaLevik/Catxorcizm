@@ -52,17 +52,19 @@ namespace CodeBase.Infrastructure.LevelLogic
         private void OnMageLoaded()
         {
             _stateMachine.Enter<LoadLevelState, string>(MageArea);
+            ShowInterstitial();
         }
 
         private void OnMarketLoaded()
         {
             _stateMachine.Enter<LoadLevelState, string>(MarketArea);
+            ShowInterstitial();
         }
 
         private void OnPortAreaLoad()
         {
             _stateMachine.Enter<LoadLevelState, string>(PortArea);
-            //ShowInterstitial();
+            ShowInterstitial();
         }        
 
         private void ShowInterstitial()

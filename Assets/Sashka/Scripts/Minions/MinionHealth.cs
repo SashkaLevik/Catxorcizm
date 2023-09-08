@@ -21,7 +21,6 @@ namespace Assets.Sashka.Scripts.Minions
 
         private SpawnerController _spawnerController;
         public float _currentDefence;
-
         public event UnityAction DefenceChanged;
         public event UnityAction HealthChanged;
         public event UnityAction<BaseMinion> Died;
@@ -35,7 +34,7 @@ namespace Assets.Sashka.Scripts.Minions
             _defence = _minion.Defence;
             SetDefence();
         }        
-
+        
         public float Current
         {
             get => _current;
@@ -64,17 +63,7 @@ namespace Assets.Sashka.Scripts.Minions
                 _defence = value;
                 DefenceChanged?.Invoke();
             }
-        }
-
-        private void SetDefence()
-        {
-            _currentDefence = _defence;
-
-            if (_currentDefence > 0)
-            {
-                _shield.gameObject.SetActive(true);
-            }            
-        }
+        }        
 
         private void OnEnable()
         {
@@ -88,6 +77,30 @@ namespace Assets.Sashka.Scripts.Minions
         {
             DefenceChanged -= SetDefence;
             _spawnerController.WaveCompleted -= SetDefence;
+        }
+
+        private void SetDefence()
+        {
+            _currentDefence = _defence;
+
+            if (_currentDefence > 0)
+            {
+                _shield.gameObject.SetActive(true);
+            }
+        }
+
+        private void Die()
+        {
+            AudioSource dieSound;
+            dieSound = _audioController.GetRandomSound();
+            dieSound.Play();
+            StartCoroutine(DestroyTimer());
+        }
+
+        private IEnumerator DestroyTimer()
+        {
+            yield return new WaitForSeconds(0.8f);
+            Destroy(gameObject);
         }
 
         public void TakeDamage(int damage)
@@ -109,28 +122,14 @@ namespace Assets.Sashka.Scripts.Minions
                 Died?.Invoke(_minion);
                 Die();
             }
-        }
+        }                       
 
         public void Heal(float heal)
         {
             Current += heal;
             HealthChanged?.Invoke();
 
-            if (Current > Max) { Current = Max; }            
-        }        
-
-        private void Die()
-        {
-            AudioSource dieSound;
-            dieSound = _audioController.GetRandomSound();
-            dieSound.Play();
-            StartCoroutine(DestroyTimer());
-        }
-
-        private IEnumerator DestroyTimer()
-        {
-            yield return new WaitForSeconds(0.8f);
-            Destroy(gameObject);
+            if (Current > Max) { Current = Max; }
         }
     }
 }

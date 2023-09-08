@@ -53,7 +53,6 @@ namespace CodeBase.Player
 
         public void LoadProgress(PlayerProgress progress)
         {
-           Debug.Log("загрузить данные Жизней");
             _state = progress.HeroState;
             _state.ResetHP();
         }

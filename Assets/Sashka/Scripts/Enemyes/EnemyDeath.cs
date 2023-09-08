@@ -32,7 +32,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             AudioSource dieSound;
             _health.HealthChanged -= OnHealthChanged;
-            _animator.PlayDeath();
             dieSound = _audioController.GetRandomSound();
             dieSound.Play();
             GameObject fx = Instantiate(DeathFx, transform.position, Quaternion.identity);

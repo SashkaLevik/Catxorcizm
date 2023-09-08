@@ -67,7 +67,6 @@ namespace CodeBase.UI.Element
                         _selectedItemStartPosition = _selected.transform.position;
                         hit.transform.GetComponent<Collider2D>().enabled = false;
                         StartCoroutine(DragTrigger());
-                        Debug.Log(hit.transform.name);
                     }
                 }
             }
@@ -93,16 +92,13 @@ namespace CodeBase.UI.Element
                         RaycastHit2D currentHit = new RaycastHit2D();
                 
                         foreach (RaycastHit2D hit2D in hitInfo)
-                        {
-                            Debug.Log(hit2D.collider.name + " collider Tower");
-                
+                        {                
                             if (hit2D.collider.TryGetComponent(out TowerSpawner spawner))
                             {
-                                if (!spawner.CreateTower)
+                                if (!spawner.IsTowerCreated)
                                 {
                                     isTowerSpawner = true;
                                     currentHit = hit2D;
-                                    Debug.Log(hit2D.collider.name + "  collider Shift");
                                 }
                             }
                         }
@@ -148,7 +144,6 @@ namespace CodeBase.UI.Element
 
         private void NewPosition(RaycastHit2D hitInfo)
         {
-            Debug.Log(hitInfo.collider.transform.name);
             _selected.SetParent(hitInfo.collider.transform, true);
             _selected.transform.localPosition = Vector3.zero;
             _currentHit.transform.GetComponent<Collider2D>().enabled = true;
@@ -158,7 +153,6 @@ namespace CodeBase.UI.Element
             _selectSpawner.IsCreateTower();
             _selectSpawner.ChildMinion(_currentSpawner);
             _currentSpawner.ObjectOffset();
-            Debug.Log("NewPos");
         }
     }
 }

@@ -33,7 +33,6 @@ namespace Assets.Sashka.Infastructure.Tresures
         {
             _spawnerController.WaveCompleted += SpawnTreasure;
             _spawnerController.WaveStarted += RemoveTreasures;
-            _spawnerController.LevelCompleted += RemoveTreasures;
         }
 
         private void OnDestroy()
@@ -43,7 +42,9 @@ namespace Assets.Sashka.Infastructure.Tresures
         }
 
         public void SpawnTreasure()
-            => StartCoroutine(SpawnLoot());
+        {
+            if (_spawnerController.IsLevelComplete == false) StartCoroutine(SpawnLoot());
+        }           
 
         public void RemoveTreasures()
         {

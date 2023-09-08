@@ -4,8 +4,6 @@ using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.UI.Forms;
 using CodeBase.UI.Service.Factory;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -69,9 +67,9 @@ namespace CodeBase.Tower
             _sprite.enabled = false;
             _minionHealth = GetComponentInChildren<MinionHealth>();
             _minionHealth.Died += OnMinionDie;
-        }               
+        }
 
-        public void OnMinionDie(BaseMinion minion)
+        private void OnMinionDie(BaseMinion minion)
         {
             if (_isTowerCreated)
             {

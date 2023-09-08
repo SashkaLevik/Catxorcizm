@@ -35,7 +35,6 @@ namespace CodeBase.UI.Forms
         
         public void LoadProgress(PlayerProgress progress)
         {
-            Debug.Log("zagruzka minions");
             _countMinions = progress.NumberOfMinions;
         }
 

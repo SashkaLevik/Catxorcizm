@@ -154,6 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - {fileID: 716848316}
+  - {fileID: 611464272}
+  - {fileID: 1129869085}
+  - {fileID: 286257212}
+  - {fileID: 1773241890}
+  - {fileID: 666373810}
+  - {fileID: 2084952090}
+  - {fileID: 694826387}
   _treasureBackground: {fileID: 1879528996}
 --- !u!4 &86234847
 Transform:

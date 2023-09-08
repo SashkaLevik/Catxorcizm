@@ -9,8 +9,7 @@ namespace CodeBase.Infrastructure.State
     public class LoadProgressState: IState
     {
         private const string MenuScene = "MenuScene";
-        private const string PortArea = "PortArea";
-        
+
         private readonly GameStateMachine _gameStateMachine;
         private readonly IPersistentProgressService _progressService;
         private readonly ISaveLoadService _saveLoadService;
@@ -26,7 +25,6 @@ namespace CodeBase.Infrastructure.State
         {
             LoadProgressOrInitNew();
             _gameStateMachine.Enter<LoadMenuState, string>(MenuScene);
-            //_gameStateMachine.Enter<LoadPortState, string>(_progressService.Progress.WorldData.Level);
         }
 
         public void Exit()

@@ -1,7 +1,5 @@
 ﻿using Agava.YandexGames;
 using CodeBase.Infrastructure.Service;
-using CodeBase.Infrastructure.Service.PersistentProgress;
-using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
 using CodeBase.Infrastructure.UI;
 using CodeBase.UI;

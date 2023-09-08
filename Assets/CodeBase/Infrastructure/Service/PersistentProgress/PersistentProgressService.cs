@@ -1,5 +1,4 @@
 ﻿using CodeBase.Data;
-using UnityEngine;
 
 namespace CodeBase.Infrastructure.Service.PersistentProgress
 {

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Sashka.Scripts.Minions;
 using CodeBase.Infrastructure.StaticData;
 using CodeBase.Tower;
 using UnityEngine;

@@ -37,7 +37,6 @@ namespace CodeBase.Infrastructure.State
 
         private void RegisterServices()
         {
-            //_services.RegisterSingle<IInputService>(InputService());
             RegisterStaticData();
             
             _services.RegisterSingle<IGameStateMachine>(_stateMachine);

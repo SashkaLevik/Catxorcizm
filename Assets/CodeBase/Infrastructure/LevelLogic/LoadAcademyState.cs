@@ -2,7 +2,6 @@
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.Infrastructure.State;
-using CodeBase.Player;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.LevelLogic

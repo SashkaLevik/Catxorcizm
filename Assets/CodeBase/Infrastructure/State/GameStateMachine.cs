@@ -6,7 +6,6 @@ using CodeBase.Infrastructure.Service;
 using CodeBase.Infrastructure.Service.PersistentProgress;
 using CodeBase.Infrastructure.Service.SaveLoad;
 using CodeBase.UI.Service.Factory;
-using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {

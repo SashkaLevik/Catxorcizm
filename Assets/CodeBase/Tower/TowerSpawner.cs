@@ -86,15 +86,15 @@ namespace CodeBase.Tower
                 Destroy(_currentTower);
         }
 
-        public void ObjectOffset()
+        public void ObjectOffset(TowerSpawner position)
         {
             _minionHealth.Died -= OnMinionDie;
 
-            if (!_isTowerCreated)
+            if (!position._isTowerCreated)
             {
-                _minionHealth = null;
-                _currentTower = null;
-                _data = null;
+                position._data = null;
+                position._currentTower = null;
+                position._minionHealth = null;
             }
         }
 

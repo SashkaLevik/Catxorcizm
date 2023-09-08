@@ -24,6 +24,11 @@ namespace CodeBase.UI.Element
             panel.SetActive(true);
         }
 
+        public void ClosePanel(GameObject panel)
+        {
+            panel.SetActive(false);
+        }
+
         public void Show(TowerStaticData data)
         {
             if (Application.systemLanguage == SystemLanguage.Russian)
@@ -39,11 +44,6 @@ namespace CodeBase.UI.Element
             _damageText.text = data.Damage.ToString();
             _cooldownText.text = data.Cooldown.ToString();
             _healthText.text = data.MaxHP.ToString();                                               
-        }
-
-        public void ClosePanel(GameObject panel)
-        {
-            panel.SetActive(false);
         }
 
         public void SetItemIcon(BaseMinion minion)

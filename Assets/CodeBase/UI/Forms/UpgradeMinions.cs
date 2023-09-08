@@ -60,6 +60,7 @@ namespace CodeBase.UI.Forms
                 if (staticData.TowerTypeID == data.TowerTypeID)
                 {
                     _panelMinions.Show(staticData);
+                    _price.text = _nextUpgrade.Price.ToString();
                 }
             }
         }

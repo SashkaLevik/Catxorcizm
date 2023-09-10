@@ -10,6 +10,7 @@ namespace CodeBase.Infrastructure.UI
     public class MenuScreen : MonoBehaviour
     {
         private const string MusicVolume = "MusicVolume";
+
         [SerializeField] private GameObject _menuScreen;
         [SerializeField] private GameObject _settingsScreen;
         [SerializeField] private GameObject _levelScreen;
@@ -22,16 +23,15 @@ namespace CodeBase.Infrastructure.UI
         [SerializeField] private GameRules _gameRules;
         [SerializeField] private AudioSource _audio;
 
+        private string _disactivate = "Disactivate";
+
         public event UnityAction GameStarted;
         public event UnityAction RulesShowed;
-        private string _disactivate = "Disactivate";
 
         private ISaveLoadService _saveLoadService;
 
         private void Awake()
-        {
-            _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
-        }
+            => _saveLoadService = AllServices.Container.Single<ISaveLoadService>();
 
         private void Start()
         {

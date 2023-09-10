@@ -34,10 +34,7 @@ namespace CodeBase.UI.Forms
         }
         
         public void LoadProgress(PlayerProgress progress)
-        {
-            Debug.Log("zagruzka minions");
-            _countMinions = progress.NumberOfMinions;
-        }
+            => _countMinions = progress.NumberOfMinions;
 
         public void Inactive()
         {
@@ -63,9 +60,7 @@ namespace CodeBase.UI.Forms
         }
 
         private void Update()
-        {
-            _currentMoney = _playerMoney.CurrentSoul;
-        }
+            => _currentMoney = _playerMoney.CurrentSoul;
 
         private void OnEnable()
         {

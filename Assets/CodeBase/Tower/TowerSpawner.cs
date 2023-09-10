@@ -53,6 +53,8 @@ namespace CodeBase.Tower
 
             GameObject tower = _factory.CreatTower(towerTypeID, parent);
             _currentTower = tower;
+            _minionHealth = _currentTower.GetComponentInChildren<MinionHealth>();
+            _minionHealth.Died += OnMinionDie;
         }
 
         public void IsCreateTower()
@@ -66,18 +68,13 @@ namespace CodeBase.Tower
             Spawner(data.TowerTypeID, transform);
             _data = data;
             _isTowerCreated = true;
-            _sprite.enabled = false;
-            _minionHealth = GetComponentInChildren<MinionHealth>();
-            _minionHealth.Died += OnMinionDie;
+            _sprite.enabled = false;            
         }               
 
         public void OnMinionDie(BaseMinion minion)
-        {
-            if (_isTowerCreated)
-            {
-                _isTowerCreated = false;
-                _sprite.enabled = true;
-            }
+        {            
+            _isTowerCreated = false;
+            _sprite.enabled = true;
         }        
 
         public void DestroyMinions()

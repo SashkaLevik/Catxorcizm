@@ -77,6 +77,35 @@ namespace Assets.Sashka.Scripts.Minions
         {
             DefenceChanged -= SetDefence;
             _spawnerController.WaveCompleted -= SetDefence;
+        }        
+
+        public void TakeDamage(int damage)
+        {
+            if (_currentDefence != 0)
+            {
+                _shield.ActivateProtect();
+                _currentDefence -= 1;
+            }
+            else if (_currentDefence <= 0)
+            {
+                _shield.gameObject.SetActive(false);
+                Current -= damage;
+                HealthChanged?.Invoke();
+            }
+
+            if (Current <= 0)
+            {
+                Died?.Invoke(_minion);
+                Die();
+            }
+        }
+
+        public void Heal(float heal)
+        {
+            Current += heal;
+            HealthChanged?.Invoke();
+
+            if (Current > Max) { Current = Max; }
         }
 
         private void SetDefence()
@@ -101,35 +130,6 @@ namespace Assets.Sashka.Scripts.Minions
         {
             yield return new WaitForSeconds(0.8f);
             Destroy(gameObject);
-        }
-
-        public void TakeDamage(int damage)
-        {
-            if (_currentDefence != 0)
-            {
-                _shield.ActivateProtect();
-                _currentDefence -= 1;
-            }
-            else if(_currentDefence <= 0)
-            {
-                _shield.gameObject.SetActive(false);
-                Current -= damage;
-                HealthChanged?.Invoke();
-            }
-            
-            if (Current <= 0)
-            {
-                Died?.Invoke(_minion);
-                Die();
-            }
-        }                       
-
-        public void Heal(float heal)
-        {
-            Current += heal;
-            HealthChanged?.Invoke();
-
-            if (Current > Max) { Current = Max; }
-        }
+        }        
     }
 }

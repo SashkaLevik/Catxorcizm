@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 217706652}
   - component: {fileID: 217706651}
   m_Layer: 0
-  m_Name: FifthWaveSpawner (1)
+  m_Name: 8WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,8 +639,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 0
-  _mediumCount: 5
-  _strongCount: 5
+  _mediumCount: 4
+  _strongCount: 4
   _bossCount: 1
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 217706651}
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 505188769}
   - component: {fileID: 505188770}
   m_Layer: 0
-  m_Name: ThirdWaveSpawner
+  m_Name: 3WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1051,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 4
+  _weakCount: 2
   _mediumCount: 1
   _strongCount: 0
   _bossCount: 0
@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.4
   _spawnerController: {fileID: 1276082689}
-  _portMusic: {fileID: 519420034}
+  _areaMusic: {fileID: 519420034}
 --- !u!1001 &541154680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1488,7 +1488,7 @@ GameObject:
   - component: {fileID: 615328080}
   - component: {fileID: 615328081}
   m_Layer: 0
-  m_Name: FourthWaveSpawner
+  m_Name: 4WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,8 +1527,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 3
-  _mediumCount: 3
+  _weakCount: 2
+  _mediumCount: 2
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1276082689}
@@ -1602,7 +1602,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2693253, y: -0.123470426}
+  m_Offset: {x: 2.3922875, y: -0.123470426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1613,7 +1613,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.184898, y: 0.1511414}
+  m_Size: {x: 9.405663, y: 0.1511414}
   m_EdgeRadius: 0
 --- !u!1 &735906221
 GameObject:
@@ -1699,7 +1699,7 @@ GameObject:
   - component: {fileID: 755461905}
   - component: {fileID: 755461906}
   m_Layer: 0
-  m_Name: FifthWaveSpawner (7)
+  m_Name: 7WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1739,8 +1739,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 1
-  _mediumCount: 3
-  _strongCount: 4
+  _mediumCount: 2
+  _strongCount: 3
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 1109592877}
   - component: {fileID: 1109592878}
   m_Layer: 0
-  m_Name: SecondWaveSpawner
+  m_Name: 2WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2069,7 +2069,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 0}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 5
+  _weakCount: 4
   _mediumCount: 0
   _strongCount: 0
   _bossCount: 0
@@ -2306,7 +2306,7 @@ GameObject:
   - component: {fileID: 1370948520}
   - component: {fileID: 1370948521}
   m_Layer: 0
-  m_Name: FifthWaveSpawner (6)
+  m_Name: 6WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2346,8 +2346,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 0
-  _mediumCount: 4
-  _strongCount: 3
+  _mediumCount: 3
+  _strongCount: 2
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   - component: {fileID: 1818164980}
   - component: {fileID: 1818164981}
   m_Layer: 0
-  m_Name: FifthWaveSpawner
+  m_Name: 5WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2958,8 +2958,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 2.5
   _weakCount: 1
-  _mediumCount: 3
-  _strongCount: 2
+  _mediumCount: 2
+  _strongCount: 1
   _bossCount: 0
   _controller: {fileID: 1276082689}
   _bossSound: {fileID: 0}
@@ -2975,7 +2975,7 @@ GameObject:
   - component: {fileID: 1920106315}
   - component: {fileID: 1920106317}
   m_Layer: 0
-  m_Name: FirstWaveSpawner
+  m_Name: 1WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3014,7 +3014,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 284222948}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 4
-  _weakCount: 4
+  _weakCount: 3
   _mediumCount: 0
   _strongCount: 0
   _bossCount: 0

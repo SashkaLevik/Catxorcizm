@@ -154,6 +154,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - {fileID: 716848316}
+  - {fileID: 611464272}
+  - {fileID: 1129869085}
+  - {fileID: 286257212}
+  - {fileID: 1773241890}
+  - {fileID: 666373810}
+  - {fileID: 2084952090}
+  - {fileID: 694826387}
   _treasureBackground: {fileID: 1879528996}
 --- !u!4 &86234847
 Transform:
@@ -241,7 +248,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: d84521a0cd8bb7f4786d403f923bc632, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -464,9 +471,9 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1267537542}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 2
-  _mediumCount: 4
-  _strongCount: 1
+  _weakCount: 1
+  _mediumCount: 3
+  _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 86234846}
   _bossSound: {fileID: 0}
@@ -805,8 +812,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1267537542}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 5
-  _mediumCount: 1
+  _weakCount: 4
+  _mediumCount: 0
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 86234846}
@@ -1029,8 +1036,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 5
-  _strongCount: 4
+  _mediumCount: 4
+  _strongCount: 3
   _bossCount: 0
   _controller: {fileID: 86234846}
   _bossSound: {fileID: 0}
@@ -1148,8 +1155,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 6
-  _strongCount: 7
+  _mediumCount: 5
+  _strongCount: 6
   _bossCount: 1
   _controller: {fileID: 86234846}
   _bossSound: {fileID: 694826388}
@@ -1300,7 +1307,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1267537542}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 5
+  _weakCount: 4
   _mediumCount: 0
   _strongCount: 0
   _bossCount: 0
@@ -1579,8 +1586,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1267537542}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 3
-  _mediumCount: 3
+  _weakCount: 2
+  _mediumCount: 2
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 86234846}
@@ -1768,6 +1775,7 @@ Transform:
   - {fileID: 1267537542}
   - {fileID: 256600419}
   - {fileID: 1879528998}
+  - {fileID: 1530428035}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1881,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.4
   _spawnerController: {fileID: 86234846}
-  _portMusic: {fileID: 1307584479}
+  _areaMusic: {fileID: 1307584479}
 --- !u!1 &1472504156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,6 +2058,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4978283931649437049, guid: ccd57c1f1c64aec43bcf38b7c7900453, type: 3}
   m_PrefabInstance: {fileID: 1505009478}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1530428034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530428035}
+  - component: {fileID: 1530428037}
+  - component: {fileID: 1530428036}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530428035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530428034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1307584478}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530428036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530428034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4ffab899164cc48beb74a7f79675b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1530428037
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530428034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.1723375, y: -2.397768}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.5579987, y: 0.13926291}
+  m_EdgeRadius: 0
 --- !u!1001 &1692972122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2220,8 +2299,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 5
-  _strongCount: 2
+  _mediumCount: 4
+  _strongCount: 1
   _bossCount: 0
   _controller: {fileID: 86234846}
   _bossSound: {fileID: 0}
@@ -2525,8 +2604,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 1267537542}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 1
-  _mediumCount: 5
+  _weakCount: 0
+  _mediumCount: 4
   _strongCount: 5
   _bossCount: 0
   _controller: {fileID: 86234846}

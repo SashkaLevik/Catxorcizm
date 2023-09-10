@@ -41,14 +41,8 @@ namespace Assets.Sashka.Scripts.Enemyes
             if (Current <= 0)
             {
                 Died?.Invoke(_enemy);
-                //Invoke(nameof(Die), 0.6f);
             }
-        }        
-
-        private void Die()
-        {
-            Destroy(_enemy.gameObject);
-        }
+        }                
     }
 }
 

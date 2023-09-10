@@ -9,14 +9,14 @@ namespace Assets.CodeBase.Player
         private const string IsMoving = "IsMoving";
 
         private Animator _animator;
-        private int _levelNumber;
+        private int _gameLevel;
 
         private void Start()
             => _animator = GetComponent<Animator>();
 
         public void Move()
         {
-            if (_levelNumber > 0)
+            if (_gameLevel > 0)
             {
                 _animator.SetBool(IsMoving, true);
             }
@@ -24,7 +24,7 @@ namespace Assets.CodeBase.Player
 
         public void Stop()
         {
-            if (_levelNumber > 0)
+            if (_gameLevel > 0)
             {
                 _animator.SetBool(IsMoving, false);
             }
@@ -32,7 +32,7 @@ namespace Assets.CodeBase.Player
 
         public void LoadProgress(PlayerProgress progress)
         {
-            _levelNumber = progress.HeroState.GameLevel;
+            _gameLevel = progress.HeroState.GameLevel;
         }
     }
 }

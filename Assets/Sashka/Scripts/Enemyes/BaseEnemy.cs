@@ -41,6 +41,9 @@ namespace Assets.Sashka.Scripts.Enemyes
         private void Update()
             => Move();
 
+        public void OnTornadoEnter(float modifier)
+            => StartCoroutine(ReduceSpeed(modifier));
+
         private void OnTriggerStay2D(Collider2D other)
         {            
             if (other.TryGetComponent(out _health))
@@ -86,9 +89,6 @@ namespace Assets.Sashka.Scripts.Enemyes
             _currentSpeed = _speed;
 
         private void Move() =>
-            transform.position += Vector3.left * _currentSpeed * Time.deltaTime;        
-
-        public void OnTornadoEnter(float modifier)
-            => StartCoroutine(ReduceSpeed(modifier));
+            transform.position += Vector3.left * _currentSpeed * Time.deltaTime;                
     }
 }

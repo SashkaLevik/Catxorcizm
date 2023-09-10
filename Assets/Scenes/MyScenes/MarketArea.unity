@@ -370,8 +370,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 198681031}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 2
-  _mediumCount: 3
+  _weakCount: 1
+  _mediumCount: 2
   _strongCount: 0
   _bossCount: 0
   _controller: {fileID: 1616384765}
@@ -432,8 +432,8 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 198681031}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
-  _weakCount: 2
-  _mediumCount: 3
+  _weakCount: 1
+  _mediumCount: 2
   _strongCount: 1
   _bossCount: 0
   _controller: {fileID: 1616384765}
@@ -490,8 +490,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 5
-  _strongCount: 3
+  _mediumCount: 4
+  _strongCount: 2
   _bossCount: 0
   _controller: {fileID: 1616384765}
   _bossSound: {fileID: 0}
@@ -1566,8 +1566,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 6
-  _strongCount: 6
+  _mediumCount: 5
+  _strongCount: 5
   _bossCount: 1
   _controller: {fileID: 1616384765}
   _bossSound: {fileID: 1314944178}
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 198681031}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 4
+  _weakCount: 3
   _mediumCount: 1
   _strongCount: 0
   _bossCount: 0
@@ -1686,7 +1686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9033937382464320522, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6dc360a5881b9c4e9f999da9c9f5479, type: 3}
@@ -1996,8 +1996,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 1
-  _mediumCount: 4
-  _strongCount: 2
+  _mediumCount: 3
+  _strongCount: 1
   _bossCount: 0
   _controller: {fileID: 1616384765}
   _bossSound: {fileID: 0}
@@ -2073,8 +2073,8 @@ MonoBehaviour:
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3
   _weakCount: 0
-  _mediumCount: 7
-  _strongCount: 5
+  _mediumCount: 4
+  _strongCount: 4
   _bossCount: 0
   _controller: {fileID: 1616384765}
   _bossSound: {fileID: 0}
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0.4
   _spawnerController: {fileID: 1616384765}
-  _portMusic: {fileID: 1743329176}
+  _areaMusic: {fileID: 1743329176}
 --- !u!4 &1773590069 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3805714744928226685, guid: 78600aea64ca45040966a0428d5105ef, type: 3}
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   _bossSpawnPoint: {fileID: 198681031}
   _spawnedEnemy: {fileID: 0}
   _timeBetweenSpawn: 3.5
-  _weakCount: 4
+  _weakCount: 3
   _mediumCount: 0
   _strongCount: 0
   _bossCount: 0

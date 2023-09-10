@@ -105,6 +105,7 @@ namespace CodeBase.UI.Element
         {
             if (_gameLevel == 0) _avalebleMinions = 3;
             else if (_gameLevel == 1) _avalebleMinions = 4;
+            else if (_gameLevel == 2) _avalebleMinions = 5;
         }
 
         private IEnumerator RefuseBuy()
@@ -112,7 +113,6 @@ namespace CodeBase.UI.Element
             _refuseImage.gameObject.SetActive(true);
             yield return new WaitForSeconds(3f);
             _refuseImage.gameObject.SetActive(false);
-            Debug.Log("Refuse");
         }        
     }
 }

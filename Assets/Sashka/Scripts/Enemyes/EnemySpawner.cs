@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Sashka.Scripts.Enemyes
 {
-    public class EnemySpawner : MonoBehaviour, ISavedProgressReader
+    public class EnemySpawner : MonoBehaviour
     {
         protected const string PortEnemies = "EnemiesScriptable/PortEnemies";
         protected const string MarketEnemies = "EnemiesScriptable/MarketEnemies";
@@ -23,8 +23,9 @@ namespace Assets.Sashka.Scripts.Enemyes
         [SerializeField] protected int _bossCount;
         [SerializeField] protected SpawnerController _controller;
         [SerializeField] protected AudioSource _bossSound;
+       
+        private int _spawned;
 
-        private State _heroStats;
         public List<ScriptablePrefab> _enemies;
 
         public int Weak => _weakCount;
@@ -32,23 +33,32 @@ namespace Assets.Sashka.Scripts.Enemyes
         public int Strong => _strongCount;
         public int Boss => _bossCount;
 
+        public int Spawned => _spawned;
+
         protected virtual void Awake() { }        
 
         private void Start()
+            => Invoke(nameof(Spawn), 2f);
+
+        public void SetDifficult(int difficultIndicator)
         {
-            //SetDifficult(_heroStats.Difficult);
-            Invoke(nameof(Spawn), 2f);
+            if (_weakCount > 0)
+                _weakCount += difficultIndicator;
+
+            if (_mediumCount > 0)
+                _mediumCount += difficultIndicator;
+
+            if (_strongCount > 0)
+                _strongCount += difficultIndicator;
+
+            GetSpawnedEnemies();
         }
 
-        public void LoadProgress(PlayerProgress progress)
-        {
-            _heroStats = progress.HeroState;
-        }
+        public void GetSpawnedEnemies()
+            => _spawned = _weakCount + _mediumCount + _strongCount + _bossCount;
 
         private void Spawn()
-        {
-            StartCoroutine(SpawnEnemies(_weakCount, _mediumCount, _strongCount, _bossCount));
-        }
+            => StartCoroutine(SpawnEnemies(_weakCount, _mediumCount, _strongCount, _bossCount));
 
         private IEnumerator SpawnEnemies(int weakCount, int mediumCount, int strongCount, int bossCount)
         {
@@ -94,18 +104,6 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             int randomPoint = Random.Range(0, _spawnPoints.Length);
             return _spawnPoints[randomPoint];
-        }
-
-        public void SetDifficult(int difficultIndicator)
-        {
-            if (_weakCount > 0)
-                _weakCount += difficultIndicator;
-
-            if (_mediumCount > 0)
-                _mediumCount += difficultIndicator;
-
-            if (_strongCount > 0)
-                _strongCount += difficultIndicator;            
         }        
     }
 }

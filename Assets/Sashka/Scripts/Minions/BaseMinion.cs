@@ -36,6 +36,8 @@ namespace Assets.Sashka.Scripts.Minions
             _health = GetComponent<MinionHealth>();
         }
 
+        public virtual void StartAttack() { }
+
         public void Init(BaseEnemy enemy)
             => _enemy = enemy;
 
@@ -74,7 +76,5 @@ namespace Assets.Sashka.Scripts.Minions
         {
             if (collision.TryGetComponent(out _enemy)) { StartAttack(); }
         }               
-
-        public virtual void StartAttack() { }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e02822513b22e4995748b39ed1a8bc, type: 3}
   m_Name: StrongEnemy
   m_EditorClassIdentifier: 
-  Health: 18
+  Health: 16
   Damage: 5
   Cooldown: 3
   Speed: 0.55

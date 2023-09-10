@@ -1,3 +1,5 @@
+using CodeBase.Data;
+using CodeBase.Infrastructure.Service.SaveLoad;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,13 +30,11 @@ namespace Assets.Sashka.Scripts.Enemyes
         public event UnityAction WaveStarted;
 
         public EnemySpawner CurrentSpawner => _currentSpawner;
-        public float KilledEnemies => _killedEnemiesPercent;
+        public float KilledEnemies => _killedEnemiesPercent;        
 
-        private void Awake()
-        {            
-            SetSpawner(_currentSpawnerIndex);
+        private void Start()
+        {
             _wavesCount = _spawners.Length;
-            GetEnemiesCount();
             _treasureBackground.SetActive(false);
         }
 
@@ -48,35 +48,21 @@ namespace Assets.Sashka.Scripts.Enemyes
         {
             WaveCompleted -= ShowBackground;
             WaveStarted -= HideBackground;
-        }
+        }        
 
-        private void HideBackground()
-            => _treasureBackground.SetActive(false);
-
-        private void ShowBackground()
-            => _treasureBackground.SetActive(true);
-
-        private void CheckLastWave()
-        {
-            if (_wavesCount == 0 && _spawned == 0)
-            {
-                _isLevelComplete = true;
-                LevelCompleted?.Invoke();
-            }                
-        }
-
-        private void GetEnemiesCount()
+        public void GetEnemiesCount(int difficult)
         {
             foreach (var spawner in _spawners)
             {
+                spawner.SetDifficult(difficult);
                 _enemiesCount += spawner.Weak + spawner.Medium + spawner.Strong + spawner.Boss;
             }
         }
 
-        private void SetSpawner(int index)
+        public void SetSpawner(int index)
         {
             _currentSpawner = _spawners[index];
-            _spawned = _currentSpawner.Weak + _currentSpawner.Medium + _currentSpawner.Strong + _currentSpawner.Boss;
+            _spawned = _currentSpawner.Spawned;
         }       
 
         public void OnEnemyDied(BaseEnemy enemy)
@@ -97,11 +83,10 @@ namespace Assets.Sashka.Scripts.Enemyes
         public void CalculatePercentage()
             => _killedEnemiesPercent = (_enemiesPercent / _enemiesCount) * _killedEnemies;
 
-        public void NextWave(int difficult)
+        public void NextWave()
         {
-            _currentSpawner.SetDifficult(difficult);
-
             WaveStarted?.Invoke();
+
             if (_currentSpawnerIndex != _spawners.Length)
             {
                 _spawners[_currentSpawnerIndex].gameObject.SetActive(true);
@@ -111,8 +96,25 @@ namespace Assets.Sashka.Scripts.Enemyes
                     SetSpawner(++_currentSpawnerIndex);
                     _spawners[_currentSpawnerIndex].gameObject.SetActive(true);
                 }
+                else
+                    SetSpawner(_currentSpawnerIndex);
                 _canChange = true;
             }
-        }        
+        }
+
+        private void HideBackground()
+            => _treasureBackground.SetActive(false);
+
+        private void ShowBackground()
+            => _treasureBackground.SetActive(true);
+
+        private void CheckLastWave()
+        {
+            if (_wavesCount == 0 && _spawned == 0)
+            {
+                _isLevelComplete = true;
+                LevelCompleted?.Invoke();
+            }
+        }
     }
 }

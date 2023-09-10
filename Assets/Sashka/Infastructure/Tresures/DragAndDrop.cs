@@ -43,14 +43,6 @@ namespace Assets.Sashka.Infastructure.Tresures
         {
             Vector2 clickPosition = GetMousePosition();
             RaycastHit2D[] hitInfo = Physics2D.RaycastAll(clickPosition, Vector2.zero);
-
-            foreach (RaycastHit2D hit in hitInfo)
-            {
-                if (hit.collider.TryGetComponent(out BaseMinion minion))
-                {
-                    Debug.Log(minion.name);
-                }
-            }
             transform.GetComponent<Collider2D>().enabled = true;
             Invoke(nameof(SetStartPosition), 0.2f);
         }        

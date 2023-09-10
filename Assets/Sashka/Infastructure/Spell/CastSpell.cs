@@ -36,10 +36,7 @@ namespace Assets.Sashka.Infastructure.Spell
         }
 
         public void LoadProgress(PlayerProgress progress)
-        {
-            _spellAmount = progress.HeroState.SpellAmount;
-            Debug.Log("load data Hero SpellAmount");
-        }
+            => _spellAmount = progress.HeroState.SpellAmount;
 
         private void OnEnable() => 
             _cast.onClick.AddListener(Cast);

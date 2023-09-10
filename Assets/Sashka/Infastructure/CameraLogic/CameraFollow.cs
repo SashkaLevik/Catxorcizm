@@ -14,7 +14,9 @@ namespace Assets.Sashka.Infastructure.CameraLogic
 
         [SerializeField] protected float _speed;
         [SerializeField] protected SpawnerController _spawnerController;
-        [SerializeField] protected AudioSource _portMusic;
+        [SerializeField] protected AudioSource _areaMusic;
+
+        public AudioSource AreaMusic => _areaMusic;
 
         protected float _currentSpeed;
         protected PlayerMove _playerMove;
@@ -24,14 +26,14 @@ namespace Assets.Sashka.Infastructure.CameraLogic
         {
             if(!PlayerPrefs.HasKey(MusicVolume))
             {
-                _portMusic.volume = 1;
+                _areaMusic.volume = 1;
             }
             else
-                _portMusic.volume = PlayerPrefs.GetFloat(MusicVolume);
+                _areaMusic.volume = PlayerPrefs.GetFloat(MusicVolume);
 
             _camera = Camera.main;            
             _currentSpeed = _speed;
-            _portMusic.Play();
+            _areaMusic.Play();
             StopMoving();
             StartCoroutine(nameof(GetPlayer));
         }       

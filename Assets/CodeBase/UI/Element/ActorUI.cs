@@ -27,7 +27,8 @@ namespace CodeBase.UI.Element
         [SerializeField] private Button _levelComplete;
         [SerializeField] private SpawnerController _spawnerController;
         [SerializeField] private RewardCalculation _reward;
-        
+        [SerializeField] private AudioSource _endGameMusic;
+
         private GameObject _spawner;
         private CameraFollow _cameraFollow;
         private int _gameLevel;
@@ -45,6 +46,7 @@ namespace CodeBase.UI.Element
 
         private void Start()
         {
+            _spawnerController.GetEnemiesCount(_difficult);
             _soulCount.text = _money.CurrentSoul.ToString();
             _spellAmount.text = _spell.SpellAmount.ToString();
             _canvas.worldCamera = Camera.main;
@@ -56,7 +58,7 @@ namespace CodeBase.UI.Element
             _spawnerController.LevelCompleted += CompleteLevel;
             _spawnerController.LevelCompleted += _reward.GetReward;
             _spawnerController.WaveCompleted += ShowButton;
-            _nextWave.onClick.AddListener(()=>_spawnerController.NextWave(_difficult));
+            _nextWave.onClick.AddListener(()=>_spawnerController.NextWave());
             _nextWave.onClick.AddListener(HideButton);
         }               
 
@@ -64,7 +66,7 @@ namespace CodeBase.UI.Element
         {
             _spawnerController.LevelCompleted -= _reward.GetReward;
             _spawnerController.WaveCompleted -= ShowButton;
-            _nextWave.onClick.RemoveListener(()=>_spawnerController.NextWave(_difficult));
+            _nextWave.onClick.RemoveListener(()=>_spawnerController.NextWave());
             _nextWave.onClick.RemoveListener(HideButton);
             _spawnerController.LevelCompleted -= CompleteLevel;
             _heroHealth.HealthChanged -= UpdateHpBar;
@@ -89,8 +91,11 @@ namespace CodeBase.UI.Element
         public bool IsGameComplete()
         {
             if (_spawnerController.IsLevelComplete == true && _gameLevel == 3)
+            {
+                _cameraFollow.AreaMusic.Stop();
+                _endGameMusic.Play();
                 return true;
-
+            }                
             return false;
         }
 

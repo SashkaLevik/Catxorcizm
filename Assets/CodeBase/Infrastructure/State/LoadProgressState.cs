@@ -26,7 +26,6 @@ namespace CodeBase.Infrastructure.State
         {
             LoadProgressOrInitNew();
             _gameStateMachine.Enter<LoadMenuState, string>(MenuScene);
-            //_gameStateMachine.Enter<LoadPortState, string>(_progressService.Progress.WorldData.Level);
         }
 
         public void Exit()
@@ -34,18 +33,14 @@ namespace CodeBase.Infrastructure.State
         }
         
         private void LoadProgressOrInitNew()
-        {
-            Debug.Log("создан новый прогресс");
-            
+        {            
             _progressService.Progress = 
                 _saveLoadService.LoadProgress() 
                 ?? NewProgress();
         }
         
         private PlayerProgress NewProgress()
-        {
-            Debug.Log("new Stats");
-            
+        {            
             var progress =  new PlayerProgress(initialLevel: MenuScene);
             progress.HeroState.ResetHP();
 

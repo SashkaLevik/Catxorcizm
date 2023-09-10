@@ -24,7 +24,7 @@ namespace CodeBase.Data
             Lives = 9;
             Level = 1;
             GameLevel = 0;
-            Difficult = 0;
+            Difficult = 1;
             CurrentHP = 6;
             MaxHP = 6;
             MeleeAttack = 2;

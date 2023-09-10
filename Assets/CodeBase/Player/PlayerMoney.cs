@@ -20,13 +20,7 @@ namespace CodeBase.Player
         public int EarnedSouls => _earnedSouls;        
 
         private void Start()
-        {
-            //if (_currentSoul < _currentMoneyLevel)
-            //{
-            //    _currentMoneyLevel -= _currentSoul;
-            //}
-            CurrentSoulChanged?.Invoke(_currentSoul);
-        }        
+            => CurrentSoulChanged?.Invoke(_currentSoul);
 
         public void BuyTower(TowerStaticData data)
         {
@@ -80,12 +74,9 @@ namespace CodeBase.Player
         {
             _earnedSouls += _currentSoul;
             progress.CurrentSoul = _earnedSouls;
-            Debug.Log("сохранение money");
         }
 
         public void LoadProgress(PlayerProgress progress)
-        {
-            _earnedSouls = progress.CurrentSoul;
-        }
+            => _earnedSouls = progress.CurrentSoul;
     }
 }

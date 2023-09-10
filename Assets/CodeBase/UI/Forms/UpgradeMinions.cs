@@ -106,7 +106,6 @@ namespace CodeBase.UI.Forms
             if (_currentCostOfGold <= _currentMoney)
             {
                 _inventory.CurrentData(_currentData);
-                //_playerMoney.SellMinions(_currentData);
                 _inventory.SellMinions(_currentData);
                 _playerMoney.BuyTower(data);
                 _inventory.BuyMinions(data);
